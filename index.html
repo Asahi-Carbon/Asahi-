@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asahi Carbon — Premium Graphite Electrode Supplier for Europe</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0a0a0a;
+    --dark: #111318;
+    --mid: #1e2230;
+    --carbon: #2a2d3a;
+    --steel: #3d4255;
+    --silver: #8a8fa8;
+    --light: #c8cdd8;
+    --white: #f4f5f7;
+    --gold: #c9a84c;
+    --gold-light: #e8c96e;
+    --red: #c0392b;
+    --accent: #4a7fa5;
+  }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(--dark);
+color: var(--white);
+font-family: 'DM Sans', sans-serif;
+font-weight: 300;
+line-height: 1.7;
+overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+display: flex; align-items: center; justify-content: space-between;
+padding: 1.2rem 4rem;
+background: rgba(10,10,10,0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(201,168,76,0.15);
+}
+.nav-logo {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.5rem; font-weight: 700; letter-spacing: 0.1em;
+color: var(--gold); text-decoration: none;
+}
+.nav-logo span { color: var(--white); font-weight: 300; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+color: var(--light); text-decoration: none; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+background: var(--gold); color: var(--black);
+padding: 0.6rem 1.6rem; font-size: 0.78rem;
+letter-spacing: 0.12em; text-transform: uppercase;
+font-weight: 600; text-decoration: none;
+transition: background 0.3s, transform 0.2s;
+clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* ── HERO ── */
+#hero {
+min-height: 100vh;
+display: grid; place-items: center;
+background:
+linear-gradient(170deg, rgba(10,10,10,0.97) 0%, rgba(26,30,42,0.92) 60%, rgba(10,10,10,0.98) 100%),
+url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&q=80') center/cover no-repeat;
+position: relative; overflow: hidden;
+padding: 6rem 4rem 4rem;
+text-align: center;
+}
+.hero-grain {
+position: absolute; inset: 0; opacity: 0.04;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+pointer-events: none;
+}
+.hero-line {
+width: 1px; height: 80px; background: linear-gradient(to bottom, transparent, var(--gold));
+margin: 0 auto 2rem; animation: fadeDown 1.2s ease forwards;
+}
+.hero-tag {
+font-size: 0.72rem; letter-spacing: 0.35em; text-transform: uppercase;
+color: var(--gold); margin-bottom: 1.5rem;
+animation: fadeUp 1s ease 0.3s both;
+}
+.hero-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(3rem, 7vw, 6rem);
+font-weight: 300; line-height: 1.1;
+color: var(--white); margin-bottom: 1rem;
+animation: fadeUp 1s ease 0.5s both;
+}
+.hero-title strong { color: var(--gold); font-weight: 700; display: block; }
+.hero-subtitle {
+font-size: 1.05rem; color: var(--silver); max-width: 640px; margin: 0 auto 2.5rem;
+font-weight: 300; animation: fadeUp 1s ease 0.7s both;
+}
+.hero-markets {
+display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;
+margin-bottom: 3rem; animation: fadeUp 1s ease 0.9s both;
+}
+.market-flag {
+display: flex; align-items: center; gap: 0.5rem;
+font-size: 0.75rem; letter-spacing: 0.1em; color: var(--light);
+padding: 0.45rem 1rem;
+border: 1px solid rgba(201,168,76,0.25);
+background: rgba(201,168,76,0.05);
+}
+.market-flag .flag { font-size: 1.1rem; }
+.hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 1s ease 1.1s both; }
+.btn-primary {
+background: var(--gold); color: var(--black);
+padding: 1rem 2.4rem; font-size: 0.8rem; letter-spacing: 0.15em;
+text-transform: uppercase; font-weight: 600; text-decoration: none;
+transition: all 0.3s; display: inline-block;
+clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+.btn-secondary {
+border: 1px solid rgba(201,168,76,0.5); color: var(--gold);
+padding: 1rem 2.4rem; font-size: 0.8rem; letter-spacing: 0.15em;
+text-transform: uppercase; font-weight: 500; text-decoration: none;
+transition: all 0.3s; display: inline-block;
+background: transparent;
+}
+.btn-secondary:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
+.hero-scroll {
+position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+color: var(--silver); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+animation: pulse 2s infinite;
+}
+.scroll-arrow { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); }
+
+/* ── STATS BAR ── */
+.stats-bar {
+background: var(--black);
+border-top: 1px solid rgba(201,168,76,0.2);
+border-bottom: 1px solid rgba(201,168,76,0.2);
+display: grid; grid-template-columns: repeat(4, 1fr);
+}
+.stat {
+padding: 2rem; text-align: center;
+border-right: 1px solid rgba(201,168,76,0.15);
+transition: background 0.3s;
+}
+.stat:last-child { border-right: none; }
+.stat:hover { background: rgba(201,168,76,0.04); }
+.stat-num {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1;
+margin-bottom: 0.4rem;
+}
+.stat-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--silver); }
+
+/* ── SECTION BASICS ── */
+section { padding: 7rem 4rem; }
+.section-tag {
+font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase;
+color: var(--gold); margin-bottom: 1rem; display: block;
+}
+.section-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.2;
+color: var(--white); margin-bottom: 1rem;
+}
+.section-title strong { color: var(--gold); font-weight: 700; }
+.section-sub { color: var(--silver); max-width: 560px; font-size: 0.95rem; line-height: 1.8; }
+.divider {
+width: 60px; height: 2px;
+background: linear-gradient(to right, var(--gold), transparent);
+margin: 1.5rem 0;
+}
+
+/* ── ABOUT ── */
+#about { background: var(--dark); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto; }
+.about-visual {
+position: relative;
+background: var(--carbon);
+border: 1px solid rgba(201,168,76,0.2);
+padding: 3rem;
+overflow: hidden;
+}
+.about-visual::before {
+content: '';
+position: absolute; top: -2rem; right: -2rem;
+width: 180px; height: 180px;
+border: 1px solid rgba(201,168,76,0.15);
+border-radius: 50%;
+}
+.about-visual::after {
+content: '';
+position: absolute; bottom: -1rem; left: -1rem;
+width: 100px; height: 100px;
+background: rgba(201,168,76,0.04);
+border-radius: 50%;
+}
+.about-year {
+font-family: 'Cormorant Garamond', serif;
+font-size: 5rem; font-weight: 700; color: rgba(201,168,76,0.12);
+line-height: 1; margin-bottom: -1.5rem;
+}
+.about-highlight {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.3rem; color: var(--gold); font-style: italic;
+margin-bottom: 1.5rem; line-height: 1.5;
+}
+.about-features { display: grid; gap: 1rem; margin-top: 2rem; }
+.feature {
+display: flex; gap: 1rem; align-items: flex-start;
+padding: 1rem; border-left: 2px solid var(--gold);
+background: rgba(201,168,76,0.04);
+transition: background 0.3s;
+}
+.feature:hover { background: rgba(201,168,76,0.08); }
+.feature-icon { color: var(--gold); font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+.feature-text h4 { font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 0.25rem; }
+.feature-text p { font-size: 0.85rem; color: var(--silver); }
+
+/* ── PRODUCTS ── */
+#products { background: var(--black); }
+.products-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+.products-header .divider { margin: 1.5rem auto; }
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: rgba(201,168,76,0.1); max-width: 1200px; margin: 0 auto; }
+.product-card {
+background: var(--dark); padding: 3rem 2.5rem;
+transition: background 0.4s;
+position: relative; overflow: hidden; cursor: default;
+}
+.product-card::after {
+content: '';
+position: absolute; bottom: 0; left: 0; right: 0;
+height: 2px; background: linear-gradient(to right, var(--gold), transparent);
+transform: scaleX(0); transform-origin: left;
+transition: transform 0.4s ease;
+}
+.product-card:hover { background: var(--carbon); }
+.product-card:hover::after { transform: scaleX(1); }
+.product-tag {
+font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+color: var(--gold); margin-bottom: 1rem; display: block;
+}
+.product-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.6rem; font-weight: 600; color: var(--white);
+margin-bottom: 0.5rem; line-height: 1.2;
+}
+.product-abbr {
+font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold);
+font-weight: 600; margin-bottom: 1rem;
+}
+.product-desc { font-size: 0.88rem; color: var(--silver); line-height: 1.7; margin-bottom: 1.5rem; }
+.product-specs { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 1.5rem; }
+.spec-row { display: flex; justify-content: space-between; padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.spec-key { font-size: 0.72rem; color: var(--silver); letter-spacing: 0.05em; }
+.spec-val { font-size: 0.72rem; color: var(--light); font-weight: 500; }
+
+/* ── WHY EUROPE ── */
+#europe { background: var(--dark); }
+.europe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; max-width: 1200px; margin: 0 auto; }
+.europe-cards { display: grid; gap: 1rem; }
+.europe-card {
+display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start;
+padding: 1.5rem 2rem;
+border: 1px solid rgba(201,168,76,0.15);
+background: rgba(201,168,76,0.02);
+transition: all 0.3s; cursor: default;
+}
+.europe-card:hover { border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.06); }
+.eu-icon {
+width: 3rem; height: 3rem; display: grid; place-items: center;
+background: rgba(201,168,76,0.1); color: var(--gold); font-size: 1.2rem; flex-shrink: 0;
+}
+.eu-card-title { font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--light); margin-bottom: 0.4rem; }
+.eu-card-text { font-size: 0.85rem; color: var(--silver); line-height: 1.7; }
+.contract-box {
+background: var(--carbon);
+border: 1px solid rgba(201,168,76,0.3);
+padding: 3rem;
+position: sticky; top: 100px;
+}
+.contract-box h3 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.8rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem;
+}
+.contract-sub { font-size: 0.8rem; color: var(--silver); margin-bottom: 2rem; letter-spacing: 0.05em; }
+.contract-item { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.contract-item:last-of-type { border-bottom: none; }
+.c-key { font-size: 0.78rem; color: var(--silver); }
+.c-val { font-size: 0.78rem; color: var(--light); font-weight: 500; text-align: right; }
+.contract-cta {
+margin-top: 2rem; display: block; width: 100%; padding: 1rem;
+background: var(--gold); color: var(--black);
+font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+font-weight: 700; text-align: center; text-decoration: none;
+transition: all 0.3s;
+clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.contract-cta:hover { background: var(--gold-light); }
+
+/* ── INDUSTRIES ── */
+#industries { background: var(--black); }
+.ind-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
+.ind-header .divider { margin: 1.5rem auto; }
+.ind-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(201,168,76,0.1); max-width: 1200px; margin: 0 auto; }
+.ind-card {
+background: var(--dark); padding: 2.5rem 1.5rem; text-align: center;
+transition: background 0.3s;
+}
+.ind-card:hover { background: var(--carbon); }
+.ind-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+.ind-name { font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--light); margin-bottom: 0.5rem; }
+.ind-desc { font-size: 0.8rem; color: var(--silver); line-height: 1.6; }
+
+/* ── CERTIFICATIONS ── */
+#certs { background: var(--dark); }
+.certs-inner { max-width: 1200px; margin: 0 auto; }
+.certs-top { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-bottom: 4rem; }
+.cert-badges { display: flex; gap: 1rem; flex-wrap: wrap; }
+.cert-badge {
+padding: 1rem 1.5rem; border: 1px solid rgba(201,168,76,0.3);
+background: rgba(201,168,76,0.05); text-align: center; min-width: 120px;
+}
+.cert-badge-name { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.cert-badge-desc { font-size: 0.65rem; color: var(--silver); margin-top: 0.2rem; }
+
+/* ── CONTACT ── */
+#contact {
+background: var(--black);
+border-top: 1px solid rgba(201,168,76,0.15);
+}
+.contact-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+.contact-info h2 {
+font-family: 'Cormorant Garamond', serif;
+font-size: 2.5rem; font-weight: 300; color: var(--white); margin-bottom: 1rem;
+}
+.contact-info h2 strong { color: var(--gold); }
+.elena-card {
+margin: 2.5rem 0;
+border: 1px solid rgba(201,168,76,0.3);
+background: rgba(201,168,76,0.03);
+padding: 2rem;
+position: relative;
+}
+.elena-card::before {
+content: 'EUROPEAN LIAISON';
+position: absolute; top: -0.6rem; left: 1.5rem;
+background: var(--black); padding: 0 0.5rem;
+font-size: 0.62rem; letter-spacing: 0.25em; color: var(--gold);
+}
+.elena-name {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.6rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem;
+}
+.elena-role { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+.elena-contact { display: grid; gap: 0.8rem; }
+.contact-row { display: flex; align-items: center; gap: 1rem; }
+.contact-icon { width: 2rem; height: 2rem; display: grid; place-items: center; background: rgba(201,168,76,0.1); color: var(--gold); font-size: 0.9rem; flex-shrink: 0; }
+.contact-detail a { color: var(--light); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.contact-detail a:hover { color: var(--gold); }
+.contact-detail .sub { font-size: 0.7rem; color: var(--silver); letter-spacing: 0.1em; }
+.wa-btn {
+display: inline-flex; align-items: center; gap: 0.6rem;
+background: #25D366; color: #fff; padding: 0.8rem 1.6rem;
+text-decoration: none; font-size: 0.8rem; font-weight: 600;
+letter-spacing: 0.08em; margin-top: 1rem; transition: opacity 0.3s;
+}
+.wa-btn:hover { opacity: 0.9; }
+.hq-info { margin-top: 2rem; }
+.hq-info h4 { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.hq-row { display: flex; gap: 1rem; margin-bottom: 0.6rem; }
+.hq-flag { font-size: 1.1rem; flex-shrink: 0; }
+.hq-details { font-size: 0.82rem; color: var(--silver); }
+.hq-details strong { color: var(--light); display: block; font-size: 0.75rem; letter-spacing: 0.05em; margin-bottom: 0.1rem; }
+
+/* FORM */
+.contact-form { display: grid; gap: 1.2rem; }
+.form-title {
+font-family: 'Cormorant Garamond', serif;
+font-size: 1.8rem; font-weight: 300; color: var(--white); margin-bottom: 0.5rem;
+}
+.form-sub { font-size: 0.82rem; color: var(--silver); margin-bottom: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--silver); }
+.form-input, .form-select, .form-textarea {
+background: var(--carbon); border: 1px solid rgba(255,255,255,0.08);
+color: var(--white); padding: 0.85rem 1rem; font-family: 'DM Sans', sans-serif;
+font-size: 0.88rem; font-weight: 300; outline: none; width: 100%;
+transition: border-color 0.3s;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+.form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' fill='none' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
+.form-select option { background: var(--carbon); }
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-submit {
+background: var(--gold); color: var(--black); border: none; cursor: pointer;
+padding: 1rem 2rem; font-family: 'DM Sans', sans-serif; font-weight: 700;
+font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+transition: all 0.3s; align-self: start;
+clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+.form-note { font-size: 0.72rem; color: var(--steel); line-height: 1.6; }
+
+/* ── FOOTER ── */
+footer {
+background: var(--black);
+border-top: 1px solid rgba(201,168,76,0.15);
+padding: 3rem 4rem;
+display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;
+gap: 1rem;
+}
+.footer-brand .nav-logo { font-size: 1.2rem; }
+.footer-brand p { font-size: 0.72rem; color: var(--steel); margin-top: 0.3rem; }
+.footer-copy { font-size: 0.72rem; color: var(--steel); text-align: right; }
+.footer-copy a { color: var(--silver); text-decoration: none; }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+nav { padding: 1rem 1.5rem; }
+.nav-links { display: none; }
+section { padding: 5rem 1.5rem; }
+#hero { padding: 5rem 1.5rem 3rem; }
+.stats-bar { grid-template-columns: repeat(2, 1fr); }
+.about-grid, .europe-grid, .contact-inner, .certs-top { grid-template-columns: 1fr; gap: 2.5rem; }
+.products-grid { grid-template-columns: 1fr; }
+.ind-grid { grid-template-columns: repeat(2, 1fr); }
+footer { flex-direction: column; text-align: center; }
+.footer-copy { text-align: center; }
+.form-row { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">Asahi <span>Carbon</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#europe">For Europe</a></li>
+    <li><a href="#industries">Industries</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Request Contract</a>
+</nav>
+
+<!-- HERO -->
+
+<section id="hero">
+  <div class="hero-grain"></div>
+  <div>
+    <div class="hero-line"></div>
+    <div class="hero-tag">Premium Graphite Electrode Supplier · Established 2013 · Sino-Japanese Technology</div>
+    <h1 class="hero-title">
+      Superior Graphite Electrodes
+      <strong>For European Industry</strong>
+    </h1>
+    <p class="hero-subtitle">
+      Ultra-high power graphite electrodes manufactured to international standards, purpose-built for the demanding requirements of European steel, metallurgy, and chemical sectors.
+    </p>
+    <div class="hero-markets">
+      <div class="market-flag"><span class="flag">🇩🇪</span> Germany</div>
+      <div class="market-flag"><span class="flag">🇮🇹</span> Italy</div>
+      <div class="market-flag"><span class="flag">🇫🇷</span> France</div>
+      <div class="market-flag"><span class="flag">🇪🇸</span> Spain</div>
+    </div>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Enquire About 3-Year Supply</a>
+      <a href="#products" class="btn-secondary">View Product Range</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-arrow"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- STATS -->
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">307</div><div class="stat-label">Acres of Production Area</div></div>
+  <div class="stat"><div class="stat-num">30,000<span style="font-size:1.5rem">t</span></div><div class="stat-label">Annual Production Capacity</div></div>
+  <div class="stat"><div class="stat-num">ISO</div><div class="stat-label">9001 Quality Management</div></div>
+  <div class="stat"><div class="stat-num">3yr</div><div class="stat-label">Long-Term Supply Contracts</div></div>
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual">
+      <div class="about-year">2013</div>
+      <div class="about-highlight">"Where Chinese precision meets Japanese engineering excellence."</div>
+      <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;margin-bottom:1rem;">
+        Shandong Xuri Graphite New Materials Technology Co., Ltd. was founded in 2013 in the Linyi County Economic Development Zone, Dezhou City, Shandong Province, China. With a total investment of approximately ¥466.5 million and a site covering 307 acres, we are one of Asia's most advanced graphite electrode manufacturers.
+      </p>
+      <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;">
+        In 2019, we entered a joint venture with <strong style="color:var(--light);">Sojitz Ject Corporation</strong>, a subsidiary of the renowned Japanese Sojitz Group — making us a Sino-Japanese enterprise combining best-in-class Chinese manufacturing with Japanese quality systems and global distribution expertise.
+      </p>
+    </div>
+    <div>
+      <span class="section-tag">Who We Are</span>
+      <h2 class="section-title">A World-Class <strong>Carbon Company</strong></h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-bottom:2rem;">
+        Our fully automated, integrated production lines were designed by domestic and international experts, incorporating imported high-precision equipment from Japan, Europe, and the United States — backed by advanced domestic support systems.
+      </p>
+      <div class="about-features">
+        <div class="feature">
+          <div class="feature-icon">⬡</div>
+          <div class="feature-text">
+            <h4>Full Production Chain</h4>
+            <p>Pressing → Primary Firing → Impregnation → Secondary Firing → Graphitization → Machining → R&D Centre</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🏭</div>
+          <div class="feature-text">
+            <h4>Sino-Japanese Joint Venture</h4>
+            <p>Backed by Sojitz Ject Corporation (Tokyo), with an established European branch in Düsseldorf, Germany.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌍</div>
+          <div class="feature-text">
+            <h4>Dedicated European Liaison</h4>
+            <p>Elena Li coordinates directly with European buyers, ensuring smooth contracting, logistics, and support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+  <div class="products-header">
+    <span class="section-tag">Product Range</span>
+    <h2 class="section-title">Graphite <strong>Electrode Solutions</strong></h2>
+    <div class="divider"></div>
+    <p class="section-sub">
+      We specialise in ultra-high power (UHP) graphite electrodes of 600mm and above — the standard demanded by Europe's most productive electric arc furnace operations.
+    </p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card">
+      <span class="product-tag">Series 01</span>
+      <div class="product-name">Regular Power Electrode</div>
+      <div class="product-abbr">RP GRADE</div>
+      <p class="product-desc">Suitable for standard electric arc furnaces and resistance furnaces. Consistent performance for lower current density applications across a broad range of metallurgical processes.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Resistivity</span><span class="spec-val">≤ 7.5 μΩ·m</span></div>
+        <div class="spec-row"><span class="spec-key">Bending Strength</span><span class="spec-val">≥ 6.5 MPa</span></div>
+        <div class="spec-row"><span class="spec-key">Application</span><span class="spec-val">Standard EAF / SAF</span></div>
+        <div class="spec-row"><span class="spec-key">Diameter Range</span><span class="spec-val">200 – 600mm</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <span class="product-tag">Series 02</span>
+      <div class="product-name">High Power Electrode</div>
+      <div class="product-abbr">HP GRADE</div>
+      <p class="product-desc">Engineered for high current density electric arc furnaces. Reduced oxidation consumption and excellent thermal shock resistance — meeting the demands of modern European steelmaking.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Resistivity</span><span class="spec-val">≤ 6.0 μΩ·m</span></div>
+        <div class="spec-row"><span class="spec-key">Bending Strength</span><span class="spec-val">≥ 8.0 MPa</span></div>
+        <div class="spec-row"><span class="spec-key">Application</span><span class="spec-val">High-load EAF</span></div>
+        <div class="spec-row"><span class="spec-key">Diameter Range</span><span class="spec-val">200 – 700mm</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <span class="product-tag">Series 03 — Flagship</span>
+      <div class="product-name">Ultra-High Power Electrode</div>
+      <div class="product-abbr">UHP GRADE</div>
+      <p class="product-desc">Our primary product and core capability. Designed for the most demanding modern EAF operations, with superior electrical properties, minimal consumption, and extended service life.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Resistivity</span><span class="spec-val">≤ 4.6 μΩ·m</span></div>
+        <div class="spec-row"><span class="spec-key">Bending Strength</span><span class="spec-val">≥ 10.5 MPa</span></div>
+        <div class="spec-row"><span class="spec-key">Application</span><span class="spec-val">UHP EAF / Special Furnaces</span></div>
+        <div class="spec-row"><span class="spec-key">Diameter Range</span><span class="spec-val">300 – 800mm+</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <span class="product-tag">Series 04</span>
+      <div class="product-name">Artificial Graphite Powder</div>
+      <div class="product-abbr">AGP GRADE</div>
+      <p class="product-desc">High-purity synthetic graphite powder for battery anodes, lubricants, and specialty material applications. Two grades available — standard and ultra-fine particle distribution.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Purity</span><span class="spec-val">≥ 99.5% Carbon</span></div>
+        <div class="spec-row"><span class="spec-key">Particle Size</span><span class="spec-val">D50: 5–45 μm</span></div>
+        <div class="spec-row"><span class="spec-key">Application</span><span class="spec-val">Batteries / Lubricants</span></div>
+        <div class="spec-row"><span class="spec-key">Form</span><span class="spec-val">Powder / Pellet</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <span class="product-tag">Series 05</span>
+      <div class="product-name">Special Carbon Materials</div>
+      <div class="product-abbr">SCM GRADE</div>
+      <p class="product-desc">Advanced research and production of high-end carbon products including graphene precursors, nano-carbon materials, and fullerene-based compounds for emerging industrial applications.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Category</span><span class="spec-val">Advanced Carbon</span></div>
+        <div class="spec-row"><span class="spec-key">Forms</span><span class="spec-val">Graphene / Nano-C / C60</span></div>
+        <div class="spec-row"><span class="spec-key">Status</span><span class="spec-val">R&D + Limited Supply</span></div>
+        <div class="spec-row"><span class="spec-key">Enquiries</span><span class="spec-val">Via Elena Li</span></div>
+      </div>
+    </div>
+    <div class="product-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:rgba(201,168,76,0.03);">
+      <div style="font-size:2.5rem;margin-bottom:1rem;color:var(--gold);">⬡</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--silver);line-height:1.6;">
+        Custom specifications available for long-term supply contracts.<br>
+        <span style="color:var(--gold);">Contact Elena Li to discuss your requirements.</span>
+      </div>
+      <a href="#contact" class="btn-primary" style="margin-top:2rem;">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY EUROPE -->
+
+<section id="europe">
+  <div class="europe-grid">
+    <div>
+      <span class="section-tag">Built For European Business</span>
+      <h2 class="section-title">Why Partner<br><strong>With Us</strong></h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="margin-bottom:2.5rem;">
+        We understand European procurement standards, compliance requirements, and the value of long-term supply stability. Our European representative ensures seamless communication and support.
+      </p>
+      <div class="europe-cards">
+        <div class="europe-card">
+          <div class="eu-icon">📋</div>
+          <div>
+            <div class="eu-card-title">Long-Term Supply Contracts</div>
+            <div class="eu-card-text">We offer structured 3-year supply agreements, ensuring price predictability and supply chain security — critical for European manufacturing planning horizons.</div>
+          </div>
+        </div>
+        <div class="europe-card">
+          <div class="eu-icon">✅</div>
+          <div>
+            <div class="eu-card-title">ISO 9001 Certified Quality</div>
+            <div class="eu-card-text">Our production strictly follows ISO 9001 quality management standards, with documentation and traceability that satisfies European import and compliance requirements.</div>
+          </div>
+        </div>
+        <div class="europe-card">
+          <div class="eu-icon">🚢</div>
+          <div>
+            <div class="eu-card-title">Proven Export Logistics</div>
+            <div class="eu-card-text">Full container load (FCL) shipping with professional packaging systems. Each electrode batch is protected against transit damage with documented handling specifications.</div>
+          </div>
+        </div>
+        <div class="europe-card">
+          <div class="eu-icon">🤝</div>
+          <div>
+            <div class="eu-card-title">Dedicated European Liaison</div>
+            <div class="eu-card-text">Elena Li is your single point of contact — fluent in European business culture, managing negotiations, documentation, and after-sales support between your company and our factory.</div>
+          </div>
+        </div>
+        <div class="europe-card">
+          <div class="eu-icon">💶</div>
+          <div>
+            <div class="eu-card-title">Competitive Pricing</div>
+            <div class="eu-card-text">Direct factory pricing with no unnecessary intermediaries. Long-term contracts allow us to offer volume discounts and locked-in pricing tiers that protect your margins.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="contract-box">
+        <h3>3-Year Supply Contract</h3>
+        <div class="contract-sub">Key terms for European buyers</div>
+        <div class="divider"></div>
+        <div class="contract-item"><span class="c-key">Contract Duration</span><span class="c-val">~3 years</span></div>
+        <div class="contract-item"><span class="c-key">Minimum Markets</span><span class="c-val">🇩🇪 🇮🇹 🇫🇷 🇪🇸</span></div>
+        <div class="contract-item"><span class="c-key">Grades Available</span><span class="c-val">RP, HP, UHP</span></div>
+        <div class="contract-item"><span class="c-key">Annual Capacity</span><span class="c-val">Up to 30,000t</span></div>
+        <div class="contract-item"><span class="c-key">Quality Standard</span><span class="c-val">ISO 9001</span></div>
+        <div class="contract-item"><span class="c-key">Packaging</span><span class="c-val">FCL Container Spec.</span></div>
+        <div class="contract-item"><span class="c-key">European Contact</span><span class="c-val">Elena Li (WhatsApp)</span></div>
+        <div class="contract-item"><span class="c-key">Response Time</span><span class="c-val">Within 24 hours</span></div>
+        <a href="https://wa.me/491751135709" target="_blank" class="contract-cta">📱 WhatsApp Elena Li Now</a>
+        <p style="font-size:0.7rem;color:var(--steel);text-align:center;margin-top:1rem;">+49 175 1135709 · CET Business Hours</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+
+<section id="industries">
+  <div class="ind-header">
+    <span class="section-tag">Applications</span>
+    <h2 class="section-title">Industries We <strong>Serve</strong></h2>
+    <div class="divider"></div>
+    <p class="section-sub">Carbon and graphite products are fundamental to some of Europe's most important industrial sectors.</p>
+  </div>
+  <div class="ind-grid">
+    <div class="ind-card">
+      <span class="ind-icon">⚙️</span>
+      <div class="ind-name">Metallurgy & Steel</div>
+      <div class="ind-desc">EAF steelmaking is the backbone of European green steel. Our UHP electrodes are engineered for continuous high-load operation in electric arc furnaces.</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">⚗️</span>
+      <div class="ind-name">Chemical Industry</div>
+      <div class="ind-desc">Graphite electrodes and special carbon materials serve critical roles in chlor-alkali production, industrial electrolysis, and chemical processing.</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">✈️</span>
+      <div class="ind-name">Aerospace & Defence</div>
+      <div class="ind-desc">High-purity carbon materials for aerospace component manufacturing, heat shields, and specialist structural composites demanding precise tolerances.</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">⚡</span>
+      <div class="ind-name">Energy & Nuclear</div>
+      <div class="ind-desc">Graphite's unique thermal and electrical properties make it indispensable in nuclear reactor moderators and advanced energy storage systems.</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">🔋</span>
+      <div class="ind-name">Battery & EVs</div>
+      <div class="ind-desc">Artificial graphite powder for lithium-ion battery anodes, serving Europe's rapidly growing electric vehicle and stationary energy storage markets.</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">🏗️</span>
+      <div class="ind-name">Non-Ferrous Metals</div>
+      <div class="ind-desc">Electrodes for aluminium, copper, silicon, and ferroalloy smelting operations — precision-matched to the specific current densities of each furnace type.</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">🔬</span>
+      <div class="ind-name">Semiconductors</div>
+      <div class="ind-desc">Ultra-pure graphite components for semiconductor crystal growing, epitaxial coating equipment, and high-temperature diffusion furnace applications.</div>
+    </div>
+    <div class="ind-card">
+      <span class="ind-icon">🌱</span>
+      <div class="ind-name">Green Industry</div>
+      <div class="ind-desc">Supporting Europe's decarbonisation goals: our products enable green steel production and next-generation clean energy technologies with lower carbon footprints.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+
+<section id="certs">
+  <div class="certs-inner">
+    <div class="certs-top">
+      <div>
+        <span class="section-tag">Quality & Compliance</span>
+        <h2 class="section-title">Standards That <strong>Matter to Europe</strong></h2>
+        <div class="divider"></div>
+        <p class="section-sub">
+          We maintain rigorous quality management systems aligned with international standards. Our documentation, testing records, and traceability protocols meet European import requirements.
+        </p>
+      </div>
+      <div>
+        <div class="cert-badges">
+          <div class="cert-badge">
+            <div class="cert-badge-name">ISO 9001</div>
+            <div class="cert-badge-desc">Quality Management</div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-name">JIS Standards</div>
+            <div class="cert-badge-desc">Japanese Industrial</div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-name">IEC Standards</div>
+            <div class="cert-badge-desc">International Electrotechnical</div>
+          </div>
+          <div class="cert-badge">
+            <div class="cert-badge-name">ASTM</div>
+            <div class="cert-badge-desc">Materials Testing</div>
+          </div>
+        </div>
+        <p style="font-size:0.8rem;color:var(--silver);margin-top:1.5rem;line-height:1.7;">
+          All products ship with full material test reports (MTR), certificate of conformity, and dimensional inspection records. Available in English, German, French, Italian, and Spanish on request.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <span class="section-tag">Get in Touch</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);margin-bottom:0.5rem;">
+        Talk to Our <strong style="color:var(--gold);">European Representative</strong>
+      </h2>
+      <div class="divider"></div>
+      <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;margin-bottom:2rem;">
+        Elena Li is our dedicated liaison for European markets — connecting German, Italian, French, and Spanish industrial buyers directly with our manufacturing capabilities. Reach out to discuss volumes, specifications, pricing, and long-term supply agreements.
+      </p>
+
+      <div class="elena-card">
+        <div class="elena-name">Elena Li</div>
+        <div class="elena-role">European Business Liaison · Asahi Carbon</div>
+        <div class="elena-contact">
+          <div class="contact-row">
+            <div class="contact-icon">📱</div>
+            <div class="contact-detail">
+              <a href="https://wa.me/491751135709" target="_blank">+49 175 1135709</a>
+              <div class="sub">WhatsApp · Germany</div>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon">🌍</div>
+            <div class="contact-detail">
+              <a href="#" style="pointer-events:none;color:var(--light);">Germany — CET / CEST Timezone</a>
+              <div class="sub">Mon–Fri · Business Hours</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/491751135709?text=Hello%20Elena%2C%20I%20am%20interested%20in%20a%20long-term%20graphite%20electrode%20supply%20contract." target="_blank" class="wa-btn">
+          💬 &nbsp;WhatsApp Elena Li Directly
+        </a>
+      </div>
+
+      <div class="hq-info">
+        <h4>Company Offices</h4>
+        <div class="hq-row">
+          <div class="hq-flag">🇩🇪</div>
+          <div class="hq-details">
+            <strong>SOJITZ JECT CORPORATION — Düsseldorf</strong>
+            Schirmerstr. 76, 40211 Düsseldorf, Germany · Tel: +49-211-3551-710
+          </div>
+        </div>
+        <div class="hq-row">
+          <div class="hq-flag">🇯🇵</div>
+          <div class="hq-details">
+            <strong>SOJITZ JECT CORPORATION — Tokyo HQ</strong>
+            8-6, Nishi-shimbashi 2-Chome, Minato-ku, Tokyo 105-0003 · Tel: +81-3-5511-2128
+          </div>
+        </div>
+        <div class="hq-row">
+          <div class="hq-flag">🇨🇳</div>
+          <div class="hq-details">
+            <strong>Shandong Xuri Graphite — Factory (China)</strong>
+            Linyi County Economic Development Zone, Dezhou City, Shandong · Tel: 0534-4777771
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-form">
+        <div class="form-title">Request Information</div>
+        <p class="form-sub">Fill in your details and Elena will respond within 24 hours with pricing and contract information.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input class="form-input" type="text" placeholder="Hans">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input class="form-input" type="text" placeholder="Müller">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company Name</label>
+          <input class="form-input" type="text" placeholder="Your company name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Business Email</label>
+          <input class="form-input" type="email" placeholder="hans@company.de">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Country</label>
+            <select class="form-select form-input">
+              <option value="">Select country</option>
+              <option>🇩🇪 Germany</option>
+              <option>🇮🇹 Italy</option>
+              <option>🇫🇷 France</option>
+              <option>🇪🇸 Spain</option>
+              <option>Other EU Country</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Industry</label>
+            <select class="form-select form-input">
+              <option value="">Select industry</option>
+              <option>Steel / Metallurgy (EAF)</option>
+              <option>Chemical Processing</option>
+              <option>Non-Ferrous Metals</option>
+              <option>Energy / Nuclear</option>
+              <option>Aerospace</option>
+              <option>Battery / EV Manufacturing</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Product Interest</label>
+          <select class="form-select form-input">
+            <option value="">Select product type</option>
+            <option>UHP Graphite Electrodes (600mm+)</option>
+            <option>HP Graphite Electrodes</option>
+            <option>RP Graphite Electrodes</option>
+            <option>Artificial Graphite Powder</option>
+            <option>Special Carbon Materials</option>
+            <option>Multiple / Custom Specification</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Annual Volume Estimate</label>
+          <select class="form-select form-input">
+            <option value="">Select estimated volume</option>
+            <option>Under 100 tonnes / year</option>
+            <option>100 – 500 tonnes / year</option>
+            <option>500 – 2,000 tonnes / year</option>
+            <option>2,000 – 10,000 tonnes / year</option>
+            <option>10,000+ tonnes / year</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell us about your current electrode supplier, specifications, and what you're looking for in a 3-year supply partner..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit(this)">Send Enquiry to Elena Li</button>
+        <p class="form-note">Your enquiry will be handled directly by Elena Li, our European Business Liaison. We typically respond within 24 business hours. For urgent matters, contact Elena directly via WhatsApp: <a href="https://wa.me/491751135709" style="color:var(--gold);">+49 175 1135709</a></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-brand">
+    <a href="#" class="nav-logo">Asahi <span>Carbon</span></a>
+    <p>Shandong Xuri Graphite New Materials Technology Co., Ltd.</p>
+    <p>Sino-Japanese Joint Venture · In partnership with Sojitz Ject Corporation</p>
+  </div>
+  <div class="footer-copy">
+    <p>European Enquiries: <a href="https://wa.me/491751135709">Elena Li · +49 175 1135709</a></p>
+    <p style="margin-top:0.3rem;">Serving 🇩🇪 Germany · 🇮🇹 Italy · 🇫🇷 France · 🇪🇸 Spain</p>
+    <p style="margin-top:0.5rem;color:rgba(138,143,168,0.5);">© 2025 Asahi Carbon Europe. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.product-card, .europe-card, .ind-card, .feature, .stat, .cert-badge').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  // Form submit handler
+  function handleSubmit(btn) {
+    btn.textContent = '✓ Enquiry Sent — Elena Will Be in Touch';
+    btn.style.background = '#2a7a2a';
+    btn.style.color = '#fff';
+    btn.style.clipPath = 'none';
+    btn.disabled = true;
+  }
+</script>
+
+</body>
+</html>
