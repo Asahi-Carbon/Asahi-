@@ -449,6 +449,11 @@ gap: 1rem;
 @keyframes fadeDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
+/* ── PAGE TABS ── */
+.page { display: none; }
+.page.active { display: block; }
+nav a.nav-active { color: var(--gold); }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
 nav { padding: 1rem 1.5rem; }
@@ -483,6 +488,8 @@ footer { flex-direction: column; text-align: center; }
 </nav>
 
 <!-- HERO -->
+
+<div class="page active" data-page="home">
 
 <section id="hero">
   <div class="hero-grain"></div>
@@ -522,7 +529,11 @@ footer { flex-direction: column; text-align: center; }
   <div class="stat"><div class="stat-num">JV</div><div class="stat-label">Sino-Japanese Joint Venture</div></div>
 </div>
 
+</div><!-- /page home -->
+
 <!-- ABOUT -->
+
+<div class="page" data-page="about">
 
 <section id="about">
   <div class="about-grid">
@@ -570,7 +581,11 @@ footer { flex-direction: column; text-align: center; }
   </div>
 </section>
 
+</div><!-- /page about -->
+
 <!-- PRODUCTS -->
+
+<div class="page" data-page="products">
 
 <section id="products">
   <div class="products-header">
@@ -653,7 +668,11 @@ footer { flex-direction: column; text-align: center; }
   </div>
 </section>
 
+</div><!-- /page products -->
+
 <!-- WHY EUROPE -->
+
+<div class="page" data-page="europe">
 
 <section id="europe">
   <div class="europe-grid">
@@ -722,7 +741,11 @@ footer { flex-direction: column; text-align: center; }
   </div>
 </section>
 
+</div><!-- /page europe -->
+
 <!-- INDUSTRIES -->
+
+<div class="page" data-page="industries">
 
 <section id="industries">
   <div class="ind-header">
@@ -815,7 +838,11 @@ footer { flex-direction: column; text-align: center; }
   </div>
 </section>
 
+</div><!-- /page industries -->
+
 <!-- CONTACT -->
+
+<div class="page" data-page="contact">
 
 <section id="contact">
   <div class="contact-inner">
@@ -971,6 +998,8 @@ footer { flex-direction: column; text-align: center; }
   </div>
 </section>
 
+</div><!-- /page contact -->
+
 <!-- FOOTER -->
 
 <footer>
@@ -988,6 +1017,42 @@ footer { flex-direction: column; text-align: center; }
 </footer>
 
 <script>
+  // Page tab navigation — sections accessible only via top nav buttons
+  (function() {
+    const anchorToPage = {
+      '': 'home',
+      'hero': 'home',
+      'about': 'about',
+      'products': 'products',
+      'europe': 'europe',
+      'industries': 'industries',
+      'certs': 'industries',
+      'contact': 'contact'
+    };
+
+    function showPage(name) {
+      document.querySelectorAll('.page').forEach(p => {
+        p.classList.toggle('active', p.dataset.page === name);
+      });
+      document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+        const id = a.getAttribute('href').slice(1);
+        a.classList.toggle('nav-active', anchorToPage[id] === name);
+      });
+      window.scrollTo(0, 0);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const target = anchorToPage[id];
+        if (target) {
+          e.preventDefault();
+          showPage(target);
+        }
+      });
+    });
+  })();
+
   // Scroll fade-in
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(el => {
