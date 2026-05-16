@@ -386,7 +386,8 @@ transition: background 0.3s;
   background: var(--gold);
   transform: translateX(-50%);
 }
-.timeline-head {
+.timeline-head,
+.timeline-foot {
   position: relative;
   z-index: 3;
   width: 110px; height: 110px;
@@ -400,6 +401,7 @@ transition: background 0.3s;
   letter-spacing: 0.05em;
   box-shadow: 0 0 0 8px rgba(94,179,242,0.12);
 }
+.timeline-foot { margin: 2rem auto 0; }
 .timeline-item {
   position: relative;
   display: grid;
@@ -840,7 +842,7 @@ section { padding: 5rem 1.5rem; }
 .timeline-item.left .timeline-card { grid-column: 1; }
 .timeline::before { left: 1.25rem; transform: none; }
 .timeline-dot { left: 1.25rem; }
-.timeline-head { width: 90px; height: 90px; font-size: 1.2rem; margin-left: 0; }
+.timeline-head, .timeline-foot { width: 90px; height: 90px; font-size: 1.2rem; margin-left: 0; }
 .timeline-img { height: 180px; }
 .products-grid { grid-template-columns: 1fr; }
 .ind-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1114,18 +1116,54 @@ footer { flex-direction: column; text-align: center; }
       <div class="timeline-item left">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=80');"></div>
-          <div class="timeline-date">2019</div>
-          <div class="timeline-text">Joint venture established with Sojitz Ject Corporation — combining Chinese manufacturing scale with Japanese quality systems and global distribution.</div>
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80');"></div>
+          <div class="timeline-date">2020-06-20</div>
+          <div class="timeline-text">The office building, dormitory, cafeteria and bathhouse, mechanical repair workshop, and R&amp;D center have been completed.</div>
         </div>
       </div>
 
       <div class="timeline-item right">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
-          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80');"></div>
-          <div class="timeline-date">2015</div>
-          <div class="timeline-text">Fully automated, integrated production lines commissioned — equipped with high-precision machinery imported from Japan, Europe, and the United States.</div>
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=80');"></div>
+          <div class="timeline-date">2019-04-03</div>
+          <div class="timeline-text">Machining Workshop Construction.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80');"></div>
+          <div class="timeline-date">2019-01-12</div>
+          <div class="timeline-text">Joint Venture Signing Ceremony between China and Foreign Countries.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=900&q=80');"></div>
+          <div class="timeline-date">2018-06-18</div>
+          <div class="timeline-text">The pressed-steel workshop has been completed, and equipment is being installed.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=900&q=80');"></div>
+          <div class="timeline-date">2013-06-23</div>
+          <div class="timeline-text">Press-forming, single-stage firing, impregnation, and second-stage firing — groundbreaking underway.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1590959651373-a3db0f38a961?w=900&q=80');"></div>
+          <div class="timeline-date">2013-06-18</div>
+          <div class="timeline-text">Groundbreaking Ceremony.</div>
         </div>
       </div>
 
@@ -1133,10 +1171,12 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-dot"></div>
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80');"></div>
-          <div class="timeline-date">2013</div>
-          <div class="timeline-text">Shandong Xuri Graphite New Materials Technology Co., Ltd. founded in the Linyi County Economic Development Zone, Dezhou City — investment of ¥466.5 million across a 307-acre site.</div>
+          <div class="timeline-date">2013-01-16</div>
+          <div class="timeline-text">Company established.</div>
         </div>
       </div>
+
+      <div class="timeline-foot">Start</div>
     </div>
   </div>
 </section>
