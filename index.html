@@ -1129,14 +1129,11 @@ footer { flex-direction: column; text-align: center; }
 </div>
 
 <div>
-  <iframe name="formsubmit_target" id="formsubmit_target" style="display:none" aria-hidden="true" tabindex="-1"></iframe>
-  <form class="contact-form" id="enquiryForm"
-        action="https://formsubmit.co/sales@asahicarbon.de"
-        method="POST" target="formsubmit_target">
-    <input type="hidden" name="_subject" value="New Asahi Carbon Enquiry">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+  <form class="contact-form" id="enquiryForm">
+    <input type="hidden" name="access_key" value="596d27d6-bde4-4c35-89ff-69db1588013e">
+    <input type="hidden" name="subject" value="New Asahi Carbon Enquiry">
+    <input type="hidden" name="from_name" value="Asahi Carbon Website">
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
     <div class="form-title">Request Information</div>
     <p class="form-sub">Fill in your details and JianHua will respond within 24 hours with pricing and contract information.</p>
     <div class="form-row">
@@ -1303,28 +1300,36 @@ footer { flex-direction: column; text-align: center; }
     observer.observe(el);
   });
 
-  // Enquiry form — submits natively into a hidden iframe so the user
-  // stays on the page. Native form submission means no CORS issues.
+  // Enquiry form — silent submission via Web3Forms (proper CORS support)
   const enquiryForm = document.getElementById('enquiryForm');
-  const formIframe = document.getElementById('formsubmit_target');
-  if (enquiryForm && formIframe) {
-    let submitted = false;
-    enquiryForm.addEventListener('submit', () => {
-      submitted = true;
+  if (enquiryForm) {
+    enquiryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
       const btn = enquiryForm.querySelector('.form-submit');
       btn.disabled = true;
       btn.textContent = 'Sending…';
-    });
-    formIframe.addEventListener('load', () => {
-      if (!submitted) return;
-      const btn = enquiryForm.querySelector('.form-submit');
-      btn.textContent = '✓ Enquiry Sent — JianHua Will Be in Touch';
-      btn.style.background = '#1e4d80';
-      btn.style.color = '#fff';
-      btn.style.clipPath = 'none';
-      btn.disabled = true;
-      enquiryForm.reset();
-      submitted = false;
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(enquiryForm)
+        });
+        const data = await res.json();
+        if (data.success) {
+          btn.textContent = '✓ Enquiry Sent — JianHua Will Be in Touch';
+          btn.style.background = '#1e4d80';
+          btn.style.color = '#fff';
+          btn.style.clipPath = 'none';
+          enquiryForm.reset();
+        } else {
+          btn.disabled = false;
+          btn.textContent = '✗ Send Failed — Please Email Us Directly';
+          console.error('Web3Forms error:', data);
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = '✗ Send Failed — Please Email Us Directly';
+        console.error('Submit error:', err);
+      }
     });
   }
 </script>
