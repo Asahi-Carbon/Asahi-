@@ -239,7 +239,62 @@ transition: background 0.3s;
 #products { background: var(–black); }
 .products-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
 .products-header .divider { margin: 1.5rem auto; }
-.products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5px; background: rgba(94,179,242,0.1); max-width: 1000px; margin: 0 auto; }
+.products-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: rgba(94,179,242,0.1); max-width: 1000px; margin: 0 auto; }
+.product-link {
+  background: var(--dark);
+  padding: 2.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+.product-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--gold), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.product-link:hover { background: var(--carbon); }
+.product-link:hover::after { transform: scaleX(1); }
+.product-arrow {
+  font-size: 1.8rem;
+  color: var(--gold);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.product-link:hover .product-arrow { transform: translateX(10px); }
+.back-link {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  transition: transform 0.3s;
+}
+.back-link:hover { transform: translateX(-4px); }
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px;
+  background: rgba(94,179,242,0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .detail-grid { grid-template-columns: 1fr; }
+}
 .product-card {
 background: var(–dark); padding: 3rem 2.5rem;
 transition: background 0.4s;
@@ -601,34 +656,111 @@ footer { flex-direction: column; text-align: center; }
     </p>
   </div>
   <div class="products-grid">
+    <a href="#graphite-electrode" class="product-link">
+      <div>
+        <span class="product-tag">Category 01</span>
+        <div class="product-name">Graphite Electrode</div>
+        <p class="product-desc" style="margin-bottom:0;">Regular Power (RP), High Power (HP), and Ultra-High Power (UHP) grades for the full range of electric arc furnace operations.</p>
+      </div>
+      <div class="product-arrow">→</div>
+    </a>
+    <a href="#graphite-powder" class="product-link">
+      <div>
+        <span class="product-tag">Category 02</span>
+        <div class="product-name">Artificial Graphite Powder</div>
+        <p class="product-desc" style="margin-bottom:0;">High-purity synthetic graphite powder for lithium-ion battery anodes, lubricants, and specialty materials.</p>
+      </div>
+      <div class="product-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+</div><!-- /page products -->
+
+<!-- GRAPHITE ELECTRODE DETAIL -->
+
+<div class="page" data-page="graphite-electrode">
+
+<section>
+  <a href="#products" class="back-link">← Back to Products</a>
+  <span class="section-tag">Category 01</span>
+  <h2 class="section-title">Graphite <strong>Electrode</strong></h2>
+  <div class="divider"></div>
+  <p class="section-sub" style="margin-bottom:3rem;">
+    Three grades engineered for the full spectrum of electric arc furnace operations — from standard duty to the most demanding modern UHP installations.
+  </p>
+  <div class="detail-grid">
     <div class="product-card">
-      <span class="product-tag">Category 01</span>
-      <div class="product-name">Graphite Electrode</div>
-      <div class="product-abbr">RP · HP · UHP GRADES</div>
-      <p class="product-desc">Full range of graphite electrodes — Regular Power (RP), High Power (HP), and Ultra-High Power (UHP) — engineered for European electric arc furnaces, ladle furnaces, and submerged arc operations across the full spectrum of current densities.</p>
+      <span class="product-tag">Series 01</span>
+      <div class="product-name">Regular Power</div>
+      <div class="product-abbr">RP GRADE</div>
+      <p class="product-desc">Standard electric arc furnaces and resistance furnaces. Consistent performance for lower current density applications across a broad range of metallurgical processes.</p>
       <div class="product-specs">
-        <div class="spec-row"><span class="spec-key">Grades</span><span class="spec-val">RP / HP / UHP</span></div>
-        <div class="spec-row"><span class="spec-key">Resistivity</span><span class="spec-val">≤ 4.6 – 7.5 μΩ·m</span></div>
-        <div class="spec-row"><span class="spec-key">Bending Strength</span><span class="spec-val">6.5 – 10.5 MPa</span></div>
-        <div class="spec-row"><span class="spec-key">Diameter Range</span><span class="spec-val">200 – 800mm+</span></div>
+        <div class="spec-row"><span class="spec-key">Resistivity</span><span class="spec-val">≤ 7.5 μΩ·m</span></div>
+        <div class="spec-row"><span class="spec-key">Bending Strength</span><span class="spec-val">≥ 6.5 MPa</span></div>
+        <div class="spec-row"><span class="spec-key">Application</span><span class="spec-val">Standard EAF / SAF</span></div>
+        <div class="spec-row"><span class="spec-key">Diameter</span><span class="spec-val">200 – 600mm</span></div>
       </div>
     </div>
     <div class="product-card">
-      <span class="product-tag">Category 02</span>
-      <div class="product-name">Artificial Graphite Powder</div>
-      <div class="product-abbr">AGP GRADE</div>
-      <p class="product-desc">High-purity synthetic graphite powder for battery anodes, lubricants, and specialty material applications. Two grades available — standard and ultra-fine particle distribution.</p>
+      <span class="product-tag">Series 02</span>
+      <div class="product-name">High Power</div>
+      <div class="product-abbr">HP GRADE</div>
+      <p class="product-desc">Engineered for high current density EAFs. Reduced oxidation consumption and excellent thermal shock resistance — meeting the demands of modern European steelmaking.</p>
       <div class="product-specs">
-        <div class="spec-row"><span class="spec-key">Purity</span><span class="spec-val">≥ 99.5% Carbon</span></div>
-        <div class="spec-row"><span class="spec-key">Particle Size</span><span class="spec-val">D50: 5–45 μm</span></div>
-        <div class="spec-row"><span class="spec-key">Application</span><span class="spec-val">Batteries / Lubricants</span></div>
-        <div class="spec-row"><span class="spec-key">Form</span><span class="spec-val">Powder / Pellet</span></div>
+        <div class="spec-row"><span class="spec-key">Resistivity</span><span class="spec-val">≤ 6.0 μΩ·m</span></div>
+        <div class="spec-row"><span class="spec-key">Bending Strength</span><span class="spec-val">≥ 8.0 MPa</span></div>
+        <div class="spec-row"><span class="spec-key">Application</span><span class="spec-val">High-load EAF</span></div>
+        <div class="spec-row"><span class="spec-key">Diameter</span><span class="spec-val">200 – 700mm</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <span class="product-tag">Flagship</span>
+      <div class="product-name">Ultra-High Power</div>
+      <div class="product-abbr">UHP GRADE</div>
+      <p class="product-desc">Our primary product. Designed for the most demanding modern EAF operations, with superior electrical properties, minimal consumption, and extended service life.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Resistivity</span><span class="spec-val">≤ 4.6 μΩ·m</span></div>
+        <div class="spec-row"><span class="spec-key">Bending Strength</span><span class="spec-val">≥ 10.5 MPa</span></div>
+        <div class="spec-row"><span class="spec-key">Application</span><span class="spec-val">UHP EAF / Special Furnaces</span></div>
+        <div class="spec-row"><span class="spec-key">Diameter</span><span class="spec-val">300 – 800mm+</span></div>
       </div>
     </div>
   </div>
 </section>
 
-</div><!-- /page products -->
+</div><!-- /page graphite-electrode -->
+
+<!-- GRAPHITE POWDER DETAIL -->
+
+<div class="page" data-page="graphite-powder">
+
+<section>
+  <a href="#products" class="back-link">← Back to Products</a>
+  <span class="section-tag">Category 02</span>
+  <h2 class="section-title">Artificial <strong>Graphite Powder</strong></h2>
+  <div class="divider"></div>
+  <p class="section-sub" style="margin-bottom:3rem;">
+    High-purity synthetic graphite powder for lithium-ion battery anodes, industrial lubricants, refractory components, and other specialty material applications.
+  </p>
+  <div class="detail-grid" style="grid-template-columns: 1fr; max-width: 760px;">
+    <div class="product-card">
+      <span class="product-tag">AGP Grade</span>
+      <div class="product-name">Synthetic Graphite Powder</div>
+      <p class="product-desc">Manufactured to high-purity tolerances and supplied in two particle grades — standard and ultra-fine — to suit the most demanding industrial uses. Every batch ships with full purity, granulometry, and ash-content test reports.</p>
+      <div class="product-specs">
+        <div class="spec-row"><span class="spec-key">Purity</span><span class="spec-val">≥ 99.5% Carbon</span></div>
+        <div class="spec-row"><span class="spec-key">Particle Size (Standard)</span><span class="spec-val">D50: 15 – 45 μm</span></div>
+        <div class="spec-row"><span class="spec-key">Particle Size (Ultra-fine)</span><span class="spec-val">D50: 5 – 15 μm</span></div>
+        <div class="spec-row"><span class="spec-key">Form</span><span class="spec-val">Powder / Pellet</span></div>
+        <div class="spec-row"><span class="spec-key">Application</span><span class="spec-val">Batteries · Lubricants · Refractory</span></div>
+        <div class="spec-row"><span class="spec-key">Packaging</span><span class="spec-val">25 kg sacks / 500 kg bigbags / FCL</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page graphite-powder -->
 
 <!-- WHY EUROPE -->
 
@@ -984,6 +1116,8 @@ footer { flex-direction: column; text-align: center; }
       'hero': 'home',
       'about': 'about',
       'products': 'products',
+      'graphite-electrode': 'graphite-electrode',
+      'graphite-powder': 'graphite-powder',
       'europe': 'europe',
       'industries': 'industries',
       'certs': 'industries',
