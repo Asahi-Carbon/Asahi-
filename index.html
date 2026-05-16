@@ -82,9 +82,8 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
   background: rgba(13,17,23,0.97);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(94,179,242,0.2);
-  list-style: none;
-  padding: 0.5rem 0;
-  min-width: 260px;
+  display: flex;
+  min-width: 640px;
   margin-top: 1.2rem;
   opacity: 0;
   visibility: hidden;
@@ -106,8 +105,16 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
   pointer-events: auto;
   transform: translateX(-50%) translateY(2px);
 }
-.dropdown li { list-style: none; }
-.dropdown a {
+.dropdown-nav {
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  width: 260px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(94,179,242,0.15);
+}
+.dropdown-nav li { list-style: none; }
+.dropdown-nav a {
   display: block;
   padding: 0.85rem 1.6rem;
   white-space: nowrap;
@@ -118,10 +125,51 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
   text-decoration: none;
   transition: background 0.2s, color 0.2s, padding-left 0.2s;
 }
-.dropdown a:hover {
+.dropdown-nav a:hover,
+.dropdown-nav a.preview-active {
   background: rgba(94,179,242,0.08);
   color: var(--gold);
   padding-left: 2.2rem;
+}
+.dropdown-preview {
+  flex: 1;
+  padding: 1.5rem 1.8rem;
+  min-width: 360px;
+}
+.preview-panel { display: none; }
+.preview-panel.active { display: block; }
+.preview-panel h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 0 0 0.5rem;
+  letter-spacing: 0;
+}
+.preview-panel p {
+  font-size: 0.8rem;
+  color: var(--silver);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.preview-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.preview-panel ul li {
+  font-size: 0.76rem;
+  color: var(--light);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.preview-panel ul li:last-child { border-bottom: none; }
+.preview-panel ul li strong {
+  color: var(--gold);
+  font-weight: 600;
+  margin-right: 0.5rem;
 }
 .nav-cta {
 background: var(–gold); color: var(–black);
@@ -599,11 +647,42 @@ footer { flex-direction: column; text-align: center; }
     <li><a href="#about">About</a></li>
     <li class="has-dropdown">
       <a href="#products">Products</a>
-      <ul class="dropdown">
-        <li><a href="#graphite-electrode">Graphite Electrode</a></li>
-        <li><a href="#graphite-powder">Artificial Graphite Powder</a></li>
-        <li><a href="#ingredients">Ingredients</a></li>
-      </ul>
+      <div class="dropdown">
+        <ul class="dropdown-nav">
+          <li><a href="#graphite-electrode" data-preview="graphite-electrode" class="preview-active">Graphite Electrode</a></li>
+          <li><a href="#graphite-powder" data-preview="graphite-powder">Artificial Graphite Powder</a></li>
+          <li><a href="#ingredients" data-preview="ingredients">Ingredients</a></li>
+        </ul>
+        <div class="dropdown-preview">
+          <div class="preview-panel active" data-preview-for="graphite-electrode">
+            <h4>Graphite Electrode</h4>
+            <p>Three grades engineered for the full spectrum of electric arc furnace operations.</p>
+            <ul>
+              <li><strong>RP</strong> Regular Power — Standard EAF / SAF</li>
+              <li><strong>HP</strong> High Power — High-load EAF</li>
+              <li><strong>UHP</strong> Ultra-High Power — Flagship grade</li>
+            </ul>
+          </div>
+          <div class="preview-panel" data-preview-for="graphite-powder">
+            <h4>Artificial Graphite Powder</h4>
+            <p>High-purity synthetic graphite powder for lithium-ion battery anodes, lubricants, and specialty materials.</p>
+            <ul>
+              <li><strong>Purity</strong> ≥ 99.5% Carbon</li>
+              <li><strong>Particle Size</strong> D50: 5 – 45 μm</li>
+              <li><strong>Form</strong> Powder / Pellet</li>
+            </ul>
+          </div>
+          <div class="preview-panel" data-preview-for="ingredients">
+            <h4>Ingredients</h4>
+            <p>Raw materials and feedstock for graphite production — supplied to industrial buyers worldwide.</p>
+            <ul>
+              <li><strong>Petroleum Coke</strong> Calcined, anode grade</li>
+              <li><strong>Needle Coke</strong> UHP feedstock</li>
+              <li><strong>Coal Tar Pitch</strong> Binder grade</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </li>
     <li><a href="#europe">For Europe</a></li>
     <li><a href="#industries">Industries</a></li>
@@ -1279,6 +1358,17 @@ footer { flex-direction: column; text-align: center; }
           e.preventDefault();
           showPage(target);
         }
+      });
+    });
+
+    // Products dropdown mega-menu preview
+    const previewItems = document.querySelectorAll('.dropdown-nav a[data-preview]');
+    const previewPanels = document.querySelectorAll('.preview-panel[data-preview-for]');
+    previewItems.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        const key = item.dataset.preview;
+        previewItems.forEach(i => i.classList.toggle('preview-active', i === item));
+        previewPanels.forEach(p => p.classList.toggle('active', p.dataset.previewFor === key));
       });
     });
   })();
