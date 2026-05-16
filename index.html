@@ -371,52 +371,105 @@ transition: background 0.3s;
 .about-subnav-link.active { color: var(--gold); background: rgba(94,179,242,0.06); }
 [data-page="about"] section { scroll-margin-top: 140px; }
 
-/* ── ABOUT · TIMELINE ── */
+/* ── ABOUT · TIMELINE (vertical, alternating, hover-image) ── */
 .timeline {
   position: relative;
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding-left: 2rem;
+  padding: 1rem 0 4rem;
 }
 .timeline::before {
   content: '';
   position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  left: 50%; top: 110px; bottom: 0;
+  width: 2px;
+  background: var(--gold);
+  transform: translateX(-50%);
+}
+.timeline-head {
+  position: relative;
+  z-index: 3;
+  width: 110px; height: 110px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1rem;
+  color: var(--white);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 0 8px rgba(94,179,242,0.12);
 }
 .timeline-item {
   position: relative;
-  padding: 1.2rem 0 1.2rem 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5rem;
+  align-items: start;
+  margin: 3rem 0;
+  min-height: 110px;
 }
-.timeline-item::before {
-  content: '';
+.timeline-item .timeline-card { grid-column: 2; }
+.timeline-item.left .timeline-card { grid-column: 1; }
+.timeline-dot {
   position: absolute;
-  left: -5px; top: 1.8rem;
-  width: 9px; height: 9px;
-  background: var(--gold);
+  left: 50%; top: 2.2rem;
+  width: 16px; height: 16px;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(94,179,242,0.15);
+  background: var(--white);
+  border: 2px solid var(--gold);
+  transform: translateX(-50%);
+  z-index: 4;
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-.timeline-year {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  font-weight: 600;
+.timeline-item:hover .timeline-dot {
+  background: #4ade80;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 6px rgba(74,222,128,0.18);
+}
+.timeline-card {
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 1.5rem 2rem;
+  background: rgba(13,17,23,0.35);
+  position: relative;
+  transition: border-color 0.3s, background 0.3s;
+}
+.timeline-item:hover .timeline-card {
+  border-color: rgba(94,179,242,0.55);
+  background: rgba(94,179,242,0.06);
+}
+.timeline-date {
   color: var(--gold);
-  margin-bottom: 0.3rem;
-  line-height: 1;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
 }
-.timeline-content h4 {
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--light);
-  margin: 0.4rem 0 0.5rem;
+.timeline-text {
+  color: var(--white);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
-.timeline-content p {
-  font-size: 0.85rem;
-  color: var(--silver);
-  line-height: 1.8;
+.timeline-img {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: calc(100% + 0.8rem);
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(94,179,242,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.timeline-item:hover .timeline-img {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* ── ABOUT · SPEC GRID ── */
@@ -782,6 +835,13 @@ section { padding: 5rem 1.5rem; }
 .about-subnav-link { padding: 0.5rem 0.8rem; font-size: 0.62rem; border-right: none; }
 .process-flow { flex-direction: column; }
 .process-arrow { transform: rotate(90deg); }
+.timeline-item { grid-template-columns: 1fr; column-gap: 0; padding-left: 2.5rem; }
+.timeline-item .timeline-card,
+.timeline-item.left .timeline-card { grid-column: 1; }
+.timeline::before { left: 1.25rem; transform: none; }
+.timeline-dot { left: 1.25rem; }
+.timeline-head { width: 90px; height: 90px; font-size: 1.2rem; margin-left: 0; }
+.timeline-img { height: 180px; }
 .products-grid { grid-template-columns: 1fr; }
 .ind-grid { grid-template-columns: repeat(2, 1fr); }
 footer { flex-direction: column; text-align: center; }
@@ -1012,49 +1072,69 @@ footer { flex-direction: column; text-align: center; }
 
 <!-- HISTORY -->
 <section id="about-history" style="background:var(--black);">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:4rem;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:3rem;">
       <span class="section-tag">History · Our Journey</span>
-      <h2 class="section-title">A Decade of <strong>Carbon Excellence</strong></h2>
+      <h2 class="section-title">Milestones in <strong>Our Story</strong></h2>
       <div class="divider" style="margin:1.5rem auto;"></div>
       <p class="section-sub" style="margin:0 auto;">
-        From founding in Shandong to a Sino-Japanese joint venture serving customers across three continents.
+        Hover any milestone to see the moment captured.
       </p>
     </div>
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-year">2013</div>
-        <div class="timeline-content">
-          <h4>Company Founded</h4>
-          <p>Shandong Xuri Graphite New Materials Technology Co., Ltd. established in the Linyi County Economic Development Zone, Dezhou City. Investment of ¥466.5 million across a 307-acre site.</p>
+      <div class="timeline-head">Today</div>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80');"></div>
+          <div class="timeline-date">2021-11-16</div>
+          <div class="timeline-text">Certified by international systems for quality, environment, and occupational health and safety.</div>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2015</div>
-        <div class="timeline-content">
-          <h4>Production Commissioned</h4>
-          <p>Fully automated, integrated production lines commissioned — equipped with high-precision machinery imported from Japan, Europe, and the United States.</p>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=900&q=80');"></div>
+          <div class="timeline-date">2021-09-14</div>
+          <div class="timeline-text">Xuri exports its first batch of finished products.</div>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2019</div>
-        <div class="timeline-content">
-          <h4>Sojitz Ject Joint Venture</h4>
-          <p>Joint venture with Sojitz Ject Corporation, a subsidiary of the Tokyo-based Sojitz Group — combining Chinese manufacturing scale with Japanese quality systems and global distribution.</p>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900&q=80');"></div>
+          <div class="timeline-date">2020-11-20</div>
+          <div class="timeline-text">Machine Shop Equipment Installation.</div>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2022</div>
-        <div class="timeline-content">
-          <h4>European Branch Established</h4>
-          <p>ESRLorcy GmbH opened in Düsseldorf as our European headquarters, with JianHua Li as the dedicated business liaison for European industrial buyers.</p>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=80');"></div>
+          <div class="timeline-date">2019</div>
+          <div class="timeline-text">Joint venture established with Sojitz Ject Corporation — combining Chinese manufacturing scale with Japanese quality systems and global distribution.</div>
         </div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-year">Today</div>
-        <div class="timeline-content">
-          <h4>Global Supplier</h4>
-          <p>Serving customers across Europe, North America, and South America with annual production capacity of 30,000 tonnes of premium graphite electrodes.</p>
+
+      <div class="timeline-item right">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80');"></div>
+          <div class="timeline-date">2015</div>
+          <div class="timeline-text">Fully automated, integrated production lines commissioned — equipped with high-precision machinery imported from Japan, Europe, and the United States.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80');"></div>
+          <div class="timeline-date">2013</div>
+          <div class="timeline-text">Shandong Xuri Graphite New Materials Technology Co., Ltd. founded in the Linyi County Economic Development Zone, Dezhou City — investment of ¥466.5 million across a 307-acre site.</div>
         </div>
       </div>
     </div>
