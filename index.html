@@ -629,53 +629,6 @@ font-weight: 600; margin-bottom: 1rem;
 .spec-key { font-size: 0.72rem; color: var(–silver); letter-spacing: 0.05em; }
 .spec-val { font-size: 0.72rem; color: var(–light); font-weight: 500; }
 
-/* ── WHY EUROPE ── */
-#europe { background: var(–dark); }
-.europe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; max-width: 1200px; margin: 0 auto; }
-.europe-cards { display: grid; gap: 1rem; }
-.europe-card {
-display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: start;
-padding: 1.5rem 2rem;
-border: 1px solid rgba(94,179,242,0.15);
-background: rgba(94,179,242,0.02);
-transition: all 0.3s; cursor: default;
-}
-.europe-card:hover { border-color: rgba(94,179,242,0.4); background: rgba(94,179,242,0.06); }
-.eu-icon {
-width: 3rem; height: 3rem; display: grid; place-items: center;
-background: rgba(94,179,242,0.08); color: var(–gold);
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.1rem; font-weight: 600; letter-spacing: 0.05em;
-flex-shrink: 0;
-border: 1px solid rgba(94,179,242,0.2);
-}
-.eu-card-title { font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(–light); margin-bottom: 0.4rem; }
-.eu-card-text { font-size: 0.85rem; color: var(–silver); line-height: 1.7; }
-.contract-box {
-background: var(–carbon);
-border: 1px solid rgba(94,179,242,0.3);
-padding: 3rem;
-position: sticky; top: 100px;
-}
-.contract-box h3 {
-font-family: ‘Cormorant Garamond’, serif;
-font-size: 1.8rem; font-weight: 600; color: var(–gold); margin-bottom: 0.5rem;
-}
-.contract-sub { font-size: 0.8rem; color: var(–silver); margin-bottom: 2rem; letter-spacing: 0.05em; }
-.contract-item { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
-.contract-item:last-of-type { border-bottom: none; }
-.c-key { font-size: 0.78rem; color: var(–silver); }
-.c-val { font-size: 0.78rem; color: var(–light); font-weight: 500; text-align: right; }
-.contract-cta {
-margin-top: 2rem; display: block; width: 100%; padding: 1rem;
-background: var(–gold); color: var(–black);
-font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
-font-weight: 700; text-align: center; text-decoration: none;
-transition: all 0.3s;
-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
-}
-.contract-cta:hover { background: var(–gold-light); }
-
 /* ── INDUSTRIES ── */
 #industries { background: var(–black); }
 .ind-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
@@ -822,7 +775,7 @@ nav { padding: 1rem 1.5rem; }
 section { padding: 5rem 1.5rem; }
 #hero { padding: 5rem 1.5rem 3rem; }
 .stats-bar { grid-template-columns: repeat(2, 1fr); }
-.about-grid, .europe-grid, .contact-inner, .certs-top { grid-template-columns: 1fr; gap: 2.5rem; }
+.about-grid, .contact-inner, .certs-top { grid-template-columns: 1fr; gap: 2.5rem; }
 .spec-grid, .app-grid { grid-template-columns: 1fr; }
 .facility-stats { grid-template-columns: repeat(2, 1fr); }
 .about-subnav { gap: 0; padding: 0.6rem 1rem; }
@@ -953,7 +906,6 @@ footer { flex-direction: column; text-align: center; }
         </div>
       </div>
     </li>
-    <li><a href="#europe">For Europe</a></li>
     <li><a href="#industries">Industries</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -1455,79 +1407,6 @@ footer { flex-direction: column; text-align: center; }
 
 </div><!-- /page ingredients -->
 
-<!-- WHY EUROPE -->
-
-<div class="page" data-page="europe">
-
-<section id="europe">
-  <div class="europe-grid">
-    <div>
-      <span class="section-tag">Built For European Business</span>
-      <h2 class="section-title">Why Partner<br><strong>With Us</strong></h2>
-      <div class="divider"></div>
-      <p class="section-sub" style="margin-bottom:2.5rem;">
-        We understand European procurement standards, compliance requirements, and the value of reliable supply. Our European representative ensures seamless communication and support across contracts of any length.
-      </p>
-      <div class="europe-cards">
-        <div class="europe-card">
-          <div class="eu-icon">01</div>
-          <div>
-            <div class="eu-card-title">Flexible Supply Contracts</div>
-            <div class="eu-card-text">We offer supply agreements of any length — short-term spot orders or multi-year frameworks — tailored to your procurement and planning horizon.</div>
-          </div>
-        </div>
-        <div class="europe-card">
-          <div class="eu-icon">02</div>
-          <div>
-            <div class="eu-card-title">ISO 9001 Certified Quality</div>
-            <div class="eu-card-text">Our production strictly follows ISO 9001 quality management standards, with documentation and traceability that satisfies European import and compliance requirements.</div>
-          </div>
-        </div>
-        <div class="europe-card">
-          <div class="eu-icon">03</div>
-          <div>
-            <div class="eu-card-title">Proven Export Logistics</div>
-            <div class="eu-card-text">Full container load (FCL) shipping with professional packaging systems. Each electrode batch is protected against transit damage with documented handling specifications.</div>
-          </div>
-        </div>
-        <div class="europe-card">
-          <div class="eu-icon">04</div>
-          <div>
-            <div class="eu-card-title">Dedicated European Liaison</div>
-            <div class="eu-card-text">JianHua Li is your single point of contact — fluent in European business culture, managing negotiations, documentation, and after-sales support between your company and our factory.</div>
-          </div>
-        </div>
-        <div class="europe-card">
-          <div class="eu-icon">05</div>
-          <div>
-            <div class="eu-card-title">Competitive Pricing</div>
-            <div class="eu-card-text">Direct factory pricing with no unnecessary intermediaries. Volume discounts and locked-in pricing tiers available on contracts of any length to protect your margins.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="contract-box">
-        <h3>Supply Contract</h3>
-        <div class="contract-sub">Key terms for European buyers</div>
-        <div class="divider"></div>
-        <div class="contract-item"><span class="c-key">Target Markets</span><span class="c-val">Europe · Americas</span></div>
-        <div class="contract-item"><span class="c-key">Grades Available</span><span class="c-val">RP, HP, UHP</span></div>
-        <div class="contract-item"><span class="c-key">Annual Capacity</span><span class="c-val">Up to 30,000t</span></div>
-        <div class="contract-item"><span class="c-key">Quality Standard</span><span class="c-val">ISO 9001</span></div>
-        <div class="contract-item"><span class="c-key">Packaging</span><span class="c-val">FCL Container Spec.</span></div>
-        <div class="contract-item"><span class="c-key">European Contact</span><span class="c-val">JianHua Li</span></div>
-        <div class="contract-item"><span class="c-key">Email</span><span class="c-val">sales@asahicarbon.de</span></div>
-        <a href="mailto:sales@asahicarbon.de" class="contract-cta">Email Us</a>
-        <p style="font-size:0.7rem;color:var(--steel);text-align:center;margin-top:0.5rem;">sales@asahicarbon.de</p>
-        <p style="font-size:0.7rem;color:var(--steel);text-align:center;margin-top:0.3rem;">+49 160 3061395</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-</div><!-- /page europe -->
-
 <!-- INDUSTRIES -->
 
 <div class="page" data-page="industries">
@@ -1831,7 +1710,6 @@ footer { flex-direction: column; text-align: center; }
       'graphite-electrode': 'graphite-electrode',
       'graphite-powder': 'graphite-powder',
       'ingredients': 'ingredients',
-      'europe': 'europe',
       'industries': 'industries',
       'certs': 'industries',
       'contact': 'contact'
@@ -1890,7 +1768,7 @@ footer { flex-direction: column; text-align: center; }
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.product-card, .europe-card, .ind-card, .feature, .stat, .cert-badge').forEach(el => {
+  document.querySelectorAll('.product-card, .ind-card, .feature, .stat, .cert-badge').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
