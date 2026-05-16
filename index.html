@@ -1129,7 +1129,14 @@ footer { flex-direction: column; text-align: center; }
 </div>
 
 <div>
-  <form class="contact-form" id="enquiryForm">
+  <iframe name="formsubmit_target" id="formsubmit_target" style="display:none" aria-hidden="true" tabindex="-1"></iframe>
+  <form class="contact-form" id="enquiryForm"
+        action="https://formsubmit.co/sales@asahicarbon.de"
+        method="POST" target="formsubmit_target">
+    <input type="hidden" name="_subject" value="New Asahi Carbon Enquiry">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
     <div class="form-title">Request Information</div>
     <p class="form-sub">Fill in your details and JianHua will respond within 24 hours with pricing and contract information.</p>
     <div class="form-row">
@@ -1296,41 +1303,28 @@ footer { flex-direction: column; text-align: center; }
     observer.observe(el);
   });
 
-  // Enquiry form — open user's email client with all fields pre-filled
+  // Enquiry form — submits natively into a hidden iframe so the user
+  // stays on the page. Native form submission means no CORS issues.
   const enquiryForm = document.getElementById('enquiryForm');
-  if (enquiryForm) {
-    const fieldLabels = {
-      first_name: 'First Name',
-      last_name: 'Last Name',
-      company: 'Company',
-      email: 'Email',
-      country: 'Country',
-      industry: 'Industry',
-      product_interest: 'Product Interest',
-      annual_volume: 'Annual Volume',
-      message: 'Message'
-    };
-    enquiryForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(enquiryForm);
-      const lines = [];
-      for (const [key, label] of Object.entries(fieldLabels)) {
-        const value = (data.get(key) || '').toString().trim();
-        if (value) lines.push(`${label}: ${value}`);
-      }
-      if (!lines.length) return;
-      const subject = 'New Asahi Carbon Enquiry';
-      const body = lines.join('\n');
-      const href = 'mailto:sales@asahicarbon.de'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(body);
-      window.location.href = href;
+  const formIframe = document.getElementById('formsubmit_target');
+  if (enquiryForm && formIframe) {
+    let submitted = false;
+    enquiryForm.addEventListener('submit', () => {
+      submitted = true;
       const btn = enquiryForm.querySelector('.form-submit');
-      btn.textContent = '✓ Email Opened — Hit Send to Finish';
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+    });
+    formIframe.addEventListener('load', () => {
+      if (!submitted) return;
+      const btn = enquiryForm.querySelector('.form-submit');
+      btn.textContent = '✓ Enquiry Sent — JianHua Will Be in Touch';
       btn.style.background = '#1e4d80';
       btn.style.color = '#fff';
       btn.style.clipPath = 'none';
       btn.disabled = true;
+      enquiryForm.reset();
+      submitted = false;
     });
   }
 </script>
