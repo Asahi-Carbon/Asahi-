@@ -407,20 +407,20 @@ transition: background 0.3s;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 5rem;
-  align-items: start;
+  align-items: center;
   margin: 3rem 0;
-  min-height: 110px;
+  min-height: 220px;
 }
 .timeline-item .timeline-card { grid-column: 2; }
 .timeline-item.left .timeline-card { grid-column: 1; }
 .timeline-dot {
   position: absolute;
-  left: 50%; top: 2.2rem;
+  left: 50%; top: 50%;
   width: 16px; height: 16px;
   border-radius: 50%;
   background: var(--white);
   border: 2px solid var(--gold);
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 4;
   transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -433,7 +433,6 @@ transition: background 0.3s;
   border: 1px solid rgba(255,255,255,0.25);
   padding: 1.5rem 2rem;
   background: rgba(13,17,23,0.35);
-  position: relative;
   transition: border-color 0.3s, background 0.3s;
 }
 .timeline-item:hover .timeline-card {
@@ -455,23 +454,24 @@ transition: background 0.3s;
 }
 .timeline-img {
   position: absolute;
-  left: 0; right: 0;
-  bottom: calc(100% + 0.8rem);
-  height: 240px;
+  top: 50%;
+  width: calc(50% - 2.5rem);
+  height: 200px;
+  transform: translateY(-50%);
   background-size: cover;
   background-position: center;
   border: 1px solid rgba(94,179,242,0.4);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
   pointer-events: none;
   z-index: 2;
 }
+.timeline-item.right .timeline-img { left: 0; }
+.timeline-item.left .timeline-img { right: 0; }
 .timeline-item:hover .timeline-img {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
 }
 
 /* ── ABOUT · SPEC GRID ── */
@@ -837,13 +837,13 @@ section { padding: 5rem 1.5rem; }
 .about-subnav-link { padding: 0.5rem 0.8rem; font-size: 0.62rem; border-right: none; }
 .process-flow { flex-direction: column; }
 .process-arrow { transform: rotate(90deg); }
-.timeline-item { grid-template-columns: 1fr; column-gap: 0; padding-left: 2.5rem; }
+.timeline-item { grid-template-columns: 1fr; column-gap: 0; padding-left: 2.5rem; min-height: auto; }
 .timeline-item .timeline-card,
 .timeline-item.left .timeline-card { grid-column: 1; }
 .timeline::before { left: 1.25rem; transform: none; }
 .timeline-dot { left: 1.25rem; }
 .timeline-head, .timeline-foot { width: 90px; height: 90px; font-size: 1.2rem; margin-left: 0; }
-.timeline-img { height: 180px; }
+.timeline-img { display: none; }
 .products-grid { grid-template-columns: 1fr; }
 .ind-grid { grid-template-columns: repeat(2, 1fr); }
 footer { flex-direction: column; text-align: center; }
