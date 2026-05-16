@@ -341,6 +341,201 @@ transition: background 0.3s;
 .feature-text h4 { font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(–light); margin-bottom: 0.25rem; }
 .feature-text p { font-size: 0.85rem; color: var(–silver); }
 
+/* ── ABOUT SUB-NAV ── */
+.about-subnav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background: rgba(13,17,23,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(94,179,242,0.15);
+  margin-top: 80px;
+}
+.about-subnav-link {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--light);
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  border-right: 1px solid rgba(94,179,242,0.1);
+  transition: color 0.25s, background 0.25s;
+}
+.about-subnav-link:last-child { border-right: none; }
+.about-subnav-link:hover,
+.about-subnav-link.active { color: var(--gold); background: rgba(94,179,242,0.06); }
+[data-page="about"] section { scroll-margin-top: 140px; }
+
+/* ── ABOUT · TIMELINE ── */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+}
+.timeline-item {
+  position: relative;
+  padding: 1.2rem 0 1.2rem 2.5rem;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -5px; top: 1.8rem;
+  width: 9px; height: 9px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(94,179,242,0.15);
+}
+.timeline-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.3rem;
+  line-height: 1;
+}
+.timeline-content h4 {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin: 0.4rem 0 0.5rem;
+}
+.timeline-content p {
+  font-size: 0.85rem;
+  color: var(--silver);
+  line-height: 1.8;
+}
+
+/* ── ABOUT · SPEC GRID ── */
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.spec-card {
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.15);
+  padding: 2rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.spec-card:hover { border-color: rgba(94,179,242,0.4); transform: translateY(-4px); }
+.spec-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.spec-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 1.2rem;
+}
+.spec-card ul { list-style: none; padding: 0; margin: 0; }
+.spec-card ul li {
+  font-size: 0.82rem;
+  color: var(--silver);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.spec-card ul li:last-child { border-bottom: none; }
+.spec-card ul li strong { color: var(--gold); font-weight: 600; margin-right: 0.5rem; }
+
+/* ── ABOUT · APPLICATION GRID ── */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(94,179,242,0.12);
+}
+.app-card {
+  background: var(--dark);
+  padding: 2rem;
+  transition: background 0.3s;
+}
+.app-card:hover { background: var(--carbon); }
+.app-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.app-card h4 {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 0.6rem;
+}
+.app-card p { font-size: 0.82rem; color: var(--silver); line-height: 1.7; }
+
+/* ── ABOUT · FACILITY ── */
+.facility-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(94,179,242,0.12);
+  margin-bottom: 4rem;
+}
+.facility-stat {
+  background: var(--dark);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+.facility-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.facility-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+.facility-process {
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.15);
+  padding: 2.5rem;
+}
+.process-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.process-step {
+  background: rgba(94,179,242,0.08);
+  border: 1px solid rgba(94,179,242,0.25);
+  padding: 0.7rem 1.2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light);
+}
+.process-arrow { color: var(--gold); font-size: 1.2rem; }
+
 /* ── PRODUCTS ── */
 #products { background: var(–black); }
 .products-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
@@ -628,6 +823,12 @@ section { padding: 5rem 1.5rem; }
 #hero { padding: 5rem 1.5rem 3rem; }
 .stats-bar { grid-template-columns: repeat(2, 1fr); }
 .about-grid, .europe-grid, .contact-inner, .certs-top { grid-template-columns: 1fr; gap: 2.5rem; }
+.spec-grid, .app-grid { grid-template-columns: 1fr; }
+.facility-stats { grid-template-columns: repeat(2, 1fr); }
+.about-subnav { gap: 0; padding: 0.6rem 1rem; }
+.about-subnav-link { padding: 0.5rem 0.8rem; font-size: 0.62rem; border-right: none; }
+.process-flow { flex-direction: column; }
+.process-arrow { transform: rotate(90deg); }
 .products-grid { grid-template-columns: 1fr; }
 .ind-grid { grid-template-columns: repeat(2, 1fr); }
 footer { flex-direction: column; text-align: center; }
@@ -644,7 +845,75 @@ footer { flex-direction: column; text-align: center; }
 <nav>
   <a href="#" class="nav-logo">Asahi <span>Carbon</span></a>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+    <li class="has-dropdown">
+      <a href="#about">About Us</a>
+      <div class="dropdown">
+        <ul class="dropdown-nav">
+          <li><a href="#about-profile" data-preview="about-profile" class="preview-active">Profile</a></li>
+          <li><a href="#about-history" data-preview="about-history">History</a></li>
+          <li><a href="#about-excellence" data-preview="about-excellence">Certified Excellence</a></li>
+          <li><a href="#about-specifications" data-preview="about-specifications">Product Specifications</a></li>
+          <li><a href="#about-application" data-preview="about-application">Application Site</a></li>
+          <li><a href="#about-facility" data-preview="about-facility">Our Facility</a></li>
+        </ul>
+        <div class="dropdown-preview">
+          <div class="preview-panel active" data-preview-for="about-profile">
+            <h4>Profile</h4>
+            <p>Shandong Xuri Graphite — a Sino-Japanese joint venture combining Chinese precision manufacturing with Japanese engineering excellence.</p>
+            <ul>
+              <li><strong>Founded</strong> 2013 · Shandong, China</li>
+              <li><strong>Site</strong> 307 acres of production area</li>
+              <li><strong>Investment</strong> ¥466.5 million</li>
+            </ul>
+          </div>
+          <div class="preview-panel" data-preview-for="about-history">
+            <h4>History</h4>
+            <p>From founding to international expansion — a decade of building one of Asia's most advanced graphite electrode operations.</p>
+            <ul>
+              <li><strong>2013</strong> Company founded in Dezhou City</li>
+              <li><strong>2019</strong> Joint venture with Sojitz Ject Corporation</li>
+              <li><strong>Today</strong> European branch in Düsseldorf</li>
+            </ul>
+          </div>
+          <div class="preview-panel" data-preview-for="about-excellence">
+            <h4>Certified Excellence</h4>
+            <p>International standards and rigorous quality systems backing every shipment to European customers.</p>
+            <ul>
+              <li><strong>ISO 9001</strong> Quality Management</li>
+              <li><strong>JIS</strong> Japanese Industrial Standards</li>
+              <li><strong>IEC / ASTM</strong> International Compliance</li>
+            </ul>
+          </div>
+          <div class="preview-panel" data-preview-for="about-specifications">
+            <h4>Product Specifications</h4>
+            <p>Engineered grades and material specifications across our full product range.</p>
+            <ul>
+              <li><strong>UHP</strong> Ultra-High Power Electrodes</li>
+              <li><strong>HP / RP</strong> High & Regular Power</li>
+              <li><strong>Powder</strong> ≥ 99.5% Carbon Purity</li>
+            </ul>
+          </div>
+          <div class="preview-panel" data-preview-for="about-application">
+            <h4>Application Site</h4>
+            <p>Where our materials work — from electric arc furnaces to lithium-ion battery production lines.</p>
+            <ul>
+              <li><strong>Steel</strong> EAF / SAF Operations</li>
+              <li><strong>Energy</strong> Lithium-Ion Anodes</li>
+              <li><strong>Chemical</strong> Industrial Electrolysis</li>
+            </ul>
+          </div>
+          <div class="preview-panel" data-preview-for="about-facility">
+            <h4>Our Facility</h4>
+            <p>Fully automated, integrated production lines designed by domestic and international experts.</p>
+            <ul>
+              <li><strong>307</strong> Acres of Production Area</li>
+              <li><strong>30,000t</strong> Annual Capacity</li>
+              <li><strong>Equipment</strong> Japan · Europe · USA Imports</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
     <li class="has-dropdown">
       <a href="#products">Products</a>
       <div class="dropdown">
@@ -729,11 +998,21 @@ footer { flex-direction: column; text-align: center; }
 
 </div><!-- /page home -->
 
-<!-- ABOUT -->
+<!-- ABOUT US -->
 
 <div class="page" data-page="about">
 
-<section id="about">
+<div class="about-subnav">
+  <a href="#about-profile" class="about-subnav-link">Profile</a>
+  <a href="#about-history" class="about-subnav-link">History</a>
+  <a href="#about-excellence" class="about-subnav-link">Certified Excellence</a>
+  <a href="#about-specifications" class="about-subnav-link">Product Specifications</a>
+  <a href="#about-application" class="about-subnav-link">Application Site</a>
+  <a href="#about-facility" class="about-subnav-link">Our Facility</a>
+</div>
+
+<!-- PROFILE -->
+<section id="about-profile">
   <div class="about-grid">
     <div class="about-visual">
       <div class="about-year">2013</div>
@@ -746,7 +1025,7 @@ footer { flex-direction: column; text-align: center; }
       </p>
     </div>
     <div>
-      <span class="section-tag">Who We Are</span>
+      <span class="section-tag">Profile · Who We Are</span>
       <h2 class="section-title">A World-Class <strong>Carbon Company</strong></h2>
       <div class="divider"></div>
       <p class="section-sub" style="margin-bottom:2rem;">
@@ -774,6 +1053,219 @@ footer { flex-direction: column; text-align: center; }
             <p>JianHua Li coordinates directly with European buyers, ensuring smooth contracting, logistics, and support.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section id="about-history" style="background:var(--black);">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <span class="section-tag">History · Our Journey</span>
+      <h2 class="section-title">A Decade of <strong>Carbon Excellence</strong></h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+      <p class="section-sub" style="margin:0 auto;">
+        From founding in Shandong to a Sino-Japanese joint venture serving customers across three continents.
+      </p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">2013</div>
+        <div class="timeline-content">
+          <h4>Company Founded</h4>
+          <p>Shandong Xuri Graphite New Materials Technology Co., Ltd. established in the Linyi County Economic Development Zone, Dezhou City. Investment of ¥466.5 million across a 307-acre site.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2015</div>
+        <div class="timeline-content">
+          <h4>Production Commissioned</h4>
+          <p>Fully automated, integrated production lines commissioned — equipped with high-precision machinery imported from Japan, Europe, and the United States.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2019</div>
+        <div class="timeline-content">
+          <h4>Sojitz Ject Joint Venture</h4>
+          <p>Joint venture with Sojitz Ject Corporation, a subsidiary of the Tokyo-based Sojitz Group — combining Chinese manufacturing scale with Japanese quality systems and global distribution.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-content">
+          <h4>European Branch Established</h4>
+          <p>ESRLorcy GmbH opened in Düsseldorf as our European headquarters, with JianHua Li as the dedicated business liaison for European industrial buyers.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">Today</div>
+        <div class="timeline-content">
+          <h4>Global Supplier</h4>
+          <p>Serving customers across Europe, North America, and South America with annual production capacity of 30,000 tonnes of premium graphite electrodes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFIED EXCELLENCE -->
+<section id="about-excellence" style="background:var(--dark);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <span class="section-tag">Certified Excellence · Quality & Compliance</span>
+      <h2 class="section-title">Standards That <strong>Matter to Europe</strong></h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+      <p class="section-sub" style="margin:0 auto;">
+        Rigorous quality management systems aligned with international standards. Documentation, testing records, and traceability protocols that meet European import requirements.
+      </p>
+    </div>
+    <div class="cert-badges" style="justify-content:center;">
+      <div class="cert-badge">
+        <div class="cert-badge-name">ISO 9001</div>
+        <div class="cert-badge-desc">Quality Management</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-badge-name">JIS Standards</div>
+        <div class="cert-badge-desc">Japanese Industrial</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-badge-name">IEC Standards</div>
+        <div class="cert-badge-desc">International Electrotechnical</div>
+      </div>
+      <div class="cert-badge">
+        <div class="cert-badge-name">ASTM</div>
+        <div class="cert-badge-desc">Materials Testing</div>
+      </div>
+    </div>
+    <p style="font-size:0.85rem;color:var(--silver);margin:2.5rem auto 0;line-height:1.8;max-width:780px;text-align:center;">
+      Every shipment is accompanied by a full material test report (MTR), certificate of conformity, and dimensional inspection record. Documentation available in English, German, French, Italian, and Spanish on request.
+    </p>
+  </div>
+</section>
+
+<!-- PRODUCT SPECIFICATIONS -->
+<section id="about-specifications" style="background:var(--black);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <span class="section-tag">Product Specifications · Engineered Grades</span>
+      <h2 class="section-title">Materials Built to <strong>Specification</strong></h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+      <p class="section-sub" style="margin:0 auto;">
+        A complete portfolio of graphite electrodes, synthetic powders, and raw feedstock — each engineered to meet the technical demands of high-performance industrial operations.
+      </p>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-card">
+        <div class="spec-tag">01 · Graphite Electrodes</div>
+        <h4>Three Power Grades</h4>
+        <ul>
+          <li><strong>RP</strong> Regular Power — Standard EAF / SAF</li>
+          <li><strong>HP</strong> High Power — High-load EAF</li>
+          <li><strong>UHP</strong> Ultra-High Power — Flagship grade, ≥ 600mm diameters</li>
+        </ul>
+      </div>
+      <div class="spec-card">
+        <div class="spec-tag">02 · Artificial Graphite Powder</div>
+        <h4>Battery-Grade Material</h4>
+        <ul>
+          <li><strong>Purity</strong> ≥ 99.5% Carbon</li>
+          <li><strong>Particle Size</strong> D50: 5 – 45 μm</li>
+          <li><strong>Form</strong> Powder or Pellet</li>
+        </ul>
+      </div>
+      <div class="spec-card">
+        <div class="spec-tag">03 · Raw Ingredients</div>
+        <h4>Feedstock Supply</h4>
+        <ul>
+          <li><strong>Petroleum Coke</strong> Calcined, anode grade</li>
+          <li><strong>Needle Coke</strong> UHP feedstock</li>
+          <li><strong>Coal Tar Pitch</strong> Binder grade</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION SITE -->
+<section id="about-application" style="background:var(--dark);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <span class="section-tag">Application Site · Where We Work</span>
+      <h2 class="section-title">Industries We <strong>Power</strong></h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+      <p class="section-sub" style="margin:0 auto;">
+        Our materials are deployed across heavy industry, energy storage, and advanced manufacturing — wherever performance and consistency define the operation.
+      </p>
+    </div>
+    <div class="app-grid">
+      <div class="app-card">
+        <div class="app-num">01</div>
+        <h4>Electric Arc Furnace Steelmaking</h4>
+        <p>UHP electrodes for high-productivity EAF and SAF operations across European steel mills.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-num">02</div>
+        <h4>Lithium-Ion Battery Anodes</h4>
+        <p>High-purity artificial graphite powder for next-generation energy storage and EV battery production.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-num">03</div>
+        <h4>Chemical & Electrolysis</h4>
+        <p>Special carbon materials for chlor-alkali production, industrial electrolysis, and chemical processing.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-num">04</div>
+        <h4>Non-Ferrous Metallurgy</h4>
+        <p>Graphite components for aluminium, copper, and silicon smelting at industrial scale.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-num">05</div>
+        <h4>Semiconductor Manufacturing</h4>
+        <p>Ultra-pure graphite for crystal growing, epitaxial coating, and high-temperature diffusion furnaces.</p>
+      </div>
+      <div class="app-card">
+        <div class="app-num">06</div>
+        <h4>Green Industry</h4>
+        <p>Supporting Europe's decarbonisation — enabling green steel and clean energy technologies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR FACILITY -->
+<section id="about-facility" style="background:var(--black);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <span class="section-tag">Our Facility · Manufacturing Capability</span>
+      <h2 class="section-title">Integrated Production at <strong>Scale</strong></h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+      <p class="section-sub" style="margin:0 auto;">
+        A 307-acre site in Shandong Province housing fully automated, end-to-end graphite electrode production — from raw feedstock to finished machined electrodes.
+      </p>
+    </div>
+    <div class="facility-stats">
+      <div class="facility-stat"><div class="facility-num">307</div><div class="facility-label">Acres of Production Area</div></div>
+      <div class="facility-stat"><div class="facility-num">30,000<span style="font-size:1.4rem">t</span></div><div class="facility-label">Annual Production Capacity</div></div>
+      <div class="facility-stat"><div class="facility-num">¥466.5M</div><div class="facility-label">Total Investment</div></div>
+      <div class="facility-stat"><div class="facility-num">7</div><div class="facility-label">Stage Production Chain</div></div>
+    </div>
+    <div class="facility-process">
+      <h4 style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);font-weight:400;margin-bottom:2rem;">Full Production Chain</h4>
+      <div class="process-flow">
+        <div class="process-step">Pressing</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">Primary Firing</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">Impregnation</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">Secondary Firing</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">Graphitization</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">Machining</div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">R&amp;D Centre</div>
       </div>
     </div>
   </div>
@@ -1329,6 +1821,12 @@ footer { flex-direction: column; text-align: center; }
       '': 'home',
       'hero': 'home',
       'about': 'about',
+      'about-profile': 'about',
+      'about-history': 'about',
+      'about-excellence': 'about',
+      'about-specifications': 'about',
+      'about-application': 'about',
+      'about-facility': 'about',
       'products': 'products',
       'graphite-electrode': 'graphite-electrode',
       'graphite-powder': 'graphite-powder',
@@ -1339,7 +1837,7 @@ footer { flex-direction: column; text-align: center; }
       'contact': 'contact'
     };
 
-    function showPage(name) {
+    function showPage(name, anchor) {
       document.querySelectorAll('.page').forEach(p => {
         p.classList.toggle('active', p.dataset.page === name);
       });
@@ -1347,7 +1845,13 @@ footer { flex-direction: column; text-align: center; }
         const id = a.getAttribute('href').slice(1);
         a.classList.toggle('nav-active', anchorToPage[id] === name);
       });
-      window.scrollTo(0, 0);
+      if (anchor && document.getElementById(anchor)) {
+        requestAnimationFrame(() => {
+          document.getElementById(anchor).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      } else {
+        window.scrollTo(0, 0);
+      }
     }
 
     document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -1356,19 +1860,22 @@ footer { flex-direction: column; text-align: center; }
         const target = anchorToPage[id];
         if (target) {
           e.preventDefault();
-          showPage(target);
+          const isSubAnchor = id !== target && document.getElementById(id);
+          showPage(target, isSubAnchor ? id : null);
         }
       });
     });
 
-    // Products dropdown mega-menu preview
-    const previewItems = document.querySelectorAll('.dropdown-nav a[data-preview]');
-    const previewPanels = document.querySelectorAll('.preview-panel[data-preview-for]');
-    previewItems.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        const key = item.dataset.preview;
-        previewItems.forEach(i => i.classList.toggle('preview-active', i === item));
-        previewPanels.forEach(p => p.classList.toggle('active', p.dataset.previewFor === key));
+    // Dropdown mega-menu preview — scoped per dropdown so multiple menus don't clash
+    document.querySelectorAll('.dropdown').forEach(dropdown => {
+      const items = dropdown.querySelectorAll('.dropdown-nav a[data-preview]');
+      const panels = dropdown.querySelectorAll('.preview-panel[data-preview-for]');
+      items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          const key = item.dataset.preview;
+          items.forEach(i => i.classList.toggle('preview-active', i === item));
+          panels.forEach(p => p.classList.toggle('active', p.dataset.previewFor === key));
+        });
       });
     });
   })();
