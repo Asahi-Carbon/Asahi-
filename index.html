@@ -1066,31 +1066,35 @@ footer { flex-direction: column; text-align: center; }
 </div>
 
 <div>
-  <div class="contact-form">
+  <form class="contact-form" id="enquiryForm" action="https://formsubmit.co/sales@asahicarbon.de" method="POST">
+    <input type="hidden" name="_subject" value="New Asahi Carbon enquiry">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
     <div class="form-title">Request Information</div>
     <p class="form-sub">Fill in your details and JianHua will respond within 24 hours with pricing and contract information.</p>
     <div class="form-row">
       <div class="form-group">
         <label class="form-label">First Name</label>
-        <input class="form-input" type="text" placeholder="Hans">
+        <input class="form-input" type="text" name="first_name" placeholder="Hans" required>
       </div>
       <div class="form-group">
         <label class="form-label">Last Name</label>
-        <input class="form-input" type="text" placeholder="Müller">
+        <input class="form-input" type="text" name="last_name" placeholder="Müller" required>
       </div>
     </div>
     <div class="form-group">
       <label class="form-label">Company Name</label>
-      <input class="form-input" type="text" placeholder="Your company name">
+      <input class="form-input" type="text" name="company" placeholder="Your company name">
     </div>
     <div class="form-group">
       <label class="form-label">Business Email</label>
-      <input class="form-input" type="email" placeholder="hans@company.de">
+      <input class="form-input" type="email" name="email" placeholder="hans@company.de" required>
     </div>
     <div class="form-row">
       <div class="form-group">
         <label class="form-label">Country</label>
-        <select class="form-select form-input">
+        <select class="form-select form-input" name="country">
           <option value="">Select country</option>
           <option>🇩🇪 Germany</option>
           <option>🇮🇹 Italy</option>
@@ -1110,7 +1114,7 @@ footer { flex-direction: column; text-align: center; }
       </div>
       <div class="form-group">
         <label class="form-label">Industry</label>
-        <select class="form-select form-input">
+        <select class="form-select form-input" name="industry">
           <option value="">Select industry</option>
           <option>Steel / Metallurgy (EAF)</option>
           <option>Chemical Processing</option>
@@ -1124,7 +1128,7 @@ footer { flex-direction: column; text-align: center; }
     </div>
     <div class="form-group">
       <label class="form-label">Product Interest</label>
-      <select class="form-select form-input">
+      <select class="form-select form-input" name="product_interest">
         <option value="">Select product type</option>
         <option>UHP Graphite Electrodes (600mm+)</option>
         <option>HP Graphite Electrodes</option>
@@ -1136,7 +1140,7 @@ footer { flex-direction: column; text-align: center; }
     </div>
     <div class="form-group">
       <label class="form-label">Annual Volume Estimate</label>
-      <select class="form-select form-input">
+      <select class="form-select form-input" name="annual_volume">
         <option value="">Select estimated volume</option>
         <option>Under 100 tonnes / year</option>
         <option>100 – 500 tonnes / year</option>
@@ -1147,11 +1151,11 @@ footer { flex-direction: column; text-align: center; }
     </div>
     <div class="form-group">
       <label class="form-label">Message</label>
-      <textarea class="form-textarea" placeholder="Tell us about your current electrode supplier, specifications, and what you're looking for in a supply partner..."></textarea>
+      <textarea class="form-textarea" name="message" placeholder="Tell us about your current electrode supplier, specifications, and what you're looking for in a supply partner..."></textarea>
     </div>
-    <button class="form-submit" onclick="handleSubmit(this)">Send Enquiry</button>
+    <button class="form-submit" type="submit">Send Enquiry</button>
     <p class="form-note">Your enquiry will be handled directly by JianHua Li, our European Business Liaison. We typically respond within 24 business hours. Email: <a href="mailto:sales@asahicarbon.de" style="color:var(--gold);">sales@asahicarbon.de</a> · Phone: <a href="tel:+491603061395" style="color:var(--gold);">+49 160 3061395</a></p>
-  </div>
+  </form>
 </div>
 ```
 
@@ -1232,13 +1236,36 @@ footer { flex-direction: column; text-align: center; }
     observer.observe(el);
   });
 
-  // Form submit handler
-  function handleSubmit(btn) {
-    btn.textContent = '✓ Enquiry Sent — JianHua Will Be in Touch';
-    btn.style.background = '#1e4d80';
-    btn.style.color = '#fff';
-    btn.style.clipPath = 'none';
-    btn.disabled = true;
+  // Enquiry form — submit via FormSubmit to sales@asahicarbon.de
+  const enquiryForm = document.getElementById('enquiryForm');
+  if (enquiryForm) {
+    enquiryForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = enquiryForm.querySelector('.form-submit');
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      try {
+        const res = await fetch(enquiryForm.action, {
+          method: 'POST',
+          body: new FormData(enquiryForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          btn.textContent = '✓ Enquiry Sent — JianHua Will Be in Touch';
+          btn.style.background = '#1e4d80';
+          btn.style.color = '#fff';
+          btn.style.clipPath = 'none';
+          enquiryForm.reset();
+        } else {
+          btn.disabled = false;
+          btn.textContent = '✗ Send Failed — Please Email Us Directly';
+        }
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = '✗ Send Failed — Please Email Us Directly';
+      }
+    });
   }
 </script>
 
