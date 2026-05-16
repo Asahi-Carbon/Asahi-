@@ -1129,11 +1129,7 @@ footer { flex-direction: column; text-align: center; }
 </div>
 
 <div>
-  <form class="contact-form" id="enquiryForm" action="https://formsubmit.co/ajax/sales@asahicarbon.de" method="POST">
-    <input type="hidden" name="_subject" value="New Asahi Carbon enquiry">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+  <form class="contact-form" id="enquiryForm">
     <div class="form-title">Request Information</div>
     <p class="form-sub">Fill in your details and JianHua will respond within 24 hours with pricing and contract information.</p>
     <div class="form-row">
@@ -1300,35 +1296,41 @@ footer { flex-direction: column; text-align: center; }
     observer.observe(el);
   });
 
-  // Enquiry form — submit via FormSubmit to sales@asahicarbon.de
+  // Enquiry form — open user's email client with all fields pre-filled
   const enquiryForm = document.getElementById('enquiryForm');
   if (enquiryForm) {
-    enquiryForm.addEventListener('submit', async (e) => {
+    const fieldLabels = {
+      first_name: 'First Name',
+      last_name: 'Last Name',
+      company: 'Company',
+      email: 'Email',
+      country: 'Country',
+      industry: 'Industry',
+      product_interest: 'Product Interest',
+      annual_volume: 'Annual Volume',
+      message: 'Message'
+    };
+    enquiryForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const btn = enquiryForm.querySelector('.form-submit');
-      const originalText = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      try {
-        const res = await fetch(enquiryForm.action, {
-          method: 'POST',
-          body: new FormData(enquiryForm),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          btn.textContent = '✓ Enquiry Sent — JianHua Will Be in Touch';
-          btn.style.background = '#1e4d80';
-          btn.style.color = '#fff';
-          btn.style.clipPath = 'none';
-          enquiryForm.reset();
-        } else {
-          btn.disabled = false;
-          btn.textContent = '✗ Send Failed — Please Email Us Directly';
-        }
-      } catch (err) {
-        btn.disabled = false;
-        btn.textContent = '✗ Send Failed — Please Email Us Directly';
+      const data = new FormData(enquiryForm);
+      const lines = [];
+      for (const [key, label] of Object.entries(fieldLabels)) {
+        const value = (data.get(key) || '').toString().trim();
+        if (value) lines.push(`${label}: ${value}`);
       }
+      if (!lines.length) return;
+      const subject = 'New Asahi Carbon Enquiry';
+      const body = lines.join('\n');
+      const href = 'mailto:sales@asahicarbon.de'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+      window.location.href = href;
+      const btn = enquiryForm.querySelector('.form-submit');
+      btn.textContent = '✓ Email Opened — Hit Send to Finish';
+      btn.style.background = '#1e4d80';
+      btn.style.color = '#fff';
+      btn.style.clipPath = 'none';
+      btn.disabled = true;
     });
   }
 </script>
