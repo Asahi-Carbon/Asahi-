@@ -95,20 +95,15 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(13,17,23,0.94);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: rgba(13,17,23,0.97);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(94,179,242,0.2);
-  width: 640px;
-  height: 320px;
+  min-width: 240px;
   margin-top: 1.2rem;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  overflow: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease, background-image 0.4s ease;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
   z-index: 101;
 }
 .dropdown::before {
@@ -117,16 +112,6 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
   top: -1.2rem;
   left: 0; right: 0;
   height: 1.2rem;
-  z-index: 2;
-}
-.dropdown::after {
-  /* gradient overlay so the nav list stays readable over any background image */
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(13,17,23,0.96) 0%, rgba(13,17,23,0.78) 38%, rgba(13,17,23,0.28) 100%);
-  pointer-events: none;
-  z-index: 1;
 }
 .has-dropdown:hover .dropdown,
 .has-dropdown:focus-within .dropdown {
@@ -136,18 +121,14 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
   transform: translateX(-50%) translateY(2px);
 }
 .dropdown-nav {
-  position: relative;
   list-style: none;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   margin: 0;
-  width: 280px;
-  flex-shrink: 0;
-  z-index: 2;
 }
 .dropdown-nav li { list-style: none; }
 .dropdown-nav a {
   display: block;
-  padding: 0.95rem 1.8rem;
+  padding: 0.85rem 1.6rem;
   white-space: nowrap;
   font-size: 0.74rem;
   letter-spacing: 0.14em;
@@ -158,9 +139,9 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
 }
 .dropdown-nav a:hover,
 .dropdown-nav a.preview-active {
-  background: rgba(94,179,242,0.12);
+  background: rgba(94,179,242,0.08);
   color: var(--gold);
-  padding-left: 2.4rem;
+  padding-left: 2.2rem;
 }
 .nav-cta {
 background: var(–gold); color: var(–black);
@@ -980,12 +961,12 @@ footer { flex-direction: column; text-align: center; }
       <a href="#about" data-i18n="nav.about">About Us</a>
       <div class="dropdown">
         <ul class="dropdown-nav">
-          <li><a href="#about-profile" data-bg="images/history/07-2020-06-complex-aerial.png" class="preview-active" data-i18n="nav.about.profile">Profile</a></li>
-          <li><a href="#about-history" data-bg="images/history/02-2013-06-groundbreaking.png" data-i18n="nav.about.history">History</a></li>
-          <li><a href="#about-excellence" data-bg="images/history/10-2021-11-audit.png" data-i18n="nav.about.excellence">Certified Excellence</a></li>
-          <li><a href="#about-specifications" data-bg="images/history/08-2020-11-machine-shop.png" data-i18n="nav.about.specifications">Product Specifications</a></li>
-          <li><a href="#about-application" data-bg="images/history/09-2021-09-first-export.png" data-i18n="nav.about.application">Application Site</a></li>
-          <li><a href="#about-facility" data-bg="images/history/04-2018-06-pressed-steel-workshop.png" data-i18n="nav.about.facility">Our Facility</a></li>
+          <li><a href="#about-profile" class="preview-active" data-i18n="nav.about.profile">Profile</a></li>
+          <li><a href="#about-history" data-i18n="nav.about.history">History</a></li>
+          <li><a href="#about-excellence" data-i18n="nav.about.excellence">Certified Excellence</a></li>
+          <li><a href="#about-specifications" data-i18n="nav.about.specifications">Product Specifications</a></li>
+          <li><a href="#about-application" data-i18n="nav.about.application">Application Site</a></li>
+          <li><a href="#about-facility" data-i18n="nav.about.facility">Our Facility</a></li>
         </ul>
       </div>
     </li>
@@ -993,9 +974,9 @@ footer { flex-direction: column; text-align: center; }
       <a href="#products" data-i18n="nav.products">Products</a>
       <div class="dropdown">
         <ul class="dropdown-nav">
-          <li><a href="#graphite-electrode" data-bg="images/history/08-2020-11-machine-shop.png" class="preview-active" data-i18n="nav.products.electrode">Graphite Electrode</a></li>
-          <li><a href="#graphite-powder" data-bg="images/history/06-2019-04-machining-workshop.png" data-i18n="nav.products.powder">Artificial Graphite Powder</a></li>
-          <li><a href="#ingredients" data-bg="images/history/03-2013-06-construction.png" data-i18n="nav.products.ingredients">Ingredients</a></li>
+          <li><a href="#graphite-electrode" class="preview-active" data-i18n="nav.products.electrode">Graphite Electrode</a></li>
+          <li><a href="#graphite-powder" data-i18n="nav.products.powder">Artificial Graphite Powder</a></li>
+          <li><a href="#ingredients" data-i18n="nav.products.ingredients">Ingredients</a></li>
         </ul>
       </div>
     </li>
@@ -1003,8 +984,8 @@ footer { flex-direction: column; text-align: center; }
       <a href="#services" data-i18n="nav.services">Services</a>
       <div class="dropdown">
         <ul class="dropdown-nav">
-          <li><a href="#services-support" data-bg="images/history/05-2019-01-jv-signing.png" class="preview-active" data-i18n="nav.services.support">Technical Support</a></li>
-          <li><a href="#services-shipping" data-bg="images/history/09-2021-09-first-export.png" data-i18n="nav.services.shipping">Packaging and Shipping</a></li>
+          <li><a href="#services-support" class="preview-active" data-i18n="nav.services.support">Technical Support</a></li>
+          <li><a href="#services-shipping" data-i18n="nav.services.shipping">Packaging and Shipping</a></li>
         </ul>
       </div>
     </li>
@@ -2143,21 +2124,68 @@ footer { flex-direction: column; text-align: center; }
       }
     })();
 
-    // Dropdown mega-menu — entire dropdown background swaps to a preview image on hover
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-      const items = dropdown.querySelectorAll('.dropdown-nav a[data-bg]');
-      const setBg = (url) => {
-        if (url) dropdown.style.backgroundImage = `url('${url}')`;
-      };
-      // Seed with the first item's image so the dropdown isn't blank when first opened
-      const initial = dropdown.querySelector('.dropdown-nav a[data-bg].preview-active') || items[0];
-      if (initial) setBg(initial.dataset.bg);
+    // Dropdown hover preview — hovering a subsection in the dropdown briefly
+    // swaps the page content underneath the dropdown to that destination, so
+    // you can see what you're about to navigate to. The original page is
+    // restored when the cursor leaves the dropdown (unless you clicked through).
+    let previewSavedPage = null;
+    let previewSavedAnchor = null;
+
+    function snapshotCurrentPage() {
+      const active = document.querySelector('.page.active');
+      const page = active ? active.dataset.page : 'home';
+      let anchor = null;
+      if (subsectionDefaults[page]) {
+        const sub = document.querySelector('[data-page="' + page + '"] > section.is-active');
+        anchor = sub ? sub.id : subsectionDefaults[page];
+      }
+      return { page: page, anchor: anchor };
+    }
+
+    function applyPreview(name, anchor) {
+      document.querySelectorAll('.page').forEach(p => {
+        p.classList.toggle('active', p.dataset.page === name);
+      });
+      if (subsectionDefaults[name]) {
+        showSubsection(name, anchor);
+      }
+    }
+
+    function startPreview(id) {
+      const target = anchorToPage[id];
+      if (!target) return;
+      if (previewSavedPage === null) {
+        const snap = snapshotCurrentPage();
+        previewSavedPage = snap.page;
+        previewSavedAnchor = snap.anchor;
+      }
+      const isSub = id !== target && !!document.getElementById(id);
+      applyPreview(target, isSub ? id : null);
+    }
+
+    function endPreview() {
+      if (previewSavedPage !== null) {
+        applyPreview(previewSavedPage, previewSavedAnchor);
+        previewSavedPage = null;
+        previewSavedAnchor = null;
+      }
+    }
+
+    document.querySelectorAll('.has-dropdown').forEach(li => {
+      const items = li.querySelectorAll('.dropdown-nav a[href^="#"]');
       items.forEach(item => {
         item.addEventListener('mouseenter', () => {
           items.forEach(i => i.classList.toggle('preview-active', i === item));
-          setBg(item.dataset.bg);
+          startPreview(item.getAttribute('href').slice(1));
+        });
+        // Clicking commits the preview — don't revert when the cursor leaves
+        item.addEventListener('click', () => {
+          previewSavedPage = null;
+          previewSavedAnchor = null;
         });
       });
+      // Leaving the dropdown trigger / panel reverts the preview
+      li.addEventListener('mouseleave', endPreview);
     });
   })();
 
