@@ -369,7 +369,8 @@ transition: background 0.3s;
 .about-subnav-link:last-child { border-right: none; }
 .about-subnav-link:hover,
 .about-subnav-link.active { color: var(--gold); background: rgba(94,179,242,0.06); }
-[data-page="about"] section { scroll-margin-top: 140px; }
+[data-page="about"] > section { display: none; }
+[data-page="about"] > section.is-active { display: block; }
 
 /* ── ABOUT · TIMELINE (vertical, alternating, hover-image) ── */
 .timeline {
@@ -1050,7 +1051,7 @@ footer { flex-direction: column; text-align: center; }
 </div>
 
 <!-- PROFILE -->
-<section id="about-profile">
+<section id="about-profile" class="is-active">
   <div class="about-grid">
     <div class="about-visual">
       <div class="about-year">2013</div>
@@ -1950,6 +1951,16 @@ footer { flex-direction: column; text-align: center; }
       'datenschutz': 'datenschutz'
     };
 
+    function showAboutSubsection(id) {
+      if (!id || !document.getElementById(id)) id = 'about-profile';
+      document.querySelectorAll('[data-page="about"] > section').forEach(s => {
+        s.classList.toggle('is-active', s.id === id);
+      });
+      document.querySelectorAll('.about-subnav-link').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    }
+
     function showPage(name, anchor) {
       document.querySelectorAll('.page').forEach(p => {
         p.classList.toggle('active', p.dataset.page === name);
@@ -1958,7 +1969,10 @@ footer { flex-direction: column; text-align: center; }
         const id = a.getAttribute('href').slice(1);
         a.classList.toggle('nav-active', anchorToPage[id] === name);
       });
-      if (anchor && document.getElementById(anchor)) {
+      if (name === 'about') {
+        showAboutSubsection(anchor);
+        window.scrollTo(0, 0);
+      } else if (anchor && document.getElementById(anchor)) {
         requestAnimationFrame(() => {
           document.getElementById(anchor).scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
