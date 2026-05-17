@@ -95,16 +95,20 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(13,17,23,0.97);
+  background-color: rgba(13,17,23,0.94);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   backdrop-filter: blur(12px);
   border: 1px solid rgba(94,179,242,0.2);
-  display: flex;
-  min-width: 640px;
+  width: 640px;
+  height: 320px;
   margin-top: 1.2rem;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+  overflow: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease, background-image 0.4s ease;
   z-index: 101;
 }
 .dropdown::before {
@@ -113,6 +117,16 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
   top: -1.2rem;
   left: 0; right: 0;
   height: 1.2rem;
+  z-index: 2;
+}
+.dropdown::after {
+  /* gradient overlay so the nav list stays readable over any background image */
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(13,17,23,0.96) 0%, rgba(13,17,23,0.78) 38%, rgba(13,17,23,0.28) 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 .has-dropdown:hover .dropdown,
 .has-dropdown:focus-within .dropdown {
@@ -122,17 +136,18 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
   transform: translateX(-50%) translateY(2px);
 }
 .dropdown-nav {
+  position: relative;
   list-style: none;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   margin: 0;
-  width: 260px;
+  width: 280px;
   flex-shrink: 0;
-  border-right: 1px solid rgba(94,179,242,0.15);
+  z-index: 2;
 }
 .dropdown-nav li { list-style: none; }
 .dropdown-nav a {
   display: block;
-  padding: 0.85rem 1.6rem;
+  padding: 0.95rem 1.8rem;
   white-space: nowrap;
   font-size: 0.74rem;
   letter-spacing: 0.14em;
@@ -143,49 +158,9 @@ color: var(–light); text-decoration: none; transition: color 0.3s;
 }
 .dropdown-nav a:hover,
 .dropdown-nav a.preview-active {
-  background: rgba(94,179,242,0.08);
+  background: rgba(94,179,242,0.12);
   color: var(--gold);
-  padding-left: 2.2rem;
-}
-.dropdown-preview {
-  flex: 1;
-  padding: 1.5rem 1.8rem;
-  min-width: 360px;
-}
-.preview-panel { display: none; }
-.preview-panel.active { display: block; }
-.preview-panel h4 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--gold);
-  margin: 0 0 0.5rem;
-  letter-spacing: 0;
-}
-.preview-panel p {
-  font-size: 0.8rem;
-  color: var(--silver);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-.preview-panel ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.preview-panel ul li {
-  font-size: 0.76rem;
-  color: var(--light);
-  padding: 0.45rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-.preview-panel ul li:last-child { border-bottom: none; }
-.preview-panel ul li strong {
-  color: var(--gold);
-  font-weight: 600;
-  margin-right: 0.5rem;
+  padding-left: 2.4rem;
 }
 .nav-cta {
 background: var(–gold); color: var(–black);
@@ -1005,137 +980,32 @@ footer { flex-direction: column; text-align: center; }
       <a href="#about" data-i18n="nav.about">About Us</a>
       <div class="dropdown">
         <ul class="dropdown-nav">
-          <li><a href="#about-profile" data-preview="about-profile" class="preview-active" data-i18n="nav.about.profile">Profile</a></li>
-          <li><a href="#about-history" data-preview="about-history" data-i18n="nav.about.history">History</a></li>
-          <li><a href="#about-excellence" data-preview="about-excellence" data-i18n="nav.about.excellence">Certified Excellence</a></li>
-          <li><a href="#about-specifications" data-preview="about-specifications" data-i18n="nav.about.specifications">Product Specifications</a></li>
-          <li><a href="#about-application" data-preview="about-application" data-i18n="nav.about.application">Application Site</a></li>
-          <li><a href="#about-facility" data-preview="about-facility" data-i18n="nav.about.facility">Our Facility</a></li>
+          <li><a href="#about-profile" data-bg="images/history/07-2020-06-complex-aerial.png" class="preview-active" data-i18n="nav.about.profile">Profile</a></li>
+          <li><a href="#about-history" data-bg="images/history/02-2013-06-groundbreaking.png" data-i18n="nav.about.history">History</a></li>
+          <li><a href="#about-excellence" data-bg="images/history/10-2021-11-audit.png" data-i18n="nav.about.excellence">Certified Excellence</a></li>
+          <li><a href="#about-specifications" data-bg="images/history/08-2020-11-machine-shop.png" data-i18n="nav.about.specifications">Product Specifications</a></li>
+          <li><a href="#about-application" data-bg="images/history/09-2021-09-first-export.png" data-i18n="nav.about.application">Application Site</a></li>
+          <li><a href="#about-facility" data-bg="images/history/04-2018-06-pressed-steel-workshop.png" data-i18n="nav.about.facility">Our Facility</a></li>
         </ul>
-        <div class="dropdown-preview">
-          <div class="preview-panel active" data-preview-for="about-profile">
-            <h4 data-i18n="nav.about.profile">Profile</h4>
-            <p data-i18n="dd.about.profile.p">Shandong Asahi Carbon Graphite New Material Technology Co., Ltd. — a Sino-Japanese joint venture combining Chinese precision manufacturing with Japanese engineering excellence.</p>
-            <ul>
-              <li data-i18n="dd.about.profile.li1"><strong>Founded</strong> 2013 · Shandong, China</li>
-              <li data-i18n="dd.about.profile.li2"><strong>Site</strong> 307 acres of production area</li>
-              <li data-i18n="dd.about.profile.li3"><strong>Investment</strong> ¥466.5 million</li>
-            </ul>
-          </div>
-          <div class="preview-panel" data-preview-for="about-history">
-            <h4 data-i18n="nav.about.history">History</h4>
-            <p data-i18n="dd.about.history.p">From founding to international expansion — a decade of building one of Asia's most advanced graphite electrode operations.</p>
-            <ul>
-              <li data-i18n="dd.about.history.li1"><strong>2013</strong> Company founded in Dezhou City</li>
-              <li data-i18n="dd.about.history.li2"><strong>2019</strong> Joint venture with Sojitz Ject Corporation</li>
-              <li data-i18n="dd.about.history.li3"><strong>Today</strong> European branch in Düsseldorf</li>
-            </ul>
-          </div>
-          <div class="preview-panel" data-preview-for="about-excellence">
-            <h4 data-i18n="nav.about.excellence">Certified Excellence</h4>
-            <p data-i18n="dd.about.excellence.p">International standards and rigorous quality systems backing every shipment to European customers.</p>
-            <ul>
-              <li data-i18n="dd.about.excellence.li1"><strong>ISO 9001</strong> Quality Management</li>
-              <li data-i18n="dd.about.excellence.li2"><strong>JIS</strong> Japanese Industrial Standards</li>
-              <li data-i18n="dd.about.excellence.li3"><strong>IEC / ASTM</strong> International Compliance</li>
-            </ul>
-          </div>
-          <div class="preview-panel" data-preview-for="about-specifications">
-            <h4 data-i18n="nav.about.specifications">Product Specifications</h4>
-            <p data-i18n="dd.about.specifications.p">Engineered grades and material specifications across our full product range.</p>
-            <ul>
-              <li data-i18n="dd.about.specifications.li1"><strong>UHP</strong> Ultra-High Power Electrodes</li>
-              <li data-i18n="dd.about.specifications.li2"><strong>HP / RP</strong> High & Regular Power</li>
-              <li data-i18n="dd.about.specifications.li3"><strong>Powder</strong> ≥ 99.5% Carbon Purity</li>
-            </ul>
-          </div>
-          <div class="preview-panel" data-preview-for="about-application">
-            <h4 data-i18n="nav.about.application">Application Site</h4>
-            <p data-i18n="dd.about.application.p">Where our materials work — from electric arc furnaces to lithium-ion battery production lines.</p>
-            <ul>
-              <li data-i18n="dd.about.application.li1"><strong>Steel</strong> EAF / SAF Operations</li>
-              <li data-i18n="dd.about.application.li2"><strong>Energy</strong> Lithium-Ion Anodes</li>
-              <li data-i18n="dd.about.application.li3"><strong>Chemical</strong> Industrial Electrolysis</li>
-            </ul>
-          </div>
-          <div class="preview-panel" data-preview-for="about-facility">
-            <h4 data-i18n="nav.about.facility">Our Facility</h4>
-            <p data-i18n="dd.about.facility.p">Fully automated, integrated production lines designed by domestic and international experts.</p>
-            <ul>
-              <li data-i18n="dd.about.facility.li1"><strong>307</strong> Acres of Production Area</li>
-              <li data-i18n="dd.about.facility.li2"><strong>30,000t</strong> Annual Capacity</li>
-              <li data-i18n="dd.about.facility.li3"><strong>Equipment</strong> Japan · Europe · USA Imports</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </li>
     <li class="has-dropdown">
       <a href="#products" data-i18n="nav.products">Products</a>
       <div class="dropdown">
         <ul class="dropdown-nav">
-          <li><a href="#graphite-electrode" data-preview="graphite-electrode" class="preview-active" data-i18n="nav.products.electrode">Graphite Electrode</a></li>
-          <li><a href="#graphite-powder" data-preview="graphite-powder" data-i18n="nav.products.powder">Artificial Graphite Powder</a></li>
-          <li><a href="#ingredients" data-preview="ingredients" data-i18n="nav.products.ingredients">Ingredients</a></li>
+          <li><a href="#graphite-electrode" data-bg="images/history/08-2020-11-machine-shop.png" class="preview-active" data-i18n="nav.products.electrode">Graphite Electrode</a></li>
+          <li><a href="#graphite-powder" data-bg="images/history/06-2019-04-machining-workshop.png" data-i18n="nav.products.powder">Artificial Graphite Powder</a></li>
+          <li><a href="#ingredients" data-bg="images/history/03-2013-06-construction.png" data-i18n="nav.products.ingredients">Ingredients</a></li>
         </ul>
-        <div class="dropdown-preview">
-          <div class="preview-panel active" data-preview-for="graphite-electrode">
-            <h4 data-i18n="nav.products.electrode">Graphite Electrode</h4>
-            <p data-i18n="dd.products.electrode.p">Three grades engineered for the full spectrum of electric arc furnace operations.</p>
-            <ul>
-              <li data-i18n="dd.products.electrode.li1"><strong>RP</strong> Regular Power — Standard EAF / SAF</li>
-              <li data-i18n="dd.products.electrode.li2"><strong>HP</strong> High Power — High-load EAF</li>
-              <li data-i18n="dd.products.electrode.li3"><strong>UHP</strong> Ultra-High Power — Flagship grade</li>
-            </ul>
-          </div>
-          <div class="preview-panel" data-preview-for="graphite-powder">
-            <h4 data-i18n="nav.products.powder">Artificial Graphite Powder</h4>
-            <p data-i18n="dd.products.powder.p">High-purity synthetic graphite powder for lithium-ion battery anodes, lubricants, and specialty materials.</p>
-            <ul>
-              <li data-i18n="dd.products.powder.li1"><strong>Purity</strong> ≥ 99.5% Carbon</li>
-              <li data-i18n="dd.products.powder.li2"><strong>Particle Size</strong> D50: 5 – 45 μm</li>
-              <li data-i18n="dd.products.powder.li3"><strong>Form</strong> Powder / Pellet</li>
-            </ul>
-          </div>
-          <div class="preview-panel" data-preview-for="ingredients">
-            <h4 data-i18n="nav.products.ingredients">Ingredients</h4>
-            <p data-i18n="dd.products.ingredients.p">Raw materials and feedstock for graphite production — supplied to industrial buyers worldwide.</p>
-            <ul>
-              <li data-i18n="dd.products.ingredients.li1"><strong>Petroleum Coke</strong> Calcined, anode grade</li>
-              <li data-i18n="dd.products.ingredients.li2"><strong>Needle Coke</strong> UHP feedstock</li>
-              <li data-i18n="dd.products.ingredients.li3"><strong>Coal Tar Pitch</strong> Binder grade</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </li>
     <li class="has-dropdown">
       <a href="#services" data-i18n="nav.services">Services</a>
       <div class="dropdown">
         <ul class="dropdown-nav">
-          <li><a href="#services-support" data-preview="services-support" class="preview-active" data-i18n="nav.services.support">Technical Support</a></li>
-          <li><a href="#services-shipping" data-preview="services-shipping" data-i18n="nav.services.shipping">Packaging and Shipping</a></li>
+          <li><a href="#services-support" data-bg="images/history/05-2019-01-jv-signing.png" class="preview-active" data-i18n="nav.services.support">Technical Support</a></li>
+          <li><a href="#services-shipping" data-bg="images/history/09-2021-09-first-export.png" data-i18n="nav.services.shipping">Packaging and Shipping</a></li>
         </ul>
-        <div class="dropdown-preview">
-          <div class="preview-panel active" data-preview-for="services-support">
-            <h4 data-i18n="nav.services.support">Technical Support</h4>
-            <p data-i18n="dd.services.support.p">Hands-on engineering guidance from grade selection to in-furnace performance — backed by our R&amp;D centre and Sojitz Ject technical network.</p>
-            <ul>
-              <li data-i18n="dd.services.support.li1"><strong>Pre-Sales</strong> Grade &amp; specification advice</li>
-              <li data-i18n="dd.services.support.li2"><strong>On-Site</strong> Commissioning &amp; troubleshooting</li>
-              <li data-i18n="dd.services.support.li3"><strong>Languages</strong> EN · DE · ZH · JA</li>
-            </ul>
-          </div>
-          <div class="preview-panel" data-preview-for="services-shipping">
-            <h4 data-i18n="nav.services.shipping">Packaging and Shipping</h4>
-            <p data-i18n="dd.services.shipping.p">FCL container shipments with protective packaging built for long-haul European delivery, plus full export documentation.</p>
-            <ul>
-              <li data-i18n="dd.services.shipping.li1"><strong>Packaging</strong> FCL · Edge &amp; thread protection</li>
-              <li data-i18n="dd.services.shipping.li2"><strong>Docs</strong> MTR · CoC · Inspection records</li>
-              <li data-i18n="dd.services.shipping.li3"><strong>Routes</strong> Europe · Americas</li>
-            </ul>
-          </div>
-        </div>
       </div>
     </li>
     <li><a href="#industries" data-i18n="nav.industries">Industries</a></li>
@@ -2273,15 +2143,19 @@ footer { flex-direction: column; text-align: center; }
       }
     })();
 
-    // Dropdown mega-menu preview — scoped per dropdown so multiple menus don't clash
+    // Dropdown mega-menu — entire dropdown background swaps to a preview image on hover
     document.querySelectorAll('.dropdown').forEach(dropdown => {
-      const items = dropdown.querySelectorAll('.dropdown-nav a[data-preview]');
-      const panels = dropdown.querySelectorAll('.preview-panel[data-preview-for]');
+      const items = dropdown.querySelectorAll('.dropdown-nav a[data-bg]');
+      const setBg = (url) => {
+        if (url) dropdown.style.backgroundImage = `url('${url}')`;
+      };
+      // Seed with the first item's image so the dropdown isn't blank when first opened
+      const initial = dropdown.querySelector('.dropdown-nav a[data-bg].preview-active') || items[0];
+      if (initial) setBg(initial.dataset.bg);
       items.forEach(item => {
         item.addEventListener('mouseenter', () => {
-          const key = item.dataset.preview;
           items.forEach(i => i.classList.toggle('preview-active', i === item));
-          panels.forEach(p => p.classList.toggle('active', p.dataset.previewFor === key));
+          setBg(item.dataset.bg);
         });
       });
     });
