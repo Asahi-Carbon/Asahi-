@@ -2026,17 +2026,52 @@ footer { flex-direction: column; text-align: center; }
       }
     }
 
+    function navigateTo(id, push) {
+      const target = anchorToPage[id];
+      if (!target) return false;
+      const isSubAnchor = id !== target && !!document.getElementById(id);
+      const anchor = isSubAnchor ? id : null;
+      if (push) {
+        const cur = history.state || {};
+        if (cur.page !== target || cur.anchor !== anchor) {
+          history.pushState({ page: target, anchor: anchor }, '', '#' + id);
+        }
+      }
+      showPage(target, anchor);
+      return true;
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const id = a.getAttribute('href').slice(1);
-        const target = anchorToPage[id];
-        if (target) {
+        if (navigateTo(id, true)) {
           e.preventDefault();
-          const isSubAnchor = id !== target && document.getElementById(id);
-          showPage(target, isSubAnchor ? id : null);
         }
       });
     });
+
+    window.addEventListener('popstate', (e) => {
+      const state = e.state;
+      if (state && state.page) {
+        showPage(state.page, state.anchor);
+      } else {
+        navigateTo(location.hash.slice(1), false);
+      }
+    });
+
+    // Initial route — read URL hash on load and seed the history state
+    (function initRoute() {
+      const hash = location.hash.slice(1);
+      const target = anchorToPage[hash];
+      if (target) {
+        const isSubAnchor = hash !== target && !!document.getElementById(hash);
+        const anchor = isSubAnchor ? hash : null;
+        history.replaceState({ page: target, anchor: anchor }, '', location.href);
+        showPage(target, anchor);
+      } else {
+        history.replaceState({ page: 'home', anchor: null }, '', location.href);
+      }
+    })();
 
     // Dropdown mega-menu preview — scoped per dropdown so multiple menus don't clash
     document.querySelectorAll('.dropdown').forEach(dropdown => {
