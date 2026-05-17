@@ -738,6 +738,29 @@ background: rgba(94,179,242,0.05); text-align: center; min-width: 120px;
 }
 .cert-badge-name { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(–gold); font-weight: 600; }
 .cert-badge-desc { font-size: 0.65rem; color: var(–silver); margin-top: 0.2rem; }
+.cert-documents { max-width: 1000px; margin: 4rem auto 0; }
+.cert-documents-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 400;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+}
+.cert-documents-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.cert-document {
+  display: block;
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.2);
+  padding: 1rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.cert-document:hover { border-color: rgba(94,179,242,0.55); transform: translateY(-4px); }
+.cert-document img { display: block; width: 100%; height: auto; }
 
 /* ── CONTACT ── */
 #contact {
@@ -883,6 +906,7 @@ section { padding: 5rem 1.5rem; }
 .about-visual-horizontal { grid-template-columns: 1fr; gap: 2rem; }
 .about-visual-horizontal .about-year { font-size: 5rem; }
 .spec-grid, .app-grid { grid-template-columns: 1fr; }
+.cert-documents-grid { grid-template-columns: 1fr; }
 .facility-stats { grid-template-columns: repeat(2, 1fr); }
 .about-subnav { gap: 0; padding: 0.6rem 1rem; }
 .about-subnav-link { padding: 0.5rem 0.8rem; font-size: 0.62rem; border-right: none; }
@@ -1235,6 +1259,18 @@ footer { flex-direction: column; text-align: center; }
     <p style="font-size:0.85rem;color:var(--silver);margin:2.5rem auto 0;line-height:1.8;max-width:780px;text-align:center;">
       Every shipment is accompanied by a full material test report (MTR), certificate of conformity, and dimensional inspection record. Documentation available in English, German, French, Italian, and Spanish on request.
     </p>
+
+    <div class="cert-documents">
+      <h3 class="cert-documents-title">Certificate Documents</h3>
+      <div class="cert-documents-grid">
+        <a class="cert-document" href="images/certificates/certificate-1.jpg" target="_blank" rel="noopener">
+          <img src="images/certificates/certificate-1.jpg" alt="Certificate 1" loading="lazy">
+        </a>
+        <a class="cert-document" href="images/certificates/certificate-2.jpg" target="_blank" rel="noopener">
+          <img src="images/certificates/certificate-2.jpg" alt="Certificate 2" loading="lazy">
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
