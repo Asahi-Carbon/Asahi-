@@ -761,6 +761,16 @@ background: rgba(94,179,242,0.05); text-align: center; min-width: 120px;
 }
 .cert-document:hover { border-color: rgba(94,179,242,0.55); transform: translateY(-4px); }
 .cert-document img { display: block; width: 100%; height: auto; }
+.cert-document-caption {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--silver);
+  text-align: center;
+  margin-top: 0.9rem;
+  padding-bottom: 0.2rem;
+}
+.cert-document:hover .cert-document-caption { color: var(--gold); }
 
 /* ── CONTACT ── */
 #contact {
@@ -1263,11 +1273,13 @@ footer { flex-direction: column; text-align: center; }
     <div class="cert-documents">
       <h3 class="cert-documents-title">Certificate Documents</h3>
       <div class="cert-documents-grid">
-        <a class="cert-document" href="images/certificates/certificate-1.jpg" target="_blank" rel="noopener">
-          <img src="images/certificates/certificate-1.jpg" alt="Certificate 1" loading="lazy">
+        <a class="cert-document" href="images/certificates/high-tech-enterprise.png" target="_blank" rel="noopener">
+          <img src="images/certificates/high-tech-enterprise.png" alt="High-Tech Enterprise Certificate (No. GR202237002023)" loading="lazy">
+          <div class="cert-document-caption">High-Tech Enterprise Certificate · 2022</div>
         </a>
-        <a class="cert-document" href="images/certificates/certificate-2.jpg" target="_blank" rel="noopener">
-          <img src="images/certificates/certificate-2.jpg" alt="Certificate 2" loading="lazy">
+        <a class="cert-document" href="images/certificates/innovative-sme.png" target="_blank" rel="noopener">
+          <img src="images/certificates/innovative-sme.png" alt="Innovative Small &amp; Medium Enterprise — Shandong Department of Industry and Information Technology" loading="lazy">
+          <div class="cert-document-caption">Innovative SME · Shandong Province · 2023–2025</div>
         </a>
       </div>
     </div>
