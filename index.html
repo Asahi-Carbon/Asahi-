@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0d1117">
-<title>Asahi Carbon — Premium Graphite Electrode Supplier for Europe & the Americas</title>
+<title data-i18n="page.title">Asahi Carbon — Premium Graphite Electrode Supplier for Europe & the Americas</title>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=8">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=8">
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png?v=8">
@@ -60,6 +60,22 @@ color: var(–gold); text-decoration: none;
 }
 .nav-logo span { color: var(–white); font-weight: 300; }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.lang-toggle {
+  background: transparent;
+  border: 1px solid rgba(94,179,242,0.25);
+  color: var(--silver);
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  padding: 0.45rem 0.85rem;
+  margin-left: 1.6rem;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+}
+.lang-toggle:hover { border-color: var(--gold); color: var(--light); }
+.lang-toggle span { transition: color 0.2s; }
+.lang-toggle .lang-sep { color: rgba(138,143,168,0.4); margin: 0 0.35rem; }
+.lang-toggle .lang-active { color: var(--gold); font-weight: 600; }
 .nav-links a {
 font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
 color: var(–light); text-decoration: none; transition: color 0.3s;
@@ -986,145 +1002,148 @@ footer { flex-direction: column; text-align: center; }
   <a href="#" class="nav-logo">Asahi <span>Carbon</span></a>
   <ul class="nav-links">
     <li class="has-dropdown">
-      <a href="#about">About Us</a>
+      <a href="#about" data-i18n="nav.about">About Us</a>
       <div class="dropdown">
         <ul class="dropdown-nav">
-          <li><a href="#about-profile" data-preview="about-profile" class="preview-active">Profile</a></li>
-          <li><a href="#about-history" data-preview="about-history">History</a></li>
-          <li><a href="#about-excellence" data-preview="about-excellence">Certified Excellence</a></li>
-          <li><a href="#about-specifications" data-preview="about-specifications">Product Specifications</a></li>
-          <li><a href="#about-application" data-preview="about-application">Application Site</a></li>
-          <li><a href="#about-facility" data-preview="about-facility">Our Facility</a></li>
+          <li><a href="#about-profile" data-preview="about-profile" class="preview-active" data-i18n="nav.about.profile">Profile</a></li>
+          <li><a href="#about-history" data-preview="about-history" data-i18n="nav.about.history">History</a></li>
+          <li><a href="#about-excellence" data-preview="about-excellence" data-i18n="nav.about.excellence">Certified Excellence</a></li>
+          <li><a href="#about-specifications" data-preview="about-specifications" data-i18n="nav.about.specifications">Product Specifications</a></li>
+          <li><a href="#about-application" data-preview="about-application" data-i18n="nav.about.application">Application Site</a></li>
+          <li><a href="#about-facility" data-preview="about-facility" data-i18n="nav.about.facility">Our Facility</a></li>
         </ul>
         <div class="dropdown-preview">
           <div class="preview-panel active" data-preview-for="about-profile">
-            <h4>Profile</h4>
-            <p>Shandong Asahi Carbon Graphite New Material Technology Co., Ltd. — a Sino-Japanese joint venture combining Chinese precision manufacturing with Japanese engineering excellence.</p>
+            <h4 data-i18n="nav.about.profile">Profile</h4>
+            <p data-i18n="dd.about.profile.p">Shandong Asahi Carbon Graphite New Material Technology Co., Ltd. — a Sino-Japanese joint venture combining Chinese precision manufacturing with Japanese engineering excellence.</p>
             <ul>
-              <li><strong>Founded</strong> 2013 · Shandong, China</li>
-              <li><strong>Site</strong> 307 acres of production area</li>
-              <li><strong>Investment</strong> ¥466.5 million</li>
+              <li data-i18n="dd.about.profile.li1"><strong>Founded</strong> 2013 · Shandong, China</li>
+              <li data-i18n="dd.about.profile.li2"><strong>Site</strong> 307 acres of production area</li>
+              <li data-i18n="dd.about.profile.li3"><strong>Investment</strong> ¥466.5 million</li>
             </ul>
           </div>
           <div class="preview-panel" data-preview-for="about-history">
-            <h4>History</h4>
-            <p>From founding to international expansion — a decade of building one of Asia's most advanced graphite electrode operations.</p>
+            <h4 data-i18n="nav.about.history">History</h4>
+            <p data-i18n="dd.about.history.p">From founding to international expansion — a decade of building one of Asia's most advanced graphite electrode operations.</p>
             <ul>
-              <li><strong>2013</strong> Company founded in Dezhou City</li>
-              <li><strong>2019</strong> Joint venture with Sojitz Ject Corporation</li>
-              <li><strong>Today</strong> European branch in Düsseldorf</li>
+              <li data-i18n="dd.about.history.li1"><strong>2013</strong> Company founded in Dezhou City</li>
+              <li data-i18n="dd.about.history.li2"><strong>2019</strong> Joint venture with Sojitz Ject Corporation</li>
+              <li data-i18n="dd.about.history.li3"><strong>Today</strong> European branch in Düsseldorf</li>
             </ul>
           </div>
           <div class="preview-panel" data-preview-for="about-excellence">
-            <h4>Certified Excellence</h4>
-            <p>International standards and rigorous quality systems backing every shipment to European customers.</p>
+            <h4 data-i18n="nav.about.excellence">Certified Excellence</h4>
+            <p data-i18n="dd.about.excellence.p">International standards and rigorous quality systems backing every shipment to European customers.</p>
             <ul>
-              <li><strong>ISO 9001</strong> Quality Management</li>
-              <li><strong>JIS</strong> Japanese Industrial Standards</li>
-              <li><strong>IEC / ASTM</strong> International Compliance</li>
+              <li data-i18n="dd.about.excellence.li1"><strong>ISO 9001</strong> Quality Management</li>
+              <li data-i18n="dd.about.excellence.li2"><strong>JIS</strong> Japanese Industrial Standards</li>
+              <li data-i18n="dd.about.excellence.li3"><strong>IEC / ASTM</strong> International Compliance</li>
             </ul>
           </div>
           <div class="preview-panel" data-preview-for="about-specifications">
-            <h4>Product Specifications</h4>
-            <p>Engineered grades and material specifications across our full product range.</p>
+            <h4 data-i18n="nav.about.specifications">Product Specifications</h4>
+            <p data-i18n="dd.about.specifications.p">Engineered grades and material specifications across our full product range.</p>
             <ul>
-              <li><strong>UHP</strong> Ultra-High Power Electrodes</li>
-              <li><strong>HP / RP</strong> High & Regular Power</li>
-              <li><strong>Powder</strong> ≥ 99.5% Carbon Purity</li>
+              <li data-i18n="dd.about.specifications.li1"><strong>UHP</strong> Ultra-High Power Electrodes</li>
+              <li data-i18n="dd.about.specifications.li2"><strong>HP / RP</strong> High & Regular Power</li>
+              <li data-i18n="dd.about.specifications.li3"><strong>Powder</strong> ≥ 99.5% Carbon Purity</li>
             </ul>
           </div>
           <div class="preview-panel" data-preview-for="about-application">
-            <h4>Application Site</h4>
-            <p>Where our materials work — from electric arc furnaces to lithium-ion battery production lines.</p>
+            <h4 data-i18n="nav.about.application">Application Site</h4>
+            <p data-i18n="dd.about.application.p">Where our materials work — from electric arc furnaces to lithium-ion battery production lines.</p>
             <ul>
-              <li><strong>Steel</strong> EAF / SAF Operations</li>
-              <li><strong>Energy</strong> Lithium-Ion Anodes</li>
-              <li><strong>Chemical</strong> Industrial Electrolysis</li>
+              <li data-i18n="dd.about.application.li1"><strong>Steel</strong> EAF / SAF Operations</li>
+              <li data-i18n="dd.about.application.li2"><strong>Energy</strong> Lithium-Ion Anodes</li>
+              <li data-i18n="dd.about.application.li3"><strong>Chemical</strong> Industrial Electrolysis</li>
             </ul>
           </div>
           <div class="preview-panel" data-preview-for="about-facility">
-            <h4>Our Facility</h4>
-            <p>Fully automated, integrated production lines designed by domestic and international experts.</p>
+            <h4 data-i18n="nav.about.facility">Our Facility</h4>
+            <p data-i18n="dd.about.facility.p">Fully automated, integrated production lines designed by domestic and international experts.</p>
             <ul>
-              <li><strong>307</strong> Acres of Production Area</li>
-              <li><strong>30,000t</strong> Annual Capacity</li>
-              <li><strong>Equipment</strong> Japan · Europe · USA Imports</li>
+              <li data-i18n="dd.about.facility.li1"><strong>307</strong> Acres of Production Area</li>
+              <li data-i18n="dd.about.facility.li2"><strong>30,000t</strong> Annual Capacity</li>
+              <li data-i18n="dd.about.facility.li3"><strong>Equipment</strong> Japan · Europe · USA Imports</li>
             </ul>
           </div>
         </div>
       </div>
     </li>
     <li class="has-dropdown">
-      <a href="#products">Products</a>
+      <a href="#products" data-i18n="nav.products">Products</a>
       <div class="dropdown">
         <ul class="dropdown-nav">
-          <li><a href="#graphite-electrode" data-preview="graphite-electrode" class="preview-active">Graphite Electrode</a></li>
-          <li><a href="#graphite-powder" data-preview="graphite-powder">Artificial Graphite Powder</a></li>
-          <li><a href="#ingredients" data-preview="ingredients">Ingredients</a></li>
+          <li><a href="#graphite-electrode" data-preview="graphite-electrode" class="preview-active" data-i18n="nav.products.electrode">Graphite Electrode</a></li>
+          <li><a href="#graphite-powder" data-preview="graphite-powder" data-i18n="nav.products.powder">Artificial Graphite Powder</a></li>
+          <li><a href="#ingredients" data-preview="ingredients" data-i18n="nav.products.ingredients">Ingredients</a></li>
         </ul>
         <div class="dropdown-preview">
           <div class="preview-panel active" data-preview-for="graphite-electrode">
-            <h4>Graphite Electrode</h4>
-            <p>Three grades engineered for the full spectrum of electric arc furnace operations.</p>
+            <h4 data-i18n="nav.products.electrode">Graphite Electrode</h4>
+            <p data-i18n="dd.products.electrode.p">Three grades engineered for the full spectrum of electric arc furnace operations.</p>
             <ul>
-              <li><strong>RP</strong> Regular Power — Standard EAF / SAF</li>
-              <li><strong>HP</strong> High Power — High-load EAF</li>
-              <li><strong>UHP</strong> Ultra-High Power — Flagship grade</li>
+              <li data-i18n="dd.products.electrode.li1"><strong>RP</strong> Regular Power — Standard EAF / SAF</li>
+              <li data-i18n="dd.products.electrode.li2"><strong>HP</strong> High Power — High-load EAF</li>
+              <li data-i18n="dd.products.electrode.li3"><strong>UHP</strong> Ultra-High Power — Flagship grade</li>
             </ul>
           </div>
           <div class="preview-panel" data-preview-for="graphite-powder">
-            <h4>Artificial Graphite Powder</h4>
-            <p>High-purity synthetic graphite powder for lithium-ion battery anodes, lubricants, and specialty materials.</p>
+            <h4 data-i18n="nav.products.powder">Artificial Graphite Powder</h4>
+            <p data-i18n="dd.products.powder.p">High-purity synthetic graphite powder for lithium-ion battery anodes, lubricants, and specialty materials.</p>
             <ul>
-              <li><strong>Purity</strong> ≥ 99.5% Carbon</li>
-              <li><strong>Particle Size</strong> D50: 5 – 45 μm</li>
-              <li><strong>Form</strong> Powder / Pellet</li>
+              <li data-i18n="dd.products.powder.li1"><strong>Purity</strong> ≥ 99.5% Carbon</li>
+              <li data-i18n="dd.products.powder.li2"><strong>Particle Size</strong> D50: 5 – 45 μm</li>
+              <li data-i18n="dd.products.powder.li3"><strong>Form</strong> Powder / Pellet</li>
             </ul>
           </div>
           <div class="preview-panel" data-preview-for="ingredients">
-            <h4>Ingredients</h4>
-            <p>Raw materials and feedstock for graphite production — supplied to industrial buyers worldwide.</p>
+            <h4 data-i18n="nav.products.ingredients">Ingredients</h4>
+            <p data-i18n="dd.products.ingredients.p">Raw materials and feedstock for graphite production — supplied to industrial buyers worldwide.</p>
             <ul>
-              <li><strong>Petroleum Coke</strong> Calcined, anode grade</li>
-              <li><strong>Needle Coke</strong> UHP feedstock</li>
-              <li><strong>Coal Tar Pitch</strong> Binder grade</li>
+              <li data-i18n="dd.products.ingredients.li1"><strong>Petroleum Coke</strong> Calcined, anode grade</li>
+              <li data-i18n="dd.products.ingredients.li2"><strong>Needle Coke</strong> UHP feedstock</li>
+              <li data-i18n="dd.products.ingredients.li3"><strong>Coal Tar Pitch</strong> Binder grade</li>
             </ul>
           </div>
         </div>
       </div>
     </li>
     <li class="has-dropdown">
-      <a href="#services">Services</a>
+      <a href="#services" data-i18n="nav.services">Services</a>
       <div class="dropdown">
         <ul class="dropdown-nav">
-          <li><a href="#services-support" data-preview="services-support" class="preview-active">Technical Support</a></li>
-          <li><a href="#services-shipping" data-preview="services-shipping">Packaging and Shipping</a></li>
+          <li><a href="#services-support" data-preview="services-support" class="preview-active" data-i18n="nav.services.support">Technical Support</a></li>
+          <li><a href="#services-shipping" data-preview="services-shipping" data-i18n="nav.services.shipping">Packaging and Shipping</a></li>
         </ul>
         <div class="dropdown-preview">
           <div class="preview-panel active" data-preview-for="services-support">
-            <h4>Technical Support</h4>
-            <p>Hands-on engineering guidance from grade selection to in-furnace performance — backed by our R&amp;D centre and Sojitz Ject technical network.</p>
+            <h4 data-i18n="nav.services.support">Technical Support</h4>
+            <p data-i18n="dd.services.support.p">Hands-on engineering guidance from grade selection to in-furnace performance — backed by our R&amp;D centre and Sojitz Ject technical network.</p>
             <ul>
-              <li><strong>Pre-Sales</strong> Grade &amp; specification advice</li>
-              <li><strong>On-Site</strong> Commissioning &amp; troubleshooting</li>
-              <li><strong>Languages</strong> EN · DE · ZH · JA</li>
+              <li data-i18n="dd.services.support.li1"><strong>Pre-Sales</strong> Grade &amp; specification advice</li>
+              <li data-i18n="dd.services.support.li2"><strong>On-Site</strong> Commissioning &amp; troubleshooting</li>
+              <li data-i18n="dd.services.support.li3"><strong>Languages</strong> EN · DE · ZH · JA</li>
             </ul>
           </div>
           <div class="preview-panel" data-preview-for="services-shipping">
-            <h4>Packaging and Shipping</h4>
-            <p>FCL container shipments with protective packaging built for long-haul European delivery, plus full export documentation.</p>
+            <h4 data-i18n="nav.services.shipping">Packaging and Shipping</h4>
+            <p data-i18n="dd.services.shipping.p">FCL container shipments with protective packaging built for long-haul European delivery, plus full export documentation.</p>
             <ul>
-              <li><strong>Packaging</strong> FCL · Edge &amp; thread protection</li>
-              <li><strong>Docs</strong> MTR · CoC · Inspection records</li>
-              <li><strong>Routes</strong> Europe · Americas</li>
+              <li data-i18n="dd.services.shipping.li1"><strong>Packaging</strong> FCL · Edge &amp; thread protection</li>
+              <li data-i18n="dd.services.shipping.li2"><strong>Docs</strong> MTR · CoC · Inspection records</li>
+              <li data-i18n="dd.services.shipping.li3"><strong>Routes</strong> Europe · Americas</li>
             </ul>
           </div>
         </div>
       </div>
     </li>
-    <li><a href="#industries">Industries</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#industries" data-i18n="nav.industries">Industries</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
+  <button class="lang-toggle" type="button" aria-label="Change language">
+    <span data-lang="en" class="lang-active">EN</span><span class="lang-sep">·</span><span data-lang="de">DE</span>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -1135,22 +1154,22 @@ footer { flex-direction: column; text-align: center; }
   <div class="hero-grain"></div>
   <div>
     <div class="hero-line"></div>
-    <div class="hero-tag">Premium Graphite Electrode Supplier · Established 2013 · Sino-Japanese Technology</div>
+    <div class="hero-tag" data-i18n="hero.tag">Premium Graphite Electrode Supplier · Established 2013 · Sino-Japanese Technology</div>
     <h1 class="hero-title">
-      Superior Graphite Electrodes
-      <strong>For European Industry</strong>
+      <span data-i18n="hero.title1">Superior Graphite Electrodes</span>
+      <strong data-i18n="hero.title2">For European Industry</strong>
     </h1>
-    <p class="hero-subtitle">
+    <p class="hero-subtitle" data-i18n="hero.subtitle">
       Ultra-high power graphite electrodes manufactured to international standards, purpose-built for the demanding requirements of European steel, metallurgy, and chemical sectors.
     </p>
     <div class="hero-markets">
-      <div class="market-flag"><span class="flag">🇪🇺</span> Europe</div>
-      <div class="market-flag"><span class="flag">🌎</span> North America</div>
-      <div class="market-flag"><span class="flag">🌎</span> South America</div>
+      <div class="market-flag"><span class="flag">🇪🇺</span> <span data-i18n="hero.market.europe">Europe</span></div>
+      <div class="market-flag"><span class="flag">🌎</span> <span data-i18n="hero.market.north">North America</span></div>
+      <div class="market-flag"><span class="flag">🌎</span> <span data-i18n="hero.market.south">South America</span></div>
     </div>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Enquire About Supply</a>
-      <a href="#products" class="btn-secondary">View Product Range</a>
+      <a href="#contact" class="btn-primary" data-i18n="hero.cta.supply">Enquire About Supply</a>
+      <a href="#products" class="btn-secondary" data-i18n="hero.cta.range">View Product Range</a>
     </div>
   </div>
 </section>
@@ -1158,10 +1177,10 @@ footer { flex-direction: column; text-align: center; }
 <!-- STATS -->
 
 <div class="stats-bar">
-  <div class="stat"><div class="stat-num">307</div><div class="stat-label">Acres of Production Area</div></div>
-  <div class="stat"><div class="stat-num">30,000<span style="font-size:1.5rem">t</span></div><div class="stat-label">Annual Production Capacity</div></div>
-  <div class="stat"><div class="stat-num">ISO</div><div class="stat-label">9001 Quality Management</div></div>
-  <div class="stat"><div class="stat-num">JV</div><div class="stat-label">Sino-Japanese Joint Venture</div></div>
+  <div class="stat"><div class="stat-num">307</div><div class="stat-label" data-i18n="stat.area">Acres of Production Area</div></div>
+  <div class="stat"><div class="stat-num">30,000<span style="font-size:1.5rem">t</span></div><div class="stat-label" data-i18n="stat.capacity">Annual Production Capacity</div></div>
+  <div class="stat"><div class="stat-num">ISO</div><div class="stat-label" data-i18n="stat.iso">9001 Quality Management</div></div>
+  <div class="stat"><div class="stat-num">JV</div><div class="stat-label" data-i18n="stat.jv">Sino-Japanese Joint Venture</div></div>
 </div>
 
 </div><!-- /page home -->
@@ -1171,12 +1190,12 @@ footer { flex-direction: column; text-align: center; }
 <div class="page" data-page="about">
 
 <div class="about-subnav">
-  <a href="#about-profile" class="about-subnav-link">Profile</a>
-  <a href="#about-history" class="about-subnav-link">History</a>
-  <a href="#about-excellence" class="about-subnav-link">Certified Excellence</a>
-  <a href="#about-specifications" class="about-subnav-link">Product Specifications</a>
-  <a href="#about-application" class="about-subnav-link">Application Site</a>
-  <a href="#about-facility" class="about-subnav-link">Our Facility</a>
+  <a href="#about-profile" class="about-subnav-link" data-i18n="nav.about.profile">Profile</a>
+  <a href="#about-history" class="about-subnav-link" data-i18n="nav.about.history">History</a>
+  <a href="#about-excellence" class="about-subnav-link" data-i18n="nav.about.excellence">Certified Excellence</a>
+  <a href="#about-specifications" class="about-subnav-link" data-i18n="nav.about.specifications">Product Specifications</a>
+  <a href="#about-application" class="about-subnav-link" data-i18n="nav.about.application">Application Site</a>
+  <a href="#about-facility" class="about-subnav-link" data-i18n="nav.about.facility">Our Facility</a>
 </div>
 
 <!-- PROFILE -->
@@ -1184,13 +1203,13 @@ footer { flex-direction: column; text-align: center; }
   <div class="about-visual about-visual-horizontal">
     <div class="about-visual-hero">
       <div class="about-year">2013</div>
-      <div class="about-highlight">"Where Chinese precision meets Japanese engineering excellence."</div>
+      <div class="about-highlight" data-i18n="about.profile.quote">"Where Chinese precision meets Japanese engineering excellence."</div>
     </div>
     <div class="about-visual-body">
-      <p>
+      <p data-i18n="about.profile.body1">
         Shandong Asahi Carbon Graphite New Material Technology Co., Ltd. was founded in 2013 in the Linyi County Economic Development Zone, Dezhou City, Shandong Province, China. With a total investment of approximately ¥466.5 million and a site covering 307 acres, we are one of Asia's most advanced graphite electrode manufacturers.
       </p>
-      <p>
+      <p data-i18n="about.profile.body2">
         In 2019, we entered a joint venture with <strong>Sojitz Ject Corporation</strong>, a subsidiary of the renowned Japanese Sojitz Group — making us a Sino-Japanese enterprise combining best-in-class Chinese manufacturing with Japanese quality systems and global distribution expertise.
       </p>
     </div>
@@ -1201,22 +1220,22 @@ footer { flex-direction: column; text-align: center; }
 <section id="about-history" style="background:var(--black);">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:3rem;">
-      <span class="section-tag">History · Our Journey</span>
-      <h2 class="section-title">Milestones in <strong>Our Story</strong></h2>
+      <span class="section-tag" data-i18n="about.history.tag">History · Our Journey</span>
+      <h2 class="section-title" data-i18n="about.history.title">Milestones in <strong>Our Story</strong></h2>
       <div class="divider" style="margin:1.5rem auto;"></div>
-      <p class="section-sub" style="margin:0 auto;">
+      <p class="section-sub" style="margin:0 auto;" data-i18n="about.history.sub">
         Hover any milestone to see the moment captured.
       </p>
     </div>
     <div class="timeline">
-      <div class="timeline-head">Today</div>
+      <div class="timeline-head" data-i18n="about.history.today">Today</div>
 
       <div class="timeline-item right">
         <div class="timeline-dot"></div>
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/10-2021-11-audit.png');"></div>
           <div class="timeline-date">2021-11-16</div>
-          <div class="timeline-text">Certified by international systems for quality, environment, and occupational health and safety.</div>
+          <div class="timeline-text" data-i18n="about.history.2021-11.t">Certified by international systems for quality, environment, and occupational health and safety.</div>
         </div>
       </div>
 
@@ -1225,7 +1244,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/09-2021-09-first-export.png');"></div>
           <div class="timeline-date">2021-09-14</div>
-          <div class="timeline-text">Asahi Carbon exports its first batch of finished products.</div>
+          <div class="timeline-text" data-i18n="about.history.2021-09.t">Asahi Carbon exports its first batch of finished products.</div>
         </div>
       </div>
 
@@ -1234,7 +1253,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/08-2020-11-machine-shop.png');"></div>
           <div class="timeline-date">2020-11-20</div>
-          <div class="timeline-text">Machine Shop Equipment Installation.</div>
+          <div class="timeline-text" data-i18n="about.history.2020-11.t">Machine Shop Equipment Installation.</div>
         </div>
       </div>
 
@@ -1243,7 +1262,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/07-2020-06-complex-aerial.png');"></div>
           <div class="timeline-date">2020-06-20</div>
-          <div class="timeline-text">The office building, dormitory, cafeteria and bathhouse, mechanical repair workshop, and R&amp;D center have been completed.</div>
+          <div class="timeline-text" data-i18n="about.history.2020-06.t">The office building, dormitory, cafeteria and bathhouse, mechanical repair workshop, and R&amp;D center have been completed.</div>
         </div>
       </div>
 
@@ -1252,7 +1271,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/06-2019-04-machining-workshop.png');"></div>
           <div class="timeline-date">2019-04-03</div>
-          <div class="timeline-text">Machining Workshop Construction.</div>
+          <div class="timeline-text" data-i18n="about.history.2019-04.t">Machining Workshop Construction.</div>
         </div>
       </div>
 
@@ -1261,7 +1280,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/05-2019-01-jv-signing.png');"></div>
           <div class="timeline-date">2019-01-12</div>
-          <div class="timeline-text">Joint Venture Signing Ceremony between China and Foreign Countries.</div>
+          <div class="timeline-text" data-i18n="about.history.2019-01.t">Joint Venture Signing Ceremony between China and Foreign Countries.</div>
         </div>
       </div>
 
@@ -1270,7 +1289,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/04-2018-06-pressed-steel-workshop.png');"></div>
           <div class="timeline-date">2018-06-18</div>
-          <div class="timeline-text">The pressed-steel workshop has been completed, and equipment is being installed.</div>
+          <div class="timeline-text" data-i18n="about.history.2018-06.t">The pressed-steel workshop has been completed, and equipment is being installed.</div>
         </div>
       </div>
 
@@ -1279,7 +1298,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/03-2013-06-construction.png');"></div>
           <div class="timeline-date">2013-06-23</div>
-          <div class="timeline-text">Press-forming, single-stage firing, impregnation, and second-stage firing — groundbreaking underway.</div>
+          <div class="timeline-text" data-i18n="about.history.2013-06b.t">Press-forming, single-stage firing, impregnation, and second-stage firing — groundbreaking underway.</div>
         </div>
       </div>
 
@@ -1288,7 +1307,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/02-2013-06-groundbreaking.png');"></div>
           <div class="timeline-date">2013-06-18</div>
-          <div class="timeline-text">Groundbreaking Ceremony.</div>
+          <div class="timeline-text" data-i18n="about.history.2013-06a.t">Groundbreaking Ceremony.</div>
         </div>
       </div>
 
@@ -1297,11 +1316,11 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/01-2013-01-company-gate.png');"></div>
           <div class="timeline-date">2013-01-16</div>
-          <div class="timeline-text">Company established.</div>
+          <div class="timeline-text" data-i18n="about.history.2013-01.t">Company established.</div>
         </div>
       </div>
 
-      <div class="timeline-foot">Start</div>
+      <div class="timeline-foot" data-i18n="about.history.start">Start</div>
     </div>
   </div>
 </section>
@@ -1310,45 +1329,45 @@ footer { flex-direction: column; text-align: center; }
 <section id="about-excellence" style="background:var(--dark);">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:4rem;">
-      <span class="section-tag">Certified Excellence · Quality & Compliance</span>
-      <h2 class="section-title">Standards That <strong>Matter to Europe</strong></h2>
+      <span class="section-tag" data-i18n="about.exc.tag">Certified Excellence · Quality & Compliance</span>
+      <h2 class="section-title" data-i18n="about.exc.title">Standards That <strong>Matter to Europe</strong></h2>
       <div class="divider" style="margin:1.5rem auto;"></div>
-      <p class="section-sub" style="margin:0 auto;">
+      <p class="section-sub" style="margin:0 auto;" data-i18n="about.exc.sub">
         Rigorous quality management systems aligned with international standards. Documentation, testing records, and traceability protocols that meet European import requirements.
       </p>
     </div>
     <div class="cert-badges" style="justify-content:center;">
       <div class="cert-badge">
         <div class="cert-badge-name">ISO 9001</div>
-        <div class="cert-badge-desc">Quality Management</div>
+        <div class="cert-badge-desc" data-i18n="about.exc.badge.iso">Quality Management</div>
       </div>
       <div class="cert-badge">
         <div class="cert-badge-name">JIS Standards</div>
-        <div class="cert-badge-desc">Japanese Industrial</div>
+        <div class="cert-badge-desc" data-i18n="about.exc.badge.jis">Japanese Industrial</div>
       </div>
       <div class="cert-badge">
         <div class="cert-badge-name">IEC Standards</div>
-        <div class="cert-badge-desc">International Electrotechnical</div>
+        <div class="cert-badge-desc" data-i18n="about.exc.badge.iec">International Electrotechnical</div>
       </div>
       <div class="cert-badge">
         <div class="cert-badge-name">ASTM</div>
-        <div class="cert-badge-desc">Materials Testing</div>
+        <div class="cert-badge-desc" data-i18n="about.exc.badge.astm">Materials Testing</div>
       </div>
     </div>
-    <p style="font-size:0.85rem;color:var(--silver);margin:2.5rem auto 0;line-height:1.8;max-width:780px;text-align:center;">
+    <p style="font-size:0.85rem;color:var(--silver);margin:2.5rem auto 0;line-height:1.8;max-width:780px;text-align:center;" data-i18n="about.exc.note">
       Every shipment is accompanied by a full material test report (MTR), certificate of conformity, and dimensional inspection record. Documentation available in English, German, French, Italian, and Spanish on request.
     </p>
 
     <div class="cert-documents">
-      <h3 class="cert-documents-title">Certificate Documents</h3>
+      <h3 class="cert-documents-title" data-i18n="about.exc.docs.title">Certificate Documents</h3>
       <div class="cert-documents-grid">
         <a class="cert-document" href="images/certificates/high-tech-enterprise.png" target="_blank" rel="noopener">
           <img src="images/certificates/high-tech-enterprise.png" alt="High-Tech Enterprise Certificate (No. GR202237002023)" loading="lazy">
-          <div class="cert-document-caption">High-Tech Enterprise Certificate · 2022</div>
+          <div class="cert-document-caption" data-i18n="about.exc.cert1.caption">High-Tech Enterprise Certificate · 2022</div>
         </a>
         <a class="cert-document" href="images/certificates/innovative-sme.png" target="_blank" rel="noopener">
           <img src="images/certificates/innovative-sme.png" alt="Innovative Small &amp; Medium Enterprise — Shandong Department of Industry and Information Technology" loading="lazy">
-          <div class="cert-document-caption">Innovative SME · Shandong Province · 2023–2025</div>
+          <div class="cert-document-caption" data-i18n="about.exc.cert2.caption">Innovative SME · Shandong Province · 2023–2025</div>
         </a>
       </div>
     </div>
@@ -1359,39 +1378,39 @@ footer { flex-direction: column; text-align: center; }
 <section id="about-specifications" style="background:var(--black);">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:4rem;">
-      <span class="section-tag">Product Specifications · Engineered Grades</span>
-      <h2 class="section-title">Materials Built to <strong>Specification</strong></h2>
+      <span class="section-tag" data-i18n="about.spec.tag">Product Specifications · Engineered Grades</span>
+      <h2 class="section-title" data-i18n="about.spec.title">Materials Built to <strong>Specification</strong></h2>
       <div class="divider" style="margin:1.5rem auto;"></div>
-      <p class="section-sub" style="margin:0 auto;">
+      <p class="section-sub" style="margin:0 auto;" data-i18n="about.spec.sub">
         A complete portfolio of graphite electrodes, synthetic powders, and raw feedstock — each engineered to meet the technical demands of high-performance industrial operations.
       </p>
     </div>
     <div class="spec-grid">
       <div class="spec-card">
-        <div class="spec-tag">01 · Graphite Electrodes</div>
-        <h4>Three Power Grades</h4>
+        <div class="spec-tag" data-i18n="about.spec.card1.tag">01 · Graphite Electrodes</div>
+        <h4 data-i18n="about.spec.card1.h">Three Power Grades</h4>
         <ul>
-          <li><strong>RP</strong> Regular Power — Standard EAF / SAF</li>
-          <li><strong>HP</strong> High Power — High-load EAF</li>
-          <li><strong>UHP</strong> Ultra-High Power — Flagship grade, ≥ 600mm diameters</li>
+          <li data-i18n="about.spec.card1.li1"><strong>RP</strong> Regular Power — Standard EAF / SAF</li>
+          <li data-i18n="about.spec.card1.li2"><strong>HP</strong> High Power — High-load EAF</li>
+          <li data-i18n="about.spec.card1.li3"><strong>UHP</strong> Ultra-High Power — Flagship grade, ≥ 600mm diameters</li>
         </ul>
       </div>
       <div class="spec-card">
-        <div class="spec-tag">02 · Artificial Graphite Powder</div>
-        <h4>Battery-Grade Material</h4>
+        <div class="spec-tag" data-i18n="about.spec.card2.tag">02 · Artificial Graphite Powder</div>
+        <h4 data-i18n="about.spec.card2.h">Battery-Grade Material</h4>
         <ul>
-          <li><strong>Purity</strong> ≥ 99.5% Carbon</li>
-          <li><strong>Particle Size</strong> D50: 5 – 45 μm</li>
-          <li><strong>Form</strong> Powder or Pellet</li>
+          <li data-i18n="about.spec.card2.li1"><strong>Purity</strong> ≥ 99.5% Carbon</li>
+          <li data-i18n="about.spec.card2.li2"><strong>Particle Size</strong> D50: 5 – 45 μm</li>
+          <li data-i18n="about.spec.card2.li3"><strong>Form</strong> Powder or Pellet</li>
         </ul>
       </div>
       <div class="spec-card">
-        <div class="spec-tag">03 · Raw Ingredients</div>
-        <h4>Feedstock Supply</h4>
+        <div class="spec-tag" data-i18n="about.spec.card3.tag">03 · Raw Ingredients</div>
+        <h4 data-i18n="about.spec.card3.h">Feedstock Supply</h4>
         <ul>
-          <li><strong>Petroleum Coke</strong> Calcined, anode grade</li>
-          <li><strong>Needle Coke</strong> UHP feedstock</li>
-          <li><strong>Coal Tar Pitch</strong> Binder grade</li>
+          <li data-i18n="about.spec.card3.li1"><strong>Petroleum Coke</strong> Calcined, anode grade</li>
+          <li data-i18n="about.spec.card3.li2"><strong>Needle Coke</strong> UHP feedstock</li>
+          <li data-i18n="about.spec.card3.li3"><strong>Coal Tar Pitch</strong> Binder grade</li>
         </ul>
       </div>
     </div>
@@ -1402,43 +1421,43 @@ footer { flex-direction: column; text-align: center; }
 <section id="about-application" style="background:var(--dark);">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:4rem;">
-      <span class="section-tag">Application Site · Where We Work</span>
-      <h2 class="section-title">Industries We <strong>Power</strong></h2>
+      <span class="section-tag" data-i18n="about.app.tag">Application Site · Where We Work</span>
+      <h2 class="section-title" data-i18n="about.app.title">Industries We <strong>Power</strong></h2>
       <div class="divider" style="margin:1.5rem auto;"></div>
-      <p class="section-sub" style="margin:0 auto;">
+      <p class="section-sub" style="margin:0 auto;" data-i18n="about.app.sub">
         Our materials are deployed across heavy industry, energy storage, and advanced manufacturing — wherever performance and consistency define the operation.
       </p>
     </div>
     <div class="app-grid">
       <div class="app-card">
         <div class="app-num">01</div>
-        <h4>Electric Arc Furnace Steelmaking</h4>
-        <p>UHP electrodes for high-productivity EAF and SAF operations across European steel mills.</p>
+        <h4 data-i18n="about.app.c1.h">Electric Arc Furnace Steelmaking</h4>
+        <p data-i18n="about.app.c1.p">UHP electrodes for high-productivity EAF and SAF operations across European steel mills.</p>
       </div>
       <div class="app-card">
         <div class="app-num">02</div>
-        <h4>Lithium-Ion Battery Anodes</h4>
-        <p>High-purity artificial graphite powder for next-generation energy storage and EV battery production.</p>
+        <h4 data-i18n="about.app.c2.h">Lithium-Ion Battery Anodes</h4>
+        <p data-i18n="about.app.c2.p">High-purity artificial graphite powder for next-generation energy storage and EV battery production.</p>
       </div>
       <div class="app-card">
         <div class="app-num">03</div>
-        <h4>Chemical & Electrolysis</h4>
-        <p>Special carbon materials for chlor-alkali production, industrial electrolysis, and chemical processing.</p>
+        <h4 data-i18n="about.app.c3.h">Chemical & Electrolysis</h4>
+        <p data-i18n="about.app.c3.p">Special carbon materials for chlor-alkali production, industrial electrolysis, and chemical processing.</p>
       </div>
       <div class="app-card">
         <div class="app-num">04</div>
-        <h4>Non-Ferrous Metallurgy</h4>
-        <p>Graphite components for aluminium, copper, and silicon smelting at industrial scale.</p>
+        <h4 data-i18n="about.app.c4.h">Non-Ferrous Metallurgy</h4>
+        <p data-i18n="about.app.c4.p">Graphite components for aluminium, copper, and silicon smelting at industrial scale.</p>
       </div>
       <div class="app-card">
         <div class="app-num">05</div>
-        <h4>Semiconductor Manufacturing</h4>
-        <p>Ultra-pure graphite for crystal growing, epitaxial coating, and high-temperature diffusion furnaces.</p>
+        <h4 data-i18n="about.app.c5.h">Semiconductor Manufacturing</h4>
+        <p data-i18n="about.app.c5.p">Ultra-pure graphite for crystal growing, epitaxial coating, and high-temperature diffusion furnaces.</p>
       </div>
       <div class="app-card">
         <div class="app-num">06</div>
-        <h4>Green Industry</h4>
-        <p>Supporting Europe's decarbonisation — enabling green steel and clean energy technologies.</p>
+        <h4 data-i18n="about.app.c6.h">Green Industry</h4>
+        <p data-i18n="about.app.c6.p">Supporting Europe's decarbonisation — enabling green steel and clean energy technologies.</p>
       </div>
     </div>
   </div>
@@ -1448,35 +1467,35 @@ footer { flex-direction: column; text-align: center; }
 <section id="about-facility" style="background:var(--black);">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:4rem;">
-      <span class="section-tag">Our Facility · Manufacturing Capability</span>
-      <h2 class="section-title">Integrated Production at <strong>Scale</strong></h2>
+      <span class="section-tag" data-i18n="about.fac.tag">Our Facility · Manufacturing Capability</span>
+      <h2 class="section-title" data-i18n="about.fac.title">Integrated Production at <strong>Scale</strong></h2>
       <div class="divider" style="margin:1.5rem auto;"></div>
-      <p class="section-sub" style="margin:0 auto;">
+      <p class="section-sub" style="margin:0 auto;" data-i18n="about.fac.sub">
         A 307-acre site in Shandong Province housing fully automated, end-to-end graphite electrode production — from raw feedstock to finished machined electrodes.
       </p>
     </div>
     <div class="facility-stats">
-      <div class="facility-stat"><div class="facility-num">307</div><div class="facility-label">Acres of Production Area</div></div>
-      <div class="facility-stat"><div class="facility-num">30,000<span style="font-size:1.4rem">t</span></div><div class="facility-label">Annual Production Capacity</div></div>
-      <div class="facility-stat"><div class="facility-num">¥466.5M</div><div class="facility-label">Total Investment</div></div>
-      <div class="facility-stat"><div class="facility-num">7</div><div class="facility-label">Stage Production Chain</div></div>
+      <div class="facility-stat"><div class="facility-num">307</div><div class="facility-label" data-i18n="about.fac.stat1.l">Acres of Production Area</div></div>
+      <div class="facility-stat"><div class="facility-num">30,000<span style="font-size:1.4rem">t</span></div><div class="facility-label" data-i18n="about.fac.stat2.l">Annual Production Capacity</div></div>
+      <div class="facility-stat"><div class="facility-num">¥466.5M</div><div class="facility-label" data-i18n="about.fac.stat3.l">Total Investment</div></div>
+      <div class="facility-stat"><div class="facility-num">7</div><div class="facility-label" data-i18n="about.fac.stat4.l">Stage Production Chain</div></div>
     </div>
     <div class="facility-process">
-      <h4 style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);font-weight:400;margin-bottom:2rem;">Full Production Chain</h4>
+      <h4 style="text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);font-weight:400;margin-bottom:2rem;" data-i18n="about.fac.process.h">Full Production Chain</h4>
       <div class="process-flow">
-        <div class="process-step">Pressing</div>
+        <div class="process-step" data-i18n="about.fac.step1">Pressing</div>
         <div class="process-arrow">→</div>
-        <div class="process-step">Primary Firing</div>
+        <div class="process-step" data-i18n="about.fac.step2">Primary Firing</div>
         <div class="process-arrow">→</div>
-        <div class="process-step">Impregnation</div>
+        <div class="process-step" data-i18n="about.fac.step3">Impregnation</div>
         <div class="process-arrow">→</div>
-        <div class="process-step">Secondary Firing</div>
+        <div class="process-step" data-i18n="about.fac.step4">Secondary Firing</div>
         <div class="process-arrow">→</div>
-        <div class="process-step">Graphitization</div>
+        <div class="process-step" data-i18n="about.fac.step5">Graphitization</div>
         <div class="process-arrow">→</div>
-        <div class="process-step">Machining</div>
+        <div class="process-step" data-i18n="about.fac.step6">Machining</div>
         <div class="process-arrow">→</div>
-        <div class="process-step">R&amp;D Centre</div>
+        <div class="process-step" data-i18n="about.fac.step7">R&amp;D Centre</div>
       </div>
     </div>
   </div>
@@ -1490,35 +1509,35 @@ footer { flex-direction: column; text-align: center; }
 
 <section id="products">
   <div class="products-header">
-    <span class="section-tag">Product Range</span>
-    <h2 class="section-title">Graphite <strong>Electrode Solutions</strong></h2>
+    <span class="section-tag" data-i18n="products.tag">Product Range</span>
+    <h2 class="section-title" data-i18n="products.title">Graphite <strong>Electrode Solutions</strong></h2>
     <div class="divider"></div>
-    <p class="section-sub">
+    <p class="section-sub" data-i18n="products.sub">
       We specialise in ultra-high power (UHP) graphite electrodes of 600mm and above — the standard demanded by Europe's most productive electric arc furnace operations.
     </p>
   </div>
   <div class="products-grid">
     <a href="#graphite-electrode" class="product-link">
       <div>
-        <span class="product-tag">Category 01</span>
-        <div class="product-name">Graphite Electrode</div>
-        <p class="product-desc" style="margin-bottom:0;">Regular Power (RP), High Power (HP), and Ultra-High Power (UHP) grades for the full range of electric arc furnace operations.</p>
+        <span class="product-tag" data-i18n="products.cat1.tag">Category 01</span>
+        <div class="product-name" data-i18n="products.cat1.name">Graphite Electrode</div>
+        <p class="product-desc" style="margin-bottom:0;" data-i18n="products.cat1.desc">Regular Power (RP), High Power (HP), and Ultra-High Power (UHP) grades for the full range of electric arc furnace operations.</p>
       </div>
       <div class="product-arrow">→</div>
     </a>
     <a href="#graphite-powder" class="product-link">
       <div>
-        <span class="product-tag">Category 02</span>
-        <div class="product-name">Artificial Graphite Powder</div>
-        <p class="product-desc" style="margin-bottom:0;">High-purity synthetic graphite powder for lithium-ion battery anodes, lubricants, and specialty materials.</p>
+        <span class="product-tag" data-i18n="products.cat2.tag">Category 02</span>
+        <div class="product-name" data-i18n="products.cat2.name">Artificial Graphite Powder</div>
+        <p class="product-desc" style="margin-bottom:0;" data-i18n="products.cat2.desc">High-purity synthetic graphite powder for lithium-ion battery anodes, lubricants, and specialty materials.</p>
       </div>
       <div class="product-arrow">→</div>
     </a>
     <a href="#ingredients" class="product-link">
       <div>
-        <span class="product-tag">Category 03</span>
-        <div class="product-name">Ingredients</div>
-        <p class="product-desc" style="margin-bottom:0;">Raw materials and feedstock for graphite production — petroleum coke, needle coke, and coal tar pitch supplied to industrial buyers worldwide.</p>
+        <span class="product-tag" data-i18n="products.cat3.tag">Category 03</span>
+        <div class="product-name" data-i18n="products.cat3.name">Ingredients</div>
+        <p class="product-desc" style="margin-bottom:0;" data-i18n="products.cat3.desc">Raw materials and feedstock for graphite production — petroleum coke, needle coke, and coal tar pitch supplied to industrial buyers worldwide.</p>
       </div>
       <div class="product-arrow">→</div>
     </a>
@@ -1671,51 +1690,51 @@ footer { flex-direction: column; text-align: center; }
 <div class="page" data-page="services">
 
 <div class="about-subnav">
-  <a href="#services-support" class="about-subnav-link">Technical Support</a>
-  <a href="#services-shipping" class="about-subnav-link">Packaging and Shipping</a>
+  <a href="#services-support" class="about-subnav-link" data-i18n="nav.services.support">Technical Support</a>
+  <a href="#services-shipping" class="about-subnav-link" data-i18n="nav.services.shipping">Packaging and Shipping</a>
 </div>
 
 <!-- TECHNICAL SUPPORT -->
 <section id="services-support" class="is-active" style="background:var(--dark);">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:4rem;">
-      <span class="section-tag">Services · Technical Support</span>
-      <h2 class="section-title">Engineering Guidance from <strong>Spec to Furnace</strong></h2>
+      <span class="section-tag" data-i18n="services.support.tag">Services · Technical Support</span>
+      <h2 class="section-title" data-i18n="services.support.title">Engineering Guidance from <strong>Spec to Furnace</strong></h2>
       <div class="divider" style="margin:1.5rem auto;"></div>
-      <p class="section-sub" style="margin:0 auto;">
+      <p class="section-sub" style="margin:0 auto;" data-i18n="services.support.sub">
         Our team works directly with your metallurgists and procurement to specify the right grade, optimise consumption, and resolve operational issues — drawing on both our Chinese R&amp;D centre and Sojitz Ject's Japanese engineering network.
       </p>
     </div>
     <div class="service-grid">
       <div class="service-card">
         <div class="service-icon">⬡</div>
-        <h4>Pre-Sales Consultation</h4>
-        <p>Grade selection (RP / HP / UHP), diameter matching, and joint configuration tailored to your furnace's current density, tap-to-tap cycle, and scrap mix.</p>
+        <h4 data-i18n="services.support.c1.h">Pre-Sales Consultation</h4>
+        <p data-i18n="services.support.c1.p">Grade selection (RP / HP / UHP), diameter matching, and joint configuration tailored to your furnace's current density, tap-to-tap cycle, and scrap mix.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">◈</div>
-        <h4>On-Site &amp; Remote Engineering</h4>
-        <p>Commissioning support for first deliveries, performance audits, and remote troubleshooting via JianHua Li in Düsseldorf and our China-based R&amp;D team.</p>
+        <h4 data-i18n="services.support.c2.h">On-Site &amp; Remote Engineering</h4>
+        <p data-i18n="services.support.c2.p">Commissioning support for first deliveries, performance audits, and remote troubleshooting via JianHua Li in Düsseldorf and our China-based R&amp;D team.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">◉</div>
-        <h4>Consumption Optimisation</h4>
-        <p>Wear analysis and process recommendations to lower electrode consumption per tonne of steel — backed by data from comparable European EAF operations.</p>
+        <h4 data-i18n="services.support.c3.h">Consumption Optimisation</h4>
+        <p data-i18n="services.support.c3.p">Wear analysis and process recommendations to lower electrode consumption per tonne of steel — backed by data from comparable European EAF operations.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">⬢</div>
-        <h4>Quality &amp; Traceability</h4>
-        <p>Full material test reports, batch traceability, and direct access to our QA team for non-conformance or claim resolution.</p>
+        <h4 data-i18n="services.support.c4.h">Quality &amp; Traceability</h4>
+        <p data-i18n="services.support.c4.p">Full material test reports, batch traceability, and direct access to our QA team for non-conformance or claim resolution.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">◆</div>
-        <h4>Multilingual Documentation</h4>
-        <p>Technical data sheets, MTRs, and SDS available in English, German, French, Italian, Spanish, Chinese, and Japanese on request.</p>
+        <h4 data-i18n="services.support.c5.h">Multilingual Documentation</h4>
+        <p data-i18n="services.support.c5.p">Technical data sheets, MTRs, and SDS available in English, German, French, Italian, Spanish, Chinese, and Japanese on request.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">◎</div>
-        <h4>Long-Term Supply Planning</h4>
-        <p>Forecast-based production reservations and framework agreements to protect your supply against market volatility.</p>
+        <h4 data-i18n="services.support.c6.h">Long-Term Supply Planning</h4>
+        <p data-i18n="services.support.c6.p">Forecast-based production reservations and framework agreements to protect your supply against market volatility.</p>
       </div>
     </div>
   </div>
@@ -1725,43 +1744,43 @@ footer { flex-direction: column; text-align: center; }
 <section id="services-shipping" style="background:var(--black);">
   <div style="max-width:1200px;margin:0 auto;">
     <div style="text-align:center;margin-bottom:4rem;">
-      <span class="section-tag">Services · Packaging and Shipping</span>
-      <h2 class="section-title">Built to Travel <strong>Half the World</strong></h2>
+      <span class="section-tag" data-i18n="services.shipping.tag">Services · Packaging and Shipping</span>
+      <h2 class="section-title" data-i18n="services.shipping.title">Built to Travel <strong>Half the World</strong></h2>
       <div class="divider" style="margin:1.5rem auto;"></div>
-      <p class="section-sub" style="margin:0 auto;">
+      <p class="section-sub" style="margin:0 auto;" data-i18n="services.shipping.sub">
         Every shipment leaves the factory ready for long-haul ocean transport and European port handling — protective packaging, full documentation, and logistics coordinated by our Düsseldorf office.
       </p>
     </div>
     <div class="service-grid">
       <div class="service-card">
         <div class="service-icon">⬡</div>
-        <h4>FCL Container Loading</h4>
-        <p>Full-container-load shipments with electrodes secured against vibration and impact for sea transit to European and American ports.</p>
+        <h4 data-i18n="services.shipping.c1.h">FCL Container Loading</h4>
+        <p data-i18n="services.shipping.c1.p">Full-container-load shipments with electrodes secured against vibration and impact for sea transit to European and American ports.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">◈</div>
-        <h4>Protective Packaging</h4>
-        <p>Edge and thread protection on each electrode, wooden crates or steel frames as required, with desiccants and moisture barriers for ocean freight.</p>
+        <h4 data-i18n="services.shipping.c2.h">Protective Packaging</h4>
+        <p data-i18n="services.shipping.c2.p">Edge and thread protection on each electrode, wooden crates or steel frames as required, with desiccants and moisture barriers for ocean freight.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">◉</div>
-        <h4>Export Documentation</h4>
-        <p>Material Test Report (MTR), Certificate of Conformity, dimensional inspection record, packing list, and commercial invoice with every shipment.</p>
+        <h4 data-i18n="services.shipping.c3.h">Export Documentation</h4>
+        <p data-i18n="services.shipping.c3.p">Material Test Report (MTR), Certificate of Conformity, dimensional inspection record, packing list, and commercial invoice with every shipment.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">⬢</div>
-        <h4>European Logistics</h4>
-        <p>Coordination with established freight forwarders for delivery to Rotterdam, Hamburg, Antwerp, Genoa, and inland EU destinations.</p>
+        <h4 data-i18n="services.shipping.c4.h">European Logistics</h4>
+        <p data-i18n="services.shipping.c4.p">Coordination with established freight forwarders for delivery to Rotterdam, Hamburg, Antwerp, Genoa, and inland EU destinations.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">◆</div>
-        <h4>Customs &amp; Compliance</h4>
-        <p>HS classifications, REACH and country-of-origin declarations, and support for EU import filings handled by our European representative.</p>
+        <h4 data-i18n="services.shipping.c5.h">Customs &amp; Compliance</h4>
+        <p data-i18n="services.shipping.c5.p">HS classifications, REACH and country-of-origin declarations, and support for EU import filings handled by our European representative.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">◎</div>
-        <h4>Transit Insurance Options</h4>
-        <p>All-risks cargo insurance available on request for the full value of each shipment, with claims handled directly through our liaison in Germany.</p>
+        <h4 data-i18n="services.shipping.c6.h">Transit Insurance Options</h4>
+        <p data-i18n="services.shipping.c6.p">All-risks cargo insurance available on request for the full value of each shipment, with claims handled directly through our liaison in Germany.</p>
       </div>
     </div>
   </div>
@@ -1775,51 +1794,51 @@ footer { flex-direction: column; text-align: center; }
 
 <section id="industries">
   <div class="ind-header">
-    <span class="section-tag">Applications</span>
-    <h2 class="section-title">Industries We <strong>Serve</strong></h2>
+    <span class="section-tag" data-i18n="ind.tag">Applications</span>
+    <h2 class="section-title" data-i18n="ind.title">Industries We <strong>Serve</strong></h2>
     <div class="divider"></div>
-    <p class="section-sub">Carbon and graphite products are fundamental to some of Europe's most important industrial sectors.</p>
+    <p class="section-sub" data-i18n="ind.sub">Carbon and graphite products are fundamental to some of Europe's most important industrial sectors.</p>
   </div>
   <div class="ind-grid">
     <div class="ind-card">
       <span class="ind-icon">01</span>
-      <div class="ind-name">Metallurgy & Steel</div>
-      <div class="ind-desc">EAF steelmaking is the backbone of European green steel. Our UHP electrodes are engineered for continuous high-load operation in electric arc furnaces.</div>
+      <div class="ind-name" data-i18n="ind.c1.n">Metallurgy & Steel</div>
+      <div class="ind-desc" data-i18n="ind.c1.d">EAF steelmaking is the backbone of European green steel. Our UHP electrodes are engineered for continuous high-load operation in electric arc furnaces.</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">02</span>
-      <div class="ind-name">Chemical Industry</div>
-      <div class="ind-desc">Graphite electrodes and special carbon materials serve critical roles in chlor-alkali production, industrial electrolysis, and chemical processing.</div>
+      <div class="ind-name" data-i18n="ind.c2.n">Chemical Industry</div>
+      <div class="ind-desc" data-i18n="ind.c2.d">Graphite electrodes and special carbon materials serve critical roles in chlor-alkali production, industrial electrolysis, and chemical processing.</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">03</span>
-      <div class="ind-name">Aerospace & Defence</div>
-      <div class="ind-desc">High-purity carbon materials for aerospace component manufacturing, heat shields, and specialist structural composites demanding precise tolerances.</div>
+      <div class="ind-name" data-i18n="ind.c3.n">Aerospace & Defence</div>
+      <div class="ind-desc" data-i18n="ind.c3.d">High-purity carbon materials for aerospace component manufacturing, heat shields, and specialist structural composites demanding precise tolerances.</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">04</span>
-      <div class="ind-name">Energy & Nuclear</div>
-      <div class="ind-desc">Graphite's unique thermal and electrical properties make it indispensable in nuclear reactor moderators and advanced energy storage systems.</div>
+      <div class="ind-name" data-i18n="ind.c4.n">Energy & Nuclear</div>
+      <div class="ind-desc" data-i18n="ind.c4.d">Graphite's unique thermal and electrical properties make it indispensable in nuclear reactor moderators and advanced energy storage systems.</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">05</span>
-      <div class="ind-name">Battery & EVs</div>
-      <div class="ind-desc">Artificial graphite powder for lithium-ion battery anodes, serving Europe's rapidly growing electric vehicle and stationary energy storage markets.</div>
+      <div class="ind-name" data-i18n="ind.c5.n">Battery & EVs</div>
+      <div class="ind-desc" data-i18n="ind.c5.d">Artificial graphite powder for lithium-ion battery anodes, serving Europe's rapidly growing electric vehicle and stationary energy storage markets.</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">06</span>
-      <div class="ind-name">Non-Ferrous Metals</div>
-      <div class="ind-desc">Electrodes for aluminium, copper, silicon, and ferroalloy smelting operations — precision-matched to the specific current densities of each furnace type.</div>
+      <div class="ind-name" data-i18n="ind.c6.n">Non-Ferrous Metals</div>
+      <div class="ind-desc" data-i18n="ind.c6.d">Electrodes for aluminium, copper, silicon, and ferroalloy smelting operations — precision-matched to the specific current densities of each furnace type.</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">07</span>
-      <div class="ind-name">Semiconductors</div>
-      <div class="ind-desc">Ultra-pure graphite components for semiconductor crystal growing, epitaxial coating equipment, and high-temperature diffusion furnace applications.</div>
+      <div class="ind-name" data-i18n="ind.c7.n">Semiconductors</div>
+      <div class="ind-desc" data-i18n="ind.c7.d">Ultra-pure graphite components for semiconductor crystal growing, epitaxial coating equipment, and high-temperature diffusion furnace applications.</div>
     </div>
     <div class="ind-card">
       <span class="ind-icon">08</span>
-      <div class="ind-name">Green Industry</div>
-      <div class="ind-desc">Supporting Europe's decarbonisation goals: our products enable green steel production and next-generation clean energy technologies with lower carbon footprints.</div>
+      <div class="ind-name" data-i18n="ind.c8.n">Green Industry</div>
+      <div class="ind-desc" data-i18n="ind.c8.d">Supporting Europe's decarbonisation goals: our products enable green steel production and next-generation clean energy technologies with lower carbon footprints.</div>
     </div>
   </div>
 </section>
@@ -1830,10 +1849,10 @@ footer { flex-direction: column; text-align: center; }
   <div class="certs-inner">
     <div class="certs-top">
       <div>
-        <span class="section-tag">Quality & Compliance</span>
-        <h2 class="section-title">Standards That <strong>Matter to Europe</strong></h2>
+        <span class="section-tag" data-i18n="ind.certs.tag">Quality & Compliance</span>
+        <h2 class="section-title" data-i18n="ind.certs.title">Standards That <strong>Matter to Europe</strong></h2>
         <div class="divider"></div>
-        <p class="section-sub">
+        <p class="section-sub" data-i18n="ind.certs.sub">
           We maintain rigorous quality management systems aligned with international standards. Our documentation, testing records, and traceability protocols meet European import requirements.
         </p>
       </div>
@@ -1841,22 +1860,22 @@ footer { flex-direction: column; text-align: center; }
         <div class="cert-badges">
           <div class="cert-badge">
             <div class="cert-badge-name">ISO 9001</div>
-            <div class="cert-badge-desc">Quality Management</div>
+            <div class="cert-badge-desc" data-i18n="about.exc.badge.iso">Quality Management</div>
           </div>
           <div class="cert-badge">
             <div class="cert-badge-name">JIS Standards</div>
-            <div class="cert-badge-desc">Japanese Industrial</div>
+            <div class="cert-badge-desc" data-i18n="about.exc.badge.jis">Japanese Industrial</div>
           </div>
           <div class="cert-badge">
             <div class="cert-badge-name">IEC Standards</div>
-            <div class="cert-badge-desc">International Electrotechnical</div>
+            <div class="cert-badge-desc" data-i18n="about.exc.badge.iec">International Electrotechnical</div>
           </div>
           <div class="cert-badge">
             <div class="cert-badge-name">ASTM</div>
-            <div class="cert-badge-desc">Materials Testing</div>
+            <div class="cert-badge-desc" data-i18n="about.exc.badge.astm">Materials Testing</div>
           </div>
         </div>
-        <p style="font-size:0.8rem;color:var(--silver);margin-top:1.5rem;line-height:1.7;">
+        <p style="font-size:0.8rem;color:var(--silver);margin-top:1.5rem;line-height:1.7;" data-i18n="ind.certs.note">
           All products ship with full material test reports (MTR), certificate of conformity, and dimensional inspection records. Available in English, German, French, Italian, and Spanish on request.
         </p>
       </div>
@@ -1873,49 +1892,49 @@ footer { flex-direction: column; text-align: center; }
 <section id="contact">
   <div class="contact-inner">
     <div class="contact-info">
-      <span class="section-tag">Get in Touch</span>
-      <h2 class="contact-info h2" style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);margin-bottom:0.5rem;">
+      <span class="section-tag" data-i18n="contact.tag">Get in Touch</span>
+      <h2 class="contact-info h2" style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);margin-bottom:0.5rem;" data-i18n="contact.title">
         Talk to Our <strong style="color:var(--gold);">European Representative</strong>
       </h2>
       <div class="divider"></div>
-      <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;margin-bottom:2rem;">
+      <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;margin-bottom:2rem;" data-i18n="contact.intro">
         JianHua Li is our dedicated liaison connecting industrial buyers across Europe, North America, and South America directly with our manufacturing capabilities. Reach out to discuss volumes, specifications, pricing, and supply agreements of any length — short-term or long-term.
       </p>
 
 ```
   <div class="elena-card">
     <div class="elena-name">JianHua Li</div>
-    <div class="elena-role">European Business Liaison · Asahi Carbon</div>
+    <div class="elena-role" data-i18n="contact.elena.role">European Business Liaison · Asahi Carbon</div>
     <div class="elena-contact">
       <div class="contact-row">
         <div class="contact-icon">@</div>
         <div class="contact-detail">
           <a href="mailto:sales@asahicarbon.de">sales@asahicarbon.de</a>
-          <div class="sub">Gmail</div>
+          <div class="sub" data-i18n="contact.elena.sub-mail">Gmail</div>
         </div>
       </div>
       <div class="contact-row">
         <div class="contact-icon">T</div>
         <div class="contact-detail">
           <a href="tel:+491603061395">+49 160 3061395</a>
-          <div class="sub">Phone · Germany</div>
+          <div class="sub" data-i18n="contact.elena.sub-phone">Phone · Germany</div>
         </div>
       </div>
       <div class="contact-row">
         <div class="contact-icon">◉</div>
         <div class="contact-detail">
-          <a href="#" style="pointer-events:none;color:var(--light);">Germany — CET / CEST Timezone</a>
-          <div class="sub">Mon–Fri · Business Hours</div>
+          <a href="#" style="pointer-events:none;color:var(--light);" data-i18n="contact.elena.zone">Germany — CET / CEST Timezone</a>
+          <div class="sub" data-i18n="contact.elena.zone-sub">Mon–Fri · Business Hours</div>
         </div>
       </div>
     </div>
-    <a href="mailto:sales@asahicarbon.de" class="wa-btn" style="background:#1e4d80;">
+    <a href="mailto:sales@asahicarbon.de" class="wa-btn" style="background:#1e4d80;" data-i18n="contact.elena.cta">
       Email Us
     </a>
   </div>
 
   <div class="hq-info">
-    <h4>Company Offices</h4>
+    <h4 data-i18n="contact.hq.title">Company Offices</h4>
     <div class="hq-row">
       <div class="hq-flag">🇩🇪</div>
       <div class="hq-details">
@@ -1946,31 +1965,31 @@ footer { flex-direction: column; text-align: center; }
     <input type="hidden" name="subject" value="New Asahi Carbon Enquiry">
     <input type="hidden" name="from_name" value="Asahi Carbon Website">
     <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-    <div class="form-title">Request Information</div>
-    <p class="form-sub">Fill in your details and JianHua will respond within 24 hours with pricing and contract information.</p>
+    <div class="form-title" data-i18n="form.title">Request Information</div>
+    <p class="form-sub" data-i18n="form.sub">Fill in your details and JianHua will respond within 24 hours with pricing and contract information.</p>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">First Name</label>
+        <label class="form-label" data-i18n="form.firstName">First Name</label>
         <input class="form-input" type="text" name="first_name" placeholder="Hans" required>
       </div>
       <div class="form-group">
-        <label class="form-label">Last Name</label>
+        <label class="form-label" data-i18n="form.lastName">Last Name</label>
         <input class="form-input" type="text" name="last_name" placeholder="Müller" required>
       </div>
     </div>
     <div class="form-group">
-      <label class="form-label">Company Name</label>
+      <label class="form-label" data-i18n="form.company">Company Name</label>
       <input class="form-input" type="text" name="company" placeholder="Your company name">
     </div>
     <div class="form-group">
-      <label class="form-label">Business Email</label>
+      <label class="form-label" data-i18n="form.email">Business Email</label>
       <input class="form-input" type="email" name="email" placeholder="hans@company.de" required>
     </div>
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">Country</label>
+        <label class="form-label" data-i18n="form.country">Country</label>
         <select class="form-select form-input" name="country">
-          <option value="">Select country</option>
+          <option value="" data-i18n="form.country.placeholder">Select country</option>
           <option>🇩🇪 Germany</option>
           <option>🇮🇹 Italy</option>
           <option>🇫🇷 France</option>
@@ -2025,11 +2044,11 @@ footer { flex-direction: column; text-align: center; }
       </select>
     </div>
     <div class="form-group">
-      <label class="form-label">Message</label>
-      <textarea class="form-textarea" name="message" placeholder="Tell us about your current electrode supplier, specifications, and what you're looking for in a supply partner..."></textarea>
+      <label class="form-label" data-i18n="form.message">Message</label>
+      <textarea class="form-textarea" name="message" placeholder="Tell us about your current electrode supplier, specifications, and what you're looking for in a supply partner..." data-i18n-attr="placeholder:form.message.placeholder"></textarea>
     </div>
-    <button class="form-submit" type="submit">Send Enquiry</button>
-    <p class="form-note">Your enquiry will be handled directly by JianHua Li, our European Business Liaison. We typically respond within 24 business hours. Email: <a href="mailto:sales@asahicarbon.de" style="color:var(--gold);">sales@asahicarbon.de</a> · Phone: <a href="tel:+491603061395" style="color:var(--gold);">+49 160 3061395</a></p>
+    <button class="form-submit" type="submit" data-i18n="form.submit">Send Enquiry</button>
+    <p class="form-note" data-i18n="form.note">Your enquiry will be handled directly by JianHua Li, our European Business Liaison. We typically respond within 24 business hours. Email: <a href="mailto:sales@asahicarbon.de" style="color:var(--gold);">sales@asahicarbon.de</a> · Phone: <a href="tel:+491603061395" style="color:var(--gold);">+49 160 3061395</a></p>
   </form>
 </div>
 ```
@@ -2132,15 +2151,15 @@ footer { flex-direction: column; text-align: center; }
 <footer>
   <div class="footer-brand">
     <a href="#" class="nav-logo">Asahi <span>Carbon</span></a>
-    <p>Shandong Asahi Carbon Graphite New Material Technology Co., Ltd.</p>
-    <p>Sino-Japanese Joint Venture · In partnership with Sojitz Ject Corporation</p>
+    <p data-i18n="footer.brand1">Shandong Asahi Carbon Graphite New Material Technology Co., Ltd.</p>
+    <p data-i18n="footer.brand2">Sino-Japanese Joint Venture · In partnership with Sojitz Ject Corporation</p>
   </div>
   <div class="footer-copy">
-    <p>European Enquiries: <a href="mailto:sales@asahicarbon.de">JianHua Li · sales@asahicarbon.de</a></p>
+    <p data-i18n="footer.enquiries.full">European Enquiries: <a href="mailto:sales@asahicarbon.de">JianHua Li · sales@asahicarbon.de</a></p>
     <p style="margin-top:0.2rem;"><a href="tel:+491603061395" style="color:var(--silver);">+49 160 3061395</a></p>
-    <p style="margin-top:0.3rem;">Serving Europe · North America · South America</p>
+    <p style="margin-top:0.3rem;" data-i18n="footer.serving">Serving Europe · North America · South America</p>
     <p class="footer-legal"><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></p>
-    <p style="margin-top:0.5rem;color:rgba(138,143,168,0.5);">© 2025 Asahi Carbon Europe. All rights reserved.</p>
+    <p style="margin-top:0.5rem;color:rgba(138,143,168,0.5);" data-i18n="footer.copy">© 2025 Asahi Carbon Europe. All rights reserved.</p>
   </div>
 </footer>
 
@@ -2317,6 +2336,341 @@ footer { flex-direction: column; text-align: center; }
       }
     });
   }
+
+  // ── i18n ──────────────────────────────────────────────────────────────
+  const translations = {
+    de: {
+      // Nav
+      'nav.about': 'Über uns',
+      'nav.about.profile': 'Profil',
+      'nav.about.history': 'Geschichte',
+      'nav.about.excellence': 'Zertifizierte Qualität',
+      'nav.about.specifications': 'Produktspezifikationen',
+      'nav.about.application': 'Anwendungsbereiche',
+      'nav.about.facility': 'Unser Werk',
+      'nav.products': 'Produkte',
+      'nav.products.electrode': 'Graphitelektroden',
+      'nav.products.powder': 'Synthetischer Graphitpulver',
+      'nav.products.ingredients': 'Rohstoffe',
+      'nav.services': 'Dienstleistungen',
+      'nav.services.support': 'Technischer Support',
+      'nav.services.shipping': 'Verpackung & Versand',
+      'nav.industries': 'Branchen',
+      'nav.contact': 'Kontakt',
+
+      // Dropdown previews (About)
+      'dd.about.profile.p': 'Shandong Asahi Carbon Graphite New Material Technology Co., Ltd. — ein sino-japanisches Joint Venture, das chinesische Präzisionsfertigung mit japanischer Ingenieurskunst verbindet.',
+      'dd.about.profile.li1': '<strong>Gegründet</strong> 2013 · Shandong, China',
+      'dd.about.profile.li2': '<strong>Werksgelände</strong> 307 Acres Produktionsfläche',
+      'dd.about.profile.li3': '<strong>Investition</strong> ¥466,5 Millionen',
+      'dd.about.history.p': 'Von der Gründung zur internationalen Expansion — ein Jahrzehnt im Aufbau einer der modernsten Graphitelektroden-Produktionen Asiens.',
+      'dd.about.history.li1': '<strong>2013</strong> Unternehmensgründung in Dezhou',
+      'dd.about.history.li2': '<strong>2019</strong> Joint Venture mit Sojitz Ject Corporation',
+      'dd.about.history.li3': '<strong>Heute</strong> Europa-Niederlassung in Düsseldorf',
+      'dd.about.excellence.p': 'Internationale Standards und strenge Qualitätssysteme für jede Lieferung an europäische Kunden.',
+      'dd.about.excellence.li1': '<strong>ISO 9001</strong> Qualitätsmanagement',
+      'dd.about.excellence.li2': '<strong>JIS</strong> Japanische Industriestandards',
+      'dd.about.excellence.li3': '<strong>IEC / ASTM</strong> Internationale Konformität',
+      'dd.about.specifications.p': 'Engineered Grades und Materialspezifikationen über unser gesamtes Produktportfolio.',
+      'dd.about.specifications.li1': '<strong>UHP</strong> Ultra-High-Power-Elektroden',
+      'dd.about.specifications.li2': '<strong>HP / RP</strong> High &amp; Regular Power',
+      'dd.about.specifications.li3': '<strong>Pulver</strong> ≥ 99,5 % Kohlenstoff',
+      'dd.about.application.p': 'Wo unsere Materialien arbeiten — von Elektrolichtbogenöfen bis zu Lithium-Ionen-Batteriefertigung.',
+      'dd.about.application.li1': '<strong>Stahl</strong> EAF / SAF-Betrieb',
+      'dd.about.application.li2': '<strong>Energie</strong> Lithium-Ionen-Anoden',
+      'dd.about.application.li3': '<strong>Chemie</strong> Industrielle Elektrolyse',
+      'dd.about.facility.p': 'Vollautomatisierte, integrierte Produktionslinien — entworfen von in- und ausländischen Experten.',
+      'dd.about.facility.li1': '<strong>307</strong> Acres Produktionsfläche',
+      'dd.about.facility.li2': '<strong>30.000 t</strong> Jahreskapazität',
+      'dd.about.facility.li3': '<strong>Equipment</strong> Import aus Japan · Europa · USA',
+
+      // Dropdown previews (Products)
+      'dd.products.electrode.p': 'Drei Qualitätsstufen für das gesamte Spektrum von Elektrolichtbogenöfen.',
+      'dd.products.electrode.li1': '<strong>RP</strong> Regular Power — Standard-EAF / SAF',
+      'dd.products.electrode.li2': '<strong>HP</strong> High Power — Hochlast-EAF',
+      'dd.products.electrode.li3': '<strong>UHP</strong> Ultra-High Power — Flaggschiff-Qualität',
+      'dd.products.powder.p': 'Hochreines synthetisches Graphitpulver für Lithium-Ionen-Anoden, Schmierstoffe und Spezialmaterialien.',
+      'dd.products.powder.li1': '<strong>Reinheit</strong> ≥ 99,5 % Kohlenstoff',
+      'dd.products.powder.li2': '<strong>Partikelgröße</strong> D50: 5 – 45 μm',
+      'dd.products.powder.li3': '<strong>Form</strong> Pulver / Pellet',
+      'dd.products.ingredients.p': 'Rohstoffe und Ausgangsmaterialien für die Graphitproduktion — weltweit an Industriekunden geliefert.',
+      'dd.products.ingredients.li1': '<strong>Petrolkoks</strong> Kalziniert, Anodenqualität',
+      'dd.products.ingredients.li2': '<strong>Nadelkoks</strong> UHP-Rohstoff',
+      'dd.products.ingredients.li3': '<strong>Steinkohlenpech</strong> Bindemittelqualität',
+
+      // Dropdown previews (Services)
+      'dd.services.support.p': 'Praxisnahe technische Beratung von der Qualitätswahl bis zur Performance im Ofen — gestützt auf unser F&amp;E-Zentrum und das technische Netzwerk von Sojitz Ject.',
+      'dd.services.support.li1': '<strong>Vor dem Kauf</strong> Beratung zu Qualität &amp; Spezifikation',
+      'dd.services.support.li2': '<strong>Vor Ort</strong> Inbetriebnahme &amp; Fehlerbehebung',
+      'dd.services.support.li3': '<strong>Sprachen</strong> EN · DE · ZH · JA',
+      'dd.services.shipping.p': 'FCL-Container-Lieferungen mit Schutzverpackung für lange europäische Transportwege, inklusive vollständiger Exportdokumentation.',
+      'dd.services.shipping.li1': '<strong>Verpackung</strong> FCL · Kanten- &amp; Gewindeschutz',
+      'dd.services.shipping.li2': '<strong>Dokumente</strong> MTR · CoC · Prüfprotokolle',
+      'dd.services.shipping.li3': '<strong>Routen</strong> Europa · Amerika',
+
+      // Hero
+      'hero.tag': 'Premium-Graphitelektroden-Hersteller · Gegründet 2013 · Sino-japanische Technologie',
+      'hero.title1': 'Hochwertige Graphitelektroden',
+      'hero.title2': 'Für die europäische Industrie',
+      'hero.subtitle': 'Ultra-Hochleistungs-Graphitelektroden, gefertigt nach internationalen Standards — speziell für die anspruchsvollen Anforderungen der europäischen Stahl-, Metallurgie- und Chemieindustrie.',
+      'hero.market.europe': 'Europa',
+      'hero.market.north': 'Nordamerika',
+      'hero.market.south': 'Südamerika',
+      'hero.cta.supply': 'Lieferung anfragen',
+      'hero.cta.range': 'Produktreihe ansehen',
+
+      // Stats
+      'stat.area': 'Acres Produktionsfläche',
+      'stat.capacity': 'Jährliche Produktionskapazität',
+      'stat.iso': '9001 Qualitätsmanagement',
+      'stat.jv': 'Sino-japanisches Joint Venture',
+
+      // About — Profile
+      'about.profile.quote': '„Wo chinesische Präzision auf japanische Ingenieurskunst trifft.“',
+      'about.profile.body1': 'Shandong Asahi Carbon Graphite New Material Technology Co., Ltd. wurde 2013 in der Wirtschaftsentwicklungszone Linyi, Dezhou, in der Provinz Shandong, China gegründet. Mit einem Gesamtinvestitionsvolumen von rund ¥466,5 Millionen und einem Werksgelände von 307 Acres zählen wir zu den modernsten Graphitelektroden-Herstellern Asiens.',
+      'about.profile.body2': '2019 gingen wir ein Joint Venture mit <strong>Sojitz Ject Corporation</strong> ein, einer Tochtergesellschaft der renommierten japanischen Sojitz-Gruppe — und wurden zu einem sino-japanischen Unternehmen, das erstklassige chinesische Fertigung mit japanischen Qualitätssystemen und globaler Vertriebskompetenz verbindet.',
+
+      // About — History
+      'about.history.tag': 'Geschichte · Unser Weg',
+      'about.history.title': 'Meilensteine <strong>unserer Geschichte</strong>',
+      'about.history.sub': 'Bewegen Sie den Mauszeiger über einen Meilenstein, um das festgehaltene Bild zu sehen.',
+      'about.history.today': 'Heute',
+      'about.history.start': 'Start',
+      'about.history.2021-11.t': 'Zertifiziert durch internationale Systeme für Qualität, Umwelt und Arbeitsschutz.',
+      'about.history.2021-09.t': 'Asahi Carbon exportiert die erste Charge fertiger Produkte.',
+      'about.history.2020-11.t': 'Installation der Maschinenwerkstatt-Ausrüstung.',
+      'about.history.2020-06.t': 'Fertigstellung von Bürogebäude, Wohnheim, Kantine, Werkstatt für mechanische Reparaturen und F&amp;E-Zentrum.',
+      'about.history.2019-04.t': 'Bau der Bearbeitungswerkstatt.',
+      'about.history.2019-01.t': 'Unterzeichnungszeremonie des Joint Ventures zwischen China und ausländischen Partnern.',
+      'about.history.2018-06.t': 'Die Presswerkstatt ist fertiggestellt, die Anlagen werden installiert.',
+      'about.history.2013-06b.t': 'Pressen, einstufiges Brennen, Imprägnierung und zweistufiges Brennen — Grundsteinlegung in Vorbereitung.',
+      'about.history.2013-06a.t': 'Grundsteinlegungsfeier.',
+      'about.history.2013-01.t': 'Unternehmen gegründet.',
+
+      // About — Certified Excellence
+      'about.exc.tag': 'Zertifizierte Qualität · Qualität &amp; Konformität',
+      'about.exc.title': 'Standards, die <strong>Europa wichtig sind</strong>',
+      'about.exc.sub': 'Strenge Qualitätsmanagementsysteme nach internationalen Standards. Dokumentation, Prüfprotokolle und Rückverfolgbarkeit, die den europäischen Importanforderungen entsprechen.',
+      'about.exc.badge.iso': 'Qualitätsmanagement',
+      'about.exc.badge.jis': 'Japanische Industrie',
+      'about.exc.badge.iec': 'International Electrotechnical',
+      'about.exc.badge.astm': 'Werkstoffprüfung',
+      'about.exc.note': 'Jede Lieferung wird begleitet von einem vollständigen Material-Test-Report (MTR), einem Konformitätszertifikat und einem Maßprüfprotokoll. Dokumentation auf Anfrage in Englisch, Deutsch, Französisch, Italienisch und Spanisch erhältlich.',
+      'about.exc.docs.title': 'Zertifikate',
+      'about.exc.cert1.caption': 'High-Tech-Enterprise-Zertifikat · 2022',
+      'about.exc.cert2.caption': 'Innovativer Mittelstand · Provinz Shandong · 2023–2025',
+
+      // About — Specifications
+      'about.spec.tag': 'Produktspezifikationen · Engineered Grades',
+      'about.spec.title': 'Materialien nach <strong>Spezifikation</strong>',
+      'about.spec.sub': 'Ein vollständiges Portfolio von Graphitelektroden, synthetischen Pulvern und Rohstoffen — jedes Produkt ist auf die technischen Anforderungen leistungsstarker industrieller Anwendungen abgestimmt.',
+      'about.spec.card1.tag': '01 · Graphitelektroden',
+      'about.spec.card1.h': 'Drei Leistungsstufen',
+      'about.spec.card1.li1': '<strong>RP</strong> Regular Power — Standard-EAF / SAF',
+      'about.spec.card1.li2': '<strong>HP</strong> High Power — Hochlast-EAF',
+      'about.spec.card1.li3': '<strong>UHP</strong> Ultra-High Power — Flaggschiff, Durchmesser ≥ 600 mm',
+      'about.spec.card2.tag': '02 · Synthetischer Graphitpulver',
+      'about.spec.card2.h': 'Batterie-Qualität',
+      'about.spec.card2.li1': '<strong>Reinheit</strong> ≥ 99,5 % Kohlenstoff',
+      'about.spec.card2.li2': '<strong>Partikelgröße</strong> D50: 5 – 45 μm',
+      'about.spec.card2.li3': '<strong>Form</strong> Pulver oder Pellet',
+      'about.spec.card3.tag': '03 · Rohstoffe',
+      'about.spec.card3.h': 'Rohstoffversorgung',
+      'about.spec.card3.li1': '<strong>Petrolkoks</strong> Kalziniert, Anodenqualität',
+      'about.spec.card3.li2': '<strong>Nadelkoks</strong> UHP-Rohstoff',
+      'about.spec.card3.li3': '<strong>Steinkohlenpech</strong> Bindemittelqualität',
+
+      // About — Application
+      'about.app.tag': 'Anwendungsbereiche · Wo wir wirken',
+      'about.app.title': 'Branchen, die wir <strong>antreiben</strong>',
+      'about.app.sub': 'Unsere Materialien werden in der Schwerindustrie, der Energiespeicherung und der fortschrittlichen Fertigung eingesetzt — überall dort, wo Leistung und Konstanz den Betrieb prägen.',
+      'about.app.c1.h': 'Elektrolichtbogen-Stahlproduktion',
+      'about.app.c1.p': 'UHP-Elektroden für produktionsstarke EAF- und SAF-Betriebe in europäischen Stahlwerken.',
+      'about.app.c2.h': 'Lithium-Ionen-Batterieanoden',
+      'about.app.c2.p': 'Hochreines synthetisches Graphitpulver für Energiespeicher der nächsten Generation und EV-Batterien.',
+      'about.app.c3.h': 'Chemie &amp; Elektrolyse',
+      'about.app.c3.p': 'Spezielle Kohlenstoffmaterialien für Chlor-Alkali-Elektrolyse, industrielle Elektrolyse und chemische Verfahren.',
+      'about.app.c4.h': 'Nicht­eisenmetallurgie',
+      'about.app.c4.p': 'Graphitkomponenten für die Aluminium-, Kupfer- und Siliziumverhüttung im industriellen Maßstab.',
+      'about.app.c5.h': 'Halbleiterfertigung',
+      'about.app.c5.p': 'Ultrareiner Graphit für Kristallzüchtung, Epitaxie-Beschichtung und Hochtemperatur-Diffusionsöfen.',
+      'about.app.c6.h': 'Grüne Industrie',
+      'about.app.c6.p': 'Unterstützung der Dekarbonisierung Europas — grüner Stahl und saubere Energietechnologien.',
+
+      // About — Facility
+      'about.fac.tag': 'Unser Werk · Fertigungskompetenz',
+      'about.fac.title': 'Integrierte Produktion im <strong>Großmaßstab</strong>',
+      'about.fac.sub': 'Ein 307 Acres großes Gelände in der Provinz Shandong mit vollautomatisierter, durchgängiger Graphitelektroden-Produktion — vom Rohstoff bis zur fertig bearbeiteten Elektrode.',
+      'about.fac.stat1.l': 'Acres Produktionsfläche',
+      'about.fac.stat2.l': 'Jährliche Produktionskapazität',
+      'about.fac.stat3.l': 'Gesamtinvestition',
+      'about.fac.stat4.l': 'Stufige Produktionskette',
+      'about.fac.process.h': 'Vollständige Produktionskette',
+      'about.fac.step1': 'Pressen',
+      'about.fac.step2': 'Erstes Brennen',
+      'about.fac.step3': 'Imprägnierung',
+      'about.fac.step4': 'Zweites Brennen',
+      'about.fac.step5': 'Graphitierung',
+      'about.fac.step6': 'Bearbeitung',
+      'about.fac.step7': 'F&amp;E-Zentrum',
+
+      // Products
+      'products.tag': 'Produktsortiment',
+      'products.title': 'Graphit­elektroden-<strong>Lösungen</strong>',
+      'products.sub': 'Wir sind spezialisiert auf Ultra-High-Power (UHP) Graphitelektroden ab 600 mm — der Standard, den die produktivsten Elektrolichtbogenöfen Europas erwarten.',
+      'products.cat1.tag': 'Kategorie 01',
+      'products.cat1.name': 'Graphitelektroden',
+      'products.cat1.desc': 'Regular Power (RP), High Power (HP) und Ultra-High Power (UHP) für das gesamte Spektrum der Elektrolichtbogenöfen.',
+      'products.cat2.tag': 'Kategorie 02',
+      'products.cat2.name': 'Synthetischer Graphitpulver',
+      'products.cat2.desc': 'Hochreines synthetisches Graphitpulver für Lithium-Ionen-Anoden, Schmierstoffe und Spezialmaterialien.',
+      'products.cat3.tag': 'Kategorie 03',
+      'products.cat3.name': 'Rohstoffe',
+      'products.cat3.desc': 'Rohstoffe und Ausgangsmaterialien für die Graphitproduktion — Petrolkoks, Nadelkoks und Steinkohlenpech, weltweit an Industriekunden geliefert.',
+
+      // Services — subnav already covered by nav.services.*
+      'services.support.tag': 'Dienstleistungen · Technischer Support',
+      'services.support.title': 'Engineering-Beratung vom <strong>Datenblatt bis zum Ofen</strong>',
+      'services.support.sub': 'Unser Team arbeitet direkt mit Ihren Metallurgen und dem Einkauf zusammen, um die richtige Qualität zu spezifizieren, den Verbrauch zu optimieren und betriebliche Probleme zu lösen — gestützt auf unser chinesisches F&amp;E-Zentrum und das Engineering-Netzwerk von Sojitz Ject in Japan.',
+      'services.support.c1.h': 'Beratung vor dem Kauf',
+      'services.support.c1.p': 'Qualitätswahl (RP / HP / UHP), Durchmesser-Anpassung und Verbindungskonfiguration, abgestimmt auf Stromdichte, Tap-to-Tap-Zyklus und Schrottzusammensetzung Ihres Ofens.',
+      'services.support.c2.h': 'Engineering vor Ort &amp; remote',
+      'services.support.c2.p': 'Inbetriebnahme-Unterstützung bei Erstlieferungen, Performance-Audits und Remote-Troubleshooting über JianHua Li in Düsseldorf und unser F&amp;E-Team in China.',
+      'services.support.c3.h': 'Verbrauchsoptimierung',
+      'services.support.c3.p': 'Verschleißanalyse und Prozessempfehlungen zur Senkung des Elektrodenverbrauchs pro Tonne Stahl — gestützt auf Daten vergleichbarer europäischer EAF-Betriebe.',
+      'services.support.c4.h': 'Qualität &amp; Rückverfolgbarkeit',
+      'services.support.c4.p': 'Vollständige Material-Test-Reports, Chargen-Rückverfolgbarkeit und direkter Zugang zu unserem QA-Team bei Reklamationen.',
+      'services.support.c5.h': 'Mehrsprachige Dokumentation',
+      'services.support.c5.p': 'Technische Datenblätter, MTRs und Sicherheitsdatenblätter auf Anfrage in Englisch, Deutsch, Französisch, Italienisch, Spanisch, Chinesisch und Japanisch.',
+      'services.support.c6.h': 'Langfristige Versorgungsplanung',
+      'services.support.c6.p': 'Forecast-basierte Produktionsreservierungen und Rahmenverträge zur Absicherung Ihrer Versorgung gegen Marktvolatilität.',
+      'services.shipping.tag': 'Dienstleistungen · Verpackung &amp; Versand',
+      'services.shipping.title': 'Konzipiert für den <strong>halben Globus</strong>',
+      'services.shipping.sub': 'Jede Lieferung verlässt das Werk bereit für lange Seetransporte und das Handling in europäischen Häfen — Schutzverpackung, vollständige Dokumentation und Logistik aus unserem Düsseldorfer Büro.',
+      'services.shipping.c1.h': 'FCL-Container­beladung',
+      'services.shipping.c1.p': 'Voll-Container-Lieferungen mit Elektroden, die gegen Vibration und Stoß für den Seetransport nach Europa und Amerika gesichert sind.',
+      'services.shipping.c2.h': 'Schutzverpackung',
+      'services.shipping.c2.p': 'Kanten- und Gewindeschutz für jede Elektrode, Holzkisten oder Stahlrahmen nach Bedarf, mit Trockenmittel und Feuchtigkeitsbarrieren für die Seefracht.',
+      'services.shipping.c3.h': 'Exportdokumentation',
+      'services.shipping.c3.p': 'Material-Test-Report (MTR), Konformitätszertifikat, Maßprüfprotokoll, Packliste und Handelsrechnung bei jeder Lieferung.',
+      'services.shipping.c4.h': 'Europäische Logistik',
+      'services.shipping.c4.p': 'Koordination mit etablierten Spediteuren für Lieferungen nach Rotterdam, Hamburg, Antwerpen, Genua und in europäische Binnenstandorte.',
+      'services.shipping.c5.h': 'Zoll &amp; Compliance',
+      'services.shipping.c5.p': 'HS-Klassifizierungen, REACH- und Ursprungserklärungen sowie Unterstützung bei EU-Einfuhranmeldungen durch unseren europäischen Ansprechpartner.',
+      'services.shipping.c6.h': 'Transportversicherungs­optionen',
+      'services.shipping.c6.p': 'Allgefahren-Frachtversicherung auf Anfrage über den vollen Wert jeder Lieferung — Schadensfälle werden direkt über unseren Ansprechpartner in Deutschland abgewickelt.',
+
+      // Industries page
+      'ind.tag': 'Anwendungen',
+      'ind.title': 'Branchen, die wir <strong>bedienen</strong>',
+      'ind.sub': 'Kohlenstoff- und Graphitprodukte sind die Grundlage einiger der wichtigsten Industriezweige Europas.',
+      'ind.c1.n': 'Metallurgie &amp; Stahl',
+      'ind.c1.d': 'EAF-Stahl ist das Rückgrat des grünen europäischen Stahls. Unsere UHP-Elektroden sind für den kontinuierlichen Hochlastbetrieb in Elektrolichtbogenöfen ausgelegt.',
+      'ind.c2.n': 'Chemische Industrie',
+      'ind.c2.d': 'Graphitelektroden und Spezial-Kohlenstoffmaterialien spielen eine zentrale Rolle in der Chlor-Alkali-Produktion, industriellen Elektrolyse und chemischen Verfahrenstechnik.',
+      'ind.c3.n': 'Luft- und Raumfahrt &amp; Verteidigung',
+      'ind.c3.d': 'Hochreine Kohlenstoffmaterialien für Bauteile der Luft- und Raumfahrt, Hitzeschilde und strukturelle Spezialverbundwerkstoffe mit höchsten Toleranzanforderungen.',
+      'ind.c4.n': 'Energie &amp; Kernkraft',
+      'ind.c4.d': 'Die einzigartigen thermischen und elektrischen Eigenschaften von Graphit machen es unverzichtbar in Kernreaktor-Moderatoren und fortschrittlichen Energiespeichersystemen.',
+      'ind.c5.n': 'Batterien &amp; EVs',
+      'ind.c5.d': 'Synthetisches Graphitpulver für Lithium-Ionen-Anoden für Europas schnell wachsende Märkte für Elektrofahrzeuge und stationäre Energiespeicher.',
+      'ind.c6.n': 'Nicht­eisenmetalle',
+      'ind.c6.d': 'Elektroden für die Aluminium-, Kupfer-, Silizium- und Ferrolegierungs-Verhüttung — präzise auf die jeweilige Stromdichte abgestimmt.',
+      'ind.c7.n': 'Halbleiter',
+      'ind.c7.d': 'Ultrareine Graphitkomponenten für Kristallzüchtung, Epitaxie-Beschichtungsanlagen und Hochtemperatur-Diffusionsöfen.',
+      'ind.c8.n': 'Grüne Industrie',
+      'ind.c8.d': 'Unterstützung der Dekarbonisierungsziele Europas: Unsere Produkte ermöglichen grünen Stahl und saubere Energietechnologien mit geringerem CO₂-Fußabdruck.',
+      'ind.certs.tag': 'Qualität &amp; Konformität',
+      'ind.certs.title': 'Standards, die <strong>Europa wichtig sind</strong>',
+      'ind.certs.sub': 'Wir pflegen strenge Qualitätsmanagementsysteme nach internationalen Standards. Unsere Dokumentation, Prüfprotokolle und Rückverfolgbarkeitsverfahren erfüllen die europäischen Importanforderungen.',
+      'ind.certs.note': 'Alle Produkte werden mit vollständigem Material-Test-Report (MTR), Konformitätszertifikat und Maßprüfprotokoll geliefert. Auf Anfrage in Englisch, Deutsch, Französisch, Italienisch und Spanisch erhältlich.',
+
+      // Contact
+      'contact.tag': 'Kontakt aufnehmen',
+      'contact.title': 'Sprechen Sie mit unserem <strong>europäischen Vertreter</strong>',
+      'contact.intro': 'JianHua Li ist unser dedizierter Ansprechpartner für Industriekunden in Europa, Nordamerika und Südamerika — direkt verbunden mit unserer Fertigung. Sprechen Sie uns an für Mengen, Spezifikationen, Preise und Liefervereinbarungen jeder Laufzeit, kurz- oder langfristig.',
+      'contact.elena.role': 'Europäischer Geschäftskontakt · Asahi Carbon',
+      'contact.elena.sub-mail': 'E-Mail',
+      'contact.elena.sub-phone': 'Telefon · Deutschland',
+      'contact.elena.zone': 'Deutschland — CET / CEST',
+      'contact.elena.zone-sub': 'Mo–Fr · Geschäftszeiten',
+      'contact.elena.cta': 'E-Mail senden',
+      'contact.hq.title': 'Standorte',
+      'contact.hq.de': '<strong>ESRLorcy GmbH — Düsseldorf</strong>\nBahnstr. 9, 40212 Düsseldorf, Deutschland · Tel: +49 160 3061395',
+      'contact.hq.jp': '<strong>SOJITZ JECT CORPORATION — Tokio HQ</strong>\n8-6, Nishi-shimbashi 2-Chome, Minato-ku, Tokio 105-0003 · Tel: +81-3-5511-2128',
+      'contact.hq.cn': '<strong>Shandong Asahi Carbon Graphite New Material Technology Co., Ltd. — Werk (China)</strong>\nWirtschaftsentwicklungszone Linyi, Dezhou, Shandong · Tel: 0534-4777771',
+      'form.title': 'Informationen anfordern',
+      'form.sub': 'Tragen Sie Ihre Daten ein — JianHua antwortet innerhalb von 24 Stunden mit Preis- und Vertragsinformationen.',
+      'form.firstName': 'Vorname',
+      'form.lastName': 'Nachname',
+      'form.company': 'Firma',
+      'form.email': 'Geschäfts-E-Mail',
+      'form.country': 'Land',
+      'form.country.placeholder': 'Land auswählen',
+      'form.country.other-eu': 'Anderes europäisches Land',
+      'form.country.other': 'Anderes Land',
+      'form.product': 'Produktinteresse',
+      'form.product.placeholder': 'Auswählen',
+      'form.product.electrode': 'Graphitelektroden (RP / HP / UHP)',
+      'form.product.powder': 'Synthetischer Graphitpulver',
+      'form.product.ingredients': 'Rohstoffe',
+      'form.product.multi': 'Mehrfach / Spezielle Spezifikation',
+      'form.message': 'Nachricht',
+      'form.message.placeholder': 'Erzählen Sie uns von Ihrem aktuellen Elektroden-Lieferanten, Ihren Spezifikationen und wonach Sie in einem Lieferpartner suchen…',
+      'form.submit': 'Anfrage senden',
+      'form.note': 'Ihre Anfrage wird direkt von JianHua Li, unserem europäischen Geschäftskontakt, bearbeitet. In der Regel antworten wir innerhalb von 24 Geschäftsstunden. E-Mail: <a href="mailto:sales@asahicarbon.de" style="color:var(--gold);">sales@asahicarbon.de</a> · Telefon: <a href="tel:+491603061395" style="color:var(--gold);">+49 160 3061395</a>',
+
+      // Page title
+      'page.title': 'Asahi Carbon — Premium-Graphitelektroden-Hersteller für Europa &amp; Amerika',
+
+      // Footer
+      'footer.brand1': 'Shandong Asahi Carbon Graphite New Material Technology Co., Ltd.',
+      'footer.brand2': 'Sino-japanisches Joint Venture · in Partnerschaft mit Sojitz Ject Corporation',
+      'footer.enquiries.full': 'Anfragen Europa: <a href="mailto:sales@asahicarbon.de">JianHua Li · sales@asahicarbon.de</a>',
+      'footer.serving': 'Tätig in Europa · Nordamerika · Südamerika',
+      'footer.copy': '© 2025 Asahi Carbon Europe. Alle Rechte vorbehalten.'
+    }
+  };
+
+  function applyTranslations(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (!el.dataset.i18nOrig) el.dataset.i18nOrig = el.innerHTML;
+      el.innerHTML = (lang === 'de' && translations.de[key]) ? translations.de[key] : el.dataset.i18nOrig;
+    });
+    document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+      // Format: data-i18n-attr="placeholder:key,title:key"
+      el.dataset.i18nAttr.split(',').forEach(pair => {
+        const [attr, key] = pair.split(':');
+        const origKey = 'i18nAttrOrig' + attr.charAt(0).toUpperCase() + attr.slice(1);
+        if (!el.dataset[origKey]) el.dataset[origKey] = el.getAttribute(attr) || '';
+        el.setAttribute(attr, (lang === 'de' && translations.de[key]) ? translations.de[key] : el.dataset[origKey]);
+      });
+    });
+  }
+
+  function setLanguage(lang) {
+    localStorage.setItem('lang', lang);
+    document.querySelectorAll('.lang-toggle [data-lang]').forEach(span => {
+      span.classList.toggle('lang-active', span.dataset.lang === lang);
+    });
+    applyTranslations(lang);
+  }
+
+  const langToggle = document.querySelector('.lang-toggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', (e) => {
+      // Allow clicking the EN/DE spans directly or the button overall
+      const clickedLang = e.target.dataset && e.target.dataset.lang;
+      const current = localStorage.getItem('lang') || 'en';
+      const next = clickedLang || (current === 'en' ? 'de' : 'en');
+      setLanguage(next);
+    });
+  }
+
+  // Apply saved language preference on initial load
+  setLanguage(localStorage.getItem('lang') || 'en');
 </script>
 
 </body>
