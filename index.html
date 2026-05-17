@@ -329,6 +329,30 @@ font-family: ‘Cormorant Garamond’, serif;
 font-size: 1.3rem; color: var(–gold); font-style: italic;
 margin-bottom: 1.5rem; line-height: 1.5;
 }
+.about-visual-horizontal {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) 1.6fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-visual-horizontal .about-year {
+  font-size: 7rem;
+  margin-bottom: 0;
+}
+.about-visual-horizontal .about-highlight {
+  margin-top: -1.5rem;
+  margin-bottom: 0;
+}
+.about-visual-body p {
+  font-size: 0.92rem;
+  color: var(--silver);
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+.about-visual-body p:last-child { margin-bottom: 0; }
+.about-visual-body strong { color: var(--light); }
 .about-features { display: grid; gap: 1rem; margin-top: 2rem; }
 .feature {
 display: flex; gap: 1rem; align-items: flex-start;
@@ -856,6 +880,8 @@ section { padding: 5rem 1.5rem; }
 #hero { padding: 5rem 1.5rem 3rem; }
 .stats-bar { grid-template-columns: repeat(2, 1fr); }
 .about-grid, .contact-inner, .certs-top { grid-template-columns: 1fr; gap: 2.5rem; }
+.about-visual-horizontal { grid-template-columns: 1fr; gap: 2rem; }
+.about-visual-horizontal .about-year { font-size: 5rem; }
 .spec-grid, .app-grid { grid-template-columns: 1fr; }
 .facility-stats { grid-template-columns: repeat(2, 1fr); }
 .about-subnav { gap: 0; padding: 0.6rem 1rem; }
@@ -1052,47 +1078,18 @@ footer { flex-direction: column; text-align: center; }
 
 <!-- PROFILE -->
 <section id="about-profile" class="is-active">
-  <div class="about-grid">
-    <div class="about-visual">
+  <div class="about-visual about-visual-horizontal">
+    <div class="about-visual-hero">
       <div class="about-year">2013</div>
       <div class="about-highlight">"Where Chinese precision meets Japanese engineering excellence."</div>
-      <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;margin-bottom:1rem;">
+    </div>
+    <div class="about-visual-body">
+      <p>
         Shandong Asahi Carbon Graphite New Material Technology Co., Ltd. was founded in 2013 in the Linyi County Economic Development Zone, Dezhou City, Shandong Province, China. With a total investment of approximately ¥466.5 million and a site covering 307 acres, we are one of Asia's most advanced graphite electrode manufacturers.
       </p>
-      <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;">
-        In 2019, we entered a joint venture with <strong style="color:var(--light);">Sojitz Ject Corporation</strong>, a subsidiary of the renowned Japanese Sojitz Group — making us a Sino-Japanese enterprise combining best-in-class Chinese manufacturing with Japanese quality systems and global distribution expertise.
+      <p>
+        In 2019, we entered a joint venture with <strong>Sojitz Ject Corporation</strong>, a subsidiary of the renowned Japanese Sojitz Group — making us a Sino-Japanese enterprise combining best-in-class Chinese manufacturing with Japanese quality systems and global distribution expertise.
       </p>
-    </div>
-    <div>
-      <span class="section-tag">Profile · Who We Are</span>
-      <h2 class="section-title">A World-Class <strong>Carbon Company</strong></h2>
-      <div class="divider"></div>
-      <p class="section-sub" style="margin-bottom:2rem;">
-        Our fully automated, integrated production lines were designed by domestic and international experts, incorporating imported high-precision equipment from Japan, Europe, and the United States — backed by advanced domestic support systems.
-      </p>
-      <div class="about-features">
-        <div class="feature">
-          <div class="feature-icon">⬡</div>
-          <div class="feature-text">
-            <h4>Full Production Chain</h4>
-            <p>Pressing → Primary Firing → Impregnation → Secondary Firing → Graphitization → Machining → R&D Centre</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">◈</div>
-          <div class="feature-text">
-            <h4>Sino-Japanese Joint Venture</h4>
-            <p>Backed by Sojitz Ject Corporation (Tokyo), with an established European branch in Düsseldorf, Germany.</p>
-          </div>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">◉</div>
-          <div class="feature-text">
-            <h4>Dedicated European Liaison</h4>
-            <p>JianHua Li coordinates directly with European buyers, ensuring smooth contracting, logistics, and support.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
