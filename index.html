@@ -812,6 +812,30 @@ gap: 1rem;
 .footer-brand p { font-size: 0.72rem; color: var(–steel); margin-top: 0.3rem; }
 .footer-copy { font-size: 0.72rem; color: var(–steel); text-align: right; }
 .footer-copy a { color: var(–silver); text-decoration: none; }
+.footer-legal { margin-top: 0.7rem; }
+.footer-legal a { color: var(--gold); text-decoration: none; margin: 0 0.2rem; transition: color 0.25s; }
+.footer-legal a:hover { color: var(--white); }
+
+/* ── LEGAL PAGES (Impressum / Datenschutz) ── */
+.legal-inner { max-width: 880px; margin: 0 auto; }
+.legal-inner h2.section-title { margin-bottom: 0.5rem; }
+.legal-intro { color: var(--silver); font-size: 0.9rem; margin-bottom: 2rem; font-style: italic; }
+.legal-h {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 600;
+  color: var(--gold);
+  margin: 2rem 0 0.6rem;
+  letter-spacing: 0.02em;
+}
+.legal-inner p {
+  color: var(--silver);
+  font-size: 0.88rem;
+  line-height: 1.85;
+  margin-bottom: 0.8rem;
+}
+.legal-inner a { color: var(--light); text-decoration: underline; }
+.legal-inner a:hover { color: var(--gold); }
+#impressum, #datenschutz { background: var(--dark); }
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -874,7 +898,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="dropdown-preview">
           <div class="preview-panel active" data-preview-for="about-profile">
             <h4>Profile</h4>
-            <p>Shandong Xuri Graphite — a Sino-Japanese joint venture combining Chinese precision manufacturing with Japanese engineering excellence.</p>
+            <p>Shandong Asahi Carbon Graphite — a Sino-Japanese joint venture combining Chinese precision manufacturing with Japanese engineering excellence.</p>
             <ul>
               <li><strong>Founded</strong> 2013 · Shandong, China</li>
               <li><strong>Site</strong> 307 acres of production area</li>
@@ -1032,7 +1056,7 @@ footer { flex-direction: column; text-align: center; }
       <div class="about-year">2013</div>
       <div class="about-highlight">"Where Chinese precision meets Japanese engineering excellence."</div>
       <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;margin-bottom:1rem;">
-        Shandong Xuri Graphite New Materials Technology Co., Ltd. was founded in 2013 in the Linyi County Economic Development Zone, Dezhou City, Shandong Province, China. With a total investment of approximately ¥466.5 million and a site covering 307 acres, we are one of Asia's most advanced graphite electrode manufacturers.
+        Shandong Asahi Carbon Graphite New Material Technology Co., Ltd. was founded in 2013 in the Linyi County Economic Development Zone, Dezhou City, Shandong Province, China. With a total investment of approximately ¥466.5 million and a site covering 307 acres, we are one of Asia's most advanced graphite electrode manufacturers.
       </p>
       <p style="font-size:0.88rem;color:var(--silver);line-height:1.8;">
         In 2019, we entered a joint venture with <strong style="color:var(--light);">Sojitz Ject Corporation</strong>, a subsidiary of the renowned Japanese Sojitz Group — making us a Sino-Japanese enterprise combining best-in-class Chinese manufacturing with Japanese quality systems and global distribution expertise.
@@ -1100,7 +1124,7 @@ footer { flex-direction: column; text-align: center; }
         <div class="timeline-card">
           <div class="timeline-img" style="background-image:url('images/history/09-2021-09-first-export.png');"></div>
           <div class="timeline-date">2021-09-14</div>
-          <div class="timeline-text">Xuri exports its first batch of finished products.</div>
+          <div class="timeline-text">Asahi Carbon exports its first batch of finished products.</div>
         </div>
       </div>
 
@@ -1691,7 +1715,7 @@ footer { flex-direction: column; text-align: center; }
     <div class="hq-row">
       <div class="hq-flag">🇨🇳</div>
       <div class="hq-details">
-        <strong>Shandong Xuri Graphite — Factory (China)</strong>
+        <strong>Shandong Asahi Carbon Graphite — Factory (China)</strong>
         Linyi County Economic Development Zone, Dezhou City, Shandong · Tel: 0534-4777771
       </div>
     </div>
@@ -1797,18 +1821,107 @@ footer { flex-direction: column; text-align: center; }
 
 </div><!-- /page contact -->
 
+<!-- IMPRESSUM -->
+
+<div class="page" data-page="impressum">
+
+<section id="impressum">
+  <div class="legal-inner">
+    <span class="section-tag">Legal Information</span>
+    <h2 class="section-title">Impressum</h2>
+    <div class="divider"></div>
+    <p class="legal-intro">Angaben gemäß § 5 TMG</p>
+
+    <h4 class="legal-h">Unternehmen</h4>
+    <p>Shandong Asahi Carbon Graphite New Material Technology Co., Ltd.<br>
+      No. 1261 Chaofan Street, Linzi Town<br>
+      Linyi County, Dezhou City<br>
+      Shandong Province, China</p>
+
+    <h4 class="legal-h">Vertretungsberechtigter / Geschäftsführer</h4>
+    <p>Wu Yun Zi</p>
+
+    <h4 class="legal-h">Europäischer Ansprechpartner</h4>
+    <p>JianHua Li<br>
+      Telefon: <a href="tel:+491603061395">+49 160 3061395</a><br>
+      E-Mail: <a href="mailto:sales@asahicarbon.de">sales@asahicarbon.de</a></p>
+
+    <h4 class="legal-h">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h4>
+    <p>Wu Yun Zi<br>
+      Shandong Asahi Carbon Graphite New Material Technology Co., Ltd.<br>
+      No. 1261 Chaofan Street, Linzi Town, Linyi County, Dezhou City, Shandong Province, China</p>
+
+    <h4 class="legal-h">Haftung für Inhalte</h4>
+    <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+
+    <h4 class="legal-h">Haftung für Links</h4>
+    <p>Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+    <h4 class="legal-h">Urheberrecht</h4>
+    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem chinesischen und deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+  </div>
+</section>
+
+</div><!-- /page impressum -->
+
+<!-- DATENSCHUTZ -->
+
+<div class="page" data-page="datenschutz">
+
+<section id="datenschutz">
+  <div class="legal-inner">
+    <span class="section-tag">Legal Information</span>
+    <h2 class="section-title">Datenschutzerklärung</h2>
+    <div class="divider"></div>
+
+    <h4 class="legal-h">1. Verantwortlicher</h4>
+    <p>Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+    <p>Shandong Asahi Carbon Graphite New Material Technology Co., Ltd.<br>
+      No. 1261 Chaofan Street, Linzi Town, Linyi County, Dezhou City, Shandong Province, China<br>
+      vertreten durch Wu Yun Zi</p>
+    <p>Europäischer Ansprechpartner: JianHua Li<br>
+      Telefon: <a href="tel:+491603061395">+49 160 3061395</a><br>
+      E-Mail: <a href="mailto:sales@asahicarbon.de">sales@asahicarbon.de</a></p>
+
+    <h4 class="legal-h">2. Allgemeine Hinweise</h4>
+    <p>Wir nehmen den Schutz Ihrer personenbezogenen Daten sehr ernst. Personenbezogene Daten werden auf dieser Website nur im technisch notwendigen Umfang erhoben. In keinem Fall werden die erhobenen Daten verkauft oder aus anderen Gründen an Dritte weitergegeben.</p>
+
+    <h4 class="legal-h">3. Hosting</h4>
+    <p>Diese Website wird über <strong>GitHub Pages</strong> (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) gehostet. Beim Aufruf der Website werden technische Zugriffsdaten (insbesondere IP-Adresse, Browsertyp, Datum und Uhrzeit, abgerufene Datei) verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb der Website).</p>
+
+    <h4 class="legal-h">4. Kontaktaufnahme und Anfrageformular</h4>
+    <p>Wenn Sie uns per Kontaktformular, E-Mail oder Telefon kontaktieren, werden Ihre Angaben (z. B. Name, Firma, E-Mail-Adresse, Land, Ihre Anfrage) zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen gespeichert. Das Anfrageformular wird technisch über <strong>Web3Forms</strong> (Forms-API) abgewickelt; Ihre Eingaben werden ausschließlich zum Zweck der Zustellung an unsere Vertriebsadresse weitergeleitet.</p>
+    <p>Rechtsgrundlage der Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung Ihrer Anfrage). Die Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+
+    <h4 class="legal-h">5. Cookies</h4>
+    <p>Diese Website setzt keine Tracking- oder Marketing-Cookies ein. Technisch notwendige Daten werden ausschließlich zur Auslieferung der Seite und für Funktionen wie das Anfrageformular verwendet.</p>
+
+    <h4 class="legal-h">6. Ihre Rechte</h4>
+    <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Darüber hinaus steht Ihnen ein Recht auf Berichtigung, Sperrung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit zu. Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+
+    <h4 class="legal-h">7. Beschwerderecht</h4>
+    <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren.</p>
+
+    <h4 class="legal-h">8. Aktualität und Änderung dieser Datenschutzerklärung</h4>
+    <p>Diese Datenschutzerklärung ist aktuell gültig. Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher Vorgaben kann eine Anpassung erforderlich werden. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf dieser Seite abgerufen werden.</p>
+  </div>
+</section>
+
+</div><!-- /page datenschutz -->
+
 <!-- FOOTER -->
 
 <footer>
   <div class="footer-brand">
     <a href="#" class="nav-logo">Asahi <span>Carbon</span></a>
-    <p>Shandong Xuri Graphite New Materials Technology Co., Ltd.</p>
+    <p>Shandong Asahi Carbon Graphite New Material Technology Co., Ltd.</p>
     <p>Sino-Japanese Joint Venture · In partnership with Sojitz Ject Corporation</p>
   </div>
   <div class="footer-copy">
     <p>European Enquiries: <a href="mailto:sales@asahicarbon.de">JianHua Li · sales@asahicarbon.de</a></p>
     <p style="margin-top:0.2rem;"><a href="tel:+491603061395" style="color:var(--silver);">+49 160 3061395</a></p>
     <p style="margin-top:0.3rem;">Serving Europe · North America · South America</p>
+    <p class="footer-legal"><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></p>
     <p style="margin-top:0.5rem;color:rgba(138,143,168,0.5);">© 2025 Asahi Carbon Europe. All rights reserved.</p>
   </div>
 </footer>
@@ -1832,7 +1945,9 @@ footer { flex-direction: column; text-align: center; }
       'ingredients': 'ingredients',
       'industries': 'industries',
       'certs': 'industries',
-      'contact': 'contact'
+      'contact': 'contact',
+      'impressum': 'impressum',
+      'datenschutz': 'datenschutz'
     };
 
     function showPage(name, anchor) {
