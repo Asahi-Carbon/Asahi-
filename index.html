@@ -395,6 +395,46 @@ transition: background 0.3s;
 .about-subnav-link.active { color: var(--gold); background: rgba(94,179,242,0.06); }
 [data-page="about"] > section { display: none; }
 [data-page="about"] > section.is-active { display: block; }
+[data-page="services"] > section { display: none; }
+[data-page="services"] > section.is-active { display: block; }
+
+/* ── SERVICES GRID ── */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.service-card {
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.15);
+  padding: 2rem 1.8rem;
+  transition: border-color 0.3s, transform 0.3s, background 0.3s;
+}
+.service-card:hover {
+  border-color: rgba(94,179,242,0.45);
+  background: rgba(94,179,242,0.04);
+  transform: translateY(-4px);
+}
+.service-icon {
+  color: var(--gold);
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+.service-card h4 {
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 0.7rem;
+}
+.service-card p {
+  font-size: 0.85rem;
+  color: var(--silver);
+  line-height: 1.75;
+}
 
 /* ── ABOUT · TIMELINE (vertical, alternating, hover-image) ── */
 .timeline {
@@ -915,7 +955,7 @@ section { padding: 5rem 1.5rem; }
 .about-grid, .contact-inner, .certs-top { grid-template-columns: 1fr; gap: 2.5rem; }
 .about-visual-horizontal { grid-template-columns: 1fr; gap: 2rem; }
 .about-visual-horizontal .about-year { font-size: 5rem; }
-.spec-grid, .app-grid { grid-template-columns: 1fr; }
+.spec-grid, .app-grid, .service-grid { grid-template-columns: 1fr; }
 .cert-documents-grid { grid-template-columns: 1fr; }
 .facility-stats { grid-template-columns: repeat(2, 1fr); }
 .about-subnav { gap: 0; padding: 0.6rem 1rem; }
@@ -1048,6 +1088,35 @@ footer { flex-direction: column; text-align: center; }
               <li><strong>Petroleum Coke</strong> Calcined, anode grade</li>
               <li><strong>Needle Coke</strong> UHP feedstock</li>
               <li><strong>Coal Tar Pitch</strong> Binder grade</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="has-dropdown">
+      <a href="#services">Services</a>
+      <div class="dropdown">
+        <ul class="dropdown-nav">
+          <li><a href="#services-support" data-preview="services-support" class="preview-active">Technical Support</a></li>
+          <li><a href="#services-shipping" data-preview="services-shipping">Packaging and Shipping</a></li>
+        </ul>
+        <div class="dropdown-preview">
+          <div class="preview-panel active" data-preview-for="services-support">
+            <h4>Technical Support</h4>
+            <p>Hands-on engineering guidance from grade selection to in-furnace performance — backed by our R&amp;D centre and Sojitz Ject technical network.</p>
+            <ul>
+              <li><strong>Pre-Sales</strong> Grade &amp; specification advice</li>
+              <li><strong>On-Site</strong> Commissioning &amp; troubleshooting</li>
+              <li><strong>Languages</strong> EN · DE · ZH · JA</li>
+            </ul>
+          </div>
+          <div class="preview-panel" data-preview-for="services-shipping">
+            <h4>Packaging and Shipping</h4>
+            <p>FCL container shipments with protective packaging built for long-haul European delivery, plus full export documentation.</p>
+            <ul>
+              <li><strong>Packaging</strong> FCL · Edge &amp; thread protection</li>
+              <li><strong>Docs</strong> MTR · CoC · Inspection records</li>
+              <li><strong>Routes</strong> Europe · Americas</li>
             </ul>
           </div>
         </div>
@@ -1597,6 +1666,109 @@ footer { flex-direction: column; text-align: center; }
 
 </div><!-- /page ingredients -->
 
+<!-- SERVICES -->
+
+<div class="page" data-page="services">
+
+<div class="about-subnav">
+  <a href="#services-support" class="about-subnav-link">Technical Support</a>
+  <a href="#services-shipping" class="about-subnav-link">Packaging and Shipping</a>
+</div>
+
+<!-- TECHNICAL SUPPORT -->
+<section id="services-support" class="is-active" style="background:var(--dark);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <span class="section-tag">Services · Technical Support</span>
+      <h2 class="section-title">Engineering Guidance from <strong>Spec to Furnace</strong></h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+      <p class="section-sub" style="margin:0 auto;">
+        Our team works directly with your metallurgists and procurement to specify the right grade, optimise consumption, and resolve operational issues — drawing on both our Chinese R&amp;D centre and Sojitz Ject's Japanese engineering network.
+      </p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">⬡</div>
+        <h4>Pre-Sales Consultation</h4>
+        <p>Grade selection (RP / HP / UHP), diameter matching, and joint configuration tailored to your furnace's current density, tap-to-tap cycle, and scrap mix.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◈</div>
+        <h4>On-Site &amp; Remote Engineering</h4>
+        <p>Commissioning support for first deliveries, performance audits, and remote troubleshooting via JianHua Li in Düsseldorf and our China-based R&amp;D team.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◉</div>
+        <h4>Consumption Optimisation</h4>
+        <p>Wear analysis and process recommendations to lower electrode consumption per tonne of steel — backed by data from comparable European EAF operations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⬢</div>
+        <h4>Quality &amp; Traceability</h4>
+        <p>Full material test reports, batch traceability, and direct access to our QA team for non-conformance or claim resolution.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◆</div>
+        <h4>Multilingual Documentation</h4>
+        <p>Technical data sheets, MTRs, and SDS available in English, German, French, Italian, Spanish, Chinese, and Japanese on request.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◎</div>
+        <h4>Long-Term Supply Planning</h4>
+        <p>Forecast-based production reservations and framework agreements to protect your supply against market volatility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGING AND SHIPPING -->
+<section id="services-shipping" style="background:var(--black);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:4rem;">
+      <span class="section-tag">Services · Packaging and Shipping</span>
+      <h2 class="section-title">Built to Travel <strong>Half the World</strong></h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+      <p class="section-sub" style="margin:0 auto;">
+        Every shipment leaves the factory ready for long-haul ocean transport and European port handling — protective packaging, full documentation, and logistics coordinated by our Düsseldorf office.
+      </p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-icon">⬡</div>
+        <h4>FCL Container Loading</h4>
+        <p>Full-container-load shipments with electrodes secured against vibration and impact for sea transit to European and American ports.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◈</div>
+        <h4>Protective Packaging</h4>
+        <p>Edge and thread protection on each electrode, wooden crates or steel frames as required, with desiccants and moisture barriers for ocean freight.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◉</div>
+        <h4>Export Documentation</h4>
+        <p>Material Test Report (MTR), Certificate of Conformity, dimensional inspection record, packing list, and commercial invoice with every shipment.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⬢</div>
+        <h4>European Logistics</h4>
+        <p>Coordination with established freight forwarders for delivery to Rotterdam, Hamburg, Antwerp, Genoa, and inland EU destinations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◆</div>
+        <h4>Customs &amp; Compliance</h4>
+        <p>HS classifications, REACH and country-of-origin declarations, and support for EU import filings handled by our European representative.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">◎</div>
+        <h4>Transit Insurance Options</h4>
+        <p>All-risks cargo insurance available on request for the full value of each shipment, with claims handled directly through our liaison in Germany.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /page services -->
+
 <!-- INDUSTRIES -->
 
 <div class="page" data-page="industries">
@@ -1989,6 +2161,9 @@ footer { flex-direction: column; text-align: center; }
       'graphite-electrode': 'graphite-electrode',
       'graphite-powder': 'graphite-powder',
       'ingredients': 'ingredients',
+      'services': 'services',
+      'services-support': 'services',
+      'services-shipping': 'services',
       'industries': 'industries',
       'certs': 'industries',
       'contact': 'contact',
@@ -1996,12 +2171,18 @@ footer { flex-direction: column; text-align: center; }
       'datenschutz': 'datenschutz'
     };
 
-    function showAboutSubsection(id) {
-      if (!id || !document.getElementById(id)) id = 'about-profile';
-      document.querySelectorAll('[data-page="about"] > section').forEach(s => {
+    const subsectionDefaults = {
+      about: 'about-profile',
+      services: 'services-support'
+    };
+
+    function showSubsection(pageName, id) {
+      const defaultId = subsectionDefaults[pageName];
+      if (!id || !document.getElementById(id)) id = defaultId;
+      document.querySelectorAll('[data-page="' + pageName + '"] > section').forEach(s => {
         s.classList.toggle('is-active', s.id === id);
       });
-      document.querySelectorAll('.about-subnav-link').forEach(a => {
+      document.querySelectorAll('[data-page="' + pageName + '"] .about-subnav-link').forEach(a => {
         a.classList.toggle('active', a.getAttribute('href') === '#' + id);
       });
     }
@@ -2014,8 +2195,8 @@ footer { flex-direction: column; text-align: center; }
         const id = a.getAttribute('href').slice(1);
         a.classList.toggle('nav-active', anchorToPage[id] === name);
       });
-      if (name === 'about') {
-        showAboutSubsection(anchor);
+      if (subsectionDefaults[name]) {
+        showSubsection(name, anchor);
         window.scrollTo(0, 0);
       } else if (anchor && document.getElementById(anchor)) {
         requestAnimationFrame(() => {
