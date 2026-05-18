@@ -655,6 +655,27 @@ transition: background 0.3s;
   margin-bottom: 0.6rem;
 }
 .app-card p { font-size: 0.82rem; color: var(--silver); line-height: 1.7; }
+.app-vision {
+  position: relative;
+  max-width: 900px;
+  margin: 4rem auto 0;
+  padding: 2.5rem 2.5rem 2.5rem 3rem;
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.18);
+}
+.app-vision-rule {
+  position: absolute;
+  top: 2rem; bottom: 2rem; left: 0;
+  width: 2px;
+  background: var(--gold);
+}
+.app-vision .section-tag { display: block; margin-bottom: 1.2rem; }
+.app-vision p {
+  font-size: 0.95rem;
+  color: var(--silver);
+  line-height: 1.95;
+  margin: 0;
+}
 
 /* ── ABOUT · FACILITY ── */
 .facility-stats {
@@ -1476,6 +1497,12 @@ footer { flex-direction: column; text-align: center; }
         <h4 data-i18n="about.app.c6.h">Green Industry</h4>
         <p data-i18n="about.app.c6.p">Supporting Europe's decarbonisation — enabling green steel and clean energy technologies.</p>
       </div>
+    </div>
+
+    <div class="app-vision">
+      <div class="app-vision-rule"></div>
+      <span class="section-tag" data-i18n="about.app.vision.tag">Strategy &amp; Innovation</span>
+      <p data-i18n="about.app.vision.p">The carbon industry is an important new-energy raw-material sector in China, and carbon products are widely used in numerous fields such as metallurgy, chemical engineering, aviation, aerospace, and nuclear energy. Considering the company's long-term development, ASAHI Technology has adopted a strategy driven by technological innovation to promote sustainable corporate growth. The company has invested over 20 million yuan to introduce advanced laboratory equipment and establish an independent R&amp;D center, dedicated to producing China's highest-quality ultra-high-power graphite electrodes. ASAHI Technology aims to catch up with and surpass the standards of developed countries such as Europe, the United States, and Japan, thereby building a truly national Chinese brand. At the same time, the company is actively engaged in the R&amp;D of cutting-edge carbon products, including fullerene carbon, nano-carbon, and graphene. By fully leveraging its technological strengths, ASAHI Technology is creating broader market prospects and driving the overall development of China's carbon industry.</p>
     </div>
   </div>
 </section>
@@ -2600,6 +2627,8 @@ footer { flex-direction: column; text-align: center; }
       'about.app.c5.p': 'Ultrareiner Graphit für Kristallzüchtung, Epitaxie-Beschichtung und Hochtemperatur-Diffusionsöfen.',
       'about.app.c6.h': 'Grüne Industrie',
       'about.app.c6.p': 'Unterstützung der Dekarbonisierung Europas — grüner Stahl und saubere Energietechnologien.',
+      'about.app.vision.tag': 'Strategie &amp; Innovation',
+      'about.app.vision.p': 'Die Kohlenstoffindustrie ist in China ein bedeutender Rohstoffsektor für neue Energien, und Kohlenstoffprodukte finden in zahlreichen Branchen Anwendung — darunter Metallurgie, Chemie, Luftfahrt, Raumfahrt und Kernenergie. Mit Blick auf die langfristige Entwicklung des Unternehmens verfolgt ASAHI Technology eine durch technologische Innovation geprägte Strategie für nachhaltiges Wachstum. Über 20 Millionen Yuan wurden in modernste Laborausrüstung und den Aufbau eines unabhängigen F&amp;E-Zentrums investiert, mit dem Ziel, Chinas hochwertigste Ultra-High-Power-Graphitelektroden zu fertigen. ASAHI Technology strebt an, die Standards führender Industrieländer wie Europa, der USA und Japans einzuholen und zu übertreffen — und so eine wahrhaft nationale chinesische Marke aufzubauen. Gleichzeitig forscht das Unternehmen aktiv an zukunftsweisenden Kohlenstoffprodukten wie Fullerenen, Nanokohlenstoff und Graphen. Durch die konsequente Nutzung seiner technologischen Stärken schafft ASAHI Technology weitere Marktperspektiven und treibt die gesamte Entwicklung der chinesischen Kohlenstoffindustrie voran.',
 
       // About — Facility
       'about.fac.tag': 'Unser Werk · Fertigungskompetenz',
