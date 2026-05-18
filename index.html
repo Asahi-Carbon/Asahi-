@@ -548,6 +548,84 @@ transition: background 0.3s;
 .spec-card ul li:last-child { border-bottom: none; }
 .spec-card ul li strong { color: var(--gold); font-weight: 600; margin-right: 0.5rem; }
 
+/* ── ELECTRODE SPEC TABLE ── */
+.spec-table-wrap {
+  margin-top: 4rem;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.spec-table-title {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+}
+.spec-table-sub {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--silver);
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+.spec-table-scroll {
+  overflow-x: auto;
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.18);
+}
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.spec-table thead {
+  background: rgba(94,179,242,0.08);
+}
+.spec-table th {
+  color: var(--gold);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.95rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(94,179,242,0.25);
+  border-right: 1px solid rgba(94,179,242,0.12);
+}
+.spec-table thead tr:first-child th { border-bottom-color: rgba(94,179,242,0.12); }
+.spec-table th:last-child { border-right: none; }
+.spec-table td {
+  padding: 0.85rem 1rem;
+  text-align: center;
+  color: var(--light);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-right: 1px solid rgba(255,255,255,0.04);
+  vertical-align: middle;
+}
+.spec-table td:last-child { border-right: none; }
+.spec-table tr.group-start td:not([rowspan]) { border-top: 1px solid rgba(94,179,242,0.15); }
+.spec-table tr.group-start td[rowspan] { border-top: 1px solid rgba(94,179,242,0.18); }
+.spec-table td strong {
+  display: block;
+  color: var(--white);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.spec-table .dim-mm {
+  display: block;
+  color: var(--silver);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  margin-top: 0.25rem;
+}
+.spec-table .muted { color: var(--silver); font-size: 0.78rem; }
+.spec-table tbody tr:hover td { background: rgba(94,179,242,0.05); }
+
 /* ── ABOUT · APPLICATION GRID ── */
 .app-grid {
   display: grid;
@@ -1296,6 +1374,60 @@ footer { flex-direction: column; text-align: center; }
           <li data-i18n="about.spec.card3.li2"><strong>Needle Coke</strong> UHP feedstock</li>
           <li data-i18n="about.spec.card3.li3"><strong>Coal Tar Pitch</strong> Binder grade</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="spec-table-wrap">
+      <h4 class="spec-table-title" data-i18n="spec.table.title">Standard Dimensions &amp; Weight</h4>
+      <p class="spec-table-sub" data-i18n="spec.table.sub">Reference specifications for graphite electrodes. All tolerances ship with a Material Test Report (MTR) and dimensional inspection record.</p>
+      <div class="spec-table-scroll">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th rowspan="2" data-i18n="spec.table.col.nominalDia">Nominal Diameter</th>
+              <th colspan="2" data-i18n="spec.table.col.diaRange">Diameter Range (mm)</th>
+              <th colspan="2" data-i18n="spec.table.col.lengthRange">Length Range (mm)</th>
+              <th rowspan="2" data-i18n="spec.table.col.weight">Standard Weight (kg)</th>
+            </tr>
+            <tr>
+              <th data-i18n="spec.table.col.inchMm">Inch · mm</th>
+              <th data-i18n="spec.table.col.tolerance">Tolerance</th>
+              <th data-i18n="spec.table.col.nominalLen">Nominal</th>
+              <th data-i18n="spec.table.col.tolerance">Tolerance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>3</strong><span class="dim-mm">75 mm</span></td><td>78</td><td class="muted">73 ~ 78</td><td>1000</td><td class="muted">925 ~ 1050</td><td>7</td></tr>
+            <tr><td><strong>4</strong><span class="dim-mm">100 mm</span></td><td>103</td><td class="muted">98 ~ 103</td><td>1200</td><td class="muted">1100 ~ 1250</td><td>16</td></tr>
+            <tr><td><strong>5 1/8</strong><span class="dim-mm">130 mm</span></td><td>132</td><td class="muted">129 ~ 132</td><td>1500</td><td class="muted">1400 ~ 1550</td><td>33</td></tr>
+            <tr><td><strong>6</strong><span class="dim-mm">150 mm</span></td><td>154</td><td class="muted">149 ~ 154</td><td>1500</td><td class="muted">1400 ~ 1550</td><td>45</td></tr>
+            <tr><td><strong>7</strong><span class="dim-mm">175 mm</span></td><td>179</td><td class="muted">174 ~ 179</td><td>1500</td><td class="muted">1400 ~ 1550</td><td>59</td></tr>
+            <tr class="group-start"><td rowspan="2"><strong>8</strong><span class="dim-mm">200 mm</span></td><td rowspan="2">205</td><td rowspan="2" class="muted">200 ~ 205</td><td>1500</td><td class="muted">1400 ~ 1550</td><td>76</td></tr>
+            <tr><td>1800</td><td class="muted">1700 ~ 1875</td><td>100</td></tr>
+            <tr class="group-start"><td><strong>9</strong><span class="dim-mm">225 mm</span></td><td>230</td><td class="muted">225 ~ 230</td><td>1500</td><td class="muted">1400 ~ 1550</td><td>101</td></tr>
+            <tr class="group-start"><td rowspan="2"><strong>10</strong><span class="dim-mm">250 mm</span></td><td rowspan="2">256</td><td rowspan="2" class="muted">251 ~ 256</td><td>1500</td><td class="muted">1400 ~ 1550</td><td>120</td></tr>
+            <tr><td>1800</td><td class="muted">1700 ~ 1875</td><td>155</td></tr>
+            <tr class="group-start"><td rowspan="2"><strong>12</strong><span class="dim-mm">300 mm</span></td><td rowspan="2">307</td><td rowspan="2" class="muted">302 ~ 307</td><td>1500</td><td class="muted">1400 ~ 1550</td><td>185</td></tr>
+            <tr><td>1800</td><td class="muted">1700 ~ 1875</td><td>230</td></tr>
+            <tr class="group-start"><td rowspan="3"><strong>14</strong><span class="dim-mm">350 mm</span></td><td rowspan="3">357</td><td rowspan="3" class="muted">352 ~ 357</td><td>1500</td><td class="muted">1400 ~ 1550</td><td>253</td></tr>
+            <tr><td>1800</td><td class="muted">1700 ~ 1875</td><td>305</td></tr>
+            <tr><td>2400</td><td class="muted">2275 ~ 2475</td><td>406</td></tr>
+            <tr class="group-start"><td rowspan="2"><strong>16</strong><span class="dim-mm">400 mm</span></td><td rowspan="2">409</td><td rowspan="2" class="muted">403 ~ 409</td><td>1500</td><td class="muted">1400 ~ 1550</td><td>334</td></tr>
+            <tr><td>1800</td><td class="muted">1700 ~ 1875</td><td>395</td></tr>
+            <tr class="group-start"><td rowspan="3"><strong>18</strong><span class="dim-mm">450 mm</span></td><td rowspan="3">460</td><td rowspan="3" class="muted">454 ~ 460</td><td>1800</td><td class="muted">1700 ~ 1875</td><td>505</td></tr>
+            <tr><td>2100</td><td class="muted">1975 ~ 2175</td><td>585</td></tr>
+            <tr><td>2400</td><td class="muted">2275 ~ 2475</td><td>665</td></tr>
+            <tr class="group-start"><td rowspan="3"><strong>20</strong><span class="dim-mm">500 mm</span></td><td rowspan="3">511</td><td rowspan="3" class="muted">505 ~ 511</td><td>1800</td><td class="muted">1700 ~ 1875</td><td>617</td></tr>
+            <tr><td>2100</td><td class="muted">1975 ~ 2175</td><td>717</td></tr>
+            <tr><td>2400</td><td class="muted">2275 ~ 2475</td><td>824</td></tr>
+            <tr class="group-start"><td rowspan="2"><strong>22</strong><span class="dim-mm">550 mm</span></td><td rowspan="2">562</td><td rowspan="2" class="muted">556 ~ 562</td><td>2100</td><td class="muted">1975 ~ 2175</td><td>873</td></tr>
+            <tr><td>2400</td><td class="muted">2275 ~ 2475</td><td>995</td></tr>
+            <tr class="group-start"><td rowspan="2"><strong>24</strong><span class="dim-mm">600 mm</span></td><td rowspan="2">613</td><td rowspan="2" class="muted">607 ~ 613</td><td>2400</td><td class="muted">2275 ~ 2475</td><td>1190</td></tr>
+            <tr><td>2700</td><td class="muted">2550 ~ 2850</td><td>1350</td></tr>
+            <tr class="group-start"><td><strong>26</strong><span class="dim-mm">650 mm</span></td><td>663</td><td class="muted">657 ~ 663</td><td>2700</td><td class="muted">2550 ~ 2850</td><td>1580</td></tr>
+            <tr class="group-start"><td><strong>28</strong><span class="dim-mm">700 mm</span></td><td>714</td><td class="muted">708 ~ 714</td><td>2700</td><td class="muted">2550 ~ 2850</td><td>1840</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -2440,6 +2572,15 @@ footer { flex-direction: column; text-align: center; }
       'about.spec.card3.li1': '<strong>Petrolkoks</strong> Kalziniert, Anodenqualität',
       'about.spec.card3.li2': '<strong>Nadelkoks</strong> UHP-Rohstoff',
       'about.spec.card3.li3': '<strong>Steinkohlenpech</strong> Bindemittelqualität',
+      'spec.table.title': 'Standardmaße &amp; Gewichte',
+      'spec.table.sub': 'Referenzspezifikationen für Graphitelektroden. Alle Lieferungen werden mit Material-Test-Report (MTR) und Maßprüfprotokoll versendet.',
+      'spec.table.col.nominalDia': 'Nenndurchmesser',
+      'spec.table.col.diaRange': 'Durchmesser (mm)',
+      'spec.table.col.lengthRange': 'Länge (mm)',
+      'spec.table.col.weight': 'Gewicht (kg)',
+      'spec.table.col.inchMm': 'Zoll · mm',
+      'spec.table.col.tolerance': 'Toleranz',
+      'spec.table.col.nominalLen': 'Nennmaß',
 
       // About — Application
       'about.app.tag': 'Anwendungsbereiche · Wo wir wirken',
