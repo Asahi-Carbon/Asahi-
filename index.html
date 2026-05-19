@@ -1330,8 +1330,13 @@ gap: 1rem;
 .footer-copy { font-size: 0.72rem; color: var(–steel); text-align: right; }
 .footer-copy a { color: var(–silver); text-decoration: none; }
 .footer-legal { margin-top: 0.7rem; }
-.footer-legal a { color: var(--gold); text-decoration: none; margin: 0 0.2rem; transition: color 0.25s; }
-.footer-legal a:hover { color: var(--white); }
+.footer-legal a,
+.footer-legal .footer-legal-btn { color: var(--gold); text-decoration: none; margin: 0 0.2rem; transition: color 0.25s; }
+.footer-legal a:hover,
+.footer-legal .footer-legal-btn:hover { color: var(--white); }
+.footer-legal .footer-legal-btn {
+  background: none; border: none; padding: 0; font: inherit; cursor: pointer;
+}
 
 /* ── COOKIE CONSENT ── */
 .cookie-consent {
@@ -2901,7 +2906,7 @@ footer { flex-direction: column; text-align: center; }
     <p data-i18n="footer.enquiries.full">European Enquiries: <a href="mailto:sales@asahicarbon.de">JianHua Li · sales@asahicarbon.de</a></p>
     <p style="margin-top:0.2rem;"><a href="tel:+491603061395" style="color:var(--silver);">+49 160 3061395</a></p>
     <p style="margin-top:0.3rem;" data-i18n="footer.serving">Serving Europe · North America · South America</p>
-    <p class="footer-legal"><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></p>
+    <p class="footer-legal"><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a> · <button type="button" class="footer-legal-btn" id="cookie-settings" data-i18n="footer.cookieSettings">Cookie Settings</button></p>
     <p style="margin-top:0.5rem;color:rgba(138,143,168,0.5);" data-i18n="footer.copy">© 2025 Asahi Carbon Europe. All rights reserved.</p>
   </div>
 </footer>
@@ -3514,6 +3519,7 @@ footer { flex-direction: column; text-align: center; }
       'footer.brand2': 'Sino-japanisches Joint Venture · in Partnerschaft mit Sojitz Ject Corporation',
       'footer.enquiries.full': 'Anfragen Europa: <a href="mailto:sales@asahicarbon.de">JianHua Li · sales@asahicarbon.de</a>',
       'footer.serving': 'Tätig in Europa · Nordamerika · Südamerika',
+      'footer.cookieSettings': 'Cookie-Einstellungen',
       'footer.copy': '© 2025 Asahi Carbon Europe. Alle Rechte vorbehalten.',
 
       // Cookie consent
@@ -3578,6 +3584,13 @@ footer { flex-direction: column; text-align: center; }
     };
     document.getElementById('cookie-accept').addEventListener('click', () => dismiss('accepted'));
     document.getElementById('cookie-decline').addEventListener('click', () => dismiss('declined'));
+    const settingsBtn = document.getElementById('cookie-settings');
+    if (settingsBtn) {
+      settingsBtn.addEventListener('click', () => {
+        localStorage.removeItem(STORAGE_KEY);
+        banner.classList.add('show');
+      });
+    }
   })();
 </script>
 
