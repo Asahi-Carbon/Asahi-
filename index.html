@@ -858,6 +858,13 @@ transition: background 0.3s;
 .doc-modal-body .doc-table-current td:nth-child(2),
 .doc-modal-body .doc-table-current td:nth-child(4),
 .doc-modal-body .doc-table-current td:nth-child(6) { border-left: 1px solid rgba(94,179,242,0.12); }
+.doc-modal-body .doc-table-threads { font-size: 0.76rem; }
+.doc-modal-body .doc-table-threads th { padding: 0.55rem 0.5rem; line-height: 1.2; }
+.doc-modal-body .doc-table-threads td { padding: 0.5rem 0.5rem; white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.04); }
+.doc-modal-body .doc-table-threads td:last-child { border-right: none; }
+.doc-modal-body .doc-table-threads td:first-child,
+.doc-modal-body .doc-table-threads td:nth-child(8) { color: var(--white); font-weight: 600; }
+.doc-modal-body .doc-h-unit { display: block; font-weight: 400; font-size: 0.62rem; opacity: 0.8; letter-spacing: 0.1em; margin-top: 0.15rem; }
 
 /* ── ABOUT · FACILITY ── */
 .facility-stats {
@@ -1820,17 +1827,43 @@ footer { flex-direction: column; text-align: center; }
           <h4 class="doc-title" data-i18n="about.app.docs.c5.t">Standard Dimensions for Fittings &amp; Threads</h4>
           <button class="doc-btn" data-doc-target="doc5"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc5" hidden>
-            <p>Asahi Carbon graphite electrodes are supplied with standard tapered threaded sockets and matching nipples (pins). Thread type depends on electrode diameter.</p>
-            <table class="doc-table">
-              <thead><tr><th>Diameter Range (mm)</th><th>Thread Type</th><th>Pin Length (mm)</th><th>Taper</th></tr></thead>
-              <tbody>
-                <tr><td>75 – 300</td><td>4 TPI</td><td>300 – 460</td><td>1:6</td></tr>
-                <tr><td>350 – 450</td><td>4 TPI / 3 TPI</td><td>460 – 560</td><td>1:6</td></tr>
-                <tr><td>500 – 600</td><td>3 TPI</td><td>560 – 720</td><td>1:6</td></tr>
-                <tr><td>650 – 700</td><td>3 TPI</td><td>720 – 810</td><td>1:6</td></tr>
-              </tbody>
-            </table>
-            <p class="doc-note">Thread tolerances follow ISO 13765 / IEC 60239. Custom thread profiles available on request.</p>
+            <p>Standard pin (nipple) dimensions for the <strong>4&nbsp;TPI series · pitch 6.35&nbsp;mm</strong>. Tolerances follow ISO 13765 / IEC 60239; custom thread profiles available on request.</p>
+            <div class="doc-table-scroll">
+              <table class="doc-table doc-table-threads">
+                <thead>
+                  <tr>
+                    <th>Pin Code</th>
+                    <th>Major Ø<br><span class="doc-h-unit">mm</span></th>
+                    <th>Length<br><span class="doc-h-unit">mm</span></th>
+                    <th>Root Ø<br><span class="doc-h-unit">mm</span></th>
+                    <th>Socket Depth<br><span class="doc-h-unit">mm</span></th>
+                    <th>Effective Depth<br><span class="doc-h-unit">mm</span></th>
+                    <th>Body Ø<br><span class="doc-h-unit">mm</span></th>
+                    <th>Part No.</th>
+                    <th>Major Ø<br><span class="doc-h-unit">in</span></th>
+                    <th>Length<br><span class="doc-h-unit">in</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>10T4</td><td>152.40</td><td>190.50</td><td>146.08</td><td>101.30</td><td>97.30</td><td>149.24</td><td>152T4</td><td>6.00</td><td>7.50</td></tr>
+                  <tr><td>12T4</td><td>177.80</td><td>215.90</td><td>171.48</td><td>114.00</td><td>110.00</td><td>174.64</td><td>177T4</td><td>7.00</td><td>8.50</td></tr>
+                  <tr><td>14T4</td><td>203.20</td><td>254.00</td><td>196.88</td><td>133.00</td><td>129.00</td><td>200.04</td><td>203T4</td><td>8.00</td><td>10.00</td></tr>
+                  <tr><td>16T4</td><td>222.25</td><td>304.80</td><td>215.93</td><td>158.40</td><td>154.40</td><td>219.09</td><td>222T4</td><td>8.75</td><td>12.00</td></tr>
+                  <tr><td>16T4L</td><td>222.25</td><td>355.60</td><td>215.93</td><td>183.80</td><td>179.80</td><td>219.09</td><td>222T4L</td><td>8.75</td><td>14.00</td></tr>
+                  <tr><td>18T4</td><td>241.30</td><td>304.80</td><td>234.98</td><td>158.40</td><td>154.40</td><td>238.14</td><td>241T4</td><td>9.50</td><td>12.00</td></tr>
+                  <tr><td>18T4L</td><td>241.30</td><td>355.60</td><td>234.98</td><td>183.80</td><td>179.80</td><td>238.14</td><td>241T4L</td><td>9.50</td><td>14.00</td></tr>
+                  <tr><td>20T4</td><td>269.88</td><td>355.60</td><td>263.56</td><td>183.80</td><td>179.80</td><td>266.72</td><td>269T4</td><td>10.625</td><td>14.00</td></tr>
+                  <tr><td>20T4L</td><td>269.88</td><td>457.20</td><td>263.56</td><td>237.60</td><td>232.60</td><td>266.72</td><td>269T4L</td><td>10.625</td><td>18.00</td></tr>
+                  <tr><td>22T4</td><td>298.45</td><td>355.60</td><td>292.13</td><td>183.80</td><td>179.80</td><td>295.29</td><td>298T4</td><td>11.75</td><td>14.00</td></tr>
+                  <tr><td>22T4L</td><td>298.45</td><td>457.20</td><td>292.13</td><td>237.60</td><td>232.60</td><td>295.29</td><td>298T4L</td><td>11.75</td><td>18.00</td></tr>
+                  <tr><td>24T4</td><td>317.50</td><td>355.60</td><td>311.18</td><td>183.80</td><td>179.80</td><td>314.34</td><td>317T4</td><td>12.50</td><td>14.00</td></tr>
+                  <tr><td>24T4L</td><td>317.50</td><td>457.20</td><td>311.18</td><td>237.60</td><td>232.60</td><td>314.34</td><td>317T4L</td><td>12.50</td><td>18.00</td></tr>
+                  <tr><td>26T4L</td><td>355.60</td><td>558.80</td><td>349.28</td><td>288.40</td><td>283.40</td><td>352.44</td><td>355T4L</td><td>14.00</td><td>22.00</td></tr>
+                  <tr><td>28T4L</td><td>374.65</td><td>558.80</td><td>368.33</td><td>288.40</td><td>283.40</td><td>371.49</td><td>374T4L</td><td>14.75</td><td>22.00</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="doc-note">Codes ending in "L" denote the long-pin variant. 3 TPI thread profiles are available for larger diameters — please contact us for the full schedule.</p>
           </div>
         </div>
 
