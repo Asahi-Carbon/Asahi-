@@ -677,6 +677,157 @@ transition: background 0.3s;
   margin: 0;
 }
 
+/* ── ABOUT · APPLICATION · DOCS ── */
+.docs-section { max-width: 1200px; margin: 4rem auto 0; }
+.docs-section-title {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  margin-bottom: 2rem;
+}
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.doc-card {
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.18);
+  padding: 1.8rem 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.doc-card:hover { border-color: rgba(94,179,242,0.45); transform: translateY(-3px); }
+.doc-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 0.9rem;
+}
+.doc-title {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--light);
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+  flex-grow: 1;
+}
+.doc-btn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid rgba(94,179,242,0.35);
+  color: var(--gold);
+  font-family: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+.doc-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
+
+/* Modal */
+.doc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+.doc-modal[hidden] { display: none; }
+.doc-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13,17,23,0.85);
+  backdrop-filter: blur(6px);
+}
+.doc-modal-panel {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--dark);
+  border: 1px solid rgba(94,179,242,0.3);
+  padding: 2.5rem 2.5rem 2.2rem;
+}
+.doc-modal-close {
+  position: absolute;
+  top: 0.6rem; right: 0.8rem;
+  background: transparent;
+  border: none;
+  color: var(--silver);
+  font-size: 1.7rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.3rem 0.6rem;
+  transition: color 0.2s;
+}
+.doc-modal-close:hover { color: var(--gold); }
+.doc-modal-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--gold);
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.01em;
+}
+.doc-modal-body p {
+  font-size: 0.9rem;
+  color: var(--silver);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.doc-modal-body .doc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+}
+.doc-modal-body .doc-list li {
+  font-size: 0.88rem;
+  color: var(--silver);
+  line-height: 1.7;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.doc-modal-body .doc-list li:last-child { border-bottom: none; }
+.doc-modal-body .doc-list strong { color: var(--gold); font-weight: 600; margin-right: 0.4rem; }
+.doc-modal-body .doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 1rem 0;
+}
+.doc-modal-body .doc-table th {
+  background: rgba(94,179,242,0.08);
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.6rem 0.7rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(94,179,242,0.22);
+}
+.doc-modal-body .doc-table td {
+  color: var(--light);
+  padding: 0.55rem 0.7rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.doc-modal-body .doc-note { font-style: italic; color: var(--silver); font-size: 0.82rem; }
+.doc-modal-body .doc-jump { color: var(--gold); text-decoration: none; border-bottom: 1px solid currentColor; }
+
 /* ── ABOUT · FACILITY ── */
 .facility-stats {
   display: grid;
@@ -1062,6 +1213,9 @@ section { padding: 5rem 1.5rem; }
 .cert-documents-grid { grid-template-columns: 1fr; }
 .facility-stats { grid-template-columns: repeat(2, 1fr); }
 .facility-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.docs-grid { grid-template-columns: 1fr; }
+.doc-modal-panel { padding: 1.5rem 1.3rem; }
+.doc-modal-title { font-size: 1.3rem; }
 .about-subnav { gap: 0; padding: 0.6rem 1rem; }
 .about-subnav-link { padding: 0.5rem 0.8rem; font-size: 0.62rem; border-right: none; }
 .process-flow { flex-direction: column; }
@@ -1504,6 +1658,141 @@ footer { flex-direction: column; text-align: center; }
       <span class="section-tag" data-i18n="about.app.vision.tag">Strategy &amp; Innovation</span>
       <p data-i18n="about.app.vision.p">The carbon industry is an important new-energy raw-material sector in China, and carbon products are widely used in numerous fields such as metallurgy, chemical engineering, aviation, aerospace, and nuclear energy. Considering the company's long-term development, ASAHI Technology has adopted a strategy driven by technological innovation to promote sustainable corporate growth. The company has invested over 20 million yuan to introduce advanced laboratory equipment and establish an independent R&amp;D center, dedicated to producing China's highest-quality ultra-high-power graphite electrodes. ASAHI Technology aims to catch up with and surpass the standards of developed countries such as Europe, the United States, and Japan, thereby building a truly national Chinese brand. At the same time, the company is actively engaged in the R&amp;D of cutting-edge carbon products, including fullerene carbon, nano-carbon, and graphene. By fully leveraging its technological strengths, ASAHI Technology is creating broader market prospects and driving the overall development of China's carbon industry.</p>
     </div>
+
+    <div class="docs-section">
+      <h4 class="docs-section-title" data-i18n="about.app.docs.title">Technical References</h4>
+      <div class="docs-grid">
+        <div class="doc-card">
+          <div class="doc-num">01</div>
+          <h4 class="doc-title" data-i18n="about.app.docs.c1.t">Electrodynamic Torque Table Connection</h4>
+          <button class="doc-btn" data-doc-target="doc1"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
+          <div class="doc-body" id="doc1" hidden>
+            <p>Recommended torque values for connecting graphite electrodes through threaded pins (nipples). Following these values keeps joints tight under thermal cycling and minimizes the risk of electrode breakage during EAF operation.</p>
+            <table class="doc-table">
+              <thead><tr><th>Diameter (mm)</th><th>Pin Type</th><th>Recommended Torque (N·m)</th></tr></thead>
+              <tbody>
+                <tr><td>300</td><td>4 TPI</td><td>1,400 – 1,600</td></tr>
+                <tr><td>350</td><td>4 TPI</td><td>1,700 – 2,000</td></tr>
+                <tr><td>400</td><td>4 TPI</td><td>2,000 – 2,400</td></tr>
+                <tr><td>450</td><td>3 TPI</td><td>2,400 – 2,800</td></tr>
+                <tr><td>500</td><td>3 TPI</td><td>2,800 – 3,200</td></tr>
+                <tr><td>550</td><td>3 TPI</td><td>3,200 – 3,800</td></tr>
+                <tr><td>600</td><td>3 TPI</td><td>3,800 – 4,500</td></tr>
+                <tr><td>650</td><td>3 TPI</td><td>4,500 – 5,200</td></tr>
+                <tr><td>700</td><td>3 TPI</td><td>5,200 – 6,000</td></tr>
+              </tbody>
+            </table>
+            <p class="doc-note">Always use a calibrated torque wrench and an electrode lifting bail. Apply joint compound only to the pin's leading thread.</p>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-num">02</div>
+          <h4 class="doc-title" data-i18n="about.app.docs.c2.t">Detailed Packaging of Electrodes</h4>
+          <button class="doc-btn" data-doc-target="doc2"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
+          <div class="doc-body" id="doc2" hidden>
+            <p>Every electrode leaves the factory packed for long-haul ocean transport and European port handling.</p>
+            <ul class="doc-list">
+              <li><strong>Thread protection.</strong> Plastic end caps on both threaded sockets; foam pads on critical surfaces.</li>
+              <li><strong>Body protection.</strong> Heavy-gauge stretch wrap and edge-protection bands around the electrode body.</li>
+              <li><strong>Outer crate.</strong> Wooden crates lined with desiccant pouches, secured with steel banding and corner reinforcements.</li>
+              <li><strong>Labels.</strong> Per-electrode QR code with batch number, grade, diameter, length, and net weight.</li>
+              <li><strong>Documentation.</strong> Packing list, Material Test Report (MTR), Certificate of Conformity, and dimensional inspection record travel inside a sealed pouch fixed to the crate.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-num">03</div>
+          <h4 class="doc-title" data-i18n="about.app.docs.c3.t">Containerized Transport</h4>
+          <button class="doc-btn" data-doc-target="doc3"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
+          <div class="doc-body" id="doc3" hidden>
+            <p>All exports ship as Full Container Load (FCL) via established sea-freight partners.</p>
+            <ul class="doc-list">
+              <li><strong>20' FCL.</strong> ≈ 22 – 24 tonnes net, suited to smaller diameters or short loads.</li>
+              <li><strong>40' FCL.</strong> ≈ 27 – 28 tonnes net (volume-limited rather than weight-limited).</li>
+              <li><strong>40' High Cube.</strong> Required for nominal lengths ≥ 2400 mm.</li>
+              <li><strong>Loading.</strong> Forklift with electrode lifting bail; crates blocked and braced against container walls with airbags.</li>
+              <li><strong>Routes.</strong> Tianjin / Qingdao → Rotterdam, Hamburg, Antwerp, Genoa, Houston, Veracruz, Santos.</li>
+              <li><strong>Transit time.</strong> 35 – 45 days to European ports, 28 – 40 days to North America.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-num">04</div>
+          <h4 class="doc-title" data-i18n="about.app.docs.c4.t">Current Load &amp; Current Density</h4>
+          <button class="doc-btn" data-doc-target="doc4"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
+          <div class="doc-body" id="doc4" hidden>
+            <p>Recommended operating current ranges for UHP graphite electrodes. Always derate by 10 – 15 % for continuous high-load EAF operation.</p>
+            <table class="doc-table">
+              <thead><tr><th>Diameter (mm)</th><th>Permissible Current (kA)</th><th>Current Density (A/cm²)</th></tr></thead>
+              <tbody>
+                <tr><td>300</td><td>30 – 35</td><td>30 – 34</td></tr>
+                <tr><td>350</td><td>40 – 48</td><td>30 – 33</td></tr>
+                <tr><td>400</td><td>50 – 60</td><td>28 – 32</td></tr>
+                <tr><td>450</td><td>60 – 72</td><td>27 – 30</td></tr>
+                <tr><td>500</td><td>70 – 80</td><td>26 – 29</td></tr>
+                <tr><td>550</td><td>80 – 92</td><td>25 – 28</td></tr>
+                <tr><td>600</td><td>90 – 105</td><td>24 – 27</td></tr>
+                <tr><td>650</td><td>100 – 118</td><td>23 – 26</td></tr>
+                <tr><td>700</td><td>110 – 130</td><td>22 – 25</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-num">05</div>
+          <h4 class="doc-title" data-i18n="about.app.docs.c5.t">Standard Dimensions for Fittings &amp; Threads</h4>
+          <button class="doc-btn" data-doc-target="doc5"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
+          <div class="doc-body" id="doc5" hidden>
+            <p>Asahi Carbon graphite electrodes are supplied with standard tapered threaded sockets and matching nipples (pins). Thread type depends on electrode diameter.</p>
+            <table class="doc-table">
+              <thead><tr><th>Diameter Range (mm)</th><th>Thread Type</th><th>Pin Length (mm)</th><th>Taper</th></tr></thead>
+              <tbody>
+                <tr><td>75 – 300</td><td>4 TPI</td><td>300 – 460</td><td>1:6</td></tr>
+                <tr><td>350 – 450</td><td>4 TPI / 3 TPI</td><td>460 – 560</td><td>1:6</td></tr>
+                <tr><td>500 – 600</td><td>3 TPI</td><td>560 – 720</td><td>1:6</td></tr>
+                <tr><td>650 – 700</td><td>3 TPI</td><td>720 – 810</td><td>1:6</td></tr>
+              </tbody>
+            </table>
+            <p class="doc-note">Thread tolerances follow ISO 13765 / IEC 60239. Custom thread profiles available on request.</p>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-num">06</div>
+          <h4 class="doc-title" data-i18n="about.app.docs.c6.t">Technical Specifications of Graphite Electrodes</h4>
+          <button class="doc-btn" data-doc-target="doc6"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
+          <div class="doc-body" id="doc6" hidden>
+            <p>Key physical and electrical properties for our three grades. Values are typical averages; individual batches are accompanied by a Material Test Report (MTR).</p>
+            <table class="doc-table">
+              <thead><tr><th>Property</th><th>Unit</th><th>RP</th><th>HP</th><th>UHP</th></tr></thead>
+              <tbody>
+                <tr><td>Resistivity</td><td>μΩ·m</td><td>≤ 7.5</td><td>≤ 6.0</td><td>≤ 4.6</td></tr>
+                <tr><td>Bulk Density</td><td>g/cm³</td><td>≥ 1.58</td><td>≥ 1.62</td><td>≥ 1.65</td></tr>
+                <tr><td>Bending Strength</td><td>MPa</td><td>≥ 6.5</td><td>≥ 8.0</td><td>≥ 10.5</td></tr>
+                <tr><td>Young's Modulus</td><td>GPa</td><td>≤ 8.0</td><td>≤ 10.0</td><td>≤ 12.0</td></tr>
+                <tr><td>Ash Content</td><td>%</td><td>≤ 0.5</td><td>≤ 0.4</td><td>≤ 0.3</td></tr>
+                <tr><td>CTE (100 – 600 °C)</td><td>10⁻⁶ / K</td><td>≤ 2.4</td><td>≤ 2.0</td><td>≤ 1.4</td></tr>
+                <tr><td>Max. Operating Temp.</td><td>°C</td><td>3000</td><td>3000</td><td>3000</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-num">07</div>
+          <h4 class="doc-title" data-i18n="about.app.docs.c7.t">Standard Dimensions &amp; Weight of Graphite Electrodes</h4>
+          <button class="doc-btn" data-doc-target="doc7"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
+          <div class="doc-body" id="doc7" hidden>
+            <p>The full reference table of nominal diameters (3″ – 28″), tolerances, available lengths, and standard weights is available under <strong>About Us → Product Specifications</strong>.</p>
+            <p><a class="doc-jump" href="#about-specifications">Jump to the full dimensions table →</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1570,6 +1859,16 @@ footer { flex-direction: column; text-align: center; }
     </div>
   </div>
 </section>
+
+<!-- Doc modal (shared across the about page) -->
+<div class="doc-modal" id="docModal" hidden>
+  <div class="doc-modal-overlay" data-doc-close></div>
+  <div class="doc-modal-panel" role="dialog" aria-modal="true" aria-labelledby="docModalTitle">
+    <button class="doc-modal-close" data-doc-close aria-label="Close">×</button>
+    <h3 class="doc-modal-title" id="docModalTitle"></h3>
+    <div class="doc-modal-body"></div>
+  </div>
+</div>
 
 </div><!-- /page about -->
 
@@ -2343,6 +2642,44 @@ footer { flex-direction: column; text-align: center; }
       }
     })();
 
+    // Documentation card modal (Application Site → Technical References)
+    const docModal = document.getElementById('docModal');
+    if (docModal) {
+      const modalTitle = docModal.querySelector('.doc-modal-title');
+      const modalBody = docModal.querySelector('.doc-modal-body');
+      const openDoc = (id, title) => {
+        const src = document.getElementById(id);
+        if (!src) return;
+        modalTitle.textContent = title;
+        modalBody.innerHTML = src.innerHTML;
+        docModal.hidden = false;
+        document.body.style.overflow = 'hidden';
+      };
+      const closeDoc = () => {
+        docModal.hidden = true;
+        document.body.style.overflow = '';
+      };
+      document.querySelectorAll('.doc-btn[data-doc-target]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const card = btn.closest('.doc-card');
+          const title = card ? card.querySelector('.doc-title').textContent.trim() : '';
+          openDoc(btn.dataset.docTarget, title);
+        });
+      });
+      docModal.querySelectorAll('[data-doc-close]').forEach(el => {
+        el.addEventListener('click', closeDoc);
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !docModal.hidden) closeDoc();
+      });
+      // The "Jump to dimensions table" link inside doc 7 should close the modal
+      // and let the existing in-site navigation take over.
+      modalBody.addEventListener('click', (e) => {
+        const link = e.target.closest('a.doc-jump');
+        if (link) closeDoc();
+      });
+    }
+
     // Dropdown hover preview — hovering a subsection in the dropdown briefly
     // swaps the page content underneath the dropdown to that destination, so
     // you can see what you're about to navigate to. The original page is
@@ -2628,6 +2965,15 @@ footer { flex-direction: column; text-align: center; }
       'about.app.c6.h': 'Grüne Industrie',
       'about.app.c6.p': 'Unterstützung der Dekarbonisierung Europas — grüner Stahl und saubere Energietechnologien.',
       'about.app.vision.tag': 'Strategie &amp; Innovation',
+      'about.app.docs.title': 'Technische Referenzen',
+      'about.app.docs.viewmore': 'Mehr ansehen',
+      'about.app.docs.c1.t': 'Anzugsdrehmoment-Tabelle für Elektrodenverbindungen',
+      'about.app.docs.c2.t': 'Ausführliche Verpackung der Elektroden',
+      'about.app.docs.c3.t': 'Container-Transport',
+      'about.app.docs.c4.t': 'Strombelastung &amp; Stromdichte',
+      'about.app.docs.c5.t': 'Standardabmessungen für Fittings &amp; Gewinde',
+      'about.app.docs.c6.t': 'Technische Spezifikationen der Graphitelektroden',
+      'about.app.docs.c7.t': 'Standardmaße &amp; Gewichte der Graphitelektroden',
       'about.app.vision.p': 'Die Kohlenstoffindustrie ist in China ein bedeutender Rohstoffsektor für neue Energien, und Kohlenstoffprodukte finden in zahlreichen Branchen Anwendung — darunter Metallurgie, Chemie, Luftfahrt, Raumfahrt und Kernenergie. Mit Blick auf die langfristige Entwicklung des Unternehmens verfolgt ASAHI Technology eine durch technologische Innovation geprägte Strategie für nachhaltiges Wachstum. Über 20 Millionen Yuan wurden in modernste Laborausrüstung und den Aufbau eines unabhängigen F&amp;E-Zentrums investiert, mit dem Ziel, Chinas hochwertigste Ultra-High-Power-Graphitelektroden zu fertigen. ASAHI Technology strebt an, die Standards führender Industrieländer wie Europa, der USA und Japans einzuholen und zu übertreffen — und so eine wahrhaft nationale chinesische Marke aufzubauen. Gleichzeitig forscht das Unternehmen aktiv an zukunftsweisenden Kohlenstoffprodukten wie Fullerenen, Nanokohlenstoff und Graphen. Durch die konsequente Nutzung seiner technologischen Stärken schafft ASAHI Technology weitere Marktperspektiven und treibt die gesamte Entwicklung der chinesischen Kohlenstoffindustrie voran.',
 
       // About — Facility
