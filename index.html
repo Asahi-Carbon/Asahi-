@@ -865,6 +865,20 @@ transition: background 0.3s;
 .doc-modal-body .doc-table-threads td:first-child,
 .doc-modal-body .doc-table-threads td:nth-child(8) { color: var(--white); font-weight: 600; }
 .doc-modal-body .doc-h-unit { display: block; font-weight: 400; font-size: 0.62rem; opacity: 0.8; letter-spacing: 0.1em; margin-top: 0.15rem; }
+.doc-modal-body .doc-table-tech { font-size: 0.78rem; }
+.doc-modal-body .doc-table-tech th { padding: 0.55rem 0.55rem; line-height: 1.25; }
+.doc-modal-body .doc-table-tech td { padding: 0.55rem 0.6rem; white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.04); vertical-align: middle; }
+.doc-modal-body .doc-table-tech td:last-child { border-right: none; }
+.doc-modal-body .doc-table-tech tr.row-group-start td { border-top: 1px solid rgba(94,179,242,0.18); }
+.doc-modal-body .doc-table-tech td[rowspan],
+.doc-modal-body .doc-table-tech td[colspan="2"] { color: var(--white); font-weight: 500; text-align: left; }
+.doc-modal-body .doc-table-dimweight { font-size: 0.78rem; }
+.doc-modal-body .doc-table-dimweight th { padding: 0.55rem 0.55rem; line-height: 1.25; }
+.doc-modal-body .doc-table-dimweight td { padding: 0.5rem 0.55rem; white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.04); vertical-align: middle; }
+.doc-modal-body .doc-table-dimweight td:last-child { border-right: none; }
+.doc-modal-body .doc-table-dimweight tr.row-group-start td { border-top: 1px solid rgba(94,179,242,0.18); }
+.doc-modal-body .doc-table-dimweight td:first-child,
+.doc-modal-body .doc-table-dimweight td:nth-child(2) { color: var(--white); font-weight: 600; }
 
 /* ── ABOUT · FACILITY ── */
 .facility-stats {
@@ -1872,19 +1886,46 @@ footer { flex-direction: column; text-align: center; }
           <h4 class="doc-title" data-i18n="about.app.docs.c6.t">Technical Specifications of Graphite Electrodes</h4>
           <button class="doc-btn" data-doc-target="doc6"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc6" hidden>
-            <p>Key physical and electrical properties for our three grades. Values are typical averages; individual batches are accompanied by a Material Test Report (MTR).</p>
-            <table class="doc-table">
-              <thead><tr><th>Property</th><th>Unit</th><th>RP</th><th>HP</th><th>UHP</th></tr></thead>
-              <tbody>
-                <tr><td>Resistivity</td><td>μΩ·m</td><td>≤ 7.5</td><td>≤ 6.0</td><td>≤ 4.6</td></tr>
-                <tr><td>Bulk Density</td><td>g/cm³</td><td>≥ 1.58</td><td>≥ 1.62</td><td>≥ 1.65</td></tr>
-                <tr><td>Bending Strength</td><td>MPa</td><td>≥ 6.5</td><td>≥ 8.0</td><td>≥ 10.5</td></tr>
-                <tr><td>Young's Modulus</td><td>GPa</td><td>≤ 8.0</td><td>≤ 10.0</td><td>≤ 12.0</td></tr>
-                <tr><td>Ash Content</td><td>%</td><td>≤ 0.5</td><td>≤ 0.4</td><td>≤ 0.3</td></tr>
-                <tr><td>CTE (100 – 600 °C)</td><td>10⁻⁶ / K</td><td>≤ 2.4</td><td>≤ 2.0</td><td>≤ 1.4</td></tr>
-                <tr><td>Max. Operating Temp.</td><td>°C</td><td>3000</td><td>3000</td><td>3000</td></tr>
-              </tbody>
-            </table>
+            <p>Physical and electrical properties across our three grades, with separate values for the electrode body and the connector (nipple) where applicable. Every shipment is accompanied by a Material Test Report (MTR).</p>
+            <div class="doc-table-scroll">
+              <table class="doc-table doc-table-tech">
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="3">Feature Item</th>
+                    <th rowspan="3">Unit</th>
+                    <th colspan="3">Nominal diameter (mm)</th>
+                  </tr>
+                  <tr>
+                    <th>High Power</th>
+                    <th>Near-Ultra-High Power</th>
+                    <th>Ultra-High Power</th>
+                  </tr>
+                  <tr>
+                    <th><span class="doc-h-unit">75 – 550</span></th>
+                    <th><span class="doc-h-unit">350 – 500</span></th>
+                    <th><span class="doc-h-unit">350 – 700</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="row-group-start"><td rowspan="2">Resistivity</td><td>Electrode</td><td rowspan="2">μΩ·m</td><td>5.8 – 7.0</td><td>5.5 – 6.5</td><td>4.0 – 5.5</td></tr>
+                  <tr><td>Connector</td><td>3.5 – 5.0</td><td>3.2 – 4.5</td><td>2.8 – 4.0</td></tr>
+
+                  <tr class="row-group-start"><td rowspan="2">Flexural strength</td><td>Electrode</td><td rowspan="2">MPa</td><td>10.0 – 13.0</td><td>10.0 – 15.0</td><td>10.0 – 15.0</td></tr>
+                  <tr><td>Connector</td><td>18.0 – 22.0</td><td>20.0 – 25.0</td><td>20.0 – 30.0</td></tr>
+
+                  <tr class="row-group-start"><td rowspan="2">Modulus of elasticity</td><td>Electrode</td><td rowspan="2">GPa</td><td>10.0 – 12.0</td><td>10.0 – 14.0</td><td>12.0 – 16.0</td></tr>
+                  <tr><td>Connector</td><td>14.0 – 18.0</td><td>16.0 – 22.0</td><td>16.0 – 25.0</td></tr>
+
+                  <tr class="row-group-start"><td rowspan="2">Volumetric density</td><td>Electrode</td><td rowspan="2">g/cm³</td><td>1.62 – 1.70</td><td>1.65 – 1.72</td><td>1.66 – 1.75</td></tr>
+                  <tr><td>Connector</td><td>1.75 – 1.80</td><td>1.78 – 1.82</td><td>1.80 – 1.90</td></tr>
+
+                  <tr class="row-group-start"><td colspan="2">Ash content</td><td>%</td><td>0.3</td><td>0.2</td><td>0.2</td></tr>
+
+                  <tr class="row-group-start"><td rowspan="2">C.T.E. 100 – 500&nbsp;°C</td><td>Electrode</td><td rowspan="2">×10⁻⁶ / °C</td><td>1.5 – 2.2</td><td>1.5 – 1.8</td><td>1.1 – 1.5</td></tr>
+                  <tr><td>Connector</td><td>1.0 – 1.4</td><td>1.0 – 1.4</td><td>0.5 – 1.2</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
@@ -1893,8 +1934,59 @@ footer { flex-direction: column; text-align: center; }
           <h4 class="doc-title" data-i18n="about.app.docs.c7.t">Standard Dimensions &amp; Weight of Graphite Electrodes</h4>
           <button class="doc-btn" data-doc-target="doc7"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc7" hidden>
-            <p>The full reference table of nominal diameters (3″ – 28″), tolerances, available lengths, and standard weights is available under <strong>About Us → Product Specifications</strong>.</p>
-            <p><a class="doc-jump" href="#about-specifications">Jump to the full dimensions table →</a></p>
+            <p>Nominal diameters from 3″ (75 mm) to 28″ (700 mm) with tolerance ranges, available nominal lengths, and standard weight per electrode. All deliveries ship with a Material Test Report (MTR) and dimensional inspection record.</p>
+            <div class="doc-table-scroll">
+              <table class="doc-table doc-table-dimweight">
+                <thead>
+                  <tr>
+                    <th colspan="2">Nominal diameter</th>
+                    <th colspan="2">Diameter range (mm)</th>
+                    <th colspan="3">Length range (mm)</th>
+                    <th rowspan="2">Standard weight (kg)</th>
+                  </tr>
+                  <tr>
+                    <th>Inch</th>
+                    <th>mm</th>
+                    <th>Maximum</th>
+                    <th>Minimum</th>
+                    <th>Nominal</th>
+                    <th>Maximum</th>
+                    <th>Minimum</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>3</td><td>75</td><td>78</td><td>73</td><td>1000</td><td>1050</td><td>925</td><td>7</td></tr>
+                  <tr><td>4</td><td>100</td><td>103</td><td>98</td><td>1200</td><td>1250</td><td>1100</td><td>16</td></tr>
+                  <tr><td>5 1/8</td><td>130</td><td>132</td><td>129</td><td>1500</td><td>1550</td><td>1400</td><td>33</td></tr>
+                  <tr><td>6</td><td>150</td><td>154</td><td>149</td><td>1500</td><td>1550</td><td>1400</td><td>45</td></tr>
+                  <tr><td>7</td><td>175</td><td>179</td><td>174</td><td>1500</td><td>1550</td><td>1400</td><td>59</td></tr>
+                  <tr class="row-group-start"><td rowspan="2">8</td><td rowspan="2">200</td><td rowspan="2">205</td><td rowspan="2">200</td><td>1500</td><td>1550</td><td>1400</td><td>76</td></tr>
+                  <tr><td>1800</td><td>1875</td><td>1700</td><td>100</td></tr>
+                  <tr class="row-group-start"><td>9</td><td>225</td><td>230</td><td>225</td><td>1500</td><td>1550</td><td>1400</td><td>101</td></tr>
+                  <tr class="row-group-start"><td rowspan="2">10</td><td rowspan="2">250</td><td rowspan="2">256</td><td rowspan="2">251</td><td>1500</td><td>1550</td><td>1400</td><td>120</td></tr>
+                  <tr><td>1800</td><td>1875</td><td>1700</td><td>155</td></tr>
+                  <tr class="row-group-start"><td rowspan="2">12</td><td rowspan="2">300</td><td rowspan="2">307</td><td rowspan="2">302</td><td>1500</td><td>1550</td><td>1400</td><td>185</td></tr>
+                  <tr><td>1800</td><td>1875</td><td>1700</td><td>230</td></tr>
+                  <tr class="row-group-start"><td rowspan="3">14</td><td rowspan="3">350</td><td rowspan="3">357</td><td rowspan="3">352</td><td>1500</td><td>1550</td><td>1400</td><td>253</td></tr>
+                  <tr><td>1800</td><td>1875</td><td>1700</td><td>305</td></tr>
+                  <tr><td>2400</td><td>2475</td><td>2275</td><td>406</td></tr>
+                  <tr class="row-group-start"><td rowspan="2">16</td><td rowspan="2">400</td><td rowspan="2">409</td><td rowspan="2">403</td><td>1500</td><td>1550</td><td>1400</td><td>334</td></tr>
+                  <tr><td>1800</td><td>1875</td><td>1700</td><td>395</td></tr>
+                  <tr class="row-group-start"><td rowspan="3">18</td><td rowspan="3">450</td><td rowspan="3">460</td><td rowspan="3">454</td><td>1800</td><td>1875</td><td>1700</td><td>505</td></tr>
+                  <tr><td>2100</td><td>2175</td><td>1975</td><td>585</td></tr>
+                  <tr><td>2400</td><td>2475</td><td>2275</td><td>665</td></tr>
+                  <tr class="row-group-start"><td rowspan="3">20</td><td rowspan="3">500</td><td rowspan="3">511</td><td rowspan="3">505</td><td>1800</td><td>1875</td><td>1700</td><td>617</td></tr>
+                  <tr><td>2100</td><td>2175</td><td>1975</td><td>717</td></tr>
+                  <tr><td>2400</td><td>2475</td><td>2275</td><td>824</td></tr>
+                  <tr class="row-group-start"><td rowspan="2">22</td><td rowspan="2">550</td><td rowspan="2">562</td><td rowspan="2">556</td><td>2100</td><td>2175</td><td>1975</td><td>873</td></tr>
+                  <tr><td>2400</td><td>2475</td><td>2275</td><td>995</td></tr>
+                  <tr class="row-group-start"><td rowspan="2">24</td><td rowspan="2">600</td><td rowspan="2">613</td><td rowspan="2">607</td><td>2400</td><td>2475</td><td>2275</td><td>1190</td></tr>
+                  <tr><td>2700</td><td>2850</td><td>2550</td><td>1350</td></tr>
+                  <tr class="row-group-start"><td>26</td><td>650</td><td>663</td><td>657</td><td>2700</td><td>2850</td><td>2550</td><td>1580</td></tr>
+                  <tr class="row-group-start"><td>28</td><td>700</td><td>714</td><td>708</td><td>2700</td><td>2850</td><td>2550</td><td>1840</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
