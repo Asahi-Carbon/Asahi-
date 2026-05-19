@@ -1022,6 +1022,56 @@ transition: background 0.3s;
 @media (max-width: 900px) {
   .detail-grid { grid-template-columns: 1fr; }
 }
+.product-cta {
+  max-width: 1200px;
+  margin: 4rem auto 0;
+  padding: 2.5rem 2.5rem;
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.25);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.5rem;
+  align-items: center;
+}
+.product-cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: var(--white);
+  margin: 0 0 0.5rem;
+}
+.product-cta-title strong { color: var(--gold); }
+.product-cta-sub {
+  font-size: 0.9rem;
+  color: var(--silver);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 640px;
+}
+.product-cta-actions { display: flex; gap: 0.8rem; flex-shrink: 0; }
+.product-cta-btn {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.2s;
+  white-space: nowrap;
+}
+.product-cta-btn-primary { background: var(--gold); color: var(--black); }
+.product-cta-btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+.product-cta-btn-secondary {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid rgba(94,179,242,0.4);
+}
+.product-cta-btn-secondary:hover { border-color: var(--gold); color: var(--white); }
+@media (max-width: 900px) {
+  .product-cta { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+  .product-cta-actions { flex-direction: column; }
+}
 .product-card {
 background: var(–dark); padding: 3rem 2.5rem;
 transition: background 0.4s;
@@ -2163,6 +2213,21 @@ footer { flex-direction: column; text-align: center; }
       </div>
     </div>
   </div>
+
+  <div class="product-cta">
+    <div class="product-cta-text">
+      <h3 class="product-cta-title" data-i18n="product.cta.electrode.title">Interested in Graphite Electrodes?</h3>
+      <p class="product-cta-sub" data-i18n="product.cta.electrode.sub">Send an enquiry directly to JianHua Li, our European representative. He will respond within 24 business hours with pricing, lead times, and contract options.</p>
+    </div>
+    <div class="product-cta-actions">
+      <a class="product-cta-btn product-cta-btn-primary" href="#contact" data-product-interest="UHP Graphite Electrodes (600mm+)">
+        <span data-i18n="product.cta.send">Send an enquiry</span> →
+      </a>
+      <a class="product-cta-btn product-cta-btn-secondary" href="mailto:sales@asahicarbon.de?subject=Enquiry%20-%20Graphite%20Electrodes">
+        <span data-i18n="product.cta.email">Email us</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 </div><!-- /page graphite-electrode -->
@@ -2811,6 +2876,20 @@ footer { flex-direction: column; text-align: center; }
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
         const id = a.getAttribute('href').slice(1);
+        // If a product page is sending the visitor to the contact form,
+        // pre-select the corresponding option in the Product Interest dropdown.
+        const interest = a.getAttribute('data-product-interest');
+        if (interest && id === 'contact') {
+          const sel = document.querySelector('select[name="product_interest"]');
+          if (sel) {
+            for (const opt of sel.options) {
+              if (opt.value === interest || opt.textContent.trim() === interest) {
+                sel.value = opt.value || opt.textContent;
+                break;
+              }
+            }
+          }
+        }
         if (navigateTo(id, true)) {
           e.preventDefault();
         }
@@ -3171,6 +3250,10 @@ footer { flex-direction: column; text-align: center; }
       'about.app.docs.c5.t': 'Standardabmessungen für Fittings &amp; Gewinde',
       'about.app.docs.c6.t': 'Technische Spezifikationen der Graphitelektroden',
       'about.app.docs.c7.t': 'Standardmaße &amp; Gewichte der Graphitelektroden',
+      'product.cta.electrode.title': 'Interesse an Graphitelektroden?',
+      'product.cta.electrode.sub': 'Senden Sie Ihre Anfrage direkt an JianHua Li, unseren europäischen Ansprechpartner. Wir antworten innerhalb von 24 Geschäftsstunden mit Preisen, Lieferzeiten und Vertragsoptionen.',
+      'product.cta.send': 'Anfrage senden',
+      'product.cta.email': 'E-Mail',
       'about.app.vision.p': 'Die Kohlenstoffindustrie ist in China ein bedeutender Rohstoffsektor für neue Energien, und Kohlenstoffprodukte finden in zahlreichen Branchen Anwendung — darunter Metallurgie, Chemie, Luftfahrt, Raumfahrt und Kernenergie. Mit Blick auf die langfristige Entwicklung des Unternehmens verfolgt ASAHI Technology eine durch technologische Innovation geprägte Strategie für nachhaltiges Wachstum. Über 20 Millionen Yuan wurden in modernste Laborausrüstung und den Aufbau eines unabhängigen F&amp;E-Zentrums investiert, mit dem Ziel, Chinas hochwertigste Ultra-High-Power-Graphitelektroden zu fertigen. ASAHI Technology strebt an, die Standards führender Industrieländer wie Europa, der USA und Japans einzuholen und zu übertreffen — und so eine wahrhaft nationale chinesische Marke aufzubauen. Gleichzeitig forscht das Unternehmen aktiv an zukunftsweisenden Kohlenstoffprodukten wie Fullerenen, Nanokohlenstoff und Graphen. Durch die konsequente Nutzung seiner technologischen Stärken schafft ASAHI Technology weitere Marktperspektiven und treibt die gesamte Entwicklung der chinesischen Kohlenstoffindustrie voran.',
 
       // About — Facility
