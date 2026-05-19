@@ -843,6 +843,11 @@ transition: background 0.3s;
 .doc-modal-body .doc-table-horizontal tr:first-child td { color: var(--white); font-weight: 500; }
 .doc-modal-body .doc-table-horizontal tr:last-child th,
 .doc-modal-body .doc-table-horizontal tr:last-child td { border-bottom: none; }
+.doc-modal-body .doc-table-packaging { font-size: 0.78rem; }
+.doc-modal-body .doc-table-packaging th { padding: 0.55rem 0.55rem; }
+.doc-modal-body .doc-table-packaging td { padding: 0.5rem 0.55rem; min-width: 56px; border-right: 1px solid rgba(255,255,255,0.04); }
+.doc-modal-body .doc-table-packaging td:last-child { border-right: none; }
+.doc-modal-body .doc-table-packaging tr.row-group-start td { border-top: 1px solid rgba(94,179,242,0.18); }
 
 /* ── ABOUT · FACILITY ── */
 .facility-stats {
@@ -1707,14 +1712,50 @@ footer { flex-direction: column; text-align: center; }
           <h4 class="doc-title" data-i18n="about.app.docs.c2.t">Detailed Packaging of Electrodes</h4>
           <button class="doc-btn" data-doc-target="doc2"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc2" hidden>
-            <p>Every electrode leaves the factory packed for long-haul ocean transport and European port handling.</p>
-            <ul class="doc-list">
-              <li><strong>Thread protection.</strong> Plastic end caps on both threaded sockets; foam pads on critical surfaces.</li>
-              <li><strong>Body protection.</strong> Heavy-gauge stretch wrap and edge-protection bands around the electrode body.</li>
-              <li><strong>Outer crate.</strong> Wooden crates lined with desiccant pouches, secured with steel banding and corner reinforcements.</li>
-              <li><strong>Labels.</strong> Per-electrode QR code with batch number, grade, diameter, length, and net weight.</li>
-              <li><strong>Documentation.</strong> Packing list, Material Test Report (MTR), Certificate of Conformity, and dimensional inspection record travel inside a sealed pouch fixed to the crate.</li>
-            </ul>
+            <p>Our electrodes are packaged on wooden pallets and secured with steel straps. The threads and end faces are protected by protective covers to minimize the risk of damage to these areas. The attached table shows the number of electrodes packed per pallet for each specification.</p>
+            <p>When using container transport, each 20-foot container can carry electrodes of various specifications, along with the corresponding number of connectors as shown below:</p>
+            <div class="doc-table-scroll">
+              <table class="doc-table doc-table-packaging">
+                <thead>
+                  <tr>
+                    <th colspan="2">Electrode size (in)</th>
+                    <th rowspan="2">Packaging box L×W×H (in)</th>
+                    <th rowspan="2">Boxes per container</th>
+                    <th rowspan="2">Electrodes per box</th>
+                    <th rowspan="2">Electrodes per container</th>
+                    <th rowspan="2">Net weight (t)</th>
+                  </tr>
+                  <tr>
+                    <th>Ø</th>
+                    <th>Length</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>12</td><td>72</td><td>81.1 × 38.1 × 14.5</td><td>30</td><td>3</td><td>90</td><td>20</td></tr>
+                  <tr><td>14</td><td>72</td><td>81.5 × 44 × 18.11</td><td>21</td><td>3</td><td>63</td><td>20</td></tr>
+                  <tr><td>14</td><td>84</td><td>98.4 × 44 × 18.11</td><td>16</td><td>3</td><td>48</td><td>18</td></tr>
+                  <tr><td>14</td><td>96</td><td>106.3 × 44 × 18.11</td><td>16</td><td>3</td><td>48</td><td>20</td></tr>
+                  <tr class="row-group-start"><td rowspan="2">16</td><td rowspan="2">72</td><td>83.6 × 50.2 × 20.3</td><td>16</td><td>3</td><td>48</td><td>20</td></tr>
+                  <tr><td>83.6 × 34.2 × 20.3</td><td>24</td><td>2</td><td>48</td><td>20</td></tr>
+                  <tr class="row-group-start"><td rowspan="2">16</td><td rowspan="2">84</td><td>96.4 × 50.2 × 20.3</td><td>8</td><td>3</td><td rowspan="2">40</td><td rowspan="2">18</td></tr>
+                  <tr><td>96.4 × 34.2 × 20.3</td><td>8</td><td>2</td></tr>
+                  <tr class="row-group-start"><td rowspan="2">16</td><td rowspan="2">96</td><td>106.3 × 50.2 × 20.3</td><td>8</td><td>3</td><td rowspan="2">38</td><td rowspan="2">20</td></tr>
+                  <tr><td>106.3 × 34.2 × 20.3</td><td>7</td><td>2</td></tr>
+                  <tr class="row-group-start"><td>18</td><td>72</td><td>86.6 × 37.8 × 22.2</td><td>20</td><td>2</td><td>40</td><td>20</td></tr>
+                  <tr><td>18</td><td>84</td><td>98.4 × 37.8 × 22.2</td><td>16</td><td>2</td><td>32</td><td>18</td></tr>
+                  <tr><td>18</td><td>96</td><td>108.3 × 37.8 × 22.2</td><td>14</td><td>2</td><td>28</td><td>20</td></tr>
+                  <tr class="row-group-start"><td>20</td><td>72</td><td>86.6 × 42.5 × 24.2</td><td>15</td><td>2</td><td>30</td><td>20</td></tr>
+                  <tr><td>20</td><td>84</td><td>98.4 × 42.5 × 24.2</td><td>12</td><td>2</td><td>24</td><td>18</td></tr>
+                  <tr><td>20</td><td>96</td><td>108.3 × 42.5 × 24.2</td><td>12</td><td>2</td><td>24</td><td>20</td></tr>
+                  <tr class="row-group-start"><td>22</td><td>84</td><td>98.4 × 46 × 25.6</td><td>10</td><td>2</td><td>20</td><td>18</td></tr>
+                  <tr><td>22</td><td>96</td><td>108.3 × 46 × 25.6</td><td>10</td><td>2</td><td>20</td><td>20</td></tr>
+                  <tr><td>22</td><td>110</td><td>122 × 46 × 25.6</td><td>6</td><td>2</td><td>12</td><td>16</td></tr>
+                  <tr class="row-group-start"><td>24</td><td>84</td><td>98.4 × 50.2 × 28.5</td><td>6</td><td>2</td><td>12</td><td>14</td></tr>
+                  <tr><td>24</td><td>96</td><td>108.3 × 50.2 × 28.5</td><td>6</td><td>2</td><td>12</td><td>16</td></tr>
+                  <tr><td>24</td><td>110</td><td>122 × 50.2 × 28.5</td><td>3</td><td>2</td><td>6</td><td>8</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
