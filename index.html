@@ -848,6 +848,16 @@ transition: background 0.3s;
 .doc-modal-body .doc-table-packaging td { padding: 0.5rem 0.55rem; min-width: 56px; border-right: 1px solid rgba(255,255,255,0.04); }
 .doc-modal-body .doc-table-packaging td:last-child { border-right: none; }
 .doc-modal-body .doc-table-packaging tr.row-group-start td { border-top: 1px solid rgba(94,179,242,0.18); }
+.doc-modal-body .doc-table-current { font-size: 0.78rem; }
+.doc-modal-body .doc-table-current th { padding: 0.55rem 0.55rem; }
+.doc-modal-body .doc-table-current td { padding: 0.5rem 0.55rem; white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.04); }
+.doc-modal-body .doc-table-current td:last-child { border-right: none; }
+.doc-modal-body .doc-table-current th:nth-child(2),
+.doc-modal-body .doc-table-current th:nth-child(4),
+.doc-modal-body .doc-table-current th:nth-child(6) { border-left: 1px solid rgba(94,179,242,0.18); }
+.doc-modal-body .doc-table-current td:nth-child(2),
+.doc-modal-body .doc-table-current td:nth-child(4),
+.doc-modal-body .doc-table-current td:nth-child(6) { border-left: 1px solid rgba(94,179,242,0.12); }
 
 /* ── ABOUT · FACILITY ── */
 .facility-stats {
@@ -1764,21 +1774,44 @@ footer { flex-direction: column; text-align: center; }
           <h4 class="doc-title" data-i18n="about.app.docs.c4.t">Current Load &amp; Current Density</h4>
           <button class="doc-btn" data-doc-target="doc4"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc4" hidden>
-            <p>Recommended operating current ranges for UHP graphite electrodes. Always derate by 10 – 15 % for continuous high-load EAF operation.</p>
-            <table class="doc-table">
-              <thead><tr><th>Diameter (mm)</th><th>Permissible Current (kA)</th><th>Current Density (A/cm²)</th></tr></thead>
-              <tbody>
-                <tr><td>300</td><td>30 – 35</td><td>30 – 34</td></tr>
-                <tr><td>350</td><td>40 – 48</td><td>30 – 33</td></tr>
-                <tr><td>400</td><td>50 – 60</td><td>28 – 32</td></tr>
-                <tr><td>450</td><td>60 – 72</td><td>27 – 30</td></tr>
-                <tr><td>500</td><td>70 – 80</td><td>26 – 29</td></tr>
-                <tr><td>550</td><td>80 – 92</td><td>25 – 28</td></tr>
-                <tr><td>600</td><td>90 – 105</td><td>24 – 27</td></tr>
-                <tr><td>650</td><td>100 – 118</td><td>23 – 26</td></tr>
-                <tr><td>700</td><td>110 – 130</td><td>22 – 25</td></tr>
-              </tbody>
-            </table>
+            <p>Permissible current load (A) and current density (A/cm²) across our three grades. Use the lower end of each range as a guide for continuous high-load operation; "~" indicates the diameter is not produced in that grade.</p>
+            <div class="doc-table-scroll">
+              <table class="doc-table doc-table-current">
+                <thead>
+                  <tr>
+                    <th rowspan="2">Nominal Diameter (mm)</th>
+                    <th colspan="2">High Power · HP</th>
+                    <th colspan="2">Near-Ultra-High Power · SHP</th>
+                    <th colspan="2">Ultra-High Power · UHP</th>
+                  </tr>
+                  <tr>
+                    <th>Current load (A)</th>
+                    <th>Current density (A/cm²)</th>
+                    <th>Current load (A)</th>
+                    <th>Current density (A/cm²)</th>
+                    <th>Current load (A)</th>
+                    <th>Current density (A/cm²)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>75</td><td>1,000 – 1,400</td><td>22 – 31</td><td>~</td><td>~</td><td>~</td><td>~</td></tr>
+                  <tr><td>100</td><td>1,500 – 2,400</td><td>19 – 30</td><td>~</td><td>~</td><td>~</td><td>~</td></tr>
+                  <tr><td>130</td><td>2,200 – 3,400</td><td>17 – 26</td><td>~</td><td>~</td><td>~</td><td>~</td></tr>
+                  <tr><td>150</td><td>3,000 – 4,500</td><td>16 – 25</td><td>~</td><td>~</td><td>~</td><td>~</td></tr>
+                  <tr><td>200</td><td>5,000 – 5,500</td><td>18 – 25</td><td>~</td><td>~</td><td>~</td><td>~</td></tr>
+                  <tr><td>250</td><td>8,000 – 13,000</td><td>18 – 25</td><td>~</td><td>~</td><td>9,200 – 15,100</td><td>21 – 30</td></tr>
+                  <tr><td>300</td><td>13,000 – 17,400</td><td>17 – 24</td><td>~</td><td>~</td><td>13,000 – 22,000</td><td>20 – 30</td></tr>
+                  <tr><td>350</td><td>17,400 – 24,000</td><td>17 – 24</td><td>19,000 – 28,000</td><td>17 – 30</td><td>20,000 – 28,000</td><td>20 – 30</td></tr>
+                  <tr><td>400</td><td>21,000 – 32,000</td><td>16 – 24</td><td>23,000 – 35,000</td><td>17 – 25</td><td>25,000 – 40,000</td><td>19 – 30</td></tr>
+                  <tr><td>450</td><td>25,000 – 40,000</td><td>15 – 24</td><td>30,000 – 42,000</td><td>17 – 25</td><td>32,000 – 45,000</td><td>19 – 27</td></tr>
+                  <tr><td>500</td><td>30,000 – 48,000</td><td>15 – 24</td><td>35,000 – 50,000</td><td>17 – 25</td><td>38,000 – 55,000</td><td>18 – 27</td></tr>
+                  <tr><td>550</td><td>37,000 – 57,000</td><td>15 – 23</td><td>44,000 – 58,000</td><td>18 – 24</td><td>50,000 – 60,000</td><td>18 – 24</td></tr>
+                  <tr><td>600</td><td>44,000 – 67,000</td><td>15 – 23</td><td>52,000 – 67,000</td><td>18 – 24</td><td>55,000 – 72,000</td><td>18 – 24</td></tr>
+                  <tr><td>650</td><td>~</td><td>~</td><td>~</td><td>~</td><td>55,000 – 75,000</td><td>18 – 24</td></tr>
+                  <tr><td>700</td><td>~</td><td>~</td><td>~</td><td>~</td><td>62,000 – 95,000</td><td>18 – 24</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
