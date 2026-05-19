@@ -880,6 +880,69 @@ transition: background 0.3s;
 .doc-modal-body .doc-table-dimweight td:first-child,
 .doc-modal-body .doc-table-dimweight td:nth-child(2) { color: var(--white); font-weight: 600; }
 
+/* ── Product image tile (image + Details tab) ── */
+.product-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 760px;
+  margin: 1.5rem auto 0;
+}
+.product-image-tile {
+  display: flex;
+  flex-direction: column;
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.18);
+  transition: border-color 0.3s, transform 0.3s;
+  overflow: hidden;
+}
+.product-image-tile:hover { border-color: rgba(94,179,242,0.45); transform: translateY(-3px); }
+.product-image-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  background: #ffffff;
+  overflow: hidden;
+}
+.product-image-frame img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.product-image-details {
+  display: block;
+  width: 100%;
+  align-self: stretch;
+  margin-top: auto;
+  background: transparent;
+  border: none;
+  border-top: 1px solid rgba(94,179,242,0.18);
+  color: var(--gold);
+  font-family: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.product-image-details:hover { background: var(--gold); color: var(--black); border-top-color: var(--gold); }
+.doc-modal-body .doc-img-large {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0.5rem 0 1.25rem;
+  background: #ffffff;
+}
+@media (max-width: 700px) {
+  .product-image-grid { grid-template-columns: 1fr; }
+}
+
 /* ── ABOUT · FACILITY ── */
 .facility-stats {
   display: grid;
@@ -2057,7 +2120,9 @@ footer { flex-direction: column; text-align: center; }
   </div>
 </section>
 
-<!-- Doc modal (shared across the about page) -->
+</div><!-- /page about -->
+
+<!-- Doc modal (shared across pages — must live outside any .page so it's always visible) -->
 <div class="doc-modal" id="docModal" hidden>
   <div class="doc-modal-overlay" data-doc-close></div>
   <div class="doc-modal-panel" role="dialog" aria-modal="true" aria-labelledby="docModalTitle">
@@ -2066,8 +2131,6 @@ footer { flex-direction: column; text-align: center; }
     <div class="doc-modal-body"></div>
   </div>
 </div>
-
-</div><!-- /page about -->
 
 <!-- PRODUCTS -->
 
@@ -2222,9 +2285,29 @@ footer { flex-direction: column; text-align: center; }
     </div>
   </div>
 
-  <div class="facility-gallery-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 760px; margin: 1.5rem auto 0;">
-    <a class="facility-tile" href="images/products/graphite-powder-sacks.png" target="_blank" rel="noopener"><img src="images/products/graphite-powder-sacks.png" alt="Artificial graphite powder packaged in 25 kg paper sacks, palletised and strapped for export" loading="lazy"></a>
-    <a class="facility-tile" href="images/products/graphite-powder-bigbags.png" target="_blank" rel="noopener"><img src="images/products/graphite-powder-bigbags.png" alt="Artificial graphite powder in 500 kg Asahi Carbon branded bigbags on pallets" loading="lazy"></a>
+  <div class="product-image-grid">
+    <div class="product-image-tile">
+      <div class="product-image-frame">
+        <img src="images/products/graphite-powder-sacks.png" alt="Artificial graphite powder in 25 kg paper sacks, palletised and strapped for export" loading="lazy">
+      </div>
+      <button class="doc-btn product-image-details" data-doc-target="powder-pack-sacks" data-doc-title="25 kg Paper Sacks" aria-label="View details about the 25 kg sack packaging">Details</button>
+      <div class="doc-body" id="powder-pack-sacks" hidden>
+        <img class="doc-img-large" src="images/products/graphite-powder-sacks.png" alt="Artificial graphite powder in 25 kg paper sacks, palletised and strapped for export">
+        <p>Standard retail and small-batch packaging format. Powder is sealed in multi-ply kraft paper sacks of 25 kg net weight, stacked on a heat-treated wooden pallet and secured with PET strapping for ocean and inland transport.</p>
+        <p><strong style="color:var(--gold);">Net weight per sack:</strong> 25 kg &middot; <strong style="color:var(--gold);">Pallet:</strong> 40 sacks / 1,000 kg &middot; <strong style="color:var(--gold);">Format:</strong> Sealed multi-ply kraft paper, moisture-resistant liner.</p>
+      </div>
+    </div>
+    <div class="product-image-tile">
+      <div class="product-image-frame">
+        <img src="images/products/graphite-powder-bigbags.png" alt="Artificial graphite powder in 500 kg Asahi Carbon branded bigbags on pallets" loading="lazy">
+      </div>
+      <button class="doc-btn product-image-details" data-doc-target="powder-pack-bigbags" data-doc-title="500 kg Bulk Bigbags" aria-label="View details about the 500 kg bigbag packaging">Details</button>
+      <div class="doc-body" id="powder-pack-bigbags" hidden>
+        <img class="doc-img-large" src="images/products/graphite-powder-bigbags.png" alt="Artificial graphite powder in 500 kg Asahi Carbon branded bigbags on pallets">
+        <p>Bulk packaging format for industrial buyers. Powder is filled into 500 kg woven polypropylene FIBC bigbags printed with the Asahi Carbon mark, country of origin, net weight, lot and container reference, then loaded two-high on wooden pallets for FCL shipment.</p>
+        <p><strong style="color:var(--gold);">Net weight per bigbag:</strong> 500 kg &middot; <strong style="color:var(--gold);">Pallet:</strong> 2 bigbags / 1,000 kg &middot; <strong style="color:var(--gold);">Format:</strong> Woven PP FIBC with inner liner, top-fill spout, bottom discharge.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -2906,7 +2989,8 @@ footer { flex-direction: column; text-align: center; }
       document.querySelectorAll('.doc-btn[data-doc-target]').forEach(btn => {
         btn.addEventListener('click', () => {
           const card = btn.closest('.doc-card');
-          const title = card ? card.querySelector('.doc-title').textContent.trim() : '';
+          const cardTitle = card ? card.querySelector('.doc-title') : null;
+          const title = btn.dataset.docTitle || (cardTitle ? cardTitle.textContent.trim() : '');
           openDoc(btn.dataset.docTarget, title);
         });
       });
