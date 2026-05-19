@@ -1333,6 +1333,69 @@ gap: 1rem;
 .footer-legal a { color: var(--gold); text-decoration: none; margin: 0 0.2rem; transition: color 0.25s; }
 .footer-legal a:hover { color: var(--white); }
 
+/* ── COOKIE CONSENT ── */
+.cookie-consent {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+  z-index: 200;
+  background: var(--mid);
+  border: 1px solid rgba(94,179,242,0.25);
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--light);
+  transform: translateY(40px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.cookie-consent.show { display: flex; transform: translateY(0); opacity: 1; }
+.cookie-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  color: var(--gold);
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.cookie-consent p { font-size: 0.78rem; color: var(--silver); margin: 0; }
+.cookie-consent a { color: var(--gold); text-decoration: underline; }
+.cookie-consent a:hover { color: var(--white); }
+.cookie-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.cookie-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.7rem 1.3rem;
+  border: 1px solid rgba(94,179,242,0.4);
+  background: transparent;
+  color: var(--light);
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.cookie-btn:hover { background: rgba(94,179,242,0.1); border-color: var(--gold); color: var(--white); }
+.cookie-btn.primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+  font-weight: 600;
+}
+.cookie-btn.primary:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--black); }
+@media (max-width: 600px) {
+  .cookie-consent { left: 0.8rem; right: 0.8rem; bottom: 0.8rem; padding: 1.1rem 1.2rem; }
+  .cookie-btn { flex: 1; padding: 0.7rem 0.8rem; }
+}
+
 /* ── LEGAL PAGES (Impressum / Datenschutz) ── */
 .legal-inner { max-width: 880px; margin: 0 auto; }
 .legal-inner h2.section-title { margin-bottom: 0.5rem; }
@@ -2844,6 +2907,18 @@ footer { flex-direction: column; text-align: center; }
   </div>
 </footer>
 
+<!-- COOKIE CONSENT -->
+<div id="cookie-consent" class="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie notice">
+  <div>
+    <div class="cookie-title" data-i18n="cookie.title">Cookies &amp; Privacy</div>
+    <p data-i18n="cookie.body">We use only technically necessary storage to remember your language preference. We do not use tracking or marketing cookies. See our <a href="#datenschutz">Privacy Policy</a> for details.</p>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" class="cookie-btn primary" id="cookie-accept" data-i18n="cookie.accept">Accept</button>
+    <button type="button" class="cookie-btn" id="cookie-decline" data-i18n="cookie.decline">Decline</button>
+  </div>
+</div>
+
 <script>
   // Page tab navigation — sections accessible only via top nav buttons
   (function() {
@@ -3440,7 +3515,13 @@ footer { flex-direction: column; text-align: center; }
       'footer.brand2': 'Sino-japanisches Joint Venture · in Partnerschaft mit Sojitz Ject Corporation',
       'footer.enquiries.full': 'Anfragen Europa: <a href="mailto:sales@asahicarbon.de">JianHua Li · sales@asahicarbon.de</a>',
       'footer.serving': 'Tätig in Europa · Nordamerika · Südamerika',
-      'footer.copy': '© 2025 Asahi Carbon Europe. Alle Rechte vorbehalten.'
+      'footer.copy': '© 2025 Asahi Carbon Europe. Alle Rechte vorbehalten.',
+
+      // Cookie consent
+      'cookie.title': 'Cookies &amp; Datenschutz',
+      'cookie.body': 'Wir verwenden ausschließlich technisch notwendige Speicherung, um Ihre Spracheinstellung zu merken. Es werden keine Tracking- oder Marketing-Cookies gesetzt. Weitere Informationen finden Sie in unserer <a href="#datenschutz">Datenschutzerklärung</a>.',
+      'cookie.accept': 'Akzeptieren',
+      'cookie.decline': 'Ablehnen'
     }
   };
 
@@ -3483,6 +3564,22 @@ footer { flex-direction: column; text-align: center; }
 
   // Apply saved language preference on initial load
   setLanguage(localStorage.getItem('lang') || 'en');
+
+  // ── Cookie consent ──────────────────────────────────────────────────
+  (function() {
+    const banner = document.getElementById('cookie-consent');
+    if (!banner) return;
+    const STORAGE_KEY = 'cookieConsent';
+    if (!localStorage.getItem(STORAGE_KEY)) {
+      window.setTimeout(() => banner.classList.add('show'), 600);
+    }
+    const dismiss = (value) => {
+      localStorage.setItem(STORAGE_KEY, value);
+      banner.classList.remove('show');
+    };
+    document.getElementById('cookie-accept').addEventListener('click', () => dismiss('accepted'));
+    document.getElementById('cookie-decline').addEventListener('click', () => dismiss('declined'));
+  })();
 </script>
 
 </body>
