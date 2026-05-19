@@ -827,6 +827,22 @@ transition: background 0.3s;
 }
 .doc-modal-body .doc-note { font-style: italic; color: var(--silver); font-size: 0.82rem; }
 .doc-modal-body .doc-jump { color: var(--gold); text-decoration: none; border-bottom: 1px solid currentColor; }
+.doc-modal-body .doc-table-scroll { overflow-x: auto; margin: 1rem 0; }
+.doc-modal-body .doc-table-horizontal { margin: 0; }
+.doc-modal-body .doc-table-horizontal th {
+  background: rgba(94,179,242,0.1);
+  text-align: left;
+  white-space: nowrap;
+  border-right: 1px solid rgba(94,179,242,0.22);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.doc-modal-body .doc-table-horizontal td {
+  min-width: 56px;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+.doc-modal-body .doc-table-horizontal tr:first-child td { color: var(--white); font-weight: 500; }
+.doc-modal-body .doc-table-horizontal tr:last-child th,
+.doc-modal-body .doc-table-horizontal tr:last-child td { border-bottom: none; }
 
 /* ── ABOUT · FACILITY ── */
 .facility-stats {
@@ -1668,20 +1684,20 @@ footer { flex-direction: column; text-align: center; }
           <button class="doc-btn" data-doc-target="doc1"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc1" hidden>
             <p>Recommended torque values for connecting graphite electrodes through threaded pins (nipples). Following these values keeps joints tight under thermal cycling and minimizes the risk of electrode breakage during EAF operation.</p>
-            <table class="doc-table">
-              <thead><tr><th>Diameter (mm)</th><th>Pin Type</th><th>Recommended Torque (N·m)</th></tr></thead>
-              <tbody>
-                <tr><td>300</td><td>4 TPI</td><td>1,400 – 1,600</td></tr>
-                <tr><td>350</td><td>4 TPI</td><td>1,700 – 2,000</td></tr>
-                <tr><td>400</td><td>4 TPI</td><td>2,000 – 2,400</td></tr>
-                <tr><td>450</td><td>3 TPI</td><td>2,400 – 2,800</td></tr>
-                <tr><td>500</td><td>3 TPI</td><td>2,800 – 3,200</td></tr>
-                <tr><td>550</td><td>3 TPI</td><td>3,200 – 3,800</td></tr>
-                <tr><td>600</td><td>3 TPI</td><td>3,800 – 4,500</td></tr>
-                <tr><td>650</td><td>3 TPI</td><td>4,500 – 5,200</td></tr>
-                <tr><td>700</td><td>3 TPI</td><td>5,200 – 6,000</td></tr>
-              </tbody>
-            </table>
+            <div class="doc-table-scroll">
+              <table class="doc-table doc-table-horizontal">
+                <tbody>
+                  <tr>
+                    <th>Electrode diameter (mm)</th>
+                    <td>150</td><td>200</td><td>250</td><td>300</td><td>350</td><td>400</td><td>450</td><td>500</td><td>550</td><td>600</td>
+                  </tr>
+                  <tr>
+                    <th>Torque value (kg·m)</th>
+                    <td>15</td><td>22</td><td>45</td><td>60</td><td>100</td><td>200</td><td>250</td><td>320</td><td>380</td><td>430</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <p class="doc-note">Always use a calibrated torque wrench and an electrode lifting bail. Apply joint compound only to the pin's leading thread.</p>
           </div>
         </div>
@@ -1704,23 +1720,6 @@ footer { flex-direction: column; text-align: center; }
 
         <div class="doc-card">
           <div class="doc-num">03</div>
-          <h4 class="doc-title" data-i18n="about.app.docs.c3.t">Containerized Transport</h4>
-          <button class="doc-btn" data-doc-target="doc3"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
-          <div class="doc-body" id="doc3" hidden>
-            <p>All exports ship as Full Container Load (FCL) via established sea-freight partners.</p>
-            <ul class="doc-list">
-              <li><strong>20' FCL.</strong> ≈ 22 – 24 tonnes net, suited to smaller diameters or short loads.</li>
-              <li><strong>40' FCL.</strong> ≈ 27 – 28 tonnes net (volume-limited rather than weight-limited).</li>
-              <li><strong>40' High Cube.</strong> Required for nominal lengths ≥ 2400 mm.</li>
-              <li><strong>Loading.</strong> Forklift with electrode lifting bail; crates blocked and braced against container walls with airbags.</li>
-              <li><strong>Routes.</strong> Tianjin / Qingdao → Rotterdam, Hamburg, Antwerp, Genoa, Houston, Veracruz, Santos.</li>
-              <li><strong>Transit time.</strong> 35 – 45 days to European ports, 28 – 40 days to North America.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="doc-card">
-          <div class="doc-num">04</div>
           <h4 class="doc-title" data-i18n="about.app.docs.c4.t">Current Load &amp; Current Density</h4>
           <button class="doc-btn" data-doc-target="doc4"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc4" hidden>
@@ -1743,7 +1742,7 @@ footer { flex-direction: column; text-align: center; }
         </div>
 
         <div class="doc-card">
-          <div class="doc-num">05</div>
+          <div class="doc-num">04</div>
           <h4 class="doc-title" data-i18n="about.app.docs.c5.t">Standard Dimensions for Fittings &amp; Threads</h4>
           <button class="doc-btn" data-doc-target="doc5"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc5" hidden>
@@ -1762,7 +1761,7 @@ footer { flex-direction: column; text-align: center; }
         </div>
 
         <div class="doc-card">
-          <div class="doc-num">06</div>
+          <div class="doc-num">05</div>
           <h4 class="doc-title" data-i18n="about.app.docs.c6.t">Technical Specifications of Graphite Electrodes</h4>
           <button class="doc-btn" data-doc-target="doc6"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc6" hidden>
@@ -1783,7 +1782,7 @@ footer { flex-direction: column; text-align: center; }
         </div>
 
         <div class="doc-card">
-          <div class="doc-num">07</div>
+          <div class="doc-num">06</div>
           <h4 class="doc-title" data-i18n="about.app.docs.c7.t">Standard Dimensions &amp; Weight of Graphite Electrodes</h4>
           <button class="doc-btn" data-doc-target="doc7"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc7" hidden>
@@ -2969,7 +2968,6 @@ footer { flex-direction: column; text-align: center; }
       'about.app.docs.viewmore': 'Mehr ansehen',
       'about.app.docs.c1.t': 'Anzugsdrehmoment-Tabelle für Elektrodenverbindungen',
       'about.app.docs.c2.t': 'Ausführliche Verpackung der Elektroden',
-      'about.app.docs.c3.t': 'Container-Transport',
       'about.app.docs.c4.t': 'Strombelastung &amp; Stromdichte',
       'about.app.docs.c5.t': 'Standardabmessungen für Fittings &amp; Gewinde',
       'about.app.docs.c6.t': 'Technische Spezifikationen der Graphitelektroden',
