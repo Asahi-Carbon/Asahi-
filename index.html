@@ -865,6 +865,13 @@ transition: background 0.3s;
 .doc-modal-body .doc-table-threads td:first-child,
 .doc-modal-body .doc-table-threads td:nth-child(8) { color: var(--white); font-weight: 600; }
 .doc-modal-body .doc-h-unit { display: block; font-weight: 400; font-size: 0.62rem; opacity: 0.8; letter-spacing: 0.1em; margin-top: 0.15rem; }
+.doc-modal-body .doc-table-tech { font-size: 0.78rem; }
+.doc-modal-body .doc-table-tech th { padding: 0.55rem 0.55rem; line-height: 1.25; }
+.doc-modal-body .doc-table-tech td { padding: 0.55rem 0.6rem; white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.04); vertical-align: middle; }
+.doc-modal-body .doc-table-tech td:last-child { border-right: none; }
+.doc-modal-body .doc-table-tech tr.row-group-start td { border-top: 1px solid rgba(94,179,242,0.18); }
+.doc-modal-body .doc-table-tech td[rowspan],
+.doc-modal-body .doc-table-tech td[colspan="2"] { color: var(--white); font-weight: 500; text-align: left; }
 
 /* ── ABOUT · FACILITY ── */
 .facility-stats {
@@ -1872,19 +1879,46 @@ footer { flex-direction: column; text-align: center; }
           <h4 class="doc-title" data-i18n="about.app.docs.c6.t">Technical Specifications of Graphite Electrodes</h4>
           <button class="doc-btn" data-doc-target="doc6"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc6" hidden>
-            <p>Key physical and electrical properties for our three grades. Values are typical averages; individual batches are accompanied by a Material Test Report (MTR).</p>
-            <table class="doc-table">
-              <thead><tr><th>Property</th><th>Unit</th><th>RP</th><th>HP</th><th>UHP</th></tr></thead>
-              <tbody>
-                <tr><td>Resistivity</td><td>μΩ·m</td><td>≤ 7.5</td><td>≤ 6.0</td><td>≤ 4.6</td></tr>
-                <tr><td>Bulk Density</td><td>g/cm³</td><td>≥ 1.58</td><td>≥ 1.62</td><td>≥ 1.65</td></tr>
-                <tr><td>Bending Strength</td><td>MPa</td><td>≥ 6.5</td><td>≥ 8.0</td><td>≥ 10.5</td></tr>
-                <tr><td>Young's Modulus</td><td>GPa</td><td>≤ 8.0</td><td>≤ 10.0</td><td>≤ 12.0</td></tr>
-                <tr><td>Ash Content</td><td>%</td><td>≤ 0.5</td><td>≤ 0.4</td><td>≤ 0.3</td></tr>
-                <tr><td>CTE (100 – 600 °C)</td><td>10⁻⁶ / K</td><td>≤ 2.4</td><td>≤ 2.0</td><td>≤ 1.4</td></tr>
-                <tr><td>Max. Operating Temp.</td><td>°C</td><td>3000</td><td>3000</td><td>3000</td></tr>
-              </tbody>
-            </table>
+            <p>Physical and electrical properties across our three grades, with separate values for the electrode body and the connector (nipple) where applicable. Every shipment is accompanied by a Material Test Report (MTR).</p>
+            <div class="doc-table-scroll">
+              <table class="doc-table doc-table-tech">
+                <thead>
+                  <tr>
+                    <th colspan="2" rowspan="3">Feature Item</th>
+                    <th rowspan="3">Unit</th>
+                    <th colspan="3">Nominal diameter (mm)</th>
+                  </tr>
+                  <tr>
+                    <th>High Power</th>
+                    <th>Near-Ultra-High Power</th>
+                    <th>Ultra-High Power</th>
+                  </tr>
+                  <tr>
+                    <th><span class="doc-h-unit">75 – 550</span></th>
+                    <th><span class="doc-h-unit">350 – 500</span></th>
+                    <th><span class="doc-h-unit">350 – 700</span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="row-group-start"><td rowspan="2">Resistivity</td><td>Electrode</td><td rowspan="2">μΩ·m</td><td>5.8 – 7.0</td><td>5.5 – 6.5</td><td>4.0 – 5.5</td></tr>
+                  <tr><td>Connector</td><td>3.5 – 5.0</td><td>3.2 – 4.5</td><td>2.8 – 4.0</td></tr>
+
+                  <tr class="row-group-start"><td rowspan="2">Flexural strength</td><td>Electrode</td><td rowspan="2">MPa</td><td>10.0 – 13.0</td><td>10.0 – 15.0</td><td>10.0 – 15.0</td></tr>
+                  <tr><td>Connector</td><td>18.0 – 22.0</td><td>20.0 – 25.0</td><td>20.0 – 30.0</td></tr>
+
+                  <tr class="row-group-start"><td rowspan="2">Modulus of elasticity</td><td>Electrode</td><td rowspan="2">GPa</td><td>10.0 – 12.0</td><td>10.0 – 14.0</td><td>12.0 – 16.0</td></tr>
+                  <tr><td>Connector</td><td>14.0 – 18.0</td><td>16.0 – 22.0</td><td>16.0 – 25.0</td></tr>
+
+                  <tr class="row-group-start"><td rowspan="2">Volumetric density</td><td>Electrode</td><td rowspan="2">g/cm³</td><td>1.62 – 1.70</td><td>1.65 – 1.72</td><td>1.66 – 1.75</td></tr>
+                  <tr><td>Connector</td><td>1.75 – 1.80</td><td>1.78 – 1.82</td><td>1.80 – 1.90</td></tr>
+
+                  <tr class="row-group-start"><td colspan="2">Ash content</td><td>%</td><td>0.3</td><td>0.2</td><td>0.2</td></tr>
+
+                  <tr class="row-group-start"><td rowspan="2">C.T.E. 100 – 500&nbsp;°C</td><td>Electrode</td><td rowspan="2">×10⁻⁶ / °C</td><td>1.5 – 2.2</td><td>1.5 – 1.8</td><td>1.1 – 1.5</td></tr>
+                  <tr><td>Connector</td><td>1.0 – 1.4</td><td>1.0 – 1.4</td><td>0.5 – 1.2</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
