@@ -1206,39 +1206,6 @@ background: rgba(94,179,242,0.05); text-align: center; min-width: 120px;
 }
 .cert-badge-name { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(–gold); font-weight: 600; }
 .cert-badge-desc { font-size: 0.65rem; color: var(–silver); margin-top: 0.2rem; }
-.cert-documents { max-width: 1000px; margin: 4rem auto 0; }
-.cert-documents-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem; font-weight: 400;
-  color: var(--gold);
-  text-align: center;
-  margin-bottom: 2rem;
-  letter-spacing: 0.02em;
-}
-.cert-documents-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-.cert-document {
-  display: block;
-  background: var(--carbon);
-  border: 1px solid rgba(94,179,242,0.2);
-  padding: 1rem;
-  transition: border-color 0.3s, transform 0.3s;
-}
-.cert-document:hover { border-color: rgba(94,179,242,0.55); transform: translateY(-4px); }
-.cert-document img { display: block; width: 100%; height: auto; }
-.cert-document-caption {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--silver);
-  text-align: center;
-  margin-top: 0.9rem;
-  padding-bottom: 0.2rem;
-}
-.cert-document:hover .cert-document-caption { color: var(--gold); }
 
 /* ── CONTACT ── */
 #contact {
@@ -1451,7 +1418,6 @@ section { padding: 5rem 1.5rem; }
 .about-visual-horizontal { grid-template-columns: 1fr; gap: 2rem; }
 .about-visual-horizontal .about-year { font-size: 5rem; }
 .spec-grid, .app-grid, .service-grid { grid-template-columns: 1fr; }
-.cert-documents-grid { grid-template-columns: 1fr; }
 .facility-stats { grid-template-columns: repeat(2, 1fr); }
 .facility-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
 .docs-grid { grid-template-columns: 1fr; }
@@ -1490,7 +1456,6 @@ footer { flex-direction: column; text-align: center; }
         <ul class="dropdown-nav">
           <li><a href="#about-profile" class="preview-active" data-i18n="nav.about.profile">Profile</a></li>
           <li><a href="#about-history" data-i18n="nav.about.history">History</a></li>
-          <li><a href="#about-excellence" data-i18n="nav.about.excellence">Certified Excellence</a></li>
           <li><a href="#about-specifications" data-i18n="nav.about.specifications">Product Specifications</a></li>
           <li><a href="#about-application" data-i18n="nav.about.application">Application Site</a></li>
           <li><a href="#about-facility" data-i18n="nav.about.facility">Our Facility</a></li>
@@ -1570,7 +1535,6 @@ footer { flex-direction: column; text-align: center; }
 <div class="about-subnav">
   <a href="#about-profile" class="about-subnav-link" data-i18n="nav.about.profile">Profile</a>
   <a href="#about-history" class="about-subnav-link" data-i18n="nav.about.history">History</a>
-  <a href="#about-excellence" class="about-subnav-link" data-i18n="nav.about.excellence">Certified Excellence</a>
   <a href="#about-specifications" class="about-subnav-link" data-i18n="nav.about.specifications">Product Specifications</a>
   <a href="#about-application" class="about-subnav-link" data-i18n="nav.about.application">Application Site</a>
   <a href="#about-facility" class="about-subnav-link" data-i18n="nav.about.facility">Our Facility</a>
@@ -1699,55 +1663,6 @@ footer { flex-direction: column; text-align: center; }
       </div>
 
       <div class="timeline-foot" data-i18n="about.history.start">Start</div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFIED EXCELLENCE -->
-<section id="about-excellence" style="background:var(--dark);">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:4rem;">
-      <span class="section-tag" data-i18n="about.exc.tag">Certified Excellence · Quality & Compliance</span>
-      <h2 class="section-title" data-i18n="about.exc.title">Standards That <strong>Matter to Europe</strong></h2>
-      <div class="divider" style="margin:1.5rem auto;"></div>
-      <p class="section-sub" style="margin:0 auto;" data-i18n="about.exc.sub">
-        Rigorous quality management systems aligned with international standards. Documentation, testing records, and traceability protocols that meet European import requirements.
-      </p>
-    </div>
-    <div class="cert-badges" style="justify-content:center;">
-      <div class="cert-badge">
-        <div class="cert-badge-name">ISO 9001</div>
-        <div class="cert-badge-desc" data-i18n="about.exc.badge.iso">Quality Management</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-badge-name">JIS Standards</div>
-        <div class="cert-badge-desc" data-i18n="about.exc.badge.jis">Japanese Industrial</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-badge-name">IEC Standards</div>
-        <div class="cert-badge-desc" data-i18n="about.exc.badge.iec">International Electrotechnical</div>
-      </div>
-      <div class="cert-badge">
-        <div class="cert-badge-name">ASTM</div>
-        <div class="cert-badge-desc" data-i18n="about.exc.badge.astm">Materials Testing</div>
-      </div>
-    </div>
-    <p style="font-size:0.85rem;color:var(--silver);margin:2.5rem auto 0;line-height:1.8;max-width:780px;text-align:center;" data-i18n="about.exc.note">
-      Every shipment is accompanied by a full material test report (MTR), certificate of conformity, and dimensional inspection record. Documentation available in English, German, French, Italian, and Spanish on request.
-    </p>
-
-    <div class="cert-documents">
-      <h3 class="cert-documents-title" data-i18n="about.exc.docs.title">Certificate Documents</h3>
-      <div class="cert-documents-grid">
-        <a class="cert-document" href="images/certificates/high-tech-enterprise.png" target="_blank" rel="noopener">
-          <img src="images/certificates/high-tech-enterprise.png" alt="High-Tech Enterprise Certificate (No. GR202237002023)" loading="lazy">
-          <div class="cert-document-caption" data-i18n="about.exc.cert1.caption">High-Tech Enterprise Certificate · 2022</div>
-        </a>
-        <a class="cert-document" href="images/certificates/innovative-sme.png" target="_blank" rel="noopener">
-          <img src="images/certificates/innovative-sme.png" alt="Innovative Small &amp; Medium Enterprise — Shandong Department of Industry and Information Technology" loading="lazy">
-          <div class="cert-document-caption" data-i18n="about.exc.cert2.caption">Innovative SME · Shandong Province · 2023–2025</div>
-        </a>
-      </div>
     </div>
   </div>
 </section>
@@ -2915,7 +2830,6 @@ footer { flex-direction: column; text-align: center; }
       'about': 'about',
       'about-profile': 'about',
       'about-history': 'about',
-      'about-excellence': 'about',
       'about-specifications': 'about',
       'about-application': 'about',
       'about-facility': 'about',
@@ -3191,7 +3105,6 @@ footer { flex-direction: column; text-align: center; }
       'nav.about': 'Über uns',
       'nav.about.profile': 'Profil',
       'nav.about.history': 'Geschichte',
-      'nav.about.excellence': 'Zertifizierte Qualität',
       'nav.about.specifications': 'Produktspezifikationen',
       'nav.about.application': 'Anwendungsbereiche',
       'nav.about.facility': 'Unser Werk',
@@ -3294,18 +3207,11 @@ footer { flex-direction: column; text-align: center; }
       'about.history.2013-06a.t': 'Grundsteinlegungsfeier.',
       'about.history.2013-01.t': 'Unternehmen gegründet.',
 
-      // About — Certified Excellence
-      'about.exc.tag': 'Zertifizierte Qualität · Qualität &amp; Konformität',
-      'about.exc.title': 'Standards, die <strong>Europa wichtig sind</strong>',
-      'about.exc.sub': 'Strenge Qualitätsmanagementsysteme nach internationalen Standards. Dokumentation, Prüfprotokolle und Rückverfolgbarkeit, die den europäischen Importanforderungen entsprechen.',
+      // Certification Badges (used on Industries page)
       'about.exc.badge.iso': 'Qualitätsmanagement',
       'about.exc.badge.jis': 'Japanische Industrie',
       'about.exc.badge.iec': 'International Electrotechnical',
       'about.exc.badge.astm': 'Werkstoffprüfung',
-      'about.exc.note': 'Jede Lieferung wird begleitet von einem vollständigen Material-Test-Report (MTR), einem Konformitätszertifikat und einem Maßprüfprotokoll. Dokumentation auf Anfrage in Englisch, Deutsch, Französisch, Italienisch und Spanisch erhältlich.',
-      'about.exc.docs.title': 'Zertifikate',
-      'about.exc.cert1.caption': 'High-Tech-Enterprise-Zertifikat · 2022',
-      'about.exc.cert2.caption': 'Innovativer Mittelstand · Provinz Shandong · 2023–2025',
 
       // About — Specifications
       'about.spec.tag': 'Produktspezifikationen · Engineered Grades',
