@@ -776,12 +776,6 @@ transition: background 0.3s;
 }
 .tech-resource-link:hover,
 .tech-resource-link:focus-visible { color: var(--gold); padding-left: 1rem; outline: none; }
-.tech-resource-icon {
-  flex-shrink: 0;
-  color: var(--gold);
-  font-size: 1.1rem;
-  line-height: 1;
-}
 .tech-resource-link .tech-resource-arrow {
   margin-left: auto;
   color: var(--silver);
@@ -2478,73 +2472,36 @@ footer { flex-direction: column; text-align: center; }
         Our team works directly with your metallurgists and procurement to specify the right grade, optimise consumption, and resolve operational issues — drawing on both our Chinese R&amp;D centre and Sojitz Ject's Japanese engineering network.
       </p>
     </div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-icon">⬡</div>
-        <h4 data-i18n="services.support.c1.h">Pre-Sales Consultation</h4>
-        <p data-i18n="services.support.c1.p">Grade selection (RP / HP / UHP), diameter matching, and joint configuration tailored to your furnace's current density, tap-to-tap cycle, and scrap mix.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">◈</div>
-        <h4 data-i18n="services.support.c2.h">On-Site &amp; Remote Engineering</h4>
-        <p data-i18n="services.support.c2.p">Commissioning support for first deliveries, performance audits, and remote troubleshooting via JianHua Li in Düsseldorf and our China-based R&amp;D team.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">◉</div>
-        <h4 data-i18n="services.support.c3.h">Consumption Optimisation</h4>
-        <p data-i18n="services.support.c3.p">Wear analysis and process recommendations to lower electrode consumption per tonne of steel — backed by data from comparable European EAF operations.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">⬢</div>
-        <h4 data-i18n="services.support.c4.h">Quality &amp; Traceability</h4>
-        <p data-i18n="services.support.c4.p">Full material test reports, batch traceability, and direct access to our QA team for non-conformance or claim resolution.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">◆</div>
-        <h4 data-i18n="services.support.c5.h">Multilingual Documentation</h4>
-        <p data-i18n="services.support.c5.p">Technical data sheets, MTRs, and SDS available in English, German, French, Italian, Spanish, Chinese, and Japanese on request.</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">◎</div>
-        <h4 data-i18n="services.support.c6.h">Long-Term Supply Planning</h4>
-        <p data-i18n="services.support.c6.p">Forecast-based production reservations and framework agreements to protect your supply against market volatility.</p>
-      </div>
-    </div>
 
     <div class="tech-resources">
       <h4 class="tech-resources-title" data-i18n="services.support.resources.title">Technical References</h4>
       <ul class="tech-resources-list">
         <li>
           <button type="button" class="tech-resource-link" data-doc-target="doc6" data-doc-title="Technical specifications of graphite electrodes">
-            <span class="tech-resource-icon" aria-hidden="true">👍</span>
             <span data-i18n="services.support.resources.i1">Technical specifications of graphite electrodes</span>
             <span class="tech-resource-arrow" aria-hidden="true">→</span>
           </button>
         </li>
         <li>
           <button type="button" class="tech-resource-link" data-doc-target="doc7" data-doc-title="Standard dimensions and weight of graphite electrodes">
-            <span class="tech-resource-icon" aria-hidden="true">👍</span>
             <span data-i18n="services.support.resources.i2">Standard dimensions and weight of graphite electrodes</span>
             <span class="tech-resource-arrow" aria-hidden="true">→</span>
           </button>
         </li>
         <li>
           <button type="button" class="tech-resource-link" data-doc-target="doc5" data-doc-title="Standard dimensions for fittings and threads">
-            <span class="tech-resource-icon" aria-hidden="true">👍</span>
             <span data-i18n="services.support.resources.i3">Standard dimensions for fittings and threads</span>
             <span class="tech-resource-arrow" aria-hidden="true">→</span>
           </button>
         </li>
         <li>
           <button type="button" class="tech-resource-link" data-doc-target="doc4" data-doc-title="Graphite electrodes allow for current load and current density">
-            <span class="tech-resource-icon" aria-hidden="true">👍</span>
             <span data-i18n="services.support.resources.i4">Graphite electrodes allow for current load and current density.</span>
             <span class="tech-resource-arrow" aria-hidden="true">→</span>
           </button>
         </li>
         <li>
           <button type="button" class="tech-resource-link" data-doc-target="doc1" data-doc-title="Electrodynamic Torque Table Connection">
-            <span class="tech-resource-icon" aria-hidden="true">👍</span>
             <span data-i18n="services.support.resources.i5">Electrodynamic Torque Table Connection</span>
             <span class="tech-resource-arrow" aria-hidden="true">→</span>
           </button>
@@ -3461,18 +3418,6 @@ footer { flex-direction: column; text-align: center; }
       'services.support.tag': 'Dienstleistungen · Technischer Support',
       'services.support.title': 'Engineering-Beratung vom <strong>Datenblatt bis zum Ofen</strong>',
       'services.support.sub': 'Unser Team arbeitet direkt mit Ihren Metallurgen und dem Einkauf zusammen, um die richtige Qualität zu spezifizieren, den Verbrauch zu optimieren und betriebliche Probleme zu lösen — gestützt auf unser chinesisches F&amp;E-Zentrum und das Engineering-Netzwerk von Sojitz Ject in Japan.',
-      'services.support.c1.h': 'Beratung vor dem Kauf',
-      'services.support.c1.p': 'Qualitätswahl (RP / HP / UHP), Durchmesser-Anpassung und Verbindungskonfiguration, abgestimmt auf Stromdichte, Tap-to-Tap-Zyklus und Schrottzusammensetzung Ihres Ofens.',
-      'services.support.c2.h': 'Engineering vor Ort &amp; remote',
-      'services.support.c2.p': 'Inbetriebnahme-Unterstützung bei Erstlieferungen, Performance-Audits und Remote-Troubleshooting über JianHua Li in Düsseldorf und unser F&amp;E-Team in China.',
-      'services.support.c3.h': 'Verbrauchsoptimierung',
-      'services.support.c3.p': 'Verschleißanalyse und Prozessempfehlungen zur Senkung des Elektrodenverbrauchs pro Tonne Stahl — gestützt auf Daten vergleichbarer europäischer EAF-Betriebe.',
-      'services.support.c4.h': 'Qualität &amp; Rückverfolgbarkeit',
-      'services.support.c4.p': 'Vollständige Material-Test-Reports, Chargen-Rückverfolgbarkeit und direkter Zugang zu unserem QA-Team bei Reklamationen.',
-      'services.support.c5.h': 'Mehrsprachige Dokumentation',
-      'services.support.c5.p': 'Technische Datenblätter, MTRs und Sicherheitsdatenblätter auf Anfrage in Englisch, Deutsch, Französisch, Italienisch, Spanisch, Chinesisch und Japanisch.',
-      'services.support.c6.h': 'Langfristige Versorgungsplanung',
-      'services.support.c6.p': 'Forecast-basierte Produktionsreservierungen und Rahmenverträge zur Absicherung Ihrer Versorgung gegen Marktvolatilität.',
       'services.support.resources.title': 'Technische Referenzen',
       'services.support.resources.i1': 'Technische Spezifikationen der Graphitelektroden',
       'services.support.resources.i2': 'Standardmaße &amp; Gewichte der Graphitelektroden',
