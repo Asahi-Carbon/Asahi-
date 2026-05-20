@@ -733,6 +733,64 @@ transition: background 0.3s;
 }
 .doc-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--black); }
 
+/* Technical Support — clickable resources list */
+.tech-resources {
+  margin-top: 4rem;
+  padding: 2.5rem 2rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(94,179,242,0.12);
+  border-radius: 4px;
+}
+.tech-resources-title {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+.tech-resources-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 900px;
+}
+.tech-resources-list li {
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+}
+.tech-resources-list li:last-child { border-bottom: none; }
+.tech-resource-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  text-align: left;
+  padding: 1rem 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s, padding 0.2s;
+}
+.tech-resource-link:hover,
+.tech-resource-link:focus-visible { color: var(--gold); padding-left: 1rem; outline: none; }
+.tech-resource-icon {
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.tech-resource-link .tech-resource-arrow {
+  margin-left: auto;
+  color: var(--silver);
+  font-size: 1.1rem;
+  transition: transform 0.2s, color 0.2s;
+}
+.tech-resource-link:hover .tech-resource-arrow,
+.tech-resource-link:focus-visible .tech-resource-arrow { color: var(--gold); transform: translateX(4px); }
+
 /* Modal */
 .doc-modal {
   position: fixed;
@@ -2493,6 +2551,47 @@ footer { flex-direction: column; text-align: center; }
         <p data-i18n="services.support.c6.p">Forecast-based production reservations and framework agreements to protect your supply against market volatility.</p>
       </div>
     </div>
+
+    <div class="tech-resources">
+      <h4 class="tech-resources-title" data-i18n="services.support.resources.title">Technical References</h4>
+      <ul class="tech-resources-list">
+        <li>
+          <button type="button" class="tech-resource-link" data-doc-target="doc6" data-doc-title="Technical specifications of graphite electrodes">
+            <span class="tech-resource-icon" aria-hidden="true">👍</span>
+            <span data-i18n="services.support.resources.i1">Technical specifications of graphite electrodes</span>
+            <span class="tech-resource-arrow" aria-hidden="true">→</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="tech-resource-link" data-doc-target="doc7" data-doc-title="Standard dimensions and weight of graphite electrodes">
+            <span class="tech-resource-icon" aria-hidden="true">👍</span>
+            <span data-i18n="services.support.resources.i2">Standard dimensions and weight of graphite electrodes</span>
+            <span class="tech-resource-arrow" aria-hidden="true">→</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="tech-resource-link" data-doc-target="doc5" data-doc-title="Standard dimensions for fittings and threads">
+            <span class="tech-resource-icon" aria-hidden="true">👍</span>
+            <span data-i18n="services.support.resources.i3">Standard dimensions for fittings and threads</span>
+            <span class="tech-resource-arrow" aria-hidden="true">→</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="tech-resource-link" data-doc-target="doc4" data-doc-title="Graphite electrodes allow for current load and current density">
+            <span class="tech-resource-icon" aria-hidden="true">👍</span>
+            <span data-i18n="services.support.resources.i4">Graphite electrodes allow for current load and current density.</span>
+            <span class="tech-resource-arrow" aria-hidden="true">→</span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="tech-resource-link" data-doc-target="doc1" data-doc-title="Electrodynamic Torque Table Connection">
+            <span class="tech-resource-icon" aria-hidden="true">👍</span>
+            <span data-i18n="services.support.resources.i5">Electrodynamic Torque Table Connection</span>
+            <span class="tech-resource-arrow" aria-hidden="true">→</span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -3430,6 +3529,12 @@ footer { flex-direction: column; text-align: center; }
       'services.support.c5.p': 'Technische Datenblätter, MTRs und Sicherheitsdatenblätter auf Anfrage in Englisch, Deutsch, Französisch, Italienisch, Spanisch, Chinesisch und Japanisch.',
       'services.support.c6.h': 'Langfristige Versorgungsplanung',
       'services.support.c6.p': 'Forecast-basierte Produktionsreservierungen und Rahmenverträge zur Absicherung Ihrer Versorgung gegen Marktvolatilität.',
+      'services.support.resources.title': 'Technische Referenzen',
+      'services.support.resources.i1': 'Technische Spezifikationen der Graphitelektroden',
+      'services.support.resources.i2': 'Standardmaße &amp; Gewichte der Graphitelektroden',
+      'services.support.resources.i3': 'Standardabmessungen für Fittings &amp; Gewinde',
+      'services.support.resources.i4': 'Graphitelektroden – zulässige Strombelastung und Stromdichte.',
+      'services.support.resources.i5': 'Anzugsdrehmoment-Tabelle für Elektrodenverbindungen',
       'services.shipping.tag': 'Dienstleistungen · Verpackung &amp; Versand',
       'services.shipping.title': 'Konzipiert für den <strong>halben Globus</strong>',
       'services.shipping.sub': 'Jede Lieferung verlässt das Werk bereit für lange Seetransporte und das Handling in europäischen Häfen — Schutzverpackung, vollständige Dokumentation und Logistik aus unserem Düsseldorfer Büro.',
