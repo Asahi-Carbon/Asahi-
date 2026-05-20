@@ -1074,17 +1074,6 @@ transition: background 0.3s;
   transition: transform 0.3s;
 }
 .back-link:hover { transform: translateX(-4px); }
-.detail-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5px;
-  background: rgba(94,179,242,0.1);
-  max-width: 1200px;
-  margin: 0 auto;
-}
-@media (max-width: 900px) {
-  .detail-grid { grid-template-columns: 1fr; }
-}
 .product-cta {
   max-width: 1200px;
   margin: 4rem auto 0;
@@ -1140,14 +1129,83 @@ background: var(–dark); padding: 3rem 2.5rem;
 transition: background 0.4s;
 position: relative; overflow: hidden; cursor: default;
 }
-.ingredient-image {
-display: flex; align-items: center; justify-content: center;
-aspect-ratio: 4 / 3; background: #ffffff;
-margin: -3rem -2.5rem 1.75rem; overflow: hidden;
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-.ingredient-image img {
-display: block; max-width: 100%; max-height: 100%;
-width: auto; height: auto; object-fit: contain;
+.ingredient-tile {
+  display: flex;
+  flex-direction: column;
+  background: var(--carbon);
+  border: 1px solid rgba(94,179,242,0.18);
+  transition: border-color 0.3s, transform 0.3s;
+  overflow: hidden;
+}
+.ingredient-tile:hover { border-color: rgba(94,179,242,0.45); transform: translateY(-3px); }
+.ingredient-frame {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(94,179,242,0.18);
+  background: var(--dark);
+  cursor: zoom-in;
+  overflow: hidden;
+}
+.ingredient-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: brightness(4.5) contrast(1.35);
+  transition: transform 0.4s ease;
+}
+.ingredient-frame:hover img { transform: scale(1.04); }
+.ingredient-zoom {
+  position: absolute;
+  top: 0.75rem; right: 0.85rem;
+  width: 2rem; height: 2rem;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.55);
+  color: var(--gold);
+  font-size: 1rem;
+  border: 1px solid rgba(94,179,242,0.35);
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+.ingredient-frame:hover .ingredient-zoom,
+.ingredient-frame:focus-visible .ingredient-zoom { opacity: 1; }
+.ingredient-body { padding: 1.5rem 1.75rem 1.75rem; }
+.ingredient-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: var(--white);
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.01em;
+}
+.ingredient-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--silver);
+  margin: 0;
+}
+.doc-modal-body .doc-img-ingredient {
+  background: var(--dark);
+  mix-blend-mode: multiply;
+  filter: brightness(4.5) contrast(1.35);
+}
+@media (max-width: 700px) {
+  .ingredient-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .ingredient-body { padding: 1.25rem 1.25rem 1.5rem; }
 }
 .product-card::after {
 content: ‘’;
@@ -2308,23 +2366,64 @@ footer { flex-direction: column; text-align: center; }
 <div class="page" data-page="ingredients">
 
 <section>
-  <a href="#products" class="back-link">← Back to Products</a>
+  <a href="#products" class="back-link" data-i18n="product.back">← Back to Products</a>
   <span class="section-tag">Category 03</span>
-  <h2 class="section-title"><strong>Ingredients</strong></h2>
+  <h2 class="section-title"><strong data-i18n="product.ingredients.title">Ingredients</strong></h2>
   <div class="divider"></div>
-  <p class="section-sub" style="margin-bottom:3rem;">
+  <p class="section-sub" style="margin-bottom:3rem;" data-i18n="product.ingredients.sub">
     Raw materials and feedstock for graphite production — the same inputs we use in our own electrode and powder manufacturing, available to industrial buyers worldwide.
   </p>
-  <div class="detail-grid">
-    <div class="product-card">
-      <div class="ingredient-image">
+  <div class="ingredient-grid">
+    <div class="ingredient-tile">
+      <button type="button" class="ingredient-frame" data-doc-target="ingredient-petroleum-coke" data-doc-title="Calcined Petroleum Coke" aria-label="View larger image and details of calcined petroleum coke">
         <img src="images/ingredients/petroleum-coke.png" alt="Calcined petroleum coke — porous black anode-grade chunks" loading="lazy">
+        <span class="ingredient-zoom" aria-hidden="true">⤢</span>
+      </button>
+      <div class="ingredient-body">
+        <h4 class="ingredient-name" data-i18n="product.ingredients.petroleum.name">Calcined Petroleum Coke</h4>
+        <p class="ingredient-desc" data-i18n="product.ingredients.petroleum.desc">
+          Anode-grade calcined petroleum coke (CPC) used as a primary carbon source in graphite electrode and anode paste production. Low sulphur, low metals, high fixed carbon — sourced and calcined to electrode-grade specifications.
+        </p>
+      </div>
+      <div class="doc-body" id="ingredient-petroleum-coke" hidden>
+        <img class="doc-img-large doc-img-ingredient" src="images/ingredients/petroleum-coke.png" alt="Calcined petroleum coke — porous black anode-grade chunks">
+        <p>Anode-grade calcined petroleum coke (CPC) used as a primary carbon source in graphite electrode and anode paste production. Calcined at 1,200–1,400 °C to drive off volatiles, deliver high fixed carbon and the porosity required for impregnation and graphitisation.</p>
+        <p><strong style="color:var(--gold);">Fixed carbon:</strong> ≥ 98.5 % &middot; <strong style="color:var(--gold);">Sulphur:</strong> ≤ 0.7 % &middot; <strong style="color:var(--gold);">Ash:</strong> ≤ 0.5 % &middot; <strong style="color:var(--gold);">Real density:</strong> ≥ 2.06 g/cm³</p>
+        <p>Available in standard granulometries (0–5 mm, 5–25 mm) and custom screen cuts on request. Ships in 1,000 kg bigbags or break-bulk on request.</p>
       </div>
     </div>
-    <div class="product-card">
-      <div class="ingredient-image">
+    <div class="ingredient-tile">
+      <button type="button" class="ingredient-frame" data-doc-target="ingredient-needle-coke" data-doc-title="Premium Needle Coke" aria-label="View larger image and details of premium needle coke">
         <img src="images/ingredients/needle-coke.png" alt="Premium needle coke — crystalline UHP-grade feedstock" loading="lazy">
+        <span class="ingredient-zoom" aria-hidden="true">⤢</span>
+      </button>
+      <div class="ingredient-body">
+        <h4 class="ingredient-name" data-i18n="product.ingredients.needle.name">Premium Needle Coke</h4>
+        <p class="ingredient-desc" data-i18n="product.ingredients.needle.desc">
+          Highly crystalline needle coke — the flagship feedstock for Ultra-High Power (UHP) graphite electrodes. Anisotropic, low CTE, low sulphur — engineered for electrodes running the most demanding electric arc furnace duties.
+        </p>
       </div>
+      <div class="doc-body" id="ingredient-needle-coke" hidden>
+        <img class="doc-img-large doc-img-ingredient" src="images/ingredients/needle-coke.png" alt="Premium needle coke — crystalline UHP-grade feedstock">
+        <p>Highly crystalline needle coke is the flagship feedstock for Ultra-High Power (UHP) graphite electrodes. Its anisotropic, lamellar structure gives finished electrodes the low thermal expansion and high electrical conductivity required by the most demanding electric arc furnace duties.</p>
+        <p><strong style="color:var(--gold);">Fixed carbon:</strong> ≥ 99.0 % &middot; <strong style="color:var(--gold);">Sulphur:</strong> ≤ 0.5 % &middot; <strong style="color:var(--gold);">Ash:</strong> ≤ 0.2 % &middot; <strong style="color:var(--gold);">CTE (a-axis):</strong> ≤ 1.0 × 10⁻⁶ /°C</p>
+        <p>Both petroleum-derived and coal-tar-derived needle coke available. Ships in 1,000 kg bigbags with full COA, MTR and origin documentation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-cta">
+    <div class="product-cta-text">
+      <h3 class="product-cta-title" data-i18n="product.cta.ingredients.title">Interested in Raw Materials?</h3>
+      <p class="product-cta-sub" data-i18n="product.cta.sub">Send an enquiry directly to JianHua Li, our European representative. We will respond within 24 business hours.</p>
+    </div>
+    <div class="product-cta-actions">
+      <a class="product-cta-btn product-cta-btn-primary" href="#contact" data-product-interest="Ingredients (Petroleum Coke / Needle Coke)">
+        <span data-i18n="product.cta.send">Send an enquiry</span> →
+      </a>
+      <a class="product-cta-btn product-cta-btn-secondary" href="mailto:sales@asahicarbon.de?subject=Enquiry%20-%20Ingredients">
+        <span data-i18n="product.cta.email">Email us</span>
+      </a>
     </div>
   </div>
 </section>
@@ -2961,7 +3060,7 @@ footer { flex-direction: column; text-align: center; }
         docModal.hidden = true;
         document.body.style.overflow = '';
       };
-      document.querySelectorAll('.doc-btn[data-doc-target]').forEach(btn => {
+      document.querySelectorAll('[data-doc-target]').forEach(btn => {
         btn.addEventListener('click', () => {
           const card = btn.closest('.doc-card');
           const cardTitle = card ? card.querySelector('.doc-title') : null;
@@ -3269,9 +3368,18 @@ footer { flex-direction: column; text-align: center; }
       'about.app.docs.c6.t': 'Technische Spezifikationen der Graphitelektroden',
       'about.app.docs.c7.t': 'Standardmaße &amp; Gewichte der Graphitelektroden',
       'product.cta.electrode.title': 'Interesse an Graphitelektroden?',
+      'product.cta.powder.title': 'Interesse an synthetischem Graphitpulver?',
+      'product.cta.ingredients.title': 'Interesse an Rohstoffen?',
       'product.cta.sub': 'Senden Sie Ihre Anfrage direkt an JianHua Li, unseren europäischen Ansprechpartner. Wir antworten innerhalb von 24 Geschäftsstunden.',
       'product.cta.send': 'Anfrage senden',
       'product.cta.email': 'E-Mail',
+      'product.back': '← Zurück zu den Produkten',
+      'product.ingredients.title': 'Rohstoffe',
+      'product.ingredients.sub': 'Rohstoffe und Ausgangsmaterialien für die Graphitproduktion — die gleichen Vormaterialien, die wir in unserer eigenen Elektroden- und Pulverfertigung einsetzen, weltweit an Industriekunden lieferbar.',
+      'product.ingredients.petroleum.name': 'Kalzinierter Petrolkoks',
+      'product.ingredients.petroleum.desc': 'Anodenqualität kalzinierter Petrolkoks (CPC) als primärer Kohlenstoffträger in der Graphitelektroden- und Anodenmassenfertigung. Geringer Schwefel- und Metallgehalt, hoher Fixkohlenstoffanteil — beschafft und kalziniert nach Elektrodenqualität.',
+      'product.ingredients.needle.name': 'Premium-Nadelkoks',
+      'product.ingredients.needle.desc': 'Hochkristalliner Nadelkoks — der Flaggschiff-Rohstoff für Ultra-High-Power (UHP)-Graphitelektroden. Anisotrope Struktur, niedriger Wärmeausdehnungskoeffizient und geringer Schwefelgehalt — entwickelt für Elektroden im härtesten Lichtbogenofenbetrieb.',
       'product.electrode.table.title': 'Produktdaten · Standardmaße &amp; Gewichte',
       'product.electrode.table.sub': 'Jede Lieferung enthält Material-Test-Report (MTR), Konformitätszertifikat und Maßprüfprotokoll.',
       'about.app.vision.p': 'Die Kohlenstoffindustrie ist in China ein bedeutender Rohstoffsektor für neue Energien, und Kohlenstoffprodukte finden in zahlreichen Branchen Anwendung — darunter Metallurgie, Chemie, Luftfahrt, Raumfahrt und Kernenergie. Mit Blick auf die langfristige Entwicklung des Unternehmens verfolgt ASAHI Technology eine durch technologische Innovation geprägte Strategie für nachhaltiges Wachstum. Über 20 Millionen Yuan wurden in modernste Laborausrüstung und den Aufbau eines unabhängigen F&amp;E-Zentrums investiert, mit dem Ziel, Chinas hochwertigste Ultra-High-Power-Graphitelektroden zu fertigen. ASAHI Technology strebt an, die Standards führender Industrieländer wie Europa, der USA und Japans einzuholen und zu übertreffen — und so eine wahrhaft nationale chinesische Marke aufzubauen. Gleichzeitig forscht das Unternehmen aktiv an zukunftsweisenden Kohlenstoffprodukten wie Fullerenen, Nanokohlenstoff und Graphen. Durch die konsequente Nutzung seiner technologischen Stärken schafft ASAHI Technology weitere Marktperspektiven und treibt die gesamte Entwicklung der chinesischen Kohlenstoffindustrie voran.',
