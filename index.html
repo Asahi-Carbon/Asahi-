@@ -58,7 +58,7 @@ font-family: ‘Cormorant Garamond’, serif;
 font-size: 1.5rem; font-weight: 700; letter-spacing: 0.1em;
 color: var(–gold); text-decoration: none;
 }
-.nav-logo span { color: var(--white); font-weight: 300; }
+.nav-logo span { color: var(--white); font-weight: 300; display: none; }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-toggle {
   display: none;
@@ -1571,6 +1571,7 @@ nav a.nav-active { color: var(--gold); }
 @media (max-width: 900px) {
 nav { padding: 1rem 1.5rem; }
 .nav-toggle { display: flex; }
+.nav-logo span { display: inline; }
 .nav-links {
   display: none;
   position: absolute;
