@@ -914,8 +914,10 @@ transition: background 0.3s;
 .doc-modal-body .doc-table-threads th { padding: 0.55rem 0.5rem; line-height: 1.2; }
 .doc-modal-body .doc-table-threads td { padding: 0.5rem 0.5rem; white-space: nowrap; border-right: 1px solid rgba(255,255,255,0.04); }
 .doc-modal-body .doc-table-threads td:last-child { border-right: none; }
-.doc-modal-body .doc-table-threads td:first-child,
-.doc-modal-body .doc-table-threads td:nth-child(8) { color: var(--white); font-weight: 600; }
+.doc-modal-body .doc-table-threads .nom-cell,
+.doc-modal-body .doc-table-threads .inn-cell { color: var(--white); font-weight: 600; }
+.doc-modal-body .doc-table-threads .series-cell { color: var(--white); font-weight: 600; text-align: left; vertical-align: middle; white-space: nowrap; border-right: 1px solid rgba(94,179,242,0.18); }
+.doc-modal-body .doc-table-threads tr.row-group-start td { border-top: 1px solid rgba(94,179,242,0.18); }
 .doc-modal-body .doc-h-unit { display: block; font-weight: 400; font-size: 0.62rem; opacity: 0.8; letter-spacing: 0.1em; margin-top: 0.15rem; }
 .doc-modal-body .doc-table-tech { font-size: 0.78rem; }
 .doc-modal-body .doc-table-tech th { padding: 0.55rem 0.55rem; line-height: 1.25; }
@@ -2025,43 +2027,66 @@ footer { flex-direction: column; text-align: center; }
           <h4 class="doc-title" data-i18n="about.app.docs.c5.t">Standard Dimensions for Fittings &amp; Threads</h4>
           <button class="doc-btn" data-doc-target="doc5"><span data-i18n="about.app.docs.viewmore">View More</span> →</button>
           <div class="doc-body" id="doc5" hidden>
-            <p>Standard pin (nipple) dimensions for the <strong>4&nbsp;TPI series · pitch 6.35&nbsp;mm</strong>. Tolerances follow ISO 13765 / IEC 60239; custom thread profiles available on request.</p>
+            <p>Standard pin (nipple) connector dimensions across the <strong>3&nbsp;TPI series · pitch 8.47&nbsp;mm</strong> and <strong>4&nbsp;TPI series · pitch 6.35&nbsp;mm</strong>. Tolerances follow ISO 13765 / IEC 60239; custom thread profiles available on request.</p>
             <div class="doc-table-scroll">
               <table class="doc-table doc-table-threads">
                 <thead>
                   <tr>
-                    <th>Pin Code</th>
-                    <th>Major Ø<br><span class="doc-h-unit">mm</span></th>
-                    <th>Length<br><span class="doc-h-unit">mm</span></th>
-                    <th>Root Ø<br><span class="doc-h-unit">mm</span></th>
-                    <th>Socket Depth<br><span class="doc-h-unit">mm</span></th>
-                    <th>Effective Depth<br><span class="doc-h-unit">mm</span></th>
-                    <th>Body Ø<br><span class="doc-h-unit">mm</span></th>
-                    <th>Part No.</th>
-                    <th>Major Ø<br><span class="doc-h-unit">in</span></th>
-                    <th>Length<br><span class="doc-h-unit">in</span></th>
+                    <th rowspan="2"></th>
+                    <th rowspan="2">Nominal name</th>
+                    <th colspan="2">Connector<span class="doc-h-unit">mm</span></th>
+                    <th colspan="3">Connector hole<span class="doc-h-unit">mm</span></th>
+                    <th rowspan="2">Effective diameter<span class="doc-h-unit">B · mm</span></th>
+                    <th colspan="3">International Nonproprietary Name</th>
+                  </tr>
+                  <tr>
+                    <th>A<span class="doc-h-unit">Max diameter</span></th>
+                    <th>L<span class="doc-h-unit">Max length</span></th>
+                    <th>D<span class="doc-h-unit">Caliber</span></th>
+                    <th>S<span class="doc-h-unit">Depth</span></th>
+                    <th>T<span class="doc-h-unit">Thread length</span></th>
+                    <th>Connector</th>
+                    <th>Diameter<span class="doc-h-unit">in</span></th>
+                    <th>Length<span class="doc-h-unit">in</span></th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>10T4</td><td>152.40</td><td>190.50</td><td>146.08</td><td>101.30</td><td>97.30</td><td>149.24</td><td>152T4</td><td>6.00</td><td>7.50</td></tr>
-                  <tr><td>12T4</td><td>177.80</td><td>215.90</td><td>171.48</td><td>114.00</td><td>110.00</td><td>174.64</td><td>177T4</td><td>7.00</td><td>8.50</td></tr>
-                  <tr><td>14T4</td><td>203.20</td><td>254.00</td><td>196.88</td><td>133.00</td><td>129.00</td><td>200.04</td><td>203T4</td><td>8.00</td><td>10.00</td></tr>
-                  <tr><td>16T4</td><td>222.25</td><td>304.80</td><td>215.93</td><td>158.40</td><td>154.40</td><td>219.09</td><td>222T4</td><td>8.75</td><td>12.00</td></tr>
-                  <tr><td>16T4L</td><td>222.25</td><td>355.60</td><td>215.93</td><td>183.80</td><td>179.80</td><td>219.09</td><td>222T4L</td><td>8.75</td><td>14.00</td></tr>
-                  <tr><td>18T4</td><td>241.30</td><td>304.80</td><td>234.98</td><td>158.40</td><td>154.40</td><td>238.14</td><td>241T4</td><td>9.50</td><td>12.00</td></tr>
-                  <tr><td>18T4L</td><td>241.30</td><td>355.60</td><td>234.98</td><td>183.80</td><td>179.80</td><td>238.14</td><td>241T4L</td><td>9.50</td><td>14.00</td></tr>
-                  <tr><td>20T4</td><td>269.88</td><td>355.60</td><td>263.56</td><td>183.80</td><td>179.80</td><td>266.72</td><td>269T4</td><td>10.625</td><td>14.00</td></tr>
-                  <tr><td>20T4L</td><td>269.88</td><td>457.20</td><td>263.56</td><td>237.60</td><td>232.60</td><td>266.72</td><td>269T4L</td><td>10.625</td><td>18.00</td></tr>
-                  <tr><td>22T4</td><td>298.45</td><td>355.60</td><td>292.13</td><td>183.80</td><td>179.80</td><td>295.29</td><td>298T4</td><td>11.75</td><td>14.00</td></tr>
-                  <tr><td>22T4L</td><td>298.45</td><td>457.20</td><td>292.13</td><td>237.60</td><td>232.60</td><td>295.29</td><td>298T4L</td><td>11.75</td><td>18.00</td></tr>
-                  <tr><td>24T4</td><td>317.50</td><td>355.60</td><td>311.18</td><td>183.80</td><td>179.80</td><td>314.34</td><td>317T4</td><td>12.50</td><td>14.00</td></tr>
-                  <tr><td>24T4L</td><td>317.50</td><td>457.20</td><td>311.18</td><td>237.60</td><td>232.60</td><td>314.34</td><td>317T4L</td><td>12.50</td><td>18.00</td></tr>
-                  <tr><td>26T4L</td><td>355.60</td><td>558.80</td><td>349.28</td><td>288.40</td><td>283.40</td><td>352.44</td><td>355T4L</td><td>14.00</td><td>22.00</td></tr>
-                  <tr><td>28T4L</td><td>374.65</td><td>558.80</td><td>368.33</td><td>288.40</td><td>283.40</td><td>371.49</td><td>374T4L</td><td>14.75</td><td>22.00</td></tr>
+                  <tr class="row-group-start"><td rowspan="10" class="series-cell">3 TPI<span class="doc-h-unit">Pitch 8.47 mm</span></td><td class="nom-cell">9T3</td><td>139.70</td><td>203.20</td><td>131.27</td><td>107.60</td><td>103.60</td><td>135.49</td><td class="inn-cell">139T3</td><td>5.50</td><td>8.00</td></tr>
+                  <tr><td class="nom-cell">10T3</td><td>155.57</td><td>220.00</td><td>147.14</td><td>116.00</td><td>112.00</td><td>151.36</td><td class="inn-cell">155T3</td><td>6.125</td><td>8.66</td></tr>
+                  <tr><td class="nom-cell">12T3</td><td>177.16</td><td>270.90</td><td>168.73</td><td>141.50</td><td>137.50</td><td>172.95</td><td class="inn-cell">177T3</td><td>6.975</td><td>10.66</td></tr>
+                  <tr><td class="nom-cell">14T3</td><td>215.90</td><td>304.80</td><td>207.47</td><td>158.40</td><td>154.40</td><td>211.69</td><td class="inn-cell">215T3</td><td>8.50</td><td>12.00</td></tr>
+                  <tr><td class="nom-cell">14T3L</td><td>215.90</td><td>355.60</td><td>207.47</td><td>183.80</td><td>179.80</td><td>211.69</td><td class="inn-cell">215T3L</td><td>8.50</td><td>14.00</td></tr>
+                  <tr><td class="nom-cell">16T3</td><td>241.30</td><td>338.70</td><td>232.87</td><td>175.30</td><td>171.30</td><td>237.09</td><td class="inn-cell">241T3</td><td>9.50</td><td>13.33</td></tr>
+                  <tr><td class="nom-cell">16T3L</td><td>241.30</td><td>355.60</td><td>232.87</td><td>183.80</td><td>179.80</td><td>237.09</td><td class="inn-cell">241T3L</td><td>9.50</td><td>14.00</td></tr>
+                  <tr><td class="nom-cell">18T3</td><td>273.05</td><td>355.60</td><td>264.62</td><td>183.80</td><td>179.80</td><td>268.84</td><td class="inn-cell">273T3</td><td>10.75</td><td>14.00</td></tr>
+                  <tr><td class="nom-cell">18T3L</td><td>273.05</td><td>457.20</td><td>264.62</td><td>236.60</td><td>232.60</td><td>268.84</td><td class="inn-cell">273T3L</td><td>10.75</td><td>18.00</td></tr>
+                  <tr><td class="nom-cell">20T3</td><td>298.45</td><td>372.60</td><td>290.02</td><td>192.20</td><td>188.20</td><td>294.24</td><td class="inn-cell">294T3</td><td>11.75</td><td>14.66</td></tr>
+                  <tr class="row-group-start"><td rowspan="22" class="series-cell">4 TPI<span class="doc-h-unit">Pitch 6.35 mm</span></td><td class="nom-cell">3T4</td><td>46.04</td><td>76.20</td><td>39.72</td><td>44.10</td><td>40.10</td><td>42.88</td><td class="inn-cell">45T4</td><td>1.81</td><td>3.00</td></tr>
+                  <tr><td class="nom-cell">4T4</td><td>69.85</td><td>101.60</td><td>63.53</td><td>56.80</td><td>52.80</td><td>66.69</td><td class="inn-cell">69T4</td><td>2.75</td><td>4.00</td></tr>
+                  <tr><td class="nom-cell">5 1/8 T4</td><td>79.38</td><td>127.00</td><td>73.06</td><td>69.50</td><td>65.50</td><td>76.22</td><td class="inn-cell">79T4</td><td>3.125</td><td>5.00</td></tr>
+                  <tr><td class="nom-cell">6T4</td><td>92.08</td><td>139.70</td><td>85.76</td><td>75.90</td><td>71.90</td><td>88.92</td><td class="inn-cell">92T4</td><td>3.625</td><td>5.50</td></tr>
+                  <tr><td class="nom-cell">7T4</td><td>107.95</td><td>165.10</td><td>101.63</td><td>88.60</td><td>84.60</td><td>104.79</td><td class="inn-cell">107T4</td><td>4.25</td><td>6.50</td></tr>
+                  <tr><td class="nom-cell">8T4</td><td>122.24</td><td>177.80</td><td>115.92</td><td>94.90</td><td>90.90</td><td>119.08</td><td class="inn-cell">122T4</td><td>4.812</td><td>7.00</td></tr>
+                  <tr><td class="nom-cell">9T4</td><td>139.70</td><td>203.20</td><td>133.38</td><td>94.90</td><td>90.90</td><td>136.54</td><td class="inn-cell">139T4</td><td>5.50</td><td>7.00</td></tr>
+                  <tr><td class="nom-cell">10T4</td><td>152.40</td><td>190.50</td><td>146.08</td><td>101.30</td><td>97.30</td><td>149.24</td><td class="inn-cell">152T4</td><td>6.00</td><td>7.50</td></tr>
+                  <tr><td class="nom-cell">12T4</td><td>177.80</td><td>215.90</td><td>171.48</td><td>114.00</td><td>110.00</td><td>174.64</td><td class="inn-cell">177T4</td><td>7.00</td><td>8.50</td></tr>
+                  <tr><td class="nom-cell">14T4</td><td>203.20</td><td>254.00</td><td>196.88</td><td>133.00</td><td>129.00</td><td>200.04</td><td class="inn-cell">203T4</td><td>8.00</td><td>10.00</td></tr>
+                  <tr><td class="nom-cell">16T4</td><td>222.25</td><td>304.80</td><td>215.93</td><td>158.40</td><td>154.40</td><td>219.09</td><td class="inn-cell">222T4</td><td>8.75</td><td>12.00</td></tr>
+                  <tr><td class="nom-cell">16T4L</td><td>222.25</td><td>355.60</td><td>215.93</td><td>183.80</td><td>179.80</td><td>219.09</td><td class="inn-cell">222T4L</td><td>8.75</td><td>14.00</td></tr>
+                  <tr><td class="nom-cell">18T4</td><td>241.30</td><td>304.80</td><td>234.98</td><td>158.40</td><td>154.40</td><td>238.14</td><td class="inn-cell">241T4</td><td>9.50</td><td>12.00</td></tr>
+                  <tr><td class="nom-cell">18T4L</td><td>241.30</td><td>355.60</td><td>234.98</td><td>183.80</td><td>179.80</td><td>238.14</td><td class="inn-cell">241T4L</td><td>9.50</td><td>14.00</td></tr>
+                  <tr><td class="nom-cell">20T4</td><td>269.88</td><td>355.60</td><td>263.56</td><td>183.80</td><td>179.80</td><td>266.72</td><td class="inn-cell">269T4</td><td>10.625</td><td>14.00</td></tr>
+                  <tr><td class="nom-cell">20T4L</td><td>269.88</td><td>457.20</td><td>263.56</td><td>237.60</td><td>232.60</td><td>266.72</td><td class="inn-cell">269T4L</td><td>10.625</td><td>18.00</td></tr>
+                  <tr><td class="nom-cell">22T4</td><td>298.45</td><td>355.60</td><td>292.13</td><td>183.80</td><td>179.80</td><td>295.29</td><td class="inn-cell">298T4</td><td>11.75</td><td>14.00</td></tr>
+                  <tr><td class="nom-cell">22T4L</td><td>298.45</td><td>457.20</td><td>292.13</td><td>237.60</td><td>232.60</td><td>295.29</td><td class="inn-cell">298T4L</td><td>11.75</td><td>18.00</td></tr>
+                  <tr><td class="nom-cell">24T4</td><td>317.50</td><td>355.60</td><td>311.18</td><td>183.80</td><td>179.80</td><td>314.34</td><td class="inn-cell">317T4</td><td>12.50</td><td>14.00</td></tr>
+                  <tr><td class="nom-cell">24T4L</td><td>317.50</td><td>457.20</td><td>311.18</td><td>237.60</td><td>232.60</td><td>314.34</td><td class="inn-cell">317T4L</td><td>12.50</td><td>18.00</td></tr>
+                  <tr><td class="nom-cell">26T4L</td><td>355.60</td><td>558.80</td><td>349.28</td><td>288.40</td><td>283.40</td><td>352.44</td><td class="inn-cell">355T4L</td><td>14.00</td><td>22.00</td></tr>
+                  <tr><td class="nom-cell">28T4L</td><td>374.65</td><td>558.80</td><td>368.33</td><td>288.40</td><td>283.40</td><td>371.49</td><td class="inn-cell">374T4L</td><td>14.75</td><td>22.00</td></tr>
                 </tbody>
               </table>
             </div>
-            <p class="doc-note">Codes ending in "L" denote the long-pin variant. 3 TPI thread profiles are available for larger diameters — please contact us for the full schedule.</p>
+            <p class="doc-note">Codes ending in "L" denote the long-pin variant. The International Nonproprietary Name maps each connector to its imperial diameter and length.</p>
           </div>
         </div>
 
