@@ -1583,7 +1583,9 @@ nav { padding: 1rem 1.5rem; }
   background: rgba(13,17,23,0.98);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(94,179,242,0.2);
-  max-height: calc(100vh - 100%);
+  padding-bottom: 1.5rem;
+  max-height: calc(100vh - var(--nav-h, 64px));
+  max-height: calc(100dvh - var(--nav-h, 64px));
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
@@ -3134,6 +3136,15 @@ footer { flex-direction: column; text-align: center; }
     const navEl = document.querySelector('nav');
     const navToggle = document.querySelector('.nav-toggle');
     if (navEl && navToggle) {
+      // Expose the live nav height so the dropdown menu can size its
+      // scroll area to the remaining viewport (so every item, including
+      // Contact at the bottom, is reachable on short screens).
+      const syncNavHeight = () => {
+        document.documentElement.style.setProperty('--nav-h', navEl.offsetHeight + 'px');
+      };
+      syncNavHeight();
+      window.addEventListener('resize', syncNavHeight);
+      window.addEventListener('orientationchange', syncNavHeight);
       navToggle.addEventListener('click', () => {
         const open = navEl.classList.toggle('open');
         navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
@@ -3257,22 +3268,30 @@ footer { flex-direction: column; text-align: center; }
       }
     }
 
-    document.querySelectorAll('.has-dropdown').forEach(li => {
-      const items = li.querySelectorAll('.dropdown-nav a[href^="#"]');
-      items.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-          items.forEach(i => i.classList.toggle('preview-active', i === item));
-          startPreview(item.getAttribute('href').slice(1));
+    // The hover-preview is a desktop-only nicety. On touch devices a tap
+    // fires a synthetic mouseenter that swaps the page content underneath,
+    // which makes the browser cancel the first click (sticky-hover) and
+    // forces a second tap to actually navigate. Only wire it up where the
+    // pointer can genuinely hover so a single tap navigates on mobile.
+    const canHover = window.matchMedia('(hover: hover)').matches;
+    if (canHover) {
+      document.querySelectorAll('.has-dropdown').forEach(li => {
+        const items = li.querySelectorAll('.dropdown-nav a[href^="#"]');
+        items.forEach(item => {
+          item.addEventListener('mouseenter', () => {
+            items.forEach(i => i.classList.toggle('preview-active', i === item));
+            startPreview(item.getAttribute('href').slice(1));
+          });
+          // Clicking commits the preview — don't revert when the cursor leaves
+          item.addEventListener('click', () => {
+            previewSavedPage = null;
+            previewSavedAnchor = null;
+          });
         });
-        // Clicking commits the preview — don't revert when the cursor leaves
-        item.addEventListener('click', () => {
-          previewSavedPage = null;
-          previewSavedAnchor = null;
-        });
+        // Leaving the dropdown trigger / panel reverts the preview
+        li.addEventListener('mouseleave', endPreview);
       });
-      // Leaving the dropdown trigger / panel reverts the preview
-      li.addEventListener('mouseleave', endPreview);
-    });
+    }
   })();
 
   // Scroll fade-in
